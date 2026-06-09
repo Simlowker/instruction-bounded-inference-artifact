@@ -1,7 +1,7 @@
 # Source Pinning Note
 
 This note records the source pins used by the v14 short manuscript and the
-companion `comoto-paper-artifact` reproduction package. It is intentionally
+companion `instruction-bounded-inference-artifact` reproduction package. It is intentionally
 separate from the CSV evidence tables: the tables record measured outputs,
 while this note records source provenance and publication gates.
 
@@ -9,12 +9,12 @@ while this note records source provenance and publication gates.
 
 | Component | Pin | Evidence |
 | --- | --- | --- |
-| Comoto rebuild source | `Simlowker/gian@8cda13b` | Companion `comoto-paper-artifact` repository, files `REPRODUCE.md` and `results/rebench_2026-05-19.md` |
-| onicai rebuild source | `onicai/llama_cpp_canister@v0.10.1` | Companion `comoto-paper-artifact` repository, files `REPRODUCE.md` and `results/rebench_2026-05-19.md` |
+| Comoto rebuild source | `Simlowker/gian@8cda13b` | Companion `instruction-bounded-inference-artifact` repository, files `REPRODUCE.md` and `results/rebench_2026-05-19.md` |
+| onicai rebuild source | `onicai/llama_cpp_canister@v0.10.1` | Companion `instruction-bounded-inference-artifact` repository, files `REPRODUCE.md` and `results/rebench_2026-05-19.md` |
 | Original onicai baseline tag | `onicai/llama_cpp_canister@v0.9.0` | `artifact/data/onchain/icp_mainnet.csv`; manuscript reference [9] |
-| Qwen 2.5 0.5B Instruct Q8_0 GGUF | SHA-256 `ca59ca7f13d0e15a8cfa77bd17e65d24f6844b554a7b6c12e07a5f89ff76844e` | Companion `comoto-paper-artifact` repository, files `REPRODUCE.md` and `results/rebench_2026-05-19.md` |
-| Rebuilt Comoto WASM | SHA-256 `da112d9916ea816620ddba02a09aead5c2fc966ac9026681880e71d388e9a49c` | Companion `comoto-paper-artifact` repository, file `results/rebench_2026-05-19.md` |
-| Rebuilt onicai WASM | SHA-256 `b6ccbff0b6287026e7b91924d3bc77dbcfbfa35c17f3d0bd865a09d929169660` | Companion `comoto-paper-artifact` repository, file `results/rebench_2026-05-19.md` |
+| Qwen 2.5 0.5B Instruct Q8_0 GGUF | SHA-256 `ca59ca7f13d0e15a8cfa77bd17e65d24f6844b554a7b6c12e07a5f89ff76844e` | Companion `instruction-bounded-inference-artifact` repository, files `REPRODUCE.md` and `results/rebench_2026-05-19.md` |
+| Rebuilt Comoto WASM | SHA-256 `da112d9916ea816620ddba02a09aead5c2fc966ac9026681880e71d388e9a49c` | Companion `instruction-bounded-inference-artifact` repository, file `results/rebench_2026-05-19.md` |
+| Rebuilt onicai WASM | SHA-256 `b6ccbff0b6287026e7b91924d3bc77dbcfbfa35c17f3d0bd865a09d929169660` | Companion `instruction-bounded-inference-artifact` repository, file `results/rebench_2026-05-19.md` |
 
 ## Manuscript Reference Pins
 

@@ -215,9 +215,10 @@ multi-call IO fits, source pins
 (<code>artifact/notes/source_pinning.md</code>), and a source-backed
 execution-boundary note
 (<code>artifact/notes/blockchain_ai_execution_boundaries.md</code>). The
-companion reproduction repository <code>comoto-paper-artifact</code>
-contains the end-to-end local rebuild and re-benchmark procedure for the
-2.9× fork gap (<code>REPRODUCE.md</code>) and its 2026-05-19 result log
+companion reproduction repository
+<code>instruction-bounded-inference-artifact</code> contains the
+end-to-end local rebuild and re-benchmark procedure for the 2.9× fork
+gap (<code>REPRODUCE.md</code>) and its 2026-05-19 result log
 (<code>results/rebench_2026-05-19.md</code>). Every load-bearing numeric
 claim below cites an explicit CSV or summary-table path; the full
 claim-to-evidence mapping lives in
@@ -911,7 +912,7 @@ Byte-exact rebuild is therefore impossible, but functional behavior —
 the claim itself — is fully reproducible from current public source by
 any reviewer with <code>dfx</code>, ~50 GB disk, and ~30 min CPU; no ICP
 cycles required. The end-to-end procedure is in the companion
-<code>comoto-paper-artifact</code> repository, file
+<code>instruction-bounded-inference-artifact</code> repository, file
 <code>REPRODUCE.md</code>; the reproduced 29-vs-10 result is logged in
 <code>results/rebench_2026-05-19.md</code> in that repository.</p>
 <h3 id="matmul-dominates-at-98.7">4.2 Matmul dominates at 98.7%</h3>
@@ -1385,9 +1386,10 @@ registry/table/claim consistency.</p>
 per-operation profiling, Paper 1.5 CSVs, scripts, exports): the
 <code>artifact/</code> directory of this package.</li>
 <li><strong>Reproduction repository</strong>:
-<code>github.com/Simlowker/comoto-paper-artifact</code> — the end-to-end
-local rebuild of the 2.9× fork gap (<code>REPRODUCE.md</code>) and its
-result log (<code>results/rebench_2026-05-19.md</code>). Made public at
+<code>github.com/Simlowker/instruction-bounded-inference-artifact</code>
+— the end-to-end local rebuild of the 2.9× fork gap
+(<code>REPRODUCE.md</code>) and its result log
+(<code>results/rebench_2026-05-19.md</code>). Made public at
 deposit.</li>
 <li><strong>Archived snapshot + DOI</strong>: Zenodo
 <code>10.5281/zenodo.20607598</code> (reserved at deposit; the GitHub
@@ -1416,7 +1418,8 @@ supported.</strong></p>
 <tbody>
 <tr>
 <td>Qwen 2.5 0.5B Q8_0 GGUF</td>
-<td><code>comoto-paper-artifact</code> / <code>REPRODUCE.md</code></td>
+<td><code>instruction-bounded-inference-artifact</code> /
+<code>REPRODUCE.md</code></td>
 <td><code>ca59ca7f…6844e</code></td>
 <td>§4.1 mainnet 29-vs-10</td>
 </tr>
