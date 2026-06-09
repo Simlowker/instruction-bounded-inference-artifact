@@ -22,8 +22,8 @@ multi-call IO tax.
 
 | Path | Contents |
 |---|---|
-| `drafts/`, `CURRENT.md` | the manuscript (`paper-v14-short.md`) |
-| `exports/` | rendered `paper-v14-short.{pdf,html}` |
+| `drafts/`, `CURRENT.md` | the manuscript (`instruction-bounded-inference.md`) |
+| `exports/` | rendered `instruction-bounded-inference.{pdf,html}` |
 | `artifact/data/` | calibration registry, on-chain rows (ICP mainnet / SSN), kernel & profiling benches, Paper 1.5 CSVs (ternary, mixed-precision, multi-call, IC0524), variance-verified anchors |
 | `artifact/results/` | scaling-law outputs (BCa, LOAO), extended analysis, Paper 1.5 tables & figures, raw logs |
 | `artifact/scripts/` | `analyze_scaling_law.py`, `check_paper_readiness.py`, `rebuild_data_tables.py`, `run_variance.py`, Paper 1.5 pipelines |
@@ -37,7 +37,7 @@ multi-call IO tax.
 cd artifact
 
 # 1. Consistency gate: registry ↔ tables ↔ claims  (expect "9 pass, 0 fail")
-python3 scripts/check_paper_readiness.py --draft ../drafts/paper-v14-short.md
+python3 scripts/check_paper_readiness.py --draft ../drafts/instruction-bounded-inference.md
 
 # 2. Re-derive the scaling-law statistics
 python3 scripts/analyze_scaling_law.py    # α median 1.527, BCa [1.374, 1.65], LOAO MAPE 7.7%

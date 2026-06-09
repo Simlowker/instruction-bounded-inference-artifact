@@ -3,7 +3,7 @@
 **Checked:** 2026-04-22
 
 **Purpose.** This note supports the introduction and related-work framing in
-`../drafts/paper-v14-short.md`. The key distinction is not "blockchain AI" in
+`../drafts/instruction-bounded-inference.md`. The key distinction is not "blockchain AI" in
 the broad marketing sense, but **where the model forward pass executes**:
 inside the consensus-metered smart-contract runtime, or outside it.
 

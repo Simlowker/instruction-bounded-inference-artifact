@@ -1,7 +1,7 @@
 # Metering-Overhead Multiplier `β = 1.844` — Derivation
 
 This note documents how the metering-overhead multiplier `β` reported in
-`drafts/paper-v14-short.md` §2 and §4.2 is derived. It also reconciles the
+`drafts/instruction-bounded-inference.md` §2 and §4.2 is derived. It also reconciles the
 opcode-table cost ratio `f32 / i32 = 2×` with the observed SIMD-kernel-level
 ratio `1.05×` recorded in `artifact/data/kernel/matmul_bench.csv`. Both
 numbers are real, but they live at different levels of the cost stack and
