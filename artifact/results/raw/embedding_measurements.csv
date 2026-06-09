@@ -1,0 +1,16 @@
+model,params_M,quant,gguf_size_MB,network,canister_id,output_dim,max_input_tok_per_call,alpha_embed,latency_s,throughput_calls_min,success_rate,n_runs,measurement_type,notes
+EmbeddingGemma-300M,300,Q4_0,212,ssn,u2pva-3iaaa-aaaax-qaa7a-cai,768,126,0.53,1.62,37,10/10,10,binary_search,native in-consensus embedding deployment; system demonstration only; not a priority claim
+EmbeddingGemma-300M,300,Q4_0,212,mainnet,,768,126,0.50,2.8,,,,binary_search,mainnet avg 2.8s (more stable than SSN avg 7.8s)
+pair_type,text_a,text_b,cosine_similarity,assessment
+paraphrase,"Capital of France is Paris","Paris is the capital of France",0.977,paraphrase detection
+unrelated,"Capital of France","Machine learning algorithms",0.574,low unrelated
+unrelated,"Capital of France","Pizza on weekends",0.587,low unrelated
+unrelated,"Machine learning","Pizza on weekends",0.546,lowest most distant
+crosslingual,"La capitale de la France","The capital of France",0.93,FR-EN translation pair
+crosslingual,"L'apprentissage automatique","Machine learning",0.89,FR-EN translation pair
+retrieval_query,retrieval_result,correct
+"mes investissements immobiliers","Portfolio description",yes
+"rendement de mes placements","Financial returns",yes
+"documents juridiques succession","Legal documents",yes
+"assurance vie et prévoyance","Insurance policy",yes
+"fiscalité suisse optimisation","Tax optimization",yes

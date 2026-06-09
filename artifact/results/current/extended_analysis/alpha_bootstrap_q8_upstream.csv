@@ -1,0 +1,2 @@
+n,mean,std,median,ci_mean_low,ci_mean_high,ci_median_low,ci_median_high,method
+4,1.505,0.0719,1.53,1.43,1.545,1.4,1.56,BCa_bootstrap_9999

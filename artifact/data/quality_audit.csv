@@ -1,0 +1,15 @@
+model,quant,layers,size_MB,tok_call,tok_call_env,ppl_wikitext2,ppl_err,qa_capital_france,reasoning_sky_blue,sentiment_negative,fr_capitale_suisse,quality_score,quality_notes
+Qwen3.5-0.8B,Q4_0,24,484,13,ssn,,,PASS:Paris,PASS:Rayleigh scattering correct,PARTIAL:repeats input,PASS:Bern+nuance Zurich,4/5,best quality — chain-of-thought via <think>
+Qwen2.5-0.5B,Q4_0,24,336,31,local,17.41,0.13,PASS:Paris,PARTIAL:scorch is wrong,PARTIAL:paraphrases not classifies,PASS:Berne,3/5,good multilingual — best PPL
+Gemma3-270M-IT,Q4_0,18,230,52,ssn,63.99,0.68,PASS:Paris,PASS:scattering OK,PASS:Negative,FAIL:Geneva (wrong),3/5,best sentiment — high PPL because instruct model on raw wikitext
+Qwen2.5-0.5B,Q8_0,24,644,29,icp_mainnet,,,PASS:Paris,PARTIAL:scorch is wrong,PARTIAL:paraphrases,PASS:Berne,3/5,same quality as Q4_0 — quant does not degrade
+SmolLM2-135M-instruct,Q8_0,30,138,95,local,,,PASS:Paris,FAIL:circular reasoning,PASS:negative,FAIL:hallucinated,2/5,classification OK only
+SmolLM2-135M,Q4_0,30,87,97,local,23.82,0.18,PASS:Paris,FAIL:circular reasoning,PASS:negative,FAIL:hallucinated,2/5,same quality as instruct Q8_0
+Falcon-H1-Tiny-90M,Q8_0,6,94,199,ssn,343.68,5.30,PASS:Paris,FAIL:confuses CO2/H2O with Rayleigh,PASS:negative,FAIL:Alencon (hallucinated),2/5,classification+QA only — worst PPL confirms limited quality
+Pythia-70M,Q4_0,6,46,208,local,,,FAIL:loops 666,FAIL:loops 666,FAIL:loops 666,FAIL:loops 666,0/5,base model — degenerates in completion. Throughput valid NOT quality
+GPT2-124M,Q8_0,12,,56,local,,,PARTIAL:loops capital of,FAIL:circular,FAIL:off-topic,,0/5,base model — degenerates. Throughput valid NOT quality
+Qwen3.5-0.8B,TQ2_0,24,334,18,ssn,,,FAIL:garbage,FAIL:garbage,FAIL:garbage,FAIL:garbage,0/5,INVALID — TQ2_0 destroys DeltaNet architecture
+Qwen3.5-0.8B,Q4_0,21,445,18,ssn,,,FAIL:loops turkish,FAIL:garbage CJK,FAIL:garbage,FAIL:garbage,0/5,INVALID — pruning 3 layers breaks 3:1 DN/FA pattern
+Qwen3.5-0.8B,Q4_0,12,344,20,ssn,,,FAIL:garbage,FAIL:garbage,FAIL:garbage,FAIL:garbage,0/5,INVALID — pruned too aggressively
+Qwen3.5-0.8B,TQ2_0,12,271,25,ssn,,,FAIL:garbage,FAIL:garbage,FAIL:garbage,FAIL:garbage,0/5,INVALID — TQ2_0 + pruning = complete destruction
+Qwen3.5-0.8B,IQ2_XXS,24,323,5,ssn,,,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,0/5,5 tok/call too low + likely garbage like TQ2_0

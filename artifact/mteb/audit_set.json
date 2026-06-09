@@ -1,0 +1,114 @@
+{
+  "description": "Fixed audit set for on-chain vs off-chain embedding fidelity test. 80 sentences: 40 FR, 40 EN, covering 8 domains + edge cases.",
+  "version": "1.0",
+  "usage": "Encode all sentences both off-chain (Q4_0 GGUF) and on-chain (ICP canister). Compare cosine similarity, rank correlation, retrieval agreement.",
+  "sentences": [
+    {"id": 1, "lang": "fr", "domain": "finance", "text": "La gestion de patrimoine immobilier en Suisse requiert une connaissance approfondie du droit cantonal."},
+    {"id": 2, "lang": "fr", "domain": "finance", "text": "Le rendement des placements financiers dépend de la diversification du portefeuille."},
+    {"id": 3, "lang": "fr", "domain": "finance", "text": "L'optimisation fiscale en Suisse repose sur la structure intercommunale et intercantonale."},
+    {"id": 4, "lang": "fr", "domain": "finance", "text": "Les taux hypothécaires suisses varient considérablement entre les établissements bancaires."},
+    {"id": 5, "lang": "fr", "domain": "finance", "text": "La prévoyance professionnelle du deuxième pilier constitue un élément clé de la retraite."},
+
+    {"id": 6, "lang": "fr", "domain": "legal", "text": "Les documents juridiques de succession doivent être notariés selon le droit suisse."},
+    {"id": 7, "lang": "fr", "domain": "legal", "text": "Le registre foncier cantonal enregistre toutes les transactions immobilières."},
+    {"id": 8, "lang": "fr", "domain": "legal", "text": "La protection des données personnelles est régie par la LPD révisée."},
+    {"id": 9, "lang": "fr", "domain": "legal", "text": "Le droit des obligations suisse encadre les contrats entre particuliers et entreprises."},
+    {"id": 10, "lang": "fr", "domain": "legal", "text": "Une clause compromissoire permet de soumettre un litige à l'arbitrage plutôt qu'aux tribunaux."},
+
+    {"id": 11, "lang": "fr", "domain": "tech", "text": "L'inférence de modèles de langage sur blockchain nécessite une optimisation de la mémoire."},
+    {"id": 12, "lang": "fr", "domain": "tech", "text": "La quantification en 4 bits réduit l'empreinte mémoire de 75% avec une perte de qualité minimale."},
+    {"id": 13, "lang": "fr", "domain": "tech", "text": "Les instructions SIMD permettent de paralléliser les opérations vectorielles sur le processeur."},
+    {"id": 14, "lang": "fr", "domain": "tech", "text": "Le protocole Internet Computer utilise des canisters WebAssembly pour l'exécution décentralisée."},
+    {"id": 15, "lang": "fr", "domain": "tech", "text": "Les embeddings transforment le texte en vecteurs numériques de haute dimension."},
+
+    {"id": 16, "lang": "fr", "domain": "science", "text": "La mécanique quantique décrit le comportement des particules à l'échelle subatomique."},
+    {"id": 17, "lang": "fr", "domain": "science", "text": "La photosynthèse convertit le dioxyde de carbone et l'eau en glucose grâce à la lumière solaire."},
+    {"id": 18, "lang": "fr", "domain": "science", "text": "Les réseaux de neurones artificiels s'inspirent du fonctionnement biologique du cerveau."},
+    {"id": 19, "lang": "fr", "domain": "science", "text": "Le théorème de Bayes permet de mettre à jour les probabilités en fonction de nouvelles observations."},
+    {"id": 20, "lang": "fr", "domain": "science", "text": "L'entropie mesure le degré de désordre dans un système thermodynamique."},
+
+    {"id": 21, "lang": "fr", "domain": "culture", "text": "Le musée du Louvre à Paris abrite la Joconde de Léonard de Vinci."},
+    {"id": 22, "lang": "fr", "domain": "culture", "text": "La littérature francophone contemporaine explore les thèmes de l'identité et de la migration."},
+    {"id": 23, "lang": "fr", "domain": "culture", "text": "Le cinéma de la Nouvelle Vague a révolutionné les techniques narratives dans les années 1960."},
+    {"id": 24, "lang": "fr", "domain": "culture", "text": "La gastronomie française est inscrite au patrimoine immatériel de l'UNESCO."},
+    {"id": 25, "lang": "fr", "domain": "culture", "text": "L'architecture haussmannienne définit le paysage urbain du Paris moderne."},
+
+    {"id": 26, "lang": "fr", "domain": "medical", "text": "L'immunothérapie représente une avancée majeure dans le traitement des cancers."},
+    {"id": 27, "lang": "fr", "domain": "medical", "text": "Le diagnostic par imagerie médicale permet de détecter les pathologies de manière non invasive."},
+    {"id": 28, "lang": "fr", "domain": "medical", "text": "Les antibiotiques ciblent spécifiquement les bactéries sans affecter les cellules humaines."},
+    {"id": 29, "lang": "fr", "domain": "medical", "text": "La télémédecine facilite l'accès aux soins dans les zones rurales."},
+    {"id": 30, "lang": "fr", "domain": "medical", "text": "Le séquençage génomique ouvre la voie à la médecine personnalisée."},
+
+    {"id": 31, "lang": "fr", "domain": "daily", "text": "Le marché du samedi matin propose des fruits et légumes de saison cultivés localement."},
+    {"id": 32, "lang": "fr", "domain": "daily", "text": "Les transports publics genevois desservent l'ensemble du canton toutes les dix minutes."},
+    {"id": 33, "lang": "fr", "domain": "daily", "text": "La randonnée en montagne nécessite un équipement adapté et une préparation physique."},
+    {"id": 34, "lang": "fr", "domain": "daily", "text": "Les horaires de travail flexibles améliorent l'équilibre entre vie professionnelle et personnelle."},
+    {"id": 35, "lang": "fr", "domain": "daily", "text": "La recette traditionnelle de la fondue savoyarde utilise trois fromages différents."},
+
+    {"id": 36, "lang": "fr", "domain": "edge", "text": "Bonjour."},
+    {"id": 37, "lang": "fr", "domain": "edge", "text": "Oui."},
+    {"id": 38, "lang": "fr", "domain": "edge", "text": "L'élève à l'école élémentaire étudie l'écriture, les éléments d'étymologie et l'évolution de la littérature européenne."},
+    {"id": 39, "lang": "fr", "domain": "edge", "text": "3.14159265358979323846"},
+    {"id": 40, "lang": "fr", "domain": "edge", "text": "Le renard brun rapide saute par-dessus le chien paresseux, encore et encore, sans jamais s'arrêter de courir à travers les vastes prairies verdoyantes du sud de la France sous un ciel bleu éclatant."},
+
+    {"id": 41, "lang": "en", "domain": "finance", "text": "Portfolio diversification across asset classes reduces systemic risk in volatile markets."},
+    {"id": 42, "lang": "en", "domain": "finance", "text": "The yield curve inversion historically signals an upcoming economic recession."},
+    {"id": 43, "lang": "en", "domain": "finance", "text": "Decentralized finance protocols enable permissionless lending and borrowing on blockchain."},
+    {"id": 44, "lang": "en", "domain": "finance", "text": "Swiss real estate investment funds provide indirect exposure to the property market."},
+    {"id": 45, "lang": "en", "domain": "finance", "text": "Central bank monetary policy directly influences inflation expectations and interest rates."},
+
+    {"id": 46, "lang": "en", "domain": "legal", "text": "Smart contracts on blockchain execute automatically when predefined conditions are met."},
+    {"id": 47, "lang": "en", "domain": "legal", "text": "The GDPR requires explicit consent for processing personal data of EU citizens."},
+    {"id": 48, "lang": "en", "domain": "legal", "text": "Intellectual property rights protect creators from unauthorized reproduction of their work."},
+    {"id": 49, "lang": "en", "domain": "legal", "text": "Corporate governance frameworks establish accountability structures for publicly listed companies."},
+    {"id": 50, "lang": "en", "domain": "legal", "text": "Regulatory sandboxes allow fintech startups to test innovations under supervised conditions."},
+
+    {"id": 51, "lang": "en", "domain": "tech", "text": "Machine learning algorithms optimize loss functions through gradient descent."},
+    {"id": 52, "lang": "en", "domain": "tech", "text": "Quantum computing leverages superposition and entanglement for parallel computation."},
+    {"id": 53, "lang": "en", "domain": "tech", "text": "WebAssembly enables near-native performance for applications running in web browsers."},
+    {"id": 54, "lang": "en", "domain": "tech", "text": "Transformer architectures use self-attention mechanisms to process sequential data."},
+    {"id": 55, "lang": "en", "domain": "tech", "text": "The Internet Computer Protocol achieves consensus through a novel chain-key cryptography scheme."},
+
+    {"id": 56, "lang": "en", "domain": "science", "text": "The double-slit experiment demonstrates the wave-particle duality of photons."},
+    {"id": 57, "lang": "en", "domain": "science", "text": "CRISPR-Cas9 gene editing allows precise modification of DNA sequences."},
+    {"id": 58, "lang": "en", "domain": "science", "text": "The theory of general relativity describes gravity as curvature of spacetime."},
+    {"id": 59, "lang": "en", "domain": "science", "text": "Protein folding determines the three-dimensional structure and function of biological molecules."},
+    {"id": 60, "lang": "en", "domain": "science", "text": "Statistical hypothesis testing quantifies the evidence against a null hypothesis."},
+
+    {"id": 61, "lang": "en", "domain": "culture", "text": "The capital of France is Paris, located on the Seine river."},
+    {"id": 62, "lang": "en", "domain": "culture", "text": "Shakespeare wrote 37 plays exploring themes of power, love, and human nature."},
+    {"id": 63, "lang": "en", "domain": "culture", "text": "Japanese architecture blends traditional wooden construction with modern minimalist design."},
+    {"id": 64, "lang": "en", "domain": "culture", "text": "The Impressionist movement prioritized capturing light and atmosphere over precise detail."},
+    {"id": 65, "lang": "en", "domain": "culture", "text": "Jazz music originated in New Orleans from a fusion of African and European traditions."},
+
+    {"id": 66, "lang": "en", "domain": "medical", "text": "mRNA vaccines instruct cells to produce spike proteins triggering an immune response."},
+    {"id": 67, "lang": "en", "domain": "medical", "text": "Magnetic resonance imaging uses strong magnetic fields to visualize soft tissue structures."},
+    {"id": 68, "lang": "en", "domain": "medical", "text": "Antibiotic resistance poses a growing threat to global public health systems."},
+    {"id": 69, "lang": "en", "domain": "medical", "text": "Clinical trials follow a four-phase process to evaluate drug safety and efficacy."},
+    {"id": 70, "lang": "en", "domain": "medical", "text": "Wearable health monitors enable continuous tracking of heart rate and blood oxygen levels."},
+
+    {"id": 71, "lang": "en", "domain": "daily", "text": "The quick brown fox jumps over the lazy dog."},
+    {"id": 72, "lang": "en", "domain": "daily", "text": "Public transportation in Zurich runs on a precise schedule every few minutes."},
+    {"id": 73, "lang": "en", "domain": "daily", "text": "Morning coffee rituals vary significantly across different European cultures."},
+    {"id": 74, "lang": "en", "domain": "daily", "text": "Hiking in the Swiss Alps requires proper equipment and weather awareness."},
+    {"id": 75, "lang": "en", "domain": "daily", "text": "Remote work has fundamentally changed how companies structure their office space."},
+
+    {"id": 76, "lang": "en", "domain": "edge", "text": "Hello."},
+    {"id": 77, "lang": "en", "domain": "edge", "text": "OK"},
+    {"id": 78, "lang": "en", "domain": "edge", "text": "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo."},
+    {"id": 79, "lang": "en", "domain": "edge", "text": "2.718281828459045"},
+    {"id": 80, "lang": "en", "domain": "edge", "text": "The exceptionally long sentence about nothing in particular continues endlessly through various clauses and subclauses without ever reaching a meaningful conclusion or making any substantive point whatsoever despite its considerable length and complexity."}
+  ],
+  "queries": [
+    {"id": "q1", "lang": "fr", "domain": "finance", "text": "investissement immobilier en Suisse"},
+    {"id": "q2", "lang": "fr", "domain": "legal", "text": "succession et notaire"},
+    {"id": "q3", "lang": "fr", "domain": "tech", "text": "inférence LLM sur blockchain"},
+    {"id": "q4", "lang": "fr", "domain": "medical", "text": "traitement du cancer"},
+    {"id": "q5", "lang": "en", "domain": "finance", "text": "portfolio risk management"},
+    {"id": "q6", "lang": "en", "domain": "tech", "text": "WebAssembly performance"},
+    {"id": "q7", "lang": "en", "domain": "science", "text": "quantum physics experiments"},
+    {"id": "q8", "lang": "en", "domain": "cross", "text": "Swiss real estate law"},
+    {"id": "q9", "lang": "fr", "domain": "cross", "text": "machine learning optimization"},
+    {"id": "q10", "lang": "en", "domain": "cross", "text": "blockchain decentralized computation"}
+  ]
+}

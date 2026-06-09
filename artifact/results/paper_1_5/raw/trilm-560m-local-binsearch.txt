@@ -1,0 +1,33 @@
+# TriLM 560M TQ2_0 — local dfx binary search for max tok/call
+# Date: 2026-04-19
+# Canister: uzt4z-lp777-77774-qaabq-cai (local replica)
+# Model:    models/trilm/TriLM_560M_Unpacked.TQ2_0.gguf (195 MB, 569M params)
+# Build:    llama_cpp.wasm 5.76 MB, TQ2_0 WASM SIMD path active
+# Replica instruction limit per update call: 40_000_000_000
+# set_max_tokens: 10000 (non-binding)
+# Prompt: "The capital of France is"
+# Run mechanism: bash scripts/7-trilm-run-update-a.sh -n N
+#                (preceded by new_chat with --model models/model.gguf)
+
+# Format: N_REQUESTED  RESULT  WALL_CLOCK
+#         RESULT = OK_<tokens_received> | EXCEEDED_INST_LIMIT
+
+200    EXCEEDED_INST_LIMIT    14.86s
+50     EXCEEDED_INST_LIMIT    15.06s
+30     OK_30                  13.18s   # output: " famous for its monuments and museums. The capital of France is the center of the European continent and is the center of the world for the French language"
+40     EXCEEDED_INST_LIMIT    15.36s
+35     EXCEEDED_INST_LIMIT    14.62s
+32     OK_32                  14.20s
+33     OK_33                  ~14s     # " famous for its monuments and museums. … There are so"
+34     OK_34                  ~14s     # " famous for its monuments and museums. … There are so many"
+35     EXCEEDED_INST_LIMIT    ~14s     # confirm boundary
+
+# Result: N_MAX = 34 tok/call (largest N that completes within 40B instructions)
+# Boundary: N=34 OK, N=35 hits IC0522 instruction-limit-exceeded.
+#
+# Reference baseline (Paper 1 §4.1 formula tok/call ≈ 40B / (α_eff × 2P)):
+#   α_eff = 1.54 (modern arch),  P = 569e6 → projected baseline ≈ 22.8 tok/call
+# Measured 34 / 22.8 ≈ 1.49× over the modern-arch baseline.
+# The DOT×4 microbench-level ternary speedup (~2.45×) does not translate
+# 1:1 to end-to-end tok/call because non-MatMul work (KV cache reads,
+# sampling, embedding lookup, etc.) also consumes the instruction budget.

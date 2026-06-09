@@ -1,0 +1,11 @@
+operation,instructions_per_call_M,pct_of_total,model,quant,notes
+MUL_MAT,2532,98.70,Pythia-70M,Q8_0,dominant cost — matmul
+UNARY_SILU_GELU,11.4,0.45,Pythia-70M,Q8_0,activation functions
+ADD_residuals,8.9,0.35,Pythia-70M,Q8_0,residual connections
+CPY_kv_cache,4.3,0.17,Pythia-70M,Q8_0,KV cache copies
+NORM_rmsnorm,2.7,0.10,Pythia-70M,Q8_0,normalization
+ROPE_position,1.9,0.08,Pythia-70M,Q8_0,positional encoding
+SOFT_MAX,1.7,0.07,Pythia-70M,Q8_0,attention softmax
+MUL,1.5,0.06,Pythia-70M,Q8_0,element-wise multiply
+Other,1.0,0.04,Pythia-70M,Q8_0,remaining ops
+C_non_total,33.4,1.30,Pythia-70M,Q8_0,sum of all non-matmul

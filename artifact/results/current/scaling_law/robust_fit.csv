@@ -1,0 +1,3 @@
+scope,alpha_ols,alpha_robust_huber,slope_ols,slope_robust,slope_expected,r_squared_ols
+all_families,3.937,3.4578,0.954,0.9602,-1.0,0.9844
+modern_only,2.2643,2.5105,0.98,0.9752,-1.0,0.9919

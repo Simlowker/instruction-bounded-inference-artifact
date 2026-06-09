@@ -1,0 +1,3 @@
+label,n,mean,std,median,ci_mean_low,ci_mean_high,ci_median_low,ci_median_high,method
+all_families,13,1.5963,0.2243,1.54,1.4944,1.7332,1.48,1.7,BCa_bootstrap_9999
+modern_only,11,1.5256,0.1543,1.527,1.4441,1.6167,1.374,1.65,BCa_bootstrap_9999

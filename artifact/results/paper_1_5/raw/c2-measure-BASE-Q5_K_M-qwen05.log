@@ -1,0 +1,47 @@
+======================================================================
+VARIANT: BASE-Q5_K_M-qwen05
+SHORT: bq5kmq
+GGUF: BASE-Q5_K_M-qwen05.gguf
+START_UTC: 2026-04-20T16:01:57Z
+======================================================================
+===== STEP 1: cp GGUF =====
+-rw-r--r--@ 1 macpromax  staff  420085472 Apr 20 18:01 models/bq5kmq.gguf
+===== STEP 2: reinstall =====
+Reinstalled code for canister llama_cpp, with canister ID uxrrr-q7777-77774-qaaaq-cai
+Deployed canisters.
+URLs:
+  Backend canister via Candid interface:
+    llama_cpp: http://127.0.0.1:4943/?canisterId=u6s2n-gx777-77774-qaaba-cai&id=uxrrr-q7777-77774-qaaaq-cai
+===== STEP 3: cycles =====
+Fabricating 50000000000000 cycles onto llama_cpp
+Fabricated 50000000000000 cycles, updated balance: 1_231_697_731_241_270 cycles
+===== STEP 4: set_max_tokens =====
+(variant { Ok = record { status_code = 200 : nat16 } })
+===== STEP 5: upload =====
+--
+Verifying that the file was uploaded correctly
+Waiting 5 seconds before next call, to ensure the upload calls are done.
+OK! filesize = 420085472, filesha256 = de70eca206aa254de9847913ab796194329b8a864ffa06c4daa28a81ca15bf33
+💯 🎉 🏁
+===== STEP 6: load_model =====
+    }
+  },
+)
+===== STEP 7: warmup (N=1,2,3) =====
+  warmup N=1 OK
+  warmup N=2 OK
+  warmup N=3 OK
+===== STEP 8: binsearch N_MAX =====
+  probe N=20 FAIL
+  probe N=40 FAIL
+  probe N=60 FAIL
+  probe N=80 FAIL
+  probe N=10 OK
+  probe N=15 OK
+  probe N=17 OK
+  probe N=18 OK
+  probe N=19 OK
+  binsearch done: N_MAX=19 (successes: 10 15 17 18 19 ; failures: 20 40 60 80)
+===== STEP 9: 3 reps at N_MAX =====
+  rep results: r1_ok=1 r2_ok=1 r3_ok=1
+===== DONE BASE-Q5_K_M-qwen05: N_MAX=19 END_UTC=2026-04-20T16:13:03Z =====

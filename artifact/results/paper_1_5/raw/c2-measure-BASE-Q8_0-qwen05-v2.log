@@ -1,0 +1,23 @@
+======================================================================
+VARIANT: BASE-Q8_0-qwen05 (re-measurement v2 with narrative prompt)
+PROMPT: Once upon a time there lived a brave knight who traveled through forests and mountains
+START_UTC: 2026-04-20T16:29:10Z
+======================================================================
+===== warmup =====
+  warmup N=1 done
+  warmup N=2 done
+  warmup N=3 done
+===== binsearch =====
+  probe N=20 OK
+  probe N=40 FAIL
+  probe N=30 OK
+  probe N=50 FAIL
+  probe N=35 FAIL
+  probe N=32 FAIL
+  probe N=31 FAIL
+  binsearch done: N_MAX=30 (ok: 20 30 ; fail: 40 50 35 32 31)
+===== 3 reps at N_MAX=30 =====
+  rep 1 OK
+  rep 2 OK
+  rep 3 OK
+===== DONE: N_MAX=30 END_UTC=2026-04-20T16:32:05Z =====

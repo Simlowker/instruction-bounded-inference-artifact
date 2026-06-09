@@ -1,0 +1,14 @@
+model,family,params_M,tok_per_call,alpha_eff,cooks_distance,studentized_residual,is_legacy,influential
+Pythia-14M,gpt_neox,14,838,1.7,0.7597,1.0182,False,True
+DistilGPT2,gpt2,82,119,2.05,0.3772,-2.8036,True,True
+GPT-2-124M,gpt2,124,84,1.92,0.1465,-1.8668,True,False
+SmolLM2-135M,llama,135,103,1.44,0.0774,1.3063,False,False
+Pythia-70M,gpt_neox,70,185,1.54,0.0762,0.8956,False,False
+Gemma3-270M-IT,gemma3,270,53,1.4,0.0661,1.2306,False,False
+OpenELM-270M,openelm,270,45,1.65,0.0109,-0.4698,False,False
+H2O-Danube3-500M,llama,500,27,1.48,0.0069,0.2799,False,False
+Qwen-2.5-0.5B,qwen2,494,27,1.5,0.0023,0.1623,False,False
+RWKV7-0.4B,rwkv7,400,32,1.56,0.0015,-0.147,False,False
+Qwen3-0.6B,qwen3,600,22,1.52,0.0002,-0.0426,False,False
+SmolLM2-360M,llama,360,36,1.54,0.0001,0.0299,False,False
+Mamba-370M,mamba,370,35,1.54,0.0,0.0086,False,False

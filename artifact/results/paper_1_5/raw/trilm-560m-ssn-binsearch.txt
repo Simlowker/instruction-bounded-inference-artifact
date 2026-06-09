@@ -1,0 +1,59 @@
+# TriLM 560M TQ2_0 — Swiss Subnet mainnet binary search for max tok/call
+# Date: 2026-04-19
+# Canister: u2pva-3iaaa-aaaax-qaa7a-cai (SSN mainnet, 13-node, --network ic)
+# Model:    models/trilm/TriLM_560M_Unpacked.TQ2_0.gguf (195 MB, 569M params)
+# Build:    llama_cpp.wasm 5.76 MB (Phase 1 build, same hash as local deploy)
+# Replica instruction limit per update call: 40_000_000_000
+# set_max_tokens: 10000 (non-binding)
+# Prompt: "The capital of France is"
+# Cycle cost: 0 (SSN rental model)
+
+# Protocol: new_chat (resets chat record) → run_update -n N → record outcome
+# Observation: the FIRST call on a freshly-reinstalled canister consumes
+# noticeably more instructions than subsequent calls. After a few warm-up
+# calls at low N, instruction count per token settles to a stable value.
+# The binary search below was conducted post-warmup.
+
+# Format: N_REQUESTED  RESULT  (REP_if_multiple)
+34     EXCEEDED_INST_LIMIT      # first probe, cold state post-reinstall (anomaly)
+30     OK_30
+25     OK_25
+20     OK_20
+33     OK_33                   # rep 1 after warmup
+32     OK_32                   # rep 1 after warmup
+31     CANISTER_TRAP           # anomaly — did not reproduce on retry
+31     OK_31  (retry)
+34     OK_34  (retry #1)
+34     OK_34  (retry #2)
+32     OK_32  (rep 1, post-stabilization)
+32     OK_32  (rep 2)
+32     OK_32  (rep 3)
+33     OK_33  (rep 1)
+33     OK_33  (rep 2)
+33     OK_33  (rep 3)
+34     OK_34  (rep 1)
+34     OK_34  (rep 2)
+34     OK_34  (rep 3)
+35     EXCEEDED_INST_LIMIT (rep 1)
+35     EXCEEDED_INST_LIMIT (rep 2)
+36     EXCEEDED_INST_LIMIT (rep 1)
+36     EXCEEDED_INST_LIMIT (rep 2)
+40     EXCEEDED_INST_LIMIT (rep 1)
+40     EXCEEDED_INST_LIMIT (rep 2)
+
+# Result: N_MAX = 34 tok/call on SSN (same boundary as local dfx)
+# 3-rep variance at N_MAX=34: all Ok, identical output (deterministic decode)
+# Post-warmup reproducibility: N=32, 33, 34 each pass 3/3; N=35, 36, 40 each fail 2/2.
+#
+# The single N=31 trap ("Canister trapped: unreachable") did not reproduce
+# on retry. Most likely cause: transient state in the prompt-cache file
+# between new_chat calls on a cold canister. Not investigated further since
+# N=31 is well within the stable working range.
+#
+# Cross-environment comparison:
+#   local dfx  N_MAX = 34
+#   SSN main   N_MAX = 34   (same)
+#
+# The 40B-instruction boundary is the dominant constraint, independent
+# of the execution environment (as expected — the limit is a protocol
+# invariant, not a hardware/scheduling artifact).

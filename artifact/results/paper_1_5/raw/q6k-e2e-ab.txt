@@ -1,0 +1,95 @@
+# C4 — Q6_K WASM SIMD vectorize: end-to-end A/B on canister
+# Date: 2026-04-19
+# Model:    Qwen 2.5 0.5B Instruct, Q6_K (620 MB GGUF)
+#           sha256 2f82233630c349ccf6b8daccf48f9a7865713d9f08a2eadfa456cebe9b97c7f5
+# Canister: uzt4z-lp777-77774-qaabq-cai (local dfx, single replica, 40B instr/call)
+# Build A:  PATCHED   — vectorized Q6_K ql/qh unpack (commit 363c80b), wasm md5 d1a8ddbc
+# Build B:  BASELINE  — scalar Q6_K unpack (parent of 363c80b),         wasm md5 8f11f134
+# Method:   Reinstall canister with patched build, upload + load Qwen Q6_K, binsearch.
+#           Then `dfx deploy --mode upgrade` swaps to baseline wasm WHILE PRESERVING
+#           the GGUF in stable memory. Reload + re-binsearch.
+#
+# Why we did NOT use Qwen 2.5 1.5B Q6_K (the originally planned target):
+#   The 1.46 GB Q6_K GGUF triggered IC0524 ("Exceeded the limit for the
+#   number of accessed pages in the stable memory in a single message
+#   execution: limit 2_097_152 KB for regular messages") on load_model.
+#   This is a hard ICP runtime limit, NOT our bug, and is itself a
+#   useful finding for the paper: Q6_K models above ~1 GB are not
+#   viable on current ICP without splitting the load across messages.
+#
+# --- Patched (vectorized unpack) results ---
+# Warmup at low N (post-reinstall / post-load):
+1     OK_1  " ______"
+2     OK_2  " ______."
+3     OK_3  " ______. ("
+# Probe upward:
+10    OK_10  " ______. (Choose from: Paris, Nice,"
+15    OK_15  " ______. (Choose from: Paris, Nice, Lyon, Montpellier)"
+20    OK_20  "...The capital of France is"
+25    OK_25  "...The capital of France is Paris. The correct answer"
+30    EXCEEDED_INST_LIMIT
+# Refine:
+26    EXCEEDED_INST_LIMIT
+27    EXCEEDED_INST_LIMIT
+28    EXCEEDED_INST_LIMIT
+29    EXCEEDED_INST_LIMIT
+# 3-rep variance at N_MAX=25:
+25    OK_25  (rep 1) — identical
+25    OK_25  (rep 2) — identical
+25    OK_25  (rep 3) — identical
+# PATCHED N_MAX = 25, CV = 0.00%
+#
+# --- Baseline (scalar unpack) results ---
+# After dfx deploy --mode upgrade with baseline wasm.
+# GGUF preserved (filesize check: 650_379_104 bytes, same as upload).
+# load_model OK, set_max_tokens reset to 10000.
+# Warmup:
+1     OK_1   " ______"
+2     OK_2   " ______."
+3     OK_3   " ______. ("
+# Probe:
+20    OK_20
+22    OK_22
+24    OK_24
+25    OK_25  "...The correct answer"     ← same decode as patched
+26    EXCEEDED_INST_LIMIT
+# 3-rep variance at N_MAX=25:
+25    OK_25  (rep 1) — identical
+25    OK_25  (rep 2) — identical
+25    OK_25  (rep 3) — identical
+# Boundary x3 at N=26:
+26    EXCEEDED_INST_LIMIT (rep 1)
+26    EXCEEDED_INST_LIMIT (rep 2)
+26    EXCEEDED_INST_LIMIT (rep 3)
+# BASELINE N_MAX = 25, CV = 0.00%
+#
+# --- Comparison ---
+# Patched N_MAX  = 25
+# Baseline N_MAX = 25
+# Δ              = 0
+#
+# Decode at N=25 in BOTH builds:
+#   " ______. (Choose from: Paris, Nice, Lyon, Montpellier) The capital of
+#    France is Paris. The correct answer"
+# → Bit-exact equivalence between scalar and vectorized Q6_K unpack
+#   confirmed end-to-end on canister, matching the microbench-level
+#   bit-exactness check (matmul-bench, all 8 reps result=56754044928).
+#
+# E2E observation:
+#   The microbench reports +2.3% (357.81 → 349.85 ns/iter). At
+#   N_MAX = 25, +2.3% buys 0.575 tokens — invisible to the integer
+#   tok/call metric. To resolve a +2.3% gain on this metric, the
+#   model would need to produce ~50 tok/call (≥ 1.15 token delta) or
+#   the metric would need to be cycles-per-token rather than
+#   tokens-per-call. Neither is achievable for this model size on
+#   the current ICP runtime (cycles-per-call is not exposed via the
+#   standard `dfx canister call` response).
+#
+# What C4 still contributes (independent of the E2E null result here):
+#   1. Microbench-level +2.3% kernel speedup, reproducible (CV 2.5%
+#      patched vs 8.0% baseline → 3.2× variance reduction).
+#   2. Bit-exact preservation across the kernel rewrite (verified at
+#      both microbench and on-chain).
+#   3. Strict-SIMD only (no relaxed_simd ops) → preserves determinism
+#      under deterministic-WASM constraints (e.g., ICP).
+#   4. Upstream-PR-able patch (small, isolated, microbench-backed).

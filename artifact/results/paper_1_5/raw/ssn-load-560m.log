@@ -1,0 +1,13 @@
+Using network type: ic
+ 
+===================================================
+Loading model
+ 
+--------------------------------------------------
+Checking health endpoint for llama_cpp
+llama_cpp health check succeeded.
+ 
+--------------------------------------------------
+Calling load_model for llama_cpp
+llama_cpp load_model succeeded.
+🎉

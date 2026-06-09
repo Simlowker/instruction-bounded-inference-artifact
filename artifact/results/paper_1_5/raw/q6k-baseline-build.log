@@ -1,0 +1,987 @@
+----------------------------
+Building libraries...
+Deleting the folder: build-library 
+Library build folder: llama_cpp_canister/build-library/__ic_candid__
+--
+Compiling C++ files for library: __ic_candid__
+Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -DNDEBUG -DGGML_USE_CPU -msimd128 -fexceptions -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS -DGGML_DEFAULT_N_THREADS=1  
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_inspect_message.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_reject_callback.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_init.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_pre_upgrade.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_cleanup_callback.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_post_upgrade.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_heartbeat.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_global_timer.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_reply_callback.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_base.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_update.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_query.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi/ic_api.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_start.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_record.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_nat32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_int32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_int8.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_null.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_int32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_float64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_int.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_args.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_vec.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_float64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_nat32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_nat32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_base.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_empty.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_int32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_opcode.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_int.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_bool.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_principal.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_int.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_float64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_record.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_nat8.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_text.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_text.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_reserved.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_nat8.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_text.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_table.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_nat64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_nat.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_int64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_int64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_float32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_float32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_nat8.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_nat64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_nat64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_bool.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_serialize.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_variant.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_deserialize.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_bool.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_record.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_assert.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_int64.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_nat.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_int16.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_nat16.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_nat16.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_variant.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_variant.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_nat.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_principal.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_float32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_serialize_type_table_registry.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_int16.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_int16.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/vec_bytes.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_int8.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_principal.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_opt_null.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_vec_int8.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid/candid_type_nat16.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks/icpp_hooks.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors/hash-library/icpp_hash_library_utils.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors/hash-library/crc32.cpp
+/opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors/hash-library/sha256.cpp
+--
+Compiling C files for library: __ic_candid__
+Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -DNDEBUG -msimd128 -DGGML_USE_CPU -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS  
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/__wasilibc_initialize_environ.c
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/posix.c
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/unreachable.c
+/opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/ic_trap.c
+--
+Creating the static library: __ic_candid__.a
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-ar qc __ic_candid__.a *.o
+--
+All done building the static library:
+llama_cpp_canister/build-library/__ic_candid__/__ic_candid__.a
+✔️
+-----
+----------------------------
+Building the wasm...
+Build folder: llama_cpp_canister/build
+Deleting the folder: build
+--
+Copying your Candid file to the build folder...
+--
+Compiling your C++ files:
+Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -I llama_cpp_canister -I llama_cpp_canister/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/vendor -I llama_cpp_canister/wasi-shims -I llama_cpp_canister/src/llama_cpp_onicai_fork/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/common -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu -I llama_cpp_canister/src/llama_cpp_onicai_fork  -DNDEBUG -DGGML_USE_CPU -msimd128 -fexceptions -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS -DGGML_DEFAULT_N_THREADS=1  
+llama_cpp_canister/src/run.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-graph.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/binary-ops.cpp
+llama_cpp_canister/src/promptcache.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/log.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-vocab.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.cpp
+llama_cpp_canister/src/download.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ops.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-adapter.cpp
+llama_cpp_canister/src/model.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/traits.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-mmap.cpp
+llama_cpp_canister/src/main_.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/reasoning-budget.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-arch.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/binary-ops.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/binary-ops.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/common.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/wasi-exception-stubs.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/log.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-graph.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-graph.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-arch.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-backend.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-vocab.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-vocab.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ops.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ops.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGIn file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.cpp:1:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+ML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/traits.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/traits.h:2:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-impl.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-backend.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-adapter.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-adapter.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/reasoning-budget.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/reasoning-budget.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-arch.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-arch.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/rwkv7.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/rwkv7.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-mmap.cpp:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-impl.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-sampler.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gemma-embedding.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-sampler.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-sampler.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gemma-embedding.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-hybrid-iswa.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-hybrid-iswa.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-hybrid-iswa.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/run.cpp:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/promptcache.cpp:4:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/unicode.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/mamba.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/mamba.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gptneox.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gptneox.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/main_.cpp:29:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/arg.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/model.cpp:12:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/arg.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/preset.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/preset.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/arg.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/files.cpp
+1 warning generated.
+llama_cpp_canister/src/wasi-download-stubs.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model-loader.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model-loader.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model-loader.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-hparams.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-hparams.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-hparams.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-context.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-context.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-context.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/wasi-chat-speculative-stubs.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/bloom.cpp
+1 warning generated.
+In file included from llama_cpp_canister/src/wasi-chat-speculative-stubs.cpp:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/speculative.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/upload.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/qwen2.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/bloom.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/qwen2.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gemma3.cpp
+1 warning generated.
+llama_cpp_canister/src/auth.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gemma3.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/vec.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/vec.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/vec.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-impl.h:5:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-io.cpp
+1 warning generated.
+llama_cpp_canister/src/db_chats.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/unicode.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-dl.cpp
+1 warning generated.
+1 warning generated.
+llama_cpp_canister/src/wasi-dl-stubs.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/sampling.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-kv-cache-iswa.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/sampling.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/sampling.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-kv-cache-iswa.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-kv-cache-iswa.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-kv-cache.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-impl.h:5:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend.cpp:11:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-backend.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-impl.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-impl.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-impl.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/wasi-chat-speculative-stubs.cpp:6:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/chat.h:7:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/parser.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/lexer.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/utils.h:54:59: warning: implicit conversion from 'long long' to 'const size_t' (aka 'const unsigned long') changes value from 1099511628211 to 435 [-Wconstant-conversion]
+   54 |     static constexpr size_t prime = size_t_digits == 64 ? 0x100000001b3 : 0x01000193;
+      |                             ~~~~~                         ^~~~~~~~~~~~~
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/utils.h:55:58: warning: implicit conversion from 'unsigned long long' to 'const size_t' (aka 'const unsigned long') changes value from 14695981039346656037 to 2216829733 [-Wconstant-conversion]
+   55 |     static constexpr size_t seed = size_t_digits == 64 ? 0xcbf29ce484222325 : 0x811c9dc5;
+      |                             ~~~~                         ^~~~~~~~~~~~~~~~~~
+1 warning generated.
+llama_cpp_canister/src/utils.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/repack.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/repack.cpp:4:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-impl.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-backend.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/db_chats.cpp:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/rwkv7-base.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/rwkv7-base.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+3 warnings generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-grammar.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-grammar.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-grammar.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-threading.cpp
+1 warning generated.
+llama_cpp_canister/src/whoami.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-threading.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-threading.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-kv-cache.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-impl.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-backend.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-kv-cache.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-kv-cache.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/unicode-data.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/gguf.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/gguf.cpp:1:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/health.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gpt2.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/gpt2.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/openelm.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/openelm.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-cparams.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-cparams.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-cparams.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/arg.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/falcon-h1.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/falcon-h1.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/arg.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/arg.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:449:16: warning: 'u8path<char[9], 0>' is deprecated [-Wdeprecated-declarations]
+  449 |     return fs::u8path("libggml-");
+      |                ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[9], 0>' has been explicitly marked deprecated here
+   78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
+      |                       ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+  747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
+      |                                             ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:457:16: warning: 'u8path<char[4], 0>' is deprecated [-Wdeprecated-declarations]
+  457 |     return fs::u8path(".so");
+      |                ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[4], 0>' has been explicitly marked deprecated here
+   78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
+      |                       ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+  747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
+      |                                             ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:463:36: warning: 'u8path<const char *, 0>' is deprecated [-Wdeprecated-declarations]
+  463 |     const fs::path name_path = fs::u8path(name);
+      |                                    ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<const char *, 0>' has been explicitly marked deprecated here
+   78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
+      |                       ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+  747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
+      |                                             ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:464:96: warning: 'u8path<char[2], 0>' is deprecated [-Wdeprecated-declarations]
+  464 |     const fs::path file_prefix = backend_filename_prefix().native() + name_path.native() + fs::u8path("-").native();
+      |                                                                                                ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[2], 0>' has been explicitly marked deprecated here
+   78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
+      |                       ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+  747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
+      |                                             ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:481:36: warning: 'u8path<const char *, 0>' is deprecated [-Wdeprecated-declarations]
+  481 |         search_paths.push_back(fs::u8path(user_search_path));
+      |                                    ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<const char *, 0>' has been explicitly marked deprecated here
+   78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
+      |                       ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+  747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
+      |                                             ^
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/gguf.cpp:673:100: warning: format specifies type 'size_t' (aka 'unsigned long') but the argument has type 'unsigned int' [-Wformat]
+  672 |                 GGML_LOG_ERROR("%s: tensor '%s' with shape (%" PRIi64 ", %" PRIi64 ", %" PRIi64 ", %" PRIi64 ") has a size in bytes > %zu\n",
+      |                                                                                                                                       ~~~
+      |                                                                                                                                       %u
+  673 |                     __func__, info.t.name, info.t.ne[0], info.t.ne[1], info.t.ne[2], info.t.ne[3], SIZE_MAX);
+      |                                                                                                    ^~~~~~~~
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/bits/stdint.h:20:25: note: expanded from macro 'SIZE_MAX'
+   20 | #define SIZE_MAX        UINT32_MAX
+      |                         ^~~~~~~~~~
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/stdint.h:50:20: note: expanded from macro 'UINT32_MAX'
+   50 | #define UINT32_MAX (0xffffffffu)
+      |                    ^~~~~~~~~~~~~
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-impl.h:119:69: note: expanded from macro 'GGML_LOG_ERROR'
+  119 | #define GGML_LOG_ERROR(...) ggml_log_internal(GGML_LOG_LEVEL_ERROR, __VA_ARGS__)
+      |                                                                     ^~~~~~~~~~~
+1 warning generated.
+llama_cpp_canister/src/max_tokens.cpp
+6 warnings generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/build-info.cpp
+llama_cpp_canister/src/ready.cpp
+1 warning generated.
+llama_cpp_canister/src/wasi-licenses-stub.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-opt.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/unary-ops.cpp
+1 warning generated.
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-opt.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-chat.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/unary-ops.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/unary-ops.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/common.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/llama.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/llama.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-recurrent.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-recurrent.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-recurrent.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/qwen3.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/qwen3.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/mamba-base.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/mamba-base.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/delta-net-base.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/delta-net-base.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/arg.cpp:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/chat.h:7:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/parser.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/lexer.h:3:
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/utils.h:54:59: warning: implicit conversion from 'long long' to 'const size_t' (aka 'const unsigned long') changes value from 1099511628211 to 435 [-Wconstant-conversion]
+   54 |     static constexpr size_t prime = size_t_digits == 64 ? 0x100000001b3 : 0x01000193;
+      |                             ~~~~~                         ^~~~~~~~~~~~~
+llama_cpp_canister/src/llama_cpp_onicai_fork/common/jinja/utils.h:55:58: warning: implicit conversion from 'unsigned long long' to 'const size_t' (aka 'const unsigned long') changes value from 14695981039346656037 to 2216829733 [-Wconstant-conversion]
+   55 |     static constexpr size_t seed = size_t_digits == 64 ? 0xcbf29ce484222325 : 0x811c9dc5;
+      |                             ~~~~                         ^~~~~~~~~~~~~~~~~~
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-chat.cpp:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/qwen35.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/qwen35.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/models/models.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+llama_cpp_canister/src/logs.cpp
+1 warning generated.
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.cpp
+llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-hybrid.cpp
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-model.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-hybrid.cpp:1:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-memory-hybrid.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-batch.h:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/include/llama.h:4:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+1 warning generated.
+2 warnings generated.
+1 warning generated.
+1 warning generated.
+1 warning generated.
+1 warning generated.
+1 warning generated.
+1 warning generated.
+In file included from llama_cpp_canister/src/logs.cpp:3:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/common/common.h:5:
+In file included from llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml-opt.h:9:
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning: 'GGML_DEFAULT_N_THREADS' macro redefined [-Wmacro-redefined]
+  232 | #define GGML_DEFAULT_N_THREADS  4
+      |         ^
+<command line>:9:9: note: previous definition is here
+    9 | #define GGML_DEFAULT_N_THREADS 1
+      |         ^
+1 warning generated.
+1 warning generated.
+1 warning generated.
+1 warning generated.
+1 warning generated.
+3 warnings generated.
+--
+Compiling your C files:
+Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -I llama_cpp_canister -I llama_cpp_canister/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/common -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu -I llama_cpp_canister/src/llama_cpp_onicai_fork  -DNDEBUG -msimd128 -DGGML_USE_CPU -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS  
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-alloc.c
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/arch/wasm/quants.c
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/arch/wasm/flash-attn.c
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml.c
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu.c
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/quants.c
+llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-quants.c
+--
+Building a wasi compatible wasm with command:
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -mexec-model=reactor  -Wl,--lto-O3 -Wl,--strip-debug -Wl,--stack-first -Wl,--export-dynamic  -Wl,-z,stack-size=8388608 -Wl,--initial-memory=536870912 -lwasi-emulated-pthread -lwasi-emulated-getpid -lwasi-emulated-signal -lwasi-emulated-process-clocks -fexceptions  *.o /Users/macpromax/.icpp/rust/1.93.0/target/wasm32-wasip1/release/libic_wasi_polyfill.a llama_cpp_canister/build-library/__ic_candid__/__ic_candid__.a -o llama_cpp_wasi.wasm 
+--
+Converting into an IC compatible wasm with command:
+/Users/macpromax/.icpp/rust/1.93.0/bin/wasi2ic llama_cpp_wasi.wasm llama_cpp.wasm 
+wasi2ic 0.2.13: processing input file: 'llama_cpp_wasi.wasm', writing output into 'llama_cpp.wasm'
+--
+Calling post_wasm_function: scripts.optimize_wasm.main
+Before: 9,015,345 bytes, 1039 globals
+Stripped 622 RTTI exports, removed 622 globals
+After:  5,746,915 bytes, 417 globals
+Delta:  -3,268,430 bytes, -622 globals
+
+Within ICP limit (417 <= 1000)
+--
+Adding custom sections to the wasm file...
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public candid:service"="llama_cpp_canister/src/llama_cpp.did" llama_cpp.wasm llama_cpp.wasm
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public cdk:name"="llama_cpp_canister/build/custom_section_cdk_name.txt" llama_cpp.wasm llama_cpp.wasm
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public cdk:languages"="llama_cpp_canister/build/custom_section_cdk_languages.txt" llama_cpp.wasm llama_cpp.wasm
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:private icpp:compiler"="llama_cpp_canister/build/custom_section_version.txt" llama_cpp.wasm llama_cpp.wasm
+/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public dfx"="llama_cpp_canister/build/custom_section_dfx.txt" llama_cpp.wasm llama_cpp.wasm
+--
+All done building the canister Wasm module:
+llama_cpp_canister/build/llama_cpp.wasm
+✔️
+--
+Generating Javascript bindings from your .did file:
+llama_cpp_canister/src/declarations/llama_cpp
+✔️
+-----
+Thank you for using icpp-pro 💻️
+-----

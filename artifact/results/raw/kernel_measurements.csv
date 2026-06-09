@@ -1,0 +1,22 @@
+kernel,dimension,iterations,total_instructions_M,flops_M,alpha_kernel,vs_f32_simd,unrolling,notes
+F32_scalar,512x512,100,387.8,52.4,7.397,3.69x_slower,none,baseline scalar
+F32_SIMD_f32x4,512x512,100,105.2,52.4,2.006,1.00x_baseline,none,reference SIMD kernel
+F32_SIMD_f32x4_x4,512x512,100,115.8,52.4,2.208,1.10x_slower,x4,compiler already auto-optimizes — manual unroll hurts
+F32_SIMD_f32x4_x8,512x512,100,106.1,52.4,2.024,1.01x_neutral,x8,neutral
+Ternary_LUT_f32cast,512x512,100,215.9,52.4,4.118,2.05x_slower,none,lookup table approach
+Ternary_AddSub_masks,512x512,100,293.6,52.4,5.601,2.79x_slower,none,mask-based ternary
+Ternary_Shuffle_scalar,512x512,100,505.9,52.4,9.649,4.81x_slower,none,worst ternary strategy
+Ternary_INT_SIMD_extmul,512x512,100,70.7,52.4,1.349,1.49x_faster,none,i16x8.extmul based
+Ternary_DOT_i32x4dot,512x512,100,59.0,52.4,1.126,1.78x_faster,none,i32x4.dot_i16x8_s — best non-unrolled
+Ternary_DOT_i32x4dot_x4,512x512,100,42.9,52.4,0.817,2.45x_faster,x4,best overall — 37.8% gain from unrolling
+Ternary_CondNeg_XOR_SUB_AND,512x512,100,77.3,52.4,1.474,1.36x_faster,none,XOR+SUB+AND approach
+SIMD_f32x4_mul_add,512x512,100,103.2,52.4,,f32_ref,none,f32x4/i32x4 ratio = 1.05x (vs 2x expected)
+SIMD_i32x4_mul_add,512x512,100,98.3,52.4,,i32_ref,none,f32x4/i32x4 ratio = 1.05x (vs 2x expected)
+F32_SIMD_f32x4,128x128,50,,,,,,variable dimension scaling
+F32_SIMD_f32x4,256x256,50,,,,,,variable dimension scaling
+F32_SIMD_f32x4,512x512,50,,,,,,variable dimension scaling
+F32_SIMD_f32x4,1024x1024,50,,,,,,variable dimension scaling
+Ternary_DOT,128x128,50,,,1.129,,none,variable dimension
+Ternary_DOT,256x256,50,,,1.065,,none,variable dimension
+Ternary_DOT,512x512,50,,,1.032,,none,variable dimension
+Ternary_DOT,1024x1024,50,,,1.016,,none,variable dimension

@@ -1,0 +1,6 @@
+model,quant,old_tok,new_tok,delta_pct,old_alpha,new_alpha,note
+SmolLM2-135M,Q4_0,103.0,97,-5.8,1.44,1.527,UPDATE
+Qwen2.5-0.5B,Q4_0,27.0,31,14.8,1.5,1.306,UPDATE
+Mamba-370M,Q8_0,35.0,30,-14.3,1.54,1.802,UPDATE
+Pythia-70M,Q4_0,185.0,208,12.4,1.54,1.374,UPDATE
+Gemma3-270M-IT,Q4_0,,56,,,1.323,NEW ROW

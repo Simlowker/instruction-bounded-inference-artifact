@@ -1,0 +1,7 @@
+model_id,format,size_MB,load_outcome,first_failing_msg_size_MB,timestamp_utc,notes
+TriLM-560M,TQ2_0,195,OK,,2026-04-20T11:56:37Z,Phase 1 (paper_1_5_phase1_results.md) loaded cleanly alpha_eff=1.03
+TriLM-3.9B,TQ2_0,1113,OK,,2026-04-20T11:56:37Z,Phase 1 loaded cleanly despite >1GB (format-dependent page access); alpha_eff=1.00
+Qwen2.5-0.5B,Q4_0,336,OK,,2026-04-20T11:56:37Z,Paper 1 Section 5.6 baseline
+Qwen2.5-0.5B,Q6_K,620,OK,,2026-04-20T11:56:37Z,Phase 1 C4 loaded cleanly
+Qwen2.5-1.5B,Q6_K,1464,IC0524,1464,2026-04-20T11:56:37Z,Phase 1 reproducible 3/3 on load_model (icp_canister_operational_findings.md)
+Qwen2.5-1.5B,Q4_0,892,other_error,,2026-04-20T12:21:06Z,"Load trapped IC0502 unreachable despite size fitting under 1GB page ceiling; base model (not Instruct); canister uxrrr-q7777 module_hash 0x2d20332671c5c70146d77064d9c9ec1807c6b002207cc63420b0b1e729364fb4; sha256 dca4b41e255d5ca266dd2335af0ca117922353f83640a5fabc585651a031deb9"

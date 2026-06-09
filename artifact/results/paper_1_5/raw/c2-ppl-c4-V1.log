@@ -1,0 +1,191 @@
+load_backend: loaded BLAS backend from /opt/homebrew/Cellar/ggml/0.9.11/libexec/libggml-blas.so
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.006 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 30150.67 MB
+load_backend: loaded MTL backend from /opt/homebrew/Cellar/ggml/0.9.11/libexec/libggml-metal.so
+load_backend: loaded CPU backend from /opt/homebrew/Cellar/ggml/0.9.11/libexec/libggml-cpu-apple_m4.so
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+llama_params_fit_impl: projected to use 240 MiB of device memory vs. 28753 MiB of free device memory
+llama_params_fit_impl: will leave 28512 >= 1024 MiB of free device memory, no changes needed
+llama_params_fit: successfully fit params to free device memory
+llama_params_fit: fitting params to free memory took 0.04 seconds
+llama_model_load_from_file_impl: using device MTL0 (Apple M4 Max) (unknown id) - 28753 MiB free
+llama_model_loader: loaded meta data with 34 key-value pairs and 272 tensors from <local-workspace>/.worktrees/paper-1.5-phase-2/.worktree-cache/variants-stage/smollm135/V1-smollm135.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = SmolLM2 135M Hf
+llama_model_loader: - kv   3:                           general.finetune str              = hf
+llama_model_loader: - kv   4:                           general.basename str              = SmolLM2
+llama_model_loader: - kv   5:                         general.size_label str              = 135M
+llama_model_loader: - kv   6:                          llama.block_count u32              = 30
+llama_model_loader: - kv   7:                       llama.context_length u32              = 8192
+llama_model_loader: - kv   8:                     llama.embedding_length u32              = 576
+llama_model_loader: - kv   9:                  llama.feed_forward_length u32              = 1536
+llama_model_loader: - kv  10:                 llama.attention.head_count u32              = 9
+llama_model_loader: - kv  11:              llama.attention.head_count_kv u32              = 3
+llama_model_loader: - kv  12:                       llama.rope.freq_base f32              = 100000.000000
+llama_model_loader: - kv  13:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  14:                 llama.attention.key_length u32              = 64
+llama_model_loader: - kv  15:               llama.attention.value_length u32              = 64
+llama_model_loader: - kv  16:                           llama.vocab_size u32              = 49152
+llama_model_loader: - kv  17:                 llama.rope.dimension_count u32              = 64
+llama_model_loader: - kv  18:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  19:                         tokenizer.ggml.pre str              = smollm
+llama_model_loader: - kv  20:                      tokenizer.ggml.tokens arr[str,49152]   = ["<|endoftext|>", "<|im_start|>", "<|...
+llama_model_loader: - kv  21:                  tokenizer.ggml.token_type arr[i32,49152]   = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  22:                      tokenizer.ggml.merges arr[str,48900]   = ["Ġ t", "Ġ a", "i n", "h e", "Ġ Ġ...
+llama_model_loader: - kv  23:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  24:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  25:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  26:            tokenizer.ggml.add_space_prefix bool             = false
+llama_model_loader: - kv  27:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - kv  29:                          general.file_type u32              = 15
+llama_model_loader: - kv  30:                      quantize.imatrix.file str              = <local-workspace>/.worktrees/pape...
+llama_model_loader: - kv  31:                   quantize.imatrix.dataset str              = <local-workspace>/.worktrees/pape...
+llama_model_loader: - kv  32:             quantize.imatrix.entries_count u32              = 210
+llama_model_loader: - kv  33:              quantize.imatrix.chunks_count u32              = 512
+llama_model_loader: - type  f32:   61 tensors
+llama_model_loader: - type q5_0:  166 tensors
+llama_model_loader: - type q8_0:   15 tensors
+llama_model_loader: - type q4_K:   16 tensors
+llama_model_loader: - type q6_K:   14 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 98.87 MiB (6.17 BPW) 
+load: 0 unused tokens
+load: printing all EOG tokens:
+load:   - 0 ('<|endoftext|>')
+load:   - 2 ('<|im_end|>')
+load:   - 4 ('<reponame>')
+load: special tokens cache size = 17
+load: token to piece cache size = 0.3170 MB
+print_info: arch                  = llama
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 8192
+print_info: n_embd                = 576
+print_info: n_embd_inp            = 576
+print_info: n_layer               = 30
+print_info: n_head                = 9
+print_info: n_head_kv             = 3
+print_info: n_rot                 = 64
+print_info: n_swa                 = 0
+print_info: is_swa_any            = 0
+print_info: n_embd_head_k         = 64
+print_info: n_embd_head_v         = 64
+print_info: n_gqa                 = 3
+print_info: n_embd_k_gqa          = 192
+print_info: n_embd_v_gqa          = 192
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 1536
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 0
+print_info: rope scaling          = linear
+print_info: freq_base_train       = 100000.0
+print_info: freq_scale_train      = 1
+print_info: n_ctx_orig_yarn       = 8192
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 256M
+print_info: model params          = 134.52 M
+print_info: general.name          = SmolLM2 135M Hf
+print_info: vocab type            = BPE
+print_info: n_vocab               = 49152
+print_info: n_merges              = 48900
+print_info: BOS token             = 0 '<|endoftext|>'
+print_info: EOS token             = 0 '<|endoftext|>'
+print_info: EOT token             = 2 '<|im_end|>'
+print_info: UNK token             = 0 '<|endoftext|>'
+print_info: LF token              = 198 'Ċ'
+print_info: FIM REP token         = 4 '<reponame>'
+print_info: EOG token             = 0 '<|endoftext|>'
+print_info: EOG token             = 2 '<|im_end|>'
+print_info: EOG token             = 4 '<reponame>'
+print_info: max token length      = 162
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 29 repeating layers to GPU
+load_tensors: offloaded 31/31 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =    28.69 MiB
+load_tensors:  MTL0_Mapped model buffer size =    98.87 MiB
+..........................................................
+common_init_result: added <|endoftext|> logit bias = -inf
+common_init_result: added <|im_end|> logit bias = -inf
+common_init_result: added <reponame> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 2048
+llama_context: n_ctx_seq     = 2048
+llama_context: n_batch       = 2048
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = auto
+llama_context: kv_unified    = false
+llama_context: freq_base     = 100000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (2048) < n_ctx_train (8192) -- the full capacity of the model will not be utilized
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4 Max
+ggml_metal_init: picking default device: Apple M4 Max
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+llama_context:        CPU  output buffer size =     0.19 MiB
+llama_kv_cache:       MTL0 KV buffer size =    45.00 MiB
+llama_kv_cache: size =   45.00 MiB (  2048 cells,  30 layers,  1/1 seqs), K (f16):   22.50 MiB, V (f16):   22.50 MiB
+llama_kv_cache: attn_rot_k = 0
+llama_kv_cache: attn_rot_v = 0
+sched_reserve: reserving ...
+sched_reserve: Flash Attention was auto, set to enabled
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:       MTL0 compute buffer size =    97.12 MiB
+sched_reserve:        CPU compute buffer size =     6.26 MiB
+sched_reserve: graph nodes  = 937
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 6.37 ms, sched copies = 1
+common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+
+system_info: n_threads = 10 (n_threads_batch = 10) / 14 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | 
+perplexity: tokenizing the input ..
+perplexity: tokenization took 1054.88 ms
+perplexity: calculating perplexity over 469 chunks, n_ctx=2048, batch_size=2048, n_seq=1
+perplexity: 0.11 seconds per pass - ETA 0.88 minutes
+[1]17.9287,[2]18.2432,[3]22.1404,[4]21.8229,[5]21.9489,[6]20.9223,[7]20.5523,[8]19.1128,[9]19.5802,[10]19.7420,[11]19.4966,[12]20.3805,[13]20.3860,[14]20.6347,[15]20.3106,[16]20.6703,[17]20.4087,[18]20.4806,[19]21.1307,[20]21.1827,[21]21.0493,[22]20.7509,[23]21.1025,[24]21.2352,[25]21.3723,[26]21.2027,[27]21.0262,[28]20.9751,[29]21.1665,[30]20.9061,[31]20.8606,[32]21.4653,[33]21.6331,[34]22.0549,[35]22.3933,[36]22.9385,[37]22.8773,[38]22.8887,[39]23.4326,[40]23.3793,[41]23.2291,[42]22.9206,[43]22.5122,[44]21.7820,[45]21.5228,[46]21.3072,[47]21.0125,[48]20.9768,[49]21.1947,[50]20.7978,[51]21.0024,[52]21.1387,[53]20.8591,[54]20.8406,[55]20.7144,[56]20.7403,[57]20.8857,[58]20.8901,[59]20.8376,[60]21.0286,[61]21.0282,[62]21.1472,[63]20.7768,[64]20.9212,[65]20.8747,[66]20.8978,[67]20.7988,[68]20.9068,[69]20.9828,[70]21.0962,[71]21.1050,[72]20.9820,[73]20.9009,[74]20.9780,[75]21.0675,[76]21.0459,[77]21.0441,[78]21.1596,[79]21.2601,[80]21.3608,[81]21.2772,[82]21.2556,[83]21.2540,[84]21.1576,[85]21.2917,[86]21.4975,[87]21.6871,[88]21.9183,[89]21.9546,[90]21.8909,[91]21.8651,[92]21.9204,[93]21.9238,[94]21.7856,[95]21.5607,[96]21.6016,[97]21.6121,[98]21.6595,[99]21.6806,[100]21.6855,[101]21.7218,[102]21.6723,[103]21.7195,[104]21.7221,[105]21.7789,[106]21.7518,[107]21.7717,[108]21.7713,[109]21.7327,[110]21.6903,[111]21.7306,[112]21.8388,[113]21.9342,[114]21.9808,[115]21.7389,[116]21.5363,[117]21.5893,[118]21.6176,[119]21.6176,[120]21.7308,[121]21.6354,[122]21.7166,[123]21.6571,[124]21.6701,[125]21.6340,[126]21.6328,[127]21.6376,[128]21.6090,[129]21.7472,[130]21.7354,[131]21.3733,[132]21.0077,[133]20.6583,[134]20.6240,[135]20.5747,[136]20.5689,[137]20.5881,[138]20.5883,[139]20.5800,[140]20.6043,[141]20.5999,[142]20.5623,[143]20.6677,[144]20.7410,[145]20.7391,[146]20.7681,[147]20.7180,[148]20.7515,[149]20.6606,[150]20.6292,[151]20.6174,[152]20.5765,[153]20.5876,[154]20.5757,[155]20.6038,[156]20.6548,[157]20.6126,[158]20.6452,[159]20.6798,[160]20.7129,[161]20.7171,[162]20.7324,[163]20.5255,[164]20.3129,[165]20.0972,[166]20.0827,[167]20.0772,[168]20.0658,[169]20.1087,[170]20.1216,[171]20.1401,[172]20.1546,[173]20.2124,[174]20.2709,[175]20.3058,[176]20.4131,[177]20.4998,[178]20.5488,[179]20.6047,[180]20.6135,[181]20.6342,[182]20.6124,[183]20.5813,[184]20.6413,[185]20.6747,[186]20.6539,[187]20.6833,[188]20.6676,[189]20.6915,[190]20.6427,[191]20.6162,[192]20.6718,[193]20.7278,[194]20.7439,[195]20.8097,[196]20.7825,[197]20.7990,[198]20.8306,[199]20.8450,[200]20.8741,[201]20.9095,[202]20.8741,[203]20.9005,[204]20.8987,[205]20.7598,[206]20.7503,[207]20.7212,[208]20.7854,[209]20.7746,[210]20.8069,[211]20.8379,[212]20.8720,[213]20.8884,[214]20.8863,[215]20.8816,[216]21.0721,[217]21.0437,[218]21.0769,[219]21.0733,[220]21.0635,[221]21.0557,[222]21.0728,[223]21.0584,[224]20.9828,[225]21.0147,[226]21.0332,[227]20.9793,[228]20.9795,[229]20.9925,[230]21.0022,[231]20.9874,[232]21.0254,[233]21.0060,[234]21.0503,[235]21.0700,[236]21.0796,[237]21.0982,[238]21.0509,[239]20.9818,[240]21.0130,[241]21.0374,[242]20.9936,[243]20.9687,[244]20.9912,[245]20.9993,[246]20.9710,[247]20.8745,[248]20.7873,[249]20.6927,[250]20.6074,[251]20.4702,[252]20.3567,[253]20.2582,[254]20.1228,[255]20.1223,[256]20.1272,[257]20.1527,[258]20.1610,[259]20.1711,[260]20.1713,[261]20.1667,[262]20.1810,[263]20.1909,[264]20.2134,[265]20.2198,[266]20.2279,[267]20.2062,[268]20.2196,[269]20.2308,[270]20.2388,[271]20.2561,[272]20.2962,[273]20.2565,[274]20.3025,[275]20.2926,[276]20.2915,[277]20.2927,[278]20.3065,[279]20.3208,[280]20.3169,[281]20.3332,[282]20.3224,[283]20.2759,[284]20.3042,[285]20.2632,[286]20.2704,[287]20.2897,[288]20.3245,[289]20.3586,[290]20.3675,[291]20.4231,[292]20.3809,[293]20.3437,[294]20.3421,[295]20.3276,[296]20.3474,[297]20.3443,[298]20.3215,[299]20.3172,[300]20.3561,[301]20.3705,[302]20.3563,[303]20.3745,[304]20.3926,[305]20.3768,[306]20.3842,[307]20.3647,[308]20.3566,[309]20.3613,[310]20.3426,[311]20.3604,[312]20.3774,[313]20.3113,[314]20.2966,[315]20.2857,[316]20.3031,[317]20.3533,[318]20.3565,[319]20.3806,[320]20.4018,[321]20.4093,[322]20.3981,[323]20.3848,[324]20.4135,[325]20.3935,[326]20.4223,[327]20.4337,[328]20.4511,[329]20.4737,[330]20.4664,[331]20.3409,[332]20.3505,[333]20.3759,[334]20.3552,[335]20.3214,[336]20.3207,[337]20.3352,[338]20.3413,[339]20.3367,[340]20.3585,[341]20.3554,[342]20.3529,[343]20.3721,[344]20.3842,[345]20.4178,[346]20.4194,[347]20.4240,[348]20.4093,[349]20.3878,[350]20.3845,[351]20.3962,[352]20.4443,[353]20.4515,[354]20.4351,[355]20.4538,[356]20.4732,[357]20.4577,[358]20.4884,[359]20.5021,[360]20.4918,[361]20.5002,[362]20.4941,[363]20.4433,[364]20.4614,[365]20.4606,[366]20.4589,[367]20.4699,[368]20.4753,[369]20.4841,[370]20.4250,[371]20.3296,[372]20.3095,[373]20.2964,[374]20.2916,[375]20.3009,[376]20.3037,[377]20.3099,[378]20.3047,[379]20.2999,[380]20.3381,[381]20.3676,[382]20.3868,[383]20.4049,[384]20.4177,[385]20.4347,[386]20.4426,[387]20.4116,[388]20.3942,[389]20.3907,[390]20.4069,[391]20.4192,[392]20.3935,[393]20.3532,[394]20.3409,[395]20.3653,[396]20.3601,[397]20.3624,[398]20.3692,[399]20.3855,[400]20.3964,[401]20.4248,[402]20.4039,[403]20.3993,[404]20.3931,[405]20.4058,[406]20.4206,[407]20.4137,[408]20.4206,[409]20.4162,[410]20.3976,[411]20.3904,[412]20.3884,[413]20.4172,[414]20.4061,[415]20.4174,[416]20.4420,[417]20.4533,[418]20.4856,[419]20.5041,[420]20.5025,[421]20.5176,[422]20.5407,[423]20.5354,[424]20.5458,[425]20.5385,[426]20.5347,[427]20.5416,[428]20.5763,[429]20.5669,[430]20.5726,[431]20.5869,[432]20.5724,[433]20.5803,[434]20.5672,[435]20.5544,[436]20.5690,[437]20.5754,[438]20.5768,[439]20.5797,[440]20.5777,[441]20.5967,[442]20.6245,[443]20.6308,[444]20.6264,[445]20.6286,[446]20.6235,[447]20.6304,[448]20.6611,[449]20.6683,[450]20.6474,[451]20.6158,[452]20.6123,[453]20.6075,[454]20.6135,[455]20.6126,[456]20.6102,[457]20.5821,[458]20.5563,[459]20.5661,[460]20.5585,[461]20.5518,[462]20.5499,[463]20.5466,[464]20.5499,[465]20.5438,[466]20.5515,[467]20.5674,[468]20.5768,[469]20.5626,
+Final estimate: PPL = 20.5626 +/- 0.08643
+
+llama_perf_context_print:        load time =      66.39 ms
+llama_perf_context_print: prompt eval time =   46980.58 ms / 960512 tokens (    0.05 ms per token, 20444.87 tokens per second)
+llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_perf_context_print:       total time =   54306.13 ms / 960513 tokens
+llama_perf_context_print:    graphs reused =          0
+llama_memory_breakdown_print: | memory breakdown [MiB]  | total    free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - MTL0 (Apple M4 Max) | 28753 = 28512 + ( 240 =    98 +      45 +      97) +           0 |
+llama_memory_breakdown_print: |   - Host                |                    34 =    28 +       0 +       6                |
+ggml_metal_free: deallocating

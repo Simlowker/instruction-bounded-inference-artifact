@@ -1,0 +1,3 @@
+Error: Failed update call.
+Caused by: The replica returned a rejection error: reject code CanisterError, reject message Error from Canister uxrrr-q7777-77774-qaaaq-cai: Canister trapped: unreachable.
+Consider gracefully handling failures from this canister or altering the canister to handle exceptions. See documentation: https://internetcomputer.org/docs/current/references/execution-errors#trapped, error code Some("IC0502")

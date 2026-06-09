@@ -1,0 +1,231 @@
+>>> sid=c3-ioover-qwen05-n1 n=1 fresh=fresh wall=4.58s
+(
+  variant {
+    Ok = record {
+      output = "你好";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=3 load_called=0 load_ok=-1 load_instr=0 load_tokens=0 load_bytes=-1 save_intermediate_called=1 save_intermediate_instr=42293921 save_intermediate_tokens=10 save_intermediate_bytes=123653 save_terminal_called=1 save_terminal_instr=35877338 save_terminal_tokens=10 save_terminal_bytes=123653
+
+>>> sid=c3-ioover-qwen05-n5 n=5 fresh=fresh wall=6.79s
+(
+  variant {
+    Ok = record {
+      output = "你好。谢谢你\n你好";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n你好。谢谢你\n";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=4 load_called=0 load_ok=-1 load_instr=0 load_tokens=0 load_bytes=-1 save_intermediate_called=1 save_intermediate_instr=42521989 save_intermediate_tokens=10 save_intermediate_bytes=123653 save_terminal_called=1 save_terminal_instr=40282639 save_terminal_tokens=14 save_terminal_bytes=172869
+
+>>> sid=c3-ioover-qwen05-n10 n=10 fresh=fresh wall=8.95s
+(
+  variant {
+    Ok = record {
+      output = "你好。谢谢你\n你好。谢谢你\n你好。";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n你好。谢谢你\n你好。谢谢你\n你好";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=5 load_called=0 load_ok=-1 load_instr=0 load_tokens=0 load_bytes=-1 save_intermediate_called=1 save_intermediate_instr=42414525 save_intermediate_tokens=10 save_intermediate_bytes=123653 save_terminal_called=1 save_terminal_instr=44648698 save_terminal_tokens=19 save_terminal_bytes=234389
+
+>>> sid=c3-ioover-qwen05-n15 n=15 fresh=fresh wall=11.28s
+(
+  variant {
+    Ok = record {
+      output = "你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=6 load_called=0 load_ok=-1 load_instr=0 load_tokens=0 load_bytes=-1 save_intermediate_called=1 save_intermediate_instr=42348002 save_intermediate_tokens=10 save_intermediate_bytes=123653 save_terminal_called=1 save_terminal_instr=49779767 save_terminal_tokens=24 save_terminal_bytes=295909
+
+>>> sid=c3-ioover-qwen05-n20 n=20 fresh=fresh wall=13.46s
+(
+  variant {
+    Ok = record {
+      output = "你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=7 load_called=0 load_ok=-1 load_instr=0 load_tokens=0 load_bytes=-1 save_intermediate_called=1 save_intermediate_instr=42189267 save_intermediate_tokens=10 save_intermediate_bytes=123653 save_terminal_called=1 save_terminal_instr=53986888 save_terminal_tokens=29 save_terminal_bytes=357429
+
+>>> sid=c3-ioover-qwen05-mc-step1 n=15 fresh=continue wall=11.22s
+(
+  variant {
+    Ok = record {
+      output = "你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n你好。谢谢你\n你好。谢谢你\n你好。谢谢你\n你好。";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=8 load_called=0 load_ok=-1 load_instr=0 load_tokens=0 load_bytes=-1 save_intermediate_called=1 save_intermediate_instr=42278990 save_intermediate_tokens=10 save_intermediate_bytes=123653 save_terminal_called=1 save_terminal_instr=49893478 save_terminal_tokens=24 save_terminal_bytes=295909
+
+>>> sid=c3-ioover-qwen05-mc-step2 n=15 fresh=continue wall=8.92s
+(
+  variant {
+    Ok = record {
+      output = "?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once \'";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=9 load_called=1 load_ok=1 load_instr=425546749 load_tokens=24 load_bytes=295909 save_intermediate_called=0 save_intermediate_instr=0 save_intermediate_tokens=0 save_intermediate_bytes=-1 save_terminal_called=1 save_terminal_instr=44773789 save_terminal_tokens=24 save_terminal_bytes=308209
+
+>>> sid=c3-ioover-qwen05-mc-step3 n=15 fresh=continue wall=9.00s
+(
+  variant {
+    Ok = record {
+      output = "?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once \'";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=10 load_called=1 load_ok=1 load_instr=425644580 load_tokens=24 load_bytes=308209 save_intermediate_called=0 save_intermediate_instr=0 save_intermediate_tokens=0 save_intermediate_bytes=-1 save_terminal_called=1 save_terminal_instr=43464626 save_terminal_tokens=24 save_terminal_bytes=308209
+
+>>> sid=c3-ioover-qwen05-mc-step4 n=15 fresh=continue wall=8.97s
+(
+  variant {
+    Ok = record {
+      output = "?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once \'";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=11 load_called=1 load_ok=1 load_instr=425744886 load_tokens=24 load_bytes=308209 save_intermediate_called=0 save_intermediate_instr=0 save_intermediate_tokens=0 save_intermediate_bytes=-1 save_terminal_called=1 save_terminal_instr=43541546 save_terminal_tokens=24 save_terminal_bytes=308209
+
+>>> sid=c3-ioover-qwen05-mc-step5 n=15 fresh=continue wall=8.94s
+(
+  variant {
+    Ok = record {
+      output = "?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once \'";
+      conversation = "<|im_start|>user\nHi.<|im_end|>\n<|im_start|>assistant\n?>\n\n<?php include_once \'config.php\'; ?>\n\n<?php include_once";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
+C3-IO-END: call=12 load_called=1 load_ok=1 load_instr=425639466 load_tokens=24 load_bytes=308209 save_intermediate_called=0 save_intermediate_instr=0 save_intermediate_tokens=0 save_intermediate_bytes=-1 save_terminal_called=1 save_terminal_instr=43588402 save_terminal_tokens=24 save_terminal_bytes=308209
+
+[76164. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: graph_compute=19476661805 (100.0%)
+
+[76165. 2026-04-20T17:48:40.245052Z]: 
+[76166. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: per_call: build=0 alloc=0 inputs=16591 compute=1298444120
+
+[76167. 2026-04-20T17:48:40.245052Z]: 
+[76168. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: === PER-OP BREAKDOWN (total=19301425862) ===
+
+[76169. 2026-04-20T17:48:40.245052Z]: 
+[76170. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[ 2] ADD                      calls=1800 instr=    24841080 (  0.1%
+[76171. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76172. 2026-04-20T17:48:40.245052Z]: 13800
+
+[76173. 2026-04-20T17:48:40.245052Z]: 
+[76174. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[ 7] MUL                      calls= 735 instr=    15106455 (  0.1%
+[76175. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76176. 2026-04-20T17:48:40.245052Z]: 20553
+
+[76177. 2026-04-20T17:48:40.245052Z]: 
+[76178. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[25] RMS_NORM                 calls= 735 instr=    14217105 (  0.1%
+[76179. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76180. 2026-04-20T17:48:40.245052Z]: 19343
+
+[76181. 2026-04-20T17:48:40.245052Z]: 
+[76182. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[29] MUL_MAT                  calls=2535 instr= 18920991446 ( 98.0%
+[76183. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76184. 2026-04-20T17:48:40.245052Z]: 7463901
+
+[76185. 2026-04-20T17:48:40.245052Z]: 
+[76186. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[34] CPY                      calls=  15 instr=       79500 (  0.0%
+[76187. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76188. 2026-04-20T17:48:40.245052Z]: 5300
+
+[76189. 2026-04-20T17:48:40.245052Z]: 
+[76190. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[40] GET_ROWS                 calls=  45 instr=      211920 (  0.0%
+[76191. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76192. 2026-04-20T17:48:40.245052Z]: 4709
+
+[76193. 2026-04-20T17:48:40.245052Z]: 
+[76194. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[42] SET_ROWS                 calls= 720 instr=     2090880 (  0.0%
+[76195. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76196. 2026-04-20T17:48:40.245052Z]: 2904
+
+[76197. 2026-04-20T17:48:40.245052Z]: 
+[76198. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[48] ROPE                     calls= 720 instr=    12687312 (  0.1%
+[76199. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76200. 2026-04-20T17:48:40.245052Z]: 17621
+
+[76201. 2026-04-20T17:48:40.245052Z]: 
+[76202. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: op[73] FLASH_ATTN_EXT           calls= 360 instr=   311200164 (  1.6%
+[76203. 2026-04-20T17:48:40.245052Z]: ) avg=
+[76204. 2026-04-20T17:48:40.245052Z]: 864444
+
+[76205. 2026-04-20T17:48:40.245052Z]: 
+[76206. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: === MUL_MAT INTERNAL (2535 calls) ===
+
+[76207. 2026-04-20T17:48:40.245052Z]: 
+[76208. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: mm_from_float=91143536 (0.5%)
+
+[76209. 2026-04-20T17:48:40.245052Z]: 
+[76210. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: mm_barrier=889785 (0.0%)
+
+[76211. 2026-04-20T17:48:40.245052Z]: 
+[76212. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: mm_vec_dot=18826836330 (99.5%)
+
+[76213. 2026-04-20T17:48:40.245052Z]: 
+[76214. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: mm_other=507000 (0.0%)
+
+[76215. 2026-04-20T17:48:40.245052Z]: 
+[76216. 2026-04-20T17:48:40.245052Z]: ICPP-PROF: mm_per_call: from_float=35954 barrier=351 vec_dot=7426759 other=200
+
+[76217. 2026-04-20T17:48:40.245052Z]: 
+[76218. 2026-04-20T17:48:40.245052Z]: C3-IO-END: call=12 load_called=1 load_ok=1 load_instr=425639466 load_tokens=24
+[76219. 2026-04-20T17:48:40.245052Z]:  load_bytes=
+[76220. 2026-04-20T17:48:40.245052Z]: 308209 save_intermediate_called=0 save_intermediate_instr=0
+[76221. 2026-04-20T17:48:40.245052Z]:  save_intermediate_tokens=
+[76222. 2026-04-20T17:48:40.245052Z]: 0 save_intermediate_bytes=-1 save_terminal_called=1 save_terminal_instr=43588402
+[76223. 2026-04-20T17:48:40.245052Z]:  save_terminal_tokens=
+[76224. 2026-04-20T17:48:40.245052Z]: 24 save_terminal_bytes=308209
+
+[76225. 2026-04-20T17:48:40.245052Z]: 

@@ -1,0 +1,11 @@
+held_out_arch,n_models,alpha_train,mean_abs_rel_error,max_abs_rel_error,is_legacy
+gemma3,1,1.54,0.0925,0.0925,False
+gpt_neox,2,1.52,0.0688,0.1215,False
+llama,3,1.54,0.03536666666666667,0.066,False
+mamba,1,1.53,0.0094,0.0094,False
+openelm,1,1.53,0.0759,0.0759,False
+qwen2,1,1.54,0.0263,0.0263,False
+qwen3,1,1.54,0.0161,0.0161,False
+rwkv7,1,1.53,0.0212,0.0212,False
+OVERALL,11,,0.0441,0.1215,False
+MODERN_ONLY,11,,0.0441,0.1215,False

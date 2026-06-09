@@ -1,0 +1,50 @@
+model,architecture,family,params_M,layers,hidden_dim,d_ff,n_kv,flops_per_tok_M,quant,simd,build,network,gguf_size_MB,tok_per_call,alpha_eff,measurement_type,n_runs,notes
+Pythia-14M,gpt_neox,gpt_neox,14.0,6,128.0,512.0,4.0,28.0,Q8_0,no,gian,local,,587,1.7,binary_search,1,calibration table
+Pythia-14M,gpt_neox,gpt_neox,14.0,6,128.0,512.0,4.0,28.0,Q4_0,yes,gian,local,,838,1.7,binary_search,1,calibration table
+Pythia-70M,gpt_neox,gpt_neox,70.0,6,512.0,2048.0,6.0,140.0,Q8_0,no,gian,local,73.0,149,1.54,binary_search,1,calibration table
+Pythia-70M,gpt_neox,gpt_neox,70.0,6,512.0,2048.0,6.0,140.0,Q4_0,yes,gian,local,46.0,208,1.374,binary_search,3,calibration table [VARIANCE UPDATE 208.33±0.577]
+Pythia-70M,gpt_neox,gpt_neox,70.0,6,512.0,2048.0,6.0,140.0,Q4_K_M,yes,gian,local,47.0,175,,binary_search,1,multi-format
+Pythia-70M,gpt_neox,gpt_neox,70.0,6,512.0,2048.0,6.0,140.0,Q6_K,yes,gian,local,57.0,159,,binary_search,1,multi-format
+Pythia-70M,gpt_neox,gpt_neox,70.0,6,512.0,2048.0,6.0,140.0,Q8_0,yes,gian,local,73.0,256,,binary_search,1,SIMD enabled
+Pythia-70M,gpt_neox,gpt_neox,70.0,6,512.0,2048.0,6.0,140.0,TQ2_0,no,gian,local,40.0,152,,binary_search,1,ternary scalar
+Pythia-70M,gpt_neox,gpt_neox,70.0,6,512.0,2048.0,6.0,140.0,TQ2_0,yes,gian,local,40.0,201,,binary_search,1,ternary SIMD — highest tok/MB (5.03)
+DistilGPT2,gpt2,gpt2,82.0,6,768.0,3072.0,12.0,164.0,Q8_0,no,gian,local,,86,2.05,binary_search,1,calibration table — GPT-2 outlier
+DistilGPT2,gpt2,gpt2,82.0,6,768.0,3072.0,12.0,164.0,Q4_0,yes,gian,local,,119,2.05,binary_search,1,calibration table — GPT-2 outlier
+GPT-2-124M,gpt2,gpt2,124.0,12,768.0,3072.0,12.0,248.0,Q8_0,no,gian,local,,56,1.92,binary_search,1,calibration table — GPT-2 outlier
+GPT-2-124M,gpt2,gpt2,124.0,12,768.0,3072.0,12.0,248.0,Q4_0,yes,gian,local,,84,1.92,binary_search,1,calibration table — GPT-2 outlier
+SmolLM2-135M,llama,llama,135.0,30,576.0,1536.0,3.0,269.0,Q8_0,no,gian,local,138.0,36,1.44,binary_search,1,calibration table
+SmolLM2-135M,llama,llama,135.0,30,576.0,1536.0,3.0,269.0,Q4_0,yes,gian,local,87.0,97,1.527,binary_search,3,calibration table — sweet spot [VARIANCE UPDATE 97.0±0.0]
+SmolLM2-135M,llama,llama,135.0,30,576.0,1536.0,3.0,269.0,Q4_K_M,yes,gian,local,101.0,85,,binary_search,1,multi-format
+SmolLM2-135M,llama,llama,135.0,30,576.0,1536.0,3.0,269.0,Q8_0,yes,gian,local,138.0,90,,binary_search,1,SIMD enabled — validates ternary projection (87 proj 3.4% err)
+SmolLM2-135M,llama,llama,135.0,30,576.0,1536.0,3.0,269.0,TQ2_0,no,gian,local,80.0,74,,binary_search,1,ternary scalar
+SmolLM2-135M,llama,llama,135.0,30,576.0,1536.0,3.0,269.0,TQ2_0,yes,gian,local,80.0,89,,binary_search,1,ternary SIMD
+SmolLM2-135M-instruct,llama,llama,135.0,30,576.0,1536.0,9.0,269.0,Q8_0,yes,gian,local,138.0,95,,binary_search,1,instruct variant — native bench done
+AMD-LLaMA-135M,llama,llama,135.0,12,768.0,2048.0,12.0,270.0,Q8_0,yes,upstream,local,136.6,122,1.21,binary_search,1,shallow 12L — 29% faster than SmolLM2 30L at same P. Output degenerate (base model)
+SmolLM2-135M,llama,llama,135.0,30,576.0,1536.0,3.0,269.0,Q4_0,yes,gian,ssn,87.0,97,1.53,binary_search,1,Swiss Subnet validation
+OpenELM-270M,openelm,openelm,270.0,16,1280.0,5120.0,,540.0,Q4_0,yes,gian,local,,45,1.65,binary_search,1,calibration table
+SmolLM2-360M,llama,llama,360.0,32,960.0,2560.0,3.0,720.0,Q8_0,no,gian,local,,10,1.54,binary_search,1,calibration table
+SmolLM2-360M,llama,llama,360.0,32,960.0,2560.0,3.0,720.0,Q4_0,yes,gian,local,,36,1.54,binary_search,1,calibration table
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,Q8_0,no,gian,local,644.0,6,1.5,binary_search,1,calibration table
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,Q4_0,yes,gian,local,336.0,31,1.306,binary_search,3,calibration table [VARIANCE UPDATE 31.0±0.0]
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,Q4_K_M,yes,gian,local,379.0,21,,binary_search,1,multi-format
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,Q8_0,yes,gian,local,644.0,30,,binary_search,1,SIMD enabled
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,TQ2_0,no,gian,local,305.0,23,,binary_search,1,ternary scalar
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,TQ2_0,yes,gian,local,305.0,29,,binary_search,1,ternary SIMD
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,Q8_0,yes,gian,mainnet,644.0,29,,binary_search,1,MAINNET — gen@29 OK gen@30 TRAP
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,Q8_0,no,onicai,mainnet,644.0,10,,binary_search,1,MAINNET baseline — gen@10 OK gen@11 TRAP
+Qwen-2.5-0.5B,qwen2,qwen2,494.0,24,896.0,4864.0,2.0,988.0,Q4_0,yes,gian,ssn,336.0,30,1.35,binary_search,1,Swiss Subnet validation
+H2O-Danube3-500M,llama,llama,500.0,16,1536.0,4096.0,,1000.0,Q4_0,yes,gian,local,,27,1.48,binary_search,1,calibration table
+H2O-Danube3-500M,llama,llama,500.0,16,1536.0,4096.0,,1000.0,Q8_0,yes,gian,local,521.0,33,,binary_search,1,SIMD enabled
+Gemma3-270M-IT,gemma3,gemma3,270.0,18,640.0,2048.0,,540.0,Q8_0,yes,upstream,local,278.0,53,1.4,binary_search,1,upstream fork validation
+Gemma3-270M-IT,gemma3,gemma3,270.0,18,640.0,2048.0,,540.0,Q4_0,yes,gian,ssn,230.0,52,1.42,binary_search,1,Swiss Subnet validation
+Mamba-370M,mamba,mamba,370.0,48,1024.0,,,740.0,Q8_0,yes,gian,local,429.0,30,1.802,binary_search,3,"SSM architecture — non-transformer [VARIANCE UPDATE 30.0±0.0; build relabeled upstream→gian 2026-04-17, tok=30 was measured on gian build hash 17806d52]"
+RWKV7-0.4B,rwkv7,rwkv7,400.0,24,1024.0,,,800.0,Q8_0,yes,upstream,local,478.0,32,1.56,binary_search,1,RNN architecture — non-transformer
+Qwen3-0.6B,qwen3,qwen3,600.0,28,1024.0,3072.0,,1200.0,Q8_0,yes,upstream,local,610.0,22,1.52,binary_search,1,upstream fork validation
+Bloomz-560M,bloom,bloom,560.0,24,1024.0,4096.0,,1120.0,Q3_K_M,yes,upstream,local,469.0,20,1.79,binary_search,1,outlier — uses Q3_K_M not Q8_0
+Gemma3-1B-IT,gemma3,gemma3,1000.0,26,1152.0,6912.0,4.0,2000.0,Q2_K,yes,gian,local,658.0,4,5.0,binary_search,1,Q2_K overhead massive — NOT VIABLE on ICP
+Qwen3.5-0.8B,qwen35,qwen35,800.0,24,1024.0,3584.0,,1600.0,Q4_0,yes,gian,ssn,484.0,13,1.97,binary_search,1,SSN only — crashes ICP mainnet. 24 real layers (18DN+6FA)
+Qwen3.5-0.8B,qwen35,qwen35,800.0,24,1024.0,3584.0,,1600.0,TQ2_0,yes,gian,ssn,334.0,18,,binary_search,1,SSN — ternary SIMD. 24 real layers
+Qwen3.5-0.8B-21L,qwen35,qwen35,735.0,21,1024.0,3584.0,,1470.0,Q4_0,yes,gian,ssn,445.0,18,,binary_search,1,SSN — pruned to 21 real layers (was mislabeled 30L)
+Qwen3.5-0.8B-12L,qwen35,qwen35,527.0,12,1024.0,3584.0,,1054.0,Q4_0,yes,gian,ssn,344.0,20,,binary_search,1,SSN — pruned to 12 real layers (was mislabeled 24L)
+Qwen3.5-0.8B-12L,qwen35,qwen35,527.0,12,1024.0,3584.0,,1054.0,TQ2_0,yes,gian,ssn,271.0,25,,binary_search,1,SSN — TQ2_0 pruned 12L best combo +92%
+Gemma3-270M-IT,gemma3,gemma3,270.0,18,640.0,2048.0,,540.0,Q4_0,yes,gian,local,230.0,56,1.323,binary_search,3,variance reps: mean=55.67 std=0.577 (P0-1)

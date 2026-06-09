@@ -1,0 +1,4 @@
+date,canister_id,model,quant,size_MB,build,wasm_sha256,tok_call_gen,tok_call_trap,prefill_calls,prompt,status_tags,notes
+2026-04-09,zmm32-7yaaa-aaaad-qlqsq-cai,Qwen2.5-0.5B,Q8_0,644,gian,ef8f9d78768c552c9758318f0293482ebc7f58bfbe12175e9d3491e8e419cbf4,29,30,2,funnAI PoAIW prompt — PoW vs PoS,runs=single_run; quality=verified; env=icp_mainnet; build=current; role=network_validation,gen@29 OK gen@30 TRAP — 2.9x vs onicai
+2026-04-09,zmm32-7yaaa-aaaad-qlqsq-cai,Qwen2.5-0.5B,Q8_0,644,onicai,6c77a958dcd4b71645a6f8d0685c57d00e27dc80fd16aebbdc61daa8cb302313,10,11,3,funnAI PoAIW prompt — PoW vs PoS,runs=single_run; quality=verified; env=icp_mainnet; build=build_specific; role=baseline,gen@10 OK gen@11 TRAP — onicai baseline v0.9.0
+2026-04-15,u2pva-3iaaa-aaaax-qaa7a-cai,EmbeddingGemma-300M,Q4_0,212,gian,,126_input,,1,various FR/EN texts,runs=single_run; quality=verified; env=icp_mainnet; build=build_specific; role=systems_demo,mainnet avg 2.8s per call (more stable than SSN)

@@ -1,0 +1,12 @@
+held_out_arch,n_models,alpha_train,mean_abs_rel_error,max_abs_rel_error,is_legacy
+gemma3,1,1.55,0.1466,0.1466,False
+gpt2,2,1.527,0.2998,0.3422,True
+gpt_neox,2,1.54,0.1075,0.108,False
+llama,3,1.605,0.05463333333333333,0.077,False
+mamba,1,1.534,0.175,0.175,False
+openelm,1,1.534,0.0734,0.0734,False
+qwen2,1,1.55,0.1574,0.1574,False
+qwen3,1,1.55,0.0225,0.0225,False
+rwkv7,1,1.534,0.0189,0.0189,False
+OVERALL,13,,0.12094615384615384,0.3422,False
+MODERN_ONLY,11,,0.08842727272727273,0.175,False

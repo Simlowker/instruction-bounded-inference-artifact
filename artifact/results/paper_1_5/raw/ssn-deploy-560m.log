@@ -1,0 +1,8 @@
+Deploying: llama_cpp
+All canisters have already been created.
+Building canister 'llama_cpp'.
+Reinstalled code for canister llama_cpp, with canister ID u2pva-3iaaa-aaaax-qaa7a-cai
+Deployed canisters.
+URLs:
+  Backend canister via Candid interface:
+    llama_cpp: https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=u2pva-3iaaa-aaaax-qaa7a-cai

@@ -1,0 +1,3317 @@
+Summary:
+ - canister_filename   = models/qwen15-q4.gguf
+ - filetype            = other
+ - local_filename_path = llama_cpp_canister/models/qwen15-q4.gguf
+ - chunksize           = 2000000 (1.907 Mb)
+ - network             = local
+ - canister            = llama_cpp
+ - canister_id         = uxrrr-q7777-77774-qaaaq-cai
+ - dfx_json_path       = llama_cpp_canister/dfx.json
+ - candid_path         = llama_cpp_canister/scripts/../build/llama_cpp.did
+ - hf_sha256           = None
+--
+Checking if the local network is up...
+Ok!
+replica-port       = None
+webserver-port     = 4943
+networks-json-path = /Users/macpromax/.config/dfx/networks.json
+Network URL        = http://localhost:4943
+Using identity = default
+Canister ID = uxrrr-q7777-77774-qaaaq-cai
+--
+Checking liveness of canister (did we deploy it!)
+Ok!
+--
+Uploading the file : llama_cpp_canister/models/qwen15-q4.gguf
+Calculated filesize    : 934954624
+Calculated SHA256 hash : dca4b41e255d5ca266dd2335af0ca117922353f83640a5fabc585651a031deb9
+--
+To canister file             : models/qwen15-q4.gguf
+--
+Reading the file into a bytes object: llama_cpp_canister/models/qwen15-q4.gguf
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 0
+- progress  = 0.2 % 
+- chunk[0]  = 71
+- chunk[-1] = 194
+OK! filesize = 2000000, filesha256 = af80cdb6b5f72bcc4dc65f03a66d3e1827ae663936c36029aba56490ad13ae00
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 1
+- progress  = 0.4 % 
+- chunk[0]  = 181
+- chunk[-1] = 0
+OK! filesize = 4000000, filesha256 = 7e530a19e981ea4635855e783cd040a1465ce34a172d0dbac699747e7cba1f74
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 2
+- progress  = 0.6 % 
+- chunk[0]  = 0
+- chunk[-1] = 43
+OK! filesize = 6000000, filesha256 = b27140ba48b523d3990d2459452eb1209323c18c10812dcb6232234f03c28c6c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 3
+- progress  = 0.9 % 
+- chunk[0]  = 12
+- chunk[-1] = 23
+OK! filesize = 8000000, filesha256 = 2aeeeb0da6f5e441e8c76cdd9cd1bf249202dffb776c78c970c4a29e04a2bf94
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 4
+- progress  = 1.1 % 
+- chunk[0]  = 241
+- chunk[-1] = 37
+OK! filesize = 10000000, filesha256 = fc713f00e5cc9785a1b04927c7f06843fb41cbf45d68cfd8be5c3a3022597989
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 5
+- progress  = 1.3 % 
+- chunk[0]  = 109
+- chunk[-1] = 131
+OK! filesize = 12000000, filesha256 = ccb4d3472dc728645e03804624cf66b6f58a43b911c2a985d29406071ce94c0d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 6
+- progress  = 1.5 % 
+- chunk[0]  = 91
+- chunk[-1] = 65
+OK! filesize = 14000000, filesha256 = fd7c5c2d1682bf21d33eed8caa09f1ba86f10a51ce0583fc22f3e59c5bdf2852
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 7
+- progress  = 1.7 % 
+- chunk[0]  = 238
+- chunk[-1] = 193
+OK! filesize = 16000000, filesha256 = 0cd37fd022ec8ccec5aa4af04ea6266733a89fe79e5f05831a49800ac256b376
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 8
+- progress  = 1.9 % 
+- chunk[0]  = 157
+- chunk[-1] = 196
+OK! filesize = 18000000, filesha256 = 83334850eeac89fd8823f91e995b693ad475c93b73dd94fab92c24c747b232fe
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 9
+- progress  = 2.1 % 
+- chunk[0]  = 87
+- chunk[-1] = 89
+OK! filesize = 20000000, filesha256 = 0428c3dfac4d91645fda1bcb712b18c0281e68ff35f9ce827296e421486048a9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 10
+- progress  = 2.4 % 
+- chunk[0]  = 101
+- chunk[-1] = 28
+OK! filesize = 22000000, filesha256 = 7f56a1e968dffe7d73f2e9a7ae3499b9c830c45be15a4907d144cf83bff479b3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 11
+- progress  = 2.6 % 
+- chunk[0]  = 143
+- chunk[-1] = 228
+OK! filesize = 24000000, filesha256 = 5c5cc3ee70d53c3bff0d8a93ea9fc7679c4cb57e4b21ec9cba879d8ecf1cf27c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 12
+- progress  = 2.8 % 
+- chunk[0]  = 155
+- chunk[-1] = 36
+OK! filesize = 26000000, filesha256 = e4729954a72a46eda3a125e0855d556c3c73bce1ce2e24468186bc39fd5120c5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 13
+- progress  = 3.0 % 
+- chunk[0]  = 32
+- chunk[-1] = 101
+OK! filesize = 28000000, filesha256 = 7a56946287f7b5b1e9d6f4c44022371272173314ae8173d7d0f2479fe6a2809e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 14
+- progress  = 3.2 % 
+- chunk[0]  = 136
+- chunk[-1] = 255
+OK! filesize = 30000000, filesha256 = abb53ebcaa26c3cad2fa6d079fcf27cf3e313a10af40d70fdcc3346289a446bc
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 15
+- progress  = 3.4 % 
+- chunk[0]  = 6
+- chunk[-1] = 82
+OK! filesize = 32000000, filesha256 = 81ea52ad77ac22f627df2a1e5c7795a21fa9bc041111a4c72844673bb219ed6d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 16
+- progress  = 3.6 % 
+- chunk[0]  = 129
+- chunk[-1] = 189
+OK! filesize = 34000000, filesha256 = ddb64630e61d5d1a259a4d8f10c1636c926c3a7aab0044a43994c0e21cc31ed5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 17
+- progress  = 3.9 % 
+- chunk[0]  = 225
+- chunk[-1] = 192
+OK! filesize = 36000000, filesha256 = d523379dd53e0fd4a43ef576677ed1cfcf2f55a47b4708dde0655b1b4096b72a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 18
+- progress  = 4.1 % 
+- chunk[0]  = 166
+- chunk[-1] = 121
+OK! filesize = 38000000, filesha256 = ab7fef5b2dc94caa8838a8af1bfd0f84ccac82ff53c8d1f09eecb4c513d0b361
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 19
+- progress  = 4.3 % 
+- chunk[0]  = 185
+- chunk[-1] = 56
+OK! filesize = 40000000, filesha256 = 5f1b4094b219e103b44793c73708cdc449e030f4d5558bd8130310a3d4e7fe72
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 20
+- progress  = 4.5 % 
+- chunk[0]  = 91
+- chunk[-1] = 120
+OK! filesize = 42000000, filesha256 = 8ef30555b9069272a20f481c058b7409a4f34501e47be2acced35be8069f60dd
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 21
+- progress  = 4.7 % 
+- chunk[0]  = 20
+- chunk[-1] = 182
+OK! filesize = 44000000, filesha256 = b4f282143c7944c74a86fd646ad2a8f8fc1e36bc61c1ce1fe4f9e40e45d029a0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 22
+- progress  = 4.9 % 
+- chunk[0]  = 56
+- chunk[-1] = 240
+OK! filesize = 46000000, filesha256 = 6060c66a9a7c16b5535d521c7e767a120c002dd4fd6c30b0559bfc0d2f720cc9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 23
+- progress  = 5.1 % 
+- chunk[0]  = 110
+- chunk[-1] = 124
+OK! filesize = 48000000, filesha256 = 2a986babd5e1893c42516125892e0e7fa21c17c54841e22aab3a34356e081c44
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 24
+- progress  = 5.3 % 
+- chunk[0]  = 7
+- chunk[-1] = 106
+OK! filesize = 50000000, filesha256 = 1d2be3e7530659fcd0435ecd38185c06c1f26766375ae1b015cc3a565f49afe9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 25
+- progress  = 5.6 % 
+- chunk[0]  = 85
+- chunk[-1] = 128
+OK! filesize = 52000000, filesha256 = 4176a78bfc88c7009e8a7518bccc01f014daf3f6b7016cffb23d5bce97d09584
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 26
+- progress  = 5.8 % 
+- chunk[0]  = 39
+- chunk[-1] = 249
+OK! filesize = 54000000, filesha256 = 0bd8325da671a4a0c2c5d94effa81fd45976dd5cab5191cd28f1e97a0e51ed6c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 27
+- progress  = 6.0 % 
+- chunk[0]  = 238
+- chunk[-1] = 196
+OK! filesize = 56000000, filesha256 = 7a517ba64f97c4a3038acc5c3633f5fee3903180f543225327c138dd1d2d903c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 28
+- progress  = 6.2 % 
+- chunk[0]  = 94
+- chunk[-1] = 251
+OK! filesize = 58000000, filesha256 = c023be2a8349415bd783df92a57fcb7e0a51ccd5cf7f25067a6c9ec29d16a4ed
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 29
+- progress  = 6.4 % 
+- chunk[0]  = 6
+- chunk[-1] = 242
+OK! filesize = 60000000, filesha256 = f2e432c74bef10a18732be4f66f7f71a2c61830559c72a618cefa2e96c622ca3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 30
+- progress  = 6.6 % 
+- chunk[0]  = 164
+- chunk[-1] = 210
+OK! filesize = 62000000, filesha256 = 2fa9832b589bd315301129090c19c1fffc2530040454061de0eccf9a8282b4c7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 31
+- progress  = 6.8 % 
+- chunk[0]  = 119
+- chunk[-1] = 12
+OK! filesize = 64000000, filesha256 = cd449eb6b3fb101b798e500e0cc9dd489a64f57716a90a1106cc5e9ed1997e2b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 32
+- progress  = 7.1 % 
+- chunk[0]  = 117
+- chunk[-1] = 248
+OK! filesize = 66000000, filesha256 = 932120d908e3720ddc1c6bc81b90f262d206d616c24352a72bddcaea5340b7e4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 33
+- progress  = 7.3 % 
+- chunk[0]  = 118
+- chunk[-1] = 111
+OK! filesize = 68000000, filesha256 = 52d3aa33dd99bc0b41044ac50522865629b9f76d852378e0af888ac1ebfc7e3d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 34
+- progress  = 7.5 % 
+- chunk[0]  = 65
+- chunk[-1] = 55
+OK! filesize = 70000000, filesha256 = 49d5f3361707bb72a9ca257b45d2be2d94f3102da1506c15360792559327bdaa
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 35
+- progress  = 7.7 % 
+- chunk[0]  = 195
+- chunk[-1] = 158
+OK! filesize = 72000000, filesha256 = 3cb2339cb6fa94d6384d4bf8c7e994498c8f4be704ab40c836d833a8b8e253b2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 36
+- progress  = 7.9 % 
+- chunk[0]  = 152
+- chunk[-1] = 1
+OK! filesize = 74000000, filesha256 = a89636a490277f559cb708fc9a62358bc1a449122e0ffc951a378a4b64fbc0df
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 37
+- progress  = 8.1 % 
+- chunk[0]  = 106
+- chunk[-1] = 200
+OK! filesize = 76000000, filesha256 = 68980f9c68ef8028fb806137178840f91fc112383d9fabb51241a7f5b4433b05
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 38
+- progress  = 8.3 % 
+- chunk[0]  = 58
+- chunk[-1] = 97
+OK! filesize = 78000000, filesha256 = 34e9b2f49f2ba132d930bf24e249e9636d62a69c75c0559fb751e39694129abd
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 39
+- progress  = 8.6 % 
+- chunk[0]  = 253
+- chunk[-1] = 93
+OK! filesize = 80000000, filesha256 = 2f087f01b4240c0249b423fb84fe942d665b23952e921ccffb940205eb8eaae8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 40
+- progress  = 8.8 % 
+- chunk[0]  = 201
+- chunk[-1] = 155
+OK! filesize = 82000000, filesha256 = 2eba15907d8a005580ef6e48546b561b07dbf9d012325b75076f8e2ca555c62d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 41
+- progress  = 9.0 % 
+- chunk[0]  = 90
+- chunk[-1] = 177
+OK! filesize = 84000000, filesha256 = dab342590636366cc12c4d99da492f2fa710246c9062e93c136720a547642760
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 42
+- progress  = 9.2 % 
+- chunk[0]  = 84
+- chunk[-1] = 21
+OK! filesize = 86000000, filesha256 = 4e4ec53d0d73f18eb3a848cd0244dee08023540cf0cbf4c9b279510d9cee80a9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 43
+- progress  = 9.4 % 
+- chunk[0]  = 242
+- chunk[-1] = 193
+OK! filesize = 88000000, filesha256 = b55d508384e77e3919c5c435958456a4ef66a24d9e2b5bfd669b12861f8292a6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 44
+- progress  = 9.6 % 
+- chunk[0]  = 129
+- chunk[-1] = 183
+OK! filesize = 90000000, filesha256 = 9d008f60971cd27c4c2718443de2fb389e5b88c170111e1318403d4deb435b62
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 45
+- progress  = 9.8 % 
+- chunk[0]  = 96
+- chunk[-1] = 153
+OK! filesize = 92000000, filesha256 = 93141bc948e46fde83e202a52ec49546f45ec9d8a588a17ea3850ae869e6326d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 46
+- progress  = 10.1 % 
+- chunk[0]  = 138
+- chunk[-1] = 118
+OK! filesize = 94000000, filesha256 = 5a538ba68fac5b4ab756810059a57fb3606c4b314f380df128c4cf89df53abe4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 47
+- progress  = 10.3 % 
+- chunk[0]  = 197
+- chunk[-1] = 185
+OK! filesize = 96000000, filesha256 = 3ec34a502b124fcb1d3c74f715a3df6f0ab1a6c303bb58567f65b386ea7010a7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 48
+- progress  = 10.5 % 
+- chunk[0]  = 215
+- chunk[-1] = 254
+OK! filesize = 98000000, filesha256 = c917291d80735bc7c07083b826f946e4832278fb9398aa81fb944631d3cfd9da
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 49
+- progress  = 10.7 % 
+- chunk[0]  = 4
+- chunk[-1] = 71
+OK! filesize = 100000000, filesha256 = fcb1a0e714e712265ae13f57c24eff00f150b482d5c10f6257e7060f8c472826
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 50
+- progress  = 10.9 % 
+- chunk[0]  = 195
+- chunk[-1] = 92
+OK! filesize = 102000000, filesha256 = 625c951a6aed790c2e9799e2e454ac4c638b7159d4301d6f7e39c1903375eb4e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 51
+- progress  = 11.1 % 
+- chunk[0]  = 88
+- chunk[-1] = 45
+OK! filesize = 104000000, filesha256 = e0dd552acfb2ae728f1b7c637e9acfc3dab19744a8e8546764e3cf956857a82b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 52
+- progress  = 11.3 % 
+- chunk[0]  = 173
+- chunk[-1] = 234
+OK! filesize = 106000000, filesha256 = a0d938a493df76f935b63103b76d5b675a5f8c758e50ff2c2ebe8590964d0afb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 53
+- progress  = 11.6 % 
+- chunk[0]  = 193
+- chunk[-1] = 24
+OK! filesize = 108000000, filesha256 = 3e18a7136e568bc1dafda27b2576e69522448f7bf28d4535b7d26aed80f6987a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 54
+- progress  = 11.8 % 
+- chunk[0]  = 61
+- chunk[-1] = 136
+OK! filesize = 110000000, filesha256 = 02efd7353c2c0118cf33e6adc712b78c58b879971ccf99409a852cc49b036e88
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 55
+- progress  = 12.0 % 
+- chunk[0]  = 128
+- chunk[-1] = 81
+OK! filesize = 112000000, filesha256 = 5c74ec00d3e0d17ead3c155fa2ffc616c4423dd5d3b432a9bcec8e0bd1fdd063
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 56
+- progress  = 12.2 % 
+- chunk[0]  = 65
+- chunk[-1] = 100
+OK! filesize = 114000000, filesha256 = db1452591d20f9040ad546243bdd6ffd4e35829763a6005abb121c0e34b7d86b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 57
+- progress  = 12.4 % 
+- chunk[0]  = 90
+- chunk[-1] = 243
+OK! filesize = 116000000, filesha256 = 133246fe4d3d6a60b834b1073efcc7499a815f51dac1311f8e560042f90cc528
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 58
+- progress  = 12.6 % 
+- chunk[0]  = 246
+- chunk[-1] = 59
+OK! filesize = 118000000, filesha256 = 37930b794b80767bdc13ce052c06f4539879f9a0a797f6ccd07f1af61c04504e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 59
+- progress  = 12.8 % 
+- chunk[0]  = 241
+- chunk[-1] = 120
+OK! filesize = 120000000, filesha256 = 6bbe17c2f94af16804e05dee44d7c99f7700663ae0e6098efb4769c295802750
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 60
+- progress  = 13.0 % 
+- chunk[0]  = 157
+- chunk[-1] = 116
+OK! filesize = 122000000, filesha256 = b23be22271df4e7bdb6296b4302e330df3daf255b2372de6ba4b000d30087c32
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 61
+- progress  = 13.3 % 
+- chunk[0]  = 98
+- chunk[-1] = 170
+OK! filesize = 124000000, filesha256 = 893de4c5a51d8099da71075aaffebe1e9b7d13bf6e2a306f0602415adc94944b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 62
+- progress  = 13.5 % 
+- chunk[0]  = 139
+- chunk[-1] = 47
+OK! filesize = 126000000, filesha256 = 1c669d08f9dc6579b82aef6c1c747a8c0688e94c9885ec5d043338681debd028
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 63
+- progress  = 13.7 % 
+- chunk[0]  = 67
+- chunk[-1] = 178
+OK! filesize = 128000000, filesha256 = 628224d12b0a5b3f718c97dc51bab66533829c6532dc79d830d77e0a1b751642
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 64
+- progress  = 13.9 % 
+- chunk[0]  = 48
+- chunk[-1] = 77
+OK! filesize = 130000000, filesha256 = 2e1326a5a447a0f3a75311a22757e4a470b00268874f607d408bc033c677c400
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 65
+- progress  = 14.1 % 
+- chunk[0]  = 169
+- chunk[-1] = 52
+OK! filesize = 132000000, filesha256 = 18e5050f59f72bd91cc21540c2db8f25f8089aace4c81cd4c2a4a9d46c31c7ff
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 66
+- progress  = 14.3 % 
+- chunk[0]  = 226
+- chunk[-1] = 142
+OK! filesize = 134000000, filesha256 = 47f34a8b3eca899655808dfacf920b5a582602e2f27c222af7a4283dce446096
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 67
+- progress  = 14.5 % 
+- chunk[0]  = 241
+- chunk[-1] = 100
+OK! filesize = 136000000, filesha256 = 441d25a030f3b6304624e68cb4fefbb7640918f54fe95bdf22afdde41f6b1f1d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 68
+- progress  = 14.8 % 
+- chunk[0]  = 157
+- chunk[-1] = 241
+OK! filesize = 138000000, filesha256 = 3d2a5420090af263833e687a06c8d242c50925e55ad1cb4306ca5fc0ed1f58d1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 69
+- progress  = 15.0 % 
+- chunk[0]  = 49
+- chunk[-1] = 216
+OK! filesize = 140000000, filesha256 = 1615c7e558e5f8e94a32820c749f272927ffffbf2bf633659903877cc19a6917
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 70
+- progress  = 15.2 % 
+- chunk[0]  = 207
+- chunk[-1] = 176
+OK! filesize = 142000000, filesha256 = 54b2016e4e914068e69a190a5c5c68068d80e534ddd781491a0d0bf9c855f405
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 71
+- progress  = 15.4 % 
+- chunk[0]  = 157
+- chunk[-1] = 87
+OK! filesize = 144000000, filesha256 = 4b1d7d3045cc9e7725d47cc9009200d9690978b528596d3bc5f657dcc6e8ada0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 72
+- progress  = 15.6 % 
+- chunk[0]  = 113
+- chunk[-1] = 57
+OK! filesize = 146000000, filesha256 = 0db988a6118eaaca2dc7b3617fb8b5986f684d633f96c0159fa4807086f91f9f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 73
+- progress  = 15.8 % 
+- chunk[0]  = 42
+- chunk[-1] = 178
+OK! filesize = 148000000, filesha256 = 5701909af2c663f580dcc9af83d0dc9d5ba698b3dd88b161af63a4b9a880d267
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 74
+- progress  = 16.0 % 
+- chunk[0]  = 59
+- chunk[-1] = 108
+OK! filesize = 150000000, filesha256 = 39a25fc7e9db58fcd4adbfc7428e02fe6c68413a4d5a3df4aa3e72d79d616607
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 75
+- progress  = 16.3 % 
+- chunk[0]  = 56
+- chunk[-1] = 28
+OK! filesize = 152000000, filesha256 = 38efc520ddff6ac950cb32fbf507d86d388af8446dab155a3e39bc7bcc0d0498
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 76
+- progress  = 16.5 % 
+- chunk[0]  = 136
+- chunk[-1] = 128
+OK! filesize = 154000000, filesha256 = c6643cff8ab5b5e5a0fe17a7bb4201e0845a98dd564a333900fab5405a4ccf08
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 77
+- progress  = 16.7 % 
+- chunk[0]  = 159
+- chunk[-1] = 154
+OK! filesize = 156000000, filesha256 = 4fea42304a4208d1b9220ca8844d756b7b9de8e0226b90aef58620c2426bf944
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 78
+- progress  = 16.9 % 
+- chunk[0]  = 150
+- chunk[-1] = 220
+OK! filesize = 158000000, filesha256 = 59dd9f29032835800fd53cf317520a86d745ad140dc14705d4dc4ba253e546aa
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 79
+- progress  = 17.1 % 
+- chunk[0]  = 127
+- chunk[-1] = 242
+OK! filesize = 160000000, filesha256 = c87191359bc9758679d1ef5c38de04d59b1df2422b378d291bd8d6a56e16b338
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 80
+- progress  = 17.3 % 
+- chunk[0]  = 149
+- chunk[-1] = 61
+OK! filesize = 162000000, filesha256 = aa26d76cfa1d3f1bb1cf0c7f36ae99f732d33af4286f78283baa8cdc98c2ad6b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 81
+- progress  = 17.5 % 
+- chunk[0]  = 135
+- chunk[-1] = 174
+OK! filesize = 164000000, filesha256 = 535015cb95f3921669012d83e4a6e93ec168960ab0db18ad04373b979bdf4145
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 82
+- progress  = 17.8 % 
+- chunk[0]  = 107
+- chunk[-1] = 58
+OK! filesize = 166000000, filesha256 = cd4f2ce07899224416ec0dfd8b2c56f39da4fdca7137d62f85de24a8d3c95f24
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 83
+- progress  = 18.0 % 
+- chunk[0]  = 86
+- chunk[-1] = 141
+OK! filesize = 168000000, filesha256 = 2cd16685cd85790086f70dd1c83402c031dbec8064dc17da09f3c35b7268e0a3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 84
+- progress  = 18.2 % 
+- chunk[0]  = 188
+- chunk[-1] = 9
+OK! filesize = 170000000, filesha256 = 748cbb4ecb5da5ccc860d8c84c5f25b19035e34eac35d042303fd70b598e05c7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 85
+- progress  = 18.4 % 
+- chunk[0]  = 203
+- chunk[-1] = 10
+OK! filesize = 172000000, filesha256 = e52e0222b892ba873fe5eaabb51f89c4a2b4ca32a54b3dd42850166700c3f396
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 86
+- progress  = 18.6 % 
+- chunk[0]  = 187
+- chunk[-1] = 170
+OK! filesize = 174000000, filesha256 = 25084ed1c4145839153c0ed1c06983cfb30571fcaa0b6433ac2613a1a2dc0062
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 87
+- progress  = 18.8 % 
+- chunk[0]  = 48
+- chunk[-1] = 4
+OK! filesize = 176000000, filesha256 = 36e0d73b016644e898a234e7be92d7faae458cef6029bade6bd0d3908296a39d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 88
+- progress  = 19.0 % 
+- chunk[0]  = 84
+- chunk[-1] = 6
+OK! filesize = 178000000, filesha256 = 50ed3f6cc5ba2a5695927bf59770eab88971383b266378c68f1596c820f87825
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 89
+- progress  = 19.3 % 
+- chunk[0]  = 147
+- chunk[-1] = 93
+OK! filesize = 180000000, filesha256 = 08a45ef3e36fe1fe1e51d0fd4aa616f2773cceef2a1f84bb687034eacca3d1ab
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 90
+- progress  = 19.5 % 
+- chunk[0]  = 9
+- chunk[-1] = 24
+OK! filesize = 182000000, filesha256 = da4ea9b8e79b580848a377378bb58b751aa67d19983c408e0c9a6de567222ca6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 91
+- progress  = 19.7 % 
+- chunk[0]  = 85
+- chunk[-1] = 33
+OK! filesize = 184000000, filesha256 = 47f941d8574a45302cbe5946d09f5357e0253f9c3f62fc5b162a29c65f534335
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 92
+- progress  = 19.9 % 
+- chunk[0]  = 131
+- chunk[-1] = 149
+OK! filesize = 186000000, filesha256 = 34c258422afcfd3e4d817dbbf22efde8850210e402877961e5579826167dbfd8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 93
+- progress  = 20.1 % 
+- chunk[0]  = 232
+- chunk[-1] = 94
+OK! filesize = 188000000, filesha256 = 43dc903d7364cb5fa669bca680f27462299efa24903f54fe70ee70089c2e6a00
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 94
+- progress  = 20.3 % 
+- chunk[0]  = 218
+- chunk[-1] = 82
+OK! filesize = 190000000, filesha256 = 434d15921534e7ac8d87042749ab48ebbb529b373f180a1151418725cd71b2bb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 95
+- progress  = 20.5 % 
+- chunk[0]  = 233
+- chunk[-1] = 21
+OK! filesize = 192000000, filesha256 = d20b6d8bfc06a1247813e2d1d15622818c000778911a1385b87b0dfd52440f19
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 96
+- progress  = 20.7 % 
+- chunk[0]  = 25
+- chunk[-1] = 133
+OK! filesize = 194000000, filesha256 = a1c74dddba9c665cd25f600d836ca550feeaaa3558c111b128b288d44592ce01
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 97
+- progress  = 21.0 % 
+- chunk[0]  = 153
+- chunk[-1] = 44
+OK! filesize = 196000000, filesha256 = e29d181efc83ba19cdd2ce913cc259407348336ef0cd1432a56a5afc510ff171
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 98
+- progress  = 21.2 % 
+- chunk[0]  = 177
+- chunk[-1] = 160
+OK! filesize = 198000000, filesha256 = a04910f2627c3dac1fad643993b2e17d3f5fcb324e4995be992fac05992dbe55
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 99
+- progress  = 21.4 % 
+- chunk[0]  = 176
+- chunk[-1] = 122
+OK! filesize = 200000000, filesha256 = 63623799a35e1e71bd7ad6fa26beae1de111fd3ecaba5dda9030d7c1e916edcb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 100
+- progress  = 21.6 % 
+- chunk[0]  = 11
+- chunk[-1] = 87
+OK! filesize = 202000000, filesha256 = 388cbe3ddf0f5e4e3dd952f64ed77104bf05874189311c5c661517c997518d01
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 101
+- progress  = 21.8 % 
+- chunk[0]  = 208
+- chunk[-1] = 32
+OK! filesize = 204000000, filesha256 = adb4783838c3e6335d3a2fe4752b60762ccd66634f30c3d7c4967f85f0d5405a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 102
+- progress  = 22.0 % 
+- chunk[0]  = 122
+- chunk[-1] = 23
+OK! filesize = 206000000, filesha256 = 6dc8be917849e23292ef172dec14db2e902f047f95c1f17ed4ba7e449146c628
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 103
+- progress  = 22.2 % 
+- chunk[0]  = 169
+- chunk[-1] = 134
+OK! filesize = 208000000, filesha256 = 89373d3c5857d594ab14913d71b241a56f3fbd392d30ccbca23ded60ee490103
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 104
+- progress  = 22.5 % 
+- chunk[0]  = 171
+- chunk[-1] = 117
+OK! filesize = 210000000, filesha256 = ec90fc7e3516a991dcda7cc4b666d248b0e1dc9985088b9683b2998b68346d7b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 105
+- progress  = 22.7 % 
+- chunk[0]  = 182
+- chunk[-1] = 156
+OK! filesize = 212000000, filesha256 = a6c6584c12c306d598feaea98ffe4cff0b8c4556a396a653876a41cdf5ba3621
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 106
+- progress  = 22.9 % 
+- chunk[0]  = 152
+- chunk[-1] = 67
+OK! filesize = 214000000, filesha256 = 6251b28a368c8eaffb9a0f153bffc1f513294dd2725912aecdd826e229a154e0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 107
+- progress  = 23.1 % 
+- chunk[0]  = 168
+- chunk[-1] = 130
+OK! filesize = 216000000, filesha256 = 4f3a3c4ea0ea0eeb4cf8392558822f0c411f7a69b5c0f9db8f1d56d7460b7f3f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 108
+- progress  = 23.3 % 
+- chunk[0]  = 92
+- chunk[-1] = 20
+OK! filesize = 218000000, filesha256 = 96c7f987d54f148f7ca26b1bce6bb073e90150a70c5a5916cab7a24d4bd46292
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 109
+- progress  = 23.5 % 
+- chunk[0]  = 179
+- chunk[-1] = 70
+OK! filesize = 220000000, filesha256 = b69a6faff846c20581b6ec22e83c2296c35a12da87c04eebf1983c2331752476
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 110
+- progress  = 23.7 % 
+- chunk[0]  = 230
+- chunk[-1] = 167
+OK! filesize = 222000000, filesha256 = d588d483c64be1c2aa26e0a4b50a3de2890b0604e24b55fb753633476d7b2252
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 111
+- progress  = 24.0 % 
+- chunk[0]  = 107
+- chunk[-1] = 91
+OK! filesize = 224000000, filesha256 = 40ace5c04017cc7775ea15f8167520acb24d8ab7e5ed96f1d223f583d50d3d97
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 112
+- progress  = 24.2 % 
+- chunk[0]  = 103
+- chunk[-1] = 204
+OK! filesize = 226000000, filesha256 = fe79bdf729df3fe03f1cc13791af61a947440c1696aca3ecc43b51afd62dabd9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 113
+- progress  = 24.4 % 
+- chunk[0]  = 254
+- chunk[-1] = 40
+OK! filesize = 228000000, filesha256 = 56b85bbc600bc2b1befe0caa9f5a8330d625547357694eeb8ab5b414a6e563d2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 114
+- progress  = 24.6 % 
+- chunk[0]  = 104
+- chunk[-1] = 169
+OK! filesize = 230000000, filesha256 = 9d8a9cbb87a53e7e52e20b46dea6655b0c785886c450c0fc371b31191aa747f5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 115
+- progress  = 24.8 % 
+- chunk[0]  = 168
+- chunk[-1] = 42
+OK! filesize = 232000000, filesha256 = aab433a4ba92c785b56f956e7ab01ff3090a8dae940e391855acbdd6ba94862f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 116
+- progress  = 25.0 % 
+- chunk[0]  = 153
+- chunk[-1] = 168
+OK! filesize = 234000000, filesha256 = 32b53cada469de24836ea4d36e4fedce22fdb0e6102aae0ac8af60fce556ea27
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 117
+- progress  = 25.2 % 
+- chunk[0]  = 96
+- chunk[-1] = 32
+OK! filesize = 236000000, filesha256 = f615c38b68e4fd1f53610ade9d181bca6da43c38dec116928bb3b391e4c3c070
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 118
+- progress  = 25.5 % 
+- chunk[0]  = 147
+- chunk[-1] = 106
+OK! filesize = 238000000, filesha256 = 84aa7ff89fb3224cc29d20e90eb265119b3f4cdd73a1692ad99796136827eea7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 119
+- progress  = 25.7 % 
+- chunk[0]  = 122
+- chunk[-1] = 90
+OK! filesize = 240000000, filesha256 = 175f4bec3444c2c4f3447236f80356d38161961cd7e2ce8c64197982a9fb5bf2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 120
+- progress  = 25.9 % 
+- chunk[0]  = 218
+- chunk[-1] = 168
+OK! filesize = 242000000, filesha256 = 7221804d3e35a8173a74672458a74aa7fef065cba4d4fefaf12f3944264c71f0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 121
+- progress  = 26.1 % 
+- chunk[0]  = 151
+- chunk[-1] = 107
+OK! filesize = 244000000, filesha256 = 7ea2c1c0f12fc129b1f6e4bc3b1463c61d165f7f1efad6a8e0d9a67db7d0c6fd
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 122
+- progress  = 26.3 % 
+- chunk[0]  = 105
+- chunk[-1] = 56
+OK! filesize = 246000000, filesha256 = d5a5a6409574f481f4465cdbb0f5593dbf42f7706107eee17b76cc301c6d9777
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 123
+- progress  = 26.5 % 
+- chunk[0]  = 96
+- chunk[-1] = 134
+OK! filesize = 248000000, filesha256 = 26db1fc29caa6012a655a1a4a503095f55178435aa50ab12708eddd801e4c34f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 124
+- progress  = 26.7 % 
+- chunk[0]  = 138
+- chunk[-1] = 121
+OK! filesize = 250000000, filesha256 = e5359d60a7ce50ca8cba96458c2945ea57cfcd1239d17f4f82f1bbd167ea3963
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 125
+- progress  = 27.0 % 
+- chunk[0]  = 167
+- chunk[-1] = 156
+OK! filesize = 252000000, filesha256 = e8da2c8a7b02f6a0f3c121cdf2a0571915b5649224074bcfbf147a3b4bfc5ed1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 126
+- progress  = 27.2 % 
+- chunk[0]  = 21
+- chunk[-1] = 119
+OK! filesize = 254000000, filesha256 = a9ef67eadf36fef37d9457059e76397900da4c20c7c6465897183073b74df55c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 127
+- progress  = 27.4 % 
+- chunk[0]  = 169
+- chunk[-1] = 140
+OK! filesize = 256000000, filesha256 = c71c26d0b2e7fed0b921782f0ebd3bbf770f7017a0e6b6f7cd68bdd893e7315a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 128
+- progress  = 27.6 % 
+- chunk[0]  = 207
+- chunk[-1] = 155
+OK! filesize = 258000000, filesha256 = c83aafaa950f933eaffdc114623842aa36d6ac72e12ef46a1fc202888f5a4226
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 129
+- progress  = 27.8 % 
+- chunk[0]  = 101
+- chunk[-1] = 166
+OK! filesize = 260000000, filesha256 = 82db9c78ffefecdc95cb433f8f32d0e7b4e5defdf47692f8e9a9d24823d1f658
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 130
+- progress  = 28.0 % 
+- chunk[0]  = 103
+- chunk[-1] = 154
+OK! filesize = 262000000, filesha256 = 4ad19015f153b3cd85b10ff3e4e9092806fc0e7abacba4dd08a83d099b4fcf3a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 131
+- progress  = 28.2 % 
+- chunk[0]  = 140
+- chunk[-1] = 140
+OK! filesize = 264000000, filesha256 = 47e79270f47ad54f6565dc9987dcdec879a0f14d2ba79e98f575cd43ee0c5c3d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 132
+- progress  = 28.5 % 
+- chunk[0]  = 122
+- chunk[-1] = 166
+OK! filesize = 266000000, filesha256 = 5988b8805bc2c86ce06f1599f060fc8537ab5273ced4632b63706f448020f7f3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 133
+- progress  = 28.7 % 
+- chunk[0]  = 120
+- chunk[-1] = 160
+OK! filesize = 268000000, filesha256 = ae02cb980841ca92f8dfdaf928f0a8e72030e8da93e121d40e8807140e382d66
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 134
+- progress  = 28.9 % 
+- chunk[0]  = 53
+- chunk[-1] = 229
+OK! filesize = 270000000, filesha256 = d091b418e69ab1dda22ab07e01383b10b23211b15d40b471114a043466bf0817
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 135
+- progress  = 29.1 % 
+- chunk[0]  = 138
+- chunk[-1] = 107
+OK! filesize = 272000000, filesha256 = 6bbe3dbaed8f435f288b72b38ec7dac2cc8bd789ae6bd6fcac9d807915beec27
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 136
+- progress  = 29.3 % 
+- chunk[0]  = 168
+- chunk[-1] = 159
+OK! filesize = 274000000, filesha256 = 42df4d4dee715413ca3c2d6f751850956dbaeafa5a86f94a1127a548627f524e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 137
+- progress  = 29.5 % 
+- chunk[0]  = 71
+- chunk[-1] = 11
+OK! filesize = 276000000, filesha256 = 4caf7eae1ca276febff0168e5093a0c5c5ecc6e0b3a3ebbb6aed3ccc93e1e534
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 138
+- progress  = 29.7 % 
+- chunk[0]  = 188
+- chunk[-1] = 106
+OK! filesize = 278000000, filesha256 = 68f9d058e046a1d81155f62b59d41002825e2517a38aa0a18b9410aab0cea239
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 139
+- progress  = 29.9 % 
+- chunk[0]  = 143
+- chunk[-1] = 119
+OK! filesize = 280000000, filesha256 = 15ededb870ad2992d331059a2f1298458d49d73063e66e9c21ae20131dbd5df6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 140
+- progress  = 30.2 % 
+- chunk[0]  = 48
+- chunk[-1] = 31
+OK! filesize = 282000000, filesha256 = 97d32f4dd8e781ba04bdaf6fa2b4b4dbfffa15f4d110aa4b254945b86a6ef583
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 141
+- progress  = 30.4 % 
+- chunk[0]  = 80
+- chunk[-1] = 106
+OK! filesize = 284000000, filesha256 = a3ce76ba1a29c9af3cb0c0d8cc9d6cc7de67ba91d60f79a19f36fbc8bacda65a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 142
+- progress  = 30.6 % 
+- chunk[0]  = 216
+- chunk[-1] = 78
+OK! filesize = 286000000, filesha256 = 241c1f625a23848cbfbccb0ad8a8a3fe3681b962d30ffa174701fa9bc154ac71
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 143
+- progress  = 30.8 % 
+- chunk[0]  = 12
+- chunk[-1] = 70
+OK! filesize = 288000000, filesha256 = 803ed037c529ca6b2a8fcf921b239a9268c415230d7088003ffba4eca0229069
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 144
+- progress  = 31.0 % 
+- chunk[0]  = 186
+- chunk[-1] = 186
+OK! filesize = 290000000, filesha256 = 2bcf82ee4e3c09ec0f34296a1daacd433444144d76c7bbc268e4e901d390f241
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 145
+- progress  = 31.2 % 
+- chunk[0]  = 155
+- chunk[-1] = 170
+OK! filesize = 292000000, filesha256 = c7a3cfdc668a2d7656dd52974996dd8083de2b2d1118172bd8eeb84c4888a97a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 146
+- progress  = 31.4 % 
+- chunk[0]  = 137
+- chunk[-1] = 137
+OK! filesize = 294000000, filesha256 = 1d9860ff06b59bfea05f42bcdf0b207c014c1d108e0804c0ba5e823687464efd
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 147
+- progress  = 31.7 % 
+- chunk[0]  = 89
+- chunk[-1] = 103
+OK! filesize = 296000000, filesha256 = f7ece1816bf8a72ad194138ce42f2d95089d6672a8d046921f9237acd1708782
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 148
+- progress  = 31.9 % 
+- chunk[0]  = 123
+- chunk[-1] = 179
+OK! filesize = 298000000, filesha256 = 62705749154a76cdf2d9c8f48ac4850fbfbd547d325d9d083aa90f5cbe7b06a4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 149
+- progress  = 32.1 % 
+- chunk[0]  = 55
+- chunk[-1] = 192
+OK! filesize = 300000000, filesha256 = 3377f86a36ed3f6461eefe7b661266d18c7021fcba5b5118e002df1e123b85ea
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 150
+- progress  = 32.3 % 
+- chunk[0]  = 166
+- chunk[-1] = 235
+OK! filesize = 302000000, filesha256 = 80d28502ec8f49b24b505030f742750a34a966bd178c1d2b91fd3fb30c2f2d89
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 151
+- progress  = 32.5 % 
+- chunk[0]  = 183
+- chunk[-1] = 101
+OK! filesize = 304000000, filesha256 = 827e1cc329d69ac29fb67936fb004dec53b986630345216f9cd8e72cc04d2753
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 152
+- progress  = 32.7 % 
+- chunk[0]  = 118
+- chunk[-1] = 90
+OK! filesize = 306000000, filesha256 = c8e42273ff71b3b148d929ed4913eeb9bc95e5f4dbc513419d402195c47dccff
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 153
+- progress  = 32.9 % 
+- chunk[0]  = 75
+- chunk[-1] = 5
+OK! filesize = 308000000, filesha256 = 4c6f3eaf3dfbdf1b81b8934ef62a1cf06b9bb84513031fd7cb6118c0f139e865
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 154
+- progress  = 33.2 % 
+- chunk[0]  = 34
+- chunk[-1] = 194
+OK! filesize = 310000000, filesha256 = 049718ad5145efb93d9c617b21b3d1e3b1552980602e0d60cdd5c2ad8a98c7c7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 155
+- progress  = 33.4 % 
+- chunk[0]  = 104
+- chunk[-1] = 126
+OK! filesize = 312000000, filesha256 = 322fa1eefd688dc4a764870f51ab899604ab06816de459a0728ab1418ba0c59d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 156
+- progress  = 33.6 % 
+- chunk[0]  = 192
+- chunk[-1] = 159
+OK! filesize = 314000000, filesha256 = 6b23698cf9eb06a930af6d7dcf3822b24a060d28a6878aa15f50a97a9e01c88d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 157
+- progress  = 33.8 % 
+- chunk[0]  = 197
+- chunk[-1] = 38
+OK! filesize = 316000000, filesha256 = 39b49ad8defa2c8531a21ef5c8ffdccb8a4129020e3b82d3bfc269cd9b5ab1e9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 158
+- progress  = 34.0 % 
+- chunk[0]  = 103
+- chunk[-1] = 139
+OK! filesize = 318000000, filesha256 = c63e80bebd3e306e9337b115aaa8574c85f6e05a69045b7576cf7b60f8e2d085
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 159
+- progress  = 34.2 % 
+- chunk[0]  = 165
+- chunk[-1] = 118
+OK! filesize = 320000000, filesha256 = 3045251d70b05715cdcfbe8e363164723917f43ba42b68ce69f57015c8f97c07
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 160
+- progress  = 34.4 % 
+- chunk[0]  = 169
+- chunk[-1] = 4
+OK! filesize = 322000000, filesha256 = 66a98c9e30171d02ee7be63892ed0c7235fb178e398cab062e4b47dacc4e11dd
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 161
+- progress  = 34.7 % 
+- chunk[0]  = 160
+- chunk[-1] = 112
+OK! filesize = 324000000, filesha256 = 38eccebe4e04ae66dcc46d3ac4aafe9beb395a1387652f5c42ceb61cea7811aa
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 162
+- progress  = 34.9 % 
+- chunk[0]  = 89
+- chunk[-1] = 137
+OK! filesize = 326000000, filesha256 = 77747457127a674ed558c7822d7a708768283fde6c49cf21b492f89c0fb73ed6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 163
+- progress  = 35.1 % 
+- chunk[0]  = 152
+- chunk[-1] = 102
+OK! filesize = 328000000, filesha256 = 82a28c8196dff45ed183bf57b239ccf05a98574e798f0091e5de82416ad0d6a0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 164
+- progress  = 35.3 % 
+- chunk[0]  = 135
+- chunk[-1] = 101
+OK! filesize = 330000000, filesha256 = e2ba433db2a4daad6157847b53824895d9bfca61cbf154bfe78f03d6f33b0b56
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 165
+- progress  = 35.5 % 
+- chunk[0]  = 101
+- chunk[-1] = 166
+OK! filesize = 332000000, filesha256 = a2452862ddb3b5a1f3f87a31ab6d37a6c1db4b7321c5c33ad03e8a4089261fb9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 166
+- progress  = 35.7 % 
+- chunk[0]  = 186
+- chunk[-1] = 168
+OK! filesize = 334000000, filesha256 = e819ffcafbe0bc743bf568005752bd896034fa9d8ba419f518e745b8c934012f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 167
+- progress  = 35.9 % 
+- chunk[0]  = 98
+- chunk[-1] = 214
+OK! filesize = 336000000, filesha256 = 9890baca96f6a63f718bd0ce38ec1b1785314d9cdac2bbdccc502d7b44c43735
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 168
+- progress  = 36.2 % 
+- chunk[0]  = 108
+- chunk[-1] = 99
+OK! filesize = 338000000, filesha256 = 2e98d727503d9c4a46db4a2b4fa8d3911f99985e54c15ea0eaa2538f19a12bec
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 169
+- progress  = 36.4 % 
+- chunk[0]  = 153
+- chunk[-1] = 78
+OK! filesize = 340000000, filesha256 = 0be0e553937852ac33dca2efc29443e88b1edf526c1cd214a4d67afa7bb37736
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 170
+- progress  = 36.6 % 
+- chunk[0]  = 32
+- chunk[-1] = 49
+OK! filesize = 342000000, filesha256 = fe80e6244d5e6eab34cd39399f23e3697fbbdc406674e09f94b5de6bef1b81b4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 171
+- progress  = 36.8 % 
+- chunk[0]  = 202
+- chunk[-1] = 250
+OK! filesize = 344000000, filesha256 = 9b3a0136c9c8e7f6448347789d2216431b3ec895fcc37f9842d6ffd674b92eeb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 172
+- progress  = 37.0 % 
+- chunk[0]  = 8
+- chunk[-1] = 35
+OK! filesize = 346000000, filesha256 = bea6832e0a49a44c71b00c0f783265651961266163eb5ed84627fb6fba7854d2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 173
+- progress  = 37.2 % 
+- chunk[0]  = 151
+- chunk[-1] = 103
+OK! filesize = 348000000, filesha256 = f7eaf5c7c159694600bf50af4ff37740440074e9a0e58947be549395391eeef7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 174
+- progress  = 37.4 % 
+- chunk[0]  = 135
+- chunk[-1] = 137
+OK! filesize = 350000000, filesha256 = 457461fafa6d09f74984ec166c992d5dedb34eb53b24abadd43ad76fda01dd0b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 175
+- progress  = 37.6 % 
+- chunk[0]  = 48
+- chunk[-1] = 32
+OK! filesize = 352000000, filesha256 = 3b9b66b5dd5a91bccf436b6a470c8c4f6e14deb7d04725c64d3d52a441383c92
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 176
+- progress  = 37.9 % 
+- chunk[0]  = 115
+- chunk[-1] = 134
+OK! filesize = 354000000, filesha256 = c4de0ea36c14334f77317943a2b8caae2a356527f697c640172bcad4ff6a2dc9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 177
+- progress  = 38.1 % 
+- chunk[0]  = 226
+- chunk[-1] = 160
+OK! filesize = 356000000, filesha256 = 4715fda5b4ef5b68eca5a309a5ee2a509aa49d2fcf6657ddc1237af1e05f5f5d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 178
+- progress  = 38.3 % 
+- chunk[0]  = 139
+- chunk[-1] = 163
+OK! filesize = 358000000, filesha256 = 7923ac51aa83084d9b6b07d98ad1c8b571ac18a81c240f5cc5c8da12386e02d9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 179
+- progress  = 38.5 % 
+- chunk[0]  = 164
+- chunk[-1] = 29
+OK! filesize = 360000000, filesha256 = d4cba152527ae27ab11b87ccd4622b3a4af5f121f2e0f56b44f995d7677325bf
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 180
+- progress  = 38.7 % 
+- chunk[0]  = 139
+- chunk[-1] = 155
+OK! filesize = 362000000, filesha256 = 1075d0d616492dc7c3bbbe2b383352dfeaed1f33ca32341b0d5de709fb205fb6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 181
+- progress  = 38.9 % 
+- chunk[0]  = 75
+- chunk[-1] = 128
+OK! filesize = 364000000, filesha256 = 4e7ae9c698cf6bec4333b5f7385515e4bcd4995e57c1c313c483a40a9e3ab247
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 182
+- progress  = 39.1 % 
+- chunk[0]  = 139
+- chunk[-1] = 230
+OK! filesize = 366000000, filesha256 = d3c9b9ac8e6e2004ec5a52d9198b0d5afb51687dbcbfbd07b23509a23b94890b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 183
+- progress  = 39.4 % 
+- chunk[0]  = 134
+- chunk[-1] = 101
+OK! filesize = 368000000, filesha256 = 894e65bdd2ecc2383b93f1f63087f637ff79e0d373737c6b439694071822003a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 184
+- progress  = 39.6 % 
+- chunk[0]  = 201
+- chunk[-1] = 123
+OK! filesize = 370000000, filesha256 = 10433375b60ade4b1fb4187c63c480356943aab3c2f46ce7769cf6d0edbdd460
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 185
+- progress  = 39.8 % 
+- chunk[0]  = 60
+- chunk[-1] = 73
+OK! filesize = 372000000, filesha256 = e9f23c6a9ea2b41720cc5e85ed82f5b14207c896368394aeb7c456100761cdfb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 186
+- progress  = 40.0 % 
+- chunk[0]  = 99
+- chunk[-1] = 91
+OK! filesize = 374000000, filesha256 = 8e68055596efd7f03c4c19499ca8dbc4f07efbb5613056b8432b746d4093b0a2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 187
+- progress  = 40.2 % 
+- chunk[0]  = 139
+- chunk[-1] = 136
+OK! filesize = 376000000, filesha256 = 3ff6f4bf45a4e9a2289f267bbea2a274ad732bcb5fabe5c42e00d25904a76dd9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 188
+- progress  = 40.4 % 
+- chunk[0]  = 70
+- chunk[-1] = 137
+OK! filesize = 378000000, filesha256 = d34e5440ccc770f0f7af50987037ee1aa56436310236fb7929fda5bad3c6835f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 189
+- progress  = 40.6 % 
+- chunk[0]  = 163
+- chunk[-1] = 22
+OK! filesize = 380000000, filesha256 = a4506961e8d0ee11875ae86a2633640996f780f4b663f0e9c94c02ea78fa847f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 190
+- progress  = 40.9 % 
+- chunk[0]  = 155
+- chunk[-1] = 163
+OK! filesize = 382000000, filesha256 = a55e7df6841ba9e87cca56391243976d4892fd69f068489aa4e7a1bd01a12c4a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 191
+- progress  = 41.1 % 
+- chunk[0]  = 169
+- chunk[-1] = 150
+OK! filesize = 384000000, filesha256 = f4e0748151acf1e566f9c44013a8df36e5fc2087527c343509b4ab7c830cf0d3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 192
+- progress  = 41.3 % 
+- chunk[0]  = 184
+- chunk[-1] = 158
+OK! filesize = 386000000, filesha256 = 26efbbe7b869d6ce04bc0972b06b68bf39c65afde0888b10c50557d199d0126b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 193
+- progress  = 41.5 % 
+- chunk[0]  = 26
+- chunk[-1] = 153
+OK! filesize = 388000000, filesha256 = 1ed6aeee02664e1fa40d1e166c14c4a77f812212d929ed45b4c8d65cc6382a69
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 194
+- progress  = 41.7 % 
+- chunk[0]  = 125
+- chunk[-1] = 89
+OK! filesize = 390000000, filesha256 = 63fe9a993629a035360a74ef2c591515df6387bc80924daee094aa0b327d844f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 195
+- progress  = 41.9 % 
+- chunk[0]  = 40
+- chunk[-1] = 32
+OK! filesize = 392000000, filesha256 = bc51c33a337413879e65fe5da7cc0a98e5f9963618fa933e1addee6c7fd148d7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 196
+- progress  = 42.1 % 
+- chunk[0]  = 171
+- chunk[-1] = 117
+OK! filesize = 394000000, filesha256 = 5b228820d651880c751a54a6fa78098d85aa3493e9fa688ef961da503b2e86c5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 197
+- progress  = 42.4 % 
+- chunk[0]  = 227
+- chunk[-1] = 133
+OK! filesize = 396000000, filesha256 = 5077c7e8807e94408a45f3af7b31231ff8438198ca7881315a72d253e0e44c7e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 198
+- progress  = 42.6 % 
+- chunk[0]  = 87
+- chunk[-1] = 201
+OK! filesize = 398000000, filesha256 = 0563871aefa2118eeda20b2fe0161bf5cc5809b26ade8b5e90d3e38fd6aca1e2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 199
+- progress  = 42.8 % 
+- chunk[0]  = 86
+- chunk[-1] = 49
+OK! filesize = 400000000, filesha256 = f764da8f8f4cf6be3ce8fda46ed93abb45163aa1ece259cdeaa8b8e68fe3a97a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 200
+- progress  = 43.0 % 
+- chunk[0]  = 204
+- chunk[-1] = 163
+OK! filesize = 402000000, filesha256 = 602fca5a29134f21b8cf049aeb2867cda2af43b4a7404dd34af86b7d14470421
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 201
+- progress  = 43.2 % 
+- chunk[0]  = 89
+- chunk[-1] = 3
+OK! filesize = 404000000, filesha256 = 48aed4cd3dec73945f999ba17502edfbd58bfa7df6d872e72eec7f5ba85041d8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 202
+- progress  = 43.4 % 
+- chunk[0]  = 102
+- chunk[-1] = 162
+OK! filesize = 406000000, filesha256 = 116e7df4b2223f57fe68923e4595ddf95c56c442b1730ecd98a22ad6bf4db6e6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 203
+- progress  = 43.6 % 
+- chunk[0]  = 155
+- chunk[-1] = 71
+OK! filesize = 408000000, filesha256 = b213e08be6166725166b86081561e4e19d8736e8000fbd758d9744e909a53ea4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 204
+- progress  = 43.9 % 
+- chunk[0]  = 8
+- chunk[-1] = 166
+OK! filesize = 410000000, filesha256 = 0c6fcac95c976e785162cf436dcb3ad611efaf6c7c889fecb90e5ba6d4fd5e51
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 205
+- progress  = 44.1 % 
+- chunk[0]  = 144
+- chunk[-1] = 110
+OK! filesize = 412000000, filesha256 = 34d3630675f96097b889ea6c624fb7088cec7faa849cd820a124773205592667
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 206
+- progress  = 44.3 % 
+- chunk[0]  = 112
+- chunk[-1] = 155
+OK! filesize = 414000000, filesha256 = 77dad7619f7316a05ca096ca8af52d8cf24f1ecb9512bc66e9ee6853092fb5b5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 207
+- progress  = 44.5 % 
+- chunk[0]  = 131
+- chunk[-1] = 171
+OK! filesize = 416000000, filesha256 = 3f298618273300f657a78ae781ad522a93fd5fc2424db0467f37f9ead5ed6e9e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 208
+- progress  = 44.7 % 
+- chunk[0]  = 144
+- chunk[-1] = 120
+OK! filesize = 418000000, filesha256 = e639b93b67e0b58d4a35c6bd6baa9a84a0071c442030daa0cc952a899d5dcbc7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 209
+- progress  = 44.9 % 
+- chunk[0]  = 55
+- chunk[-1] = 151
+OK! filesize = 420000000, filesha256 = 18dca5cc7bfd1fabc5d541216c0f93a616eed2d56ac672bca17e214054bca9b0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 210
+- progress  = 45.1 % 
+- chunk[0]  = 40
+- chunk[-1] = 131
+OK! filesize = 422000000, filesha256 = 0f4968f6d552907de0ee9a2959b7c098ed38ac906f1d698ffa22afa6f40190e5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 211
+- progress  = 45.3 % 
+- chunk[0]  = 24
+- chunk[-1] = 30
+OK! filesize = 424000000, filesha256 = 9d461df07bc12f9574a50a1dfefb21c1be2fde6d61b95f68d89a21eec235e8ff
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 212
+- progress  = 45.6 % 
+- chunk[0]  = 157
+- chunk[-1] = 121
+OK! filesize = 426000000, filesha256 = 75de1442dbe5d16394cb80540922cbbc659f1aaf6af4e450a39fbf1df48b35e1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 213
+- progress  = 45.8 % 
+- chunk[0]  = 114
+- chunk[-1] = 6
+OK! filesize = 428000000, filesha256 = ce35b05dd32407b4cb708e03baee904d69bdd2be92d0c014c6d1d387bca3d8d5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 214
+- progress  = 46.0 % 
+- chunk[0]  = 72
+- chunk[-1] = 160
+OK! filesize = 430000000, filesha256 = 1110a307ae500838fc55666650df731fb4085ce05fb98504d4bc0c4868fbeaaf
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 215
+- progress  = 46.2 % 
+- chunk[0]  = 247
+- chunk[-1] = 22
+OK! filesize = 432000000, filesha256 = 48fe64cfa50e71f2a34f4c121cfa1fd6f69adcf6fd842a707b4f6a435b48365e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 216
+- progress  = 46.4 % 
+- chunk[0]  = 156
+- chunk[-1] = 136
+OK! filesize = 434000000, filesha256 = 46088c8b19d256d18e4af8eceddf6a5cdd8e6deb8ed9a090f2404c12b9f0397e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 217
+- progress  = 46.6 % 
+- chunk[0]  = 155
+- chunk[-1] = 169
+OK! filesize = 436000000, filesha256 = 022f2be49d5f09449fbaad6afbc97a2c298e055584f1d083567d1473fdcb298c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 218
+- progress  = 46.8 % 
+- chunk[0]  = 171
+- chunk[-1] = 33
+OK! filesize = 438000000, filesha256 = 0265bf68fe86d309e9b9b51fc6eab269ddb9383d317ea5d6926f654d0489064d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 219
+- progress  = 47.1 % 
+- chunk[0]  = 137
+- chunk[-1] = 148
+OK! filesize = 440000000, filesha256 = 111bf71184115622466e822c94b6d2da73a045e2bad31fedcb5cce2c6c342ff6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 220
+- progress  = 47.3 % 
+- chunk[0]  = 150
+- chunk[-1] = 119
+OK! filesize = 442000000, filesha256 = fbe7417eaa03ef8ac691c2485d93bd5b94f6d4bda2a5b1c8a585caae4786b42f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 221
+- progress  = 47.5 % 
+- chunk[0]  = 103
+- chunk[-1] = 117
+OK! filesize = 444000000, filesha256 = b6544bab0dad641a42126f16420d7155083e7a3a89b955a9a115fb5ded504d8e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 222
+- progress  = 47.7 % 
+- chunk[0]  = 115
+- chunk[-1] = 101
+OK! filesize = 446000000, filesha256 = a32b2c325fff0d8fd5359297a2352c59dbc9e19575c31fb222276879420325f8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 223
+- progress  = 47.9 % 
+- chunk[0]  = 72
+- chunk[-1] = 99
+OK! filesize = 448000000, filesha256 = 053b47d7cd1cbe6dec09c34a73ff2790f9978b63771fd17d7febf2c3bdb525ad
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 224
+- progress  = 48.1 % 
+- chunk[0]  = 232
+- chunk[-1] = 176
+OK! filesize = 450000000, filesha256 = c631b8ae87f281f6fdafe459419f87eceaaa53c85d19a0e6567e9b71827e437f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 225
+- progress  = 48.3 % 
+- chunk[0]  = 121
+- chunk[-1] = 128
+OK! filesize = 452000000, filesha256 = 1d2156262a87f520c582a62312cefa1e62748b0987818108bc52489b761e16e1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 226
+- progress  = 48.6 % 
+- chunk[0]  = 138
+- chunk[-1] = 102
+OK! filesize = 454000000, filesha256 = 17ea0fe34803373587070afc240eb85a0e5291a8f81a79672d88fd19b59ba99a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 227
+- progress  = 48.8 % 
+- chunk[0]  = 177
+- chunk[-1] = 202
+OK! filesize = 456000000, filesha256 = 2dc31390f7fe30ef90262bd5cfcdcbee7899b0c21ea60ff06b6e7db919030987
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 228
+- progress  = 49.0 % 
+- chunk[0]  = 117
+- chunk[-1] = 138
+OK! filesize = 458000000, filesha256 = c90ea9f4a5f74dae9d6ba5723be27d2683dbe7515102fff9f1a715c0c4593f98
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 229
+- progress  = 49.2 % 
+- chunk[0]  = 118
+- chunk[-1] = 89
+OK! filesize = 460000000, filesha256 = 3379d33518f49fae478e61a0bb0c46284e4341de52f6ad7d468f26f13a0e1e09
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 230
+- progress  = 49.4 % 
+- chunk[0]  = 0
+- chunk[-1] = 83
+OK! filesize = 462000000, filesha256 = c067ad9a53bf6d667f1f48287e043c79a46f0c5ae2cdde0b527f072fe253b207
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 231
+- progress  = 49.6 % 
+- chunk[0]  = 116
+- chunk[-1] = 69
+OK! filesize = 464000000, filesha256 = 28fd840f58f67bec6b1a3fc34a6f0d50959ef64012f2fbc72e2ae3dea7d6548c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 232
+- progress  = 49.8 % 
+- chunk[0]  = 204
+- chunk[-1] = 119
+OK! filesize = 466000000, filesha256 = d2a92c08231b2226b73abef06c859db55d9517fc28d3d0c33c32cad98256cc36
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 233
+- progress  = 50.1 % 
+- chunk[0]  = 89
+- chunk[-1] = 120
+OK! filesize = 468000000, filesha256 = 42c68dc4a32e2e51c67307cde9893e35c8ddc9f2ccbeaab4c7bee8ea3a4d7b0b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 234
+- progress  = 50.3 % 
+- chunk[0]  = 0
+- chunk[-1] = 33
+OK! filesize = 470000000, filesha256 = e8c21c27cfbaac8804806c9ef2cfcd9d8523b33d939421771bf353cc6d2dcee1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 235
+- progress  = 50.5 % 
+- chunk[0]  = 135
+- chunk[-1] = 167
+OK! filesize = 472000000, filesha256 = c4b7082a566225df76052cdc9515d2684b7609f5c949e4489bc26c1a966f91ae
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 236
+- progress  = 50.7 % 
+- chunk[0]  = 231
+- chunk[-1] = 222
+OK! filesize = 474000000, filesha256 = e36f269c7188e9baebe278d283ad555eb4723269f16a76514252185df2c0c1d5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 237
+- progress  = 50.9 % 
+- chunk[0]  = 167
+- chunk[-1] = 74
+OK! filesize = 476000000, filesha256 = c421ce8991ddf37622383e3e5139515b60ad6346554768f420938a5f593040f5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 238
+- progress  = 51.1 % 
+- chunk[0]  = 188
+- chunk[-1] = 228
+OK! filesize = 478000000, filesha256 = dff1e8ba5b2467815d3812eac18752f26076f7f640b6deb61715f4d4f07f7521
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 239
+- progress  = 51.3 % 
+- chunk[0]  = 103
+- chunk[-1] = 73
+OK! filesize = 480000000, filesha256 = 7eb4a6cdf44a6248965a645ed5c58a4fecd104be534ae9754149675bfac83ca3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 240
+- progress  = 51.6 % 
+- chunk[0]  = 134
+- chunk[-1] = 178
+OK! filesize = 482000000, filesha256 = 2b5361fc4d2a25fec3620198ecfee88cc35f8233e654a27dd158a58590d8ab51
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 241
+- progress  = 51.8 % 
+- chunk[0]  = 137
+- chunk[-1] = 230
+OK! filesize = 484000000, filesha256 = 3ba832544b5b77bb9904037ad98e7256126e14422af5130498e25f923629816e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 242
+- progress  = 52.0 % 
+- chunk[0]  = 90
+- chunk[-1] = 153
+OK! filesize = 486000000, filesha256 = 638bcd9493c1f14f4f12a65dd3e68450c99cf86901e17d02f39562a2864c8cad
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 243
+- progress  = 52.2 % 
+- chunk[0]  = 165
+- chunk[-1] = 170
+OK! filesize = 488000000, filesha256 = 607aed28796ee23a09099393649241c096e663f9bcb95be2d138d1a2532c86b7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 244
+- progress  = 52.4 % 
+- chunk[0]  = 137
+- chunk[-1] = 240
+OK! filesize = 490000000, filesha256 = 2dd7a7ad7096dd11f4e857021875ffa4000315a7868b010625f87c641679c2a8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 245
+- progress  = 52.6 % 
+- chunk[0]  = 31
+- chunk[-1] = 229
+OK! filesize = 492000000, filesha256 = fa12e52e0e448fc723146efee62fbac699ea8a97bdc60186df462788a8d332f2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 246
+- progress  = 52.8 % 
+- chunk[0]  = 176
+- chunk[-1] = 138
+OK! filesize = 494000000, filesha256 = c520bcfb24b27b63d21639b1b3db7131a102db2eb535307085c5d14f970287ba
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 247
+- progress  = 53.1 % 
+- chunk[0]  = 75
+- chunk[-1] = 218
+OK! filesize = 496000000, filesha256 = a36e4d63d63c17066091366940c84ecc25aa3eaa3ebde9b6238b76627d8cbd40
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 248
+- progress  = 53.3 % 
+- chunk[0]  = 212
+- chunk[-1] = 153
+OK! filesize = 498000000, filesha256 = a76cf13025e037e8b401365b987b22a51e175e69f9739b97c4754854d2a3d917
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 249
+- progress  = 53.5 % 
+- chunk[0]  = 87
+- chunk[-1] = 153
+OK! filesize = 500000000, filesha256 = 0c9d093f25ebabef88cffc100fe44ef3a345a9d67be3c32003b871eb36d5c0c5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 250
+- progress  = 53.7 % 
+- chunk[0]  = 88
+- chunk[-1] = 31
+OK! filesize = 502000000, filesha256 = 81e12721f9d8a44ed026fd47a10e36bb89a7cb8577a0098b725f48c5b12bc9ca
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 251
+- progress  = 53.9 % 
+- chunk[0]  = 119
+- chunk[-1] = 87
+OK! filesize = 504000000, filesha256 = f8b9dfc791f82b5087dc7e3d842375e803e12bf19813c19ab70e1ba5d1b37a53
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 252
+- progress  = 54.1 % 
+- chunk[0]  = 196
+- chunk[-1] = 132
+OK! filesize = 506000000, filesha256 = fdb7bf807b00d2b2383017689f569d46337e17569ec1c4a5f468ffd79e8181fb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 253
+- progress  = 54.3 % 
+- chunk[0]  = 120
+- chunk[-1] = 159
+OK! filesize = 508000000, filesha256 = 97839adb971441249e96204e682e04c60cf4da5b58aee480b109e58733e7b8b7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 254
+- progress  = 54.5 % 
+- chunk[0]  = 121
+- chunk[-1] = 105
+OK! filesize = 510000000, filesha256 = 980a5f987a456f6e396be8a0170ead207b71c449503086ab15589cc5cbca94a6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 255
+- progress  = 54.8 % 
+- chunk[0]  = 201
+- chunk[-1] = 8
+OK! filesize = 512000000, filesha256 = 57aad8112f849f5113f8c4e02b0db7c73a7d6857fb404901f69f0afb28764a28
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 256
+- progress  = 55.0 % 
+- chunk[0]  = 136
+- chunk[-1] = 71
+OK! filesize = 514000000, filesha256 = 2261665198bbb05d071aecc9e83afe2385fcba1565b239a9ef1a708f7f3639c3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 257
+- progress  = 55.2 % 
+- chunk[0]  = 36
+- chunk[-1] = 80
+OK! filesize = 516000000, filesha256 = 3b13b807b3bfc542ae9d0b33b128f3ede1bb3a5d905b8590b461119331039913
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 258
+- progress  = 55.4 % 
+- chunk[0]  = 232
+- chunk[-1] = 122
+OK! filesize = 518000000, filesha256 = abe287267cc2d347d38e19e24b5c7a554bdf313fa857e8af114699ade5d03c43
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 259
+- progress  = 55.6 % 
+- chunk[0]  = 181
+- chunk[-1] = 69
+OK! filesize = 520000000, filesha256 = e4f3391213b814366a897ed6ac9937d0bf374a60f2076538df3f25cb1cb59df3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 260
+- progress  = 55.8 % 
+- chunk[0]  = 107
+- chunk[-1] = 208
+OK! filesize = 522000000, filesha256 = 4d99ba25f019de981eeff5706bc5e6d5f3266b0ef1cffc208a62110df3e45e7d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 261
+- progress  = 56.0 % 
+- chunk[0]  = 117
+- chunk[-1] = 123
+OK! filesize = 524000000, filesha256 = 41a4d6b1a381a4a1cbdd3e363198250c0619c344ac3bc2634c73080115492656
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 262
+- progress  = 56.3 % 
+- chunk[0]  = 144
+- chunk[-1] = 168
+OK! filesize = 526000000, filesha256 = 1d6aa90f5f4aa6f464b6b6bac257348cc689cf821c7ae1f2f06480bfbdbac3b3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 263
+- progress  = 56.5 % 
+- chunk[0]  = 138
+- chunk[-1] = 89
+OK! filesize = 528000000, filesha256 = b5394883cace5b6e5f42234b92a72045ba3f83d64050dafa6a1d45345c9d497e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 264
+- progress  = 56.7 % 
+- chunk[0]  = 249
+- chunk[-1] = 8
+OK! filesize = 530000000, filesha256 = eb086ae4e62be8d39667e36f7e85613ca98b71096dd723a1386b55f685e21f56
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 265
+- progress  = 56.9 % 
+- chunk[0]  = 135
+- chunk[-1] = 58
+OK! filesize = 532000000, filesha256 = f662c330e5eb95e041daed7e5f2214292fc15c1120ee678ddb215fad7b11401f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 266
+- progress  = 57.1 % 
+- chunk[0]  = 104
+- chunk[-1] = 230
+OK! filesize = 534000000, filesha256 = 8035925baaa9a41653fa4f75282d76b1e56ddefdefe166efa9f68dd2bcab8910
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 267
+- progress  = 57.3 % 
+- chunk[0]  = 185
+- chunk[-1] = 135
+OK! filesize = 536000000, filesha256 = 07282a9488d2319fd8160557a94b279b40f52ef956379afa7c17770dee05b3d3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 268
+- progress  = 57.5 % 
+- chunk[0]  = 151
+- chunk[-1] = 86
+OK! filesize = 538000000, filesha256 = dc6ddaaf1f51988b949b47eceae31f5394f7b4be22b370a6a2a906f91dc35509
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 269
+- progress  = 57.8 % 
+- chunk[0]  = 40
+- chunk[-1] = 5
+OK! filesize = 540000000, filesha256 = 934845f04924947a60835437dd6592439994ec4aaa541a5acf21aab84e9d7087
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 270
+- progress  = 58.0 % 
+- chunk[0]  = 151
+- chunk[-1] = 186
+OK! filesize = 542000000, filesha256 = d7aa3ac7cd24e675463fe79c03e89072f5334ea3ca30cc743d289b6f0062b623
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 271
+- progress  = 58.2 % 
+- chunk[0]  = 136
+- chunk[-1] = 187
+OK! filesize = 544000000, filesha256 = 5d568179856f22f250ce8bdc87142e8d33cb1aed1895c6f959effd9ba990943d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 272
+- progress  = 58.4 % 
+- chunk[0]  = 87
+- chunk[-1] = 149
+OK! filesize = 546000000, filesha256 = 74030800b2f7a8fe21013d9773968aac14951f69318fd52035515dae579cca23
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 273
+- progress  = 58.6 % 
+- chunk[0]  = 216
+- chunk[-1] = 158
+OK! filesize = 548000000, filesha256 = fa404d8e3e528ef8d751e2ac98ad5f8a59447f1be19118b40c11edaa2f2f8ac9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 274
+- progress  = 58.8 % 
+- chunk[0]  = 167
+- chunk[-1] = 142
+OK! filesize = 550000000, filesha256 = c22dba71578e450c458a7aa848416dfd90306428ae9dc56ff5688883b89c7033
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 275
+- progress  = 59.0 % 
+- chunk[0]  = 64
+- chunk[-1] = 13
+OK! filesize = 552000000, filesha256 = 609394ece0d1eeab9b109d78aa2ea5563d253ff34c76c5e5339dd154fa1a33e3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 276
+- progress  = 59.3 % 
+- chunk[0]  = 150
+- chunk[-1] = 214
+OK! filesize = 554000000, filesha256 = c317ca73146e32c10e627bb0581c48d6813ce54d845e4d942e81f563de615aea
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 277
+- progress  = 59.5 % 
+- chunk[0]  = 252
+- chunk[-1] = 107
+OK! filesize = 556000000, filesha256 = 53864804e607f1bb16b9edfbc7e1af8d36ff4262e9377ea2995712d0c4d44039
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 278
+- progress  = 59.7 % 
+- chunk[0]  = 121
+- chunk[-1] = 54
+OK! filesize = 558000000, filesha256 = af35febae48ad19c4f8386574d2d296f4d4545d728036a5eddff36ef015c5bd2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 279
+- progress  = 59.9 % 
+- chunk[0]  = 175
+- chunk[-1] = 200
+OK! filesize = 560000000, filesha256 = 72ce94e7733d93317001b49068e400c9df27a6d67ce991aa2874506793fb9c90
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 280
+- progress  = 60.1 % 
+- chunk[0]  = 136
+- chunk[-1] = 78
+OK! filesize = 562000000, filesha256 = c4d580520fffd8507918746352732873b316a30736986584811200b0f1af280e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 281
+- progress  = 60.3 % 
+- chunk[0]  = 214
+- chunk[-1] = 80
+OK! filesize = 564000000, filesha256 = 663fa6b246fc374a16cc09d4ec06d810166b9078fef5e15367f07eb8015d7f0e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 282
+- progress  = 60.5 % 
+- chunk[0]  = 144
+- chunk[-1] = 69
+OK! filesize = 566000000, filesha256 = 26661b8af37c3f8325d2479bcfbeca9c040396b720ebd6e0a38d0f19e341ccfb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 283
+- progress  = 60.8 % 
+- chunk[0]  = 92
+- chunk[-1] = 100
+OK! filesize = 568000000, filesha256 = 847551a5e2af53add2df31c7f5e67559a6074792fd9f06aa372ecbc5e8d96f1c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 284
+- progress  = 61.0 % 
+- chunk[0]  = 73
+- chunk[-1] = 85
+OK! filesize = 570000000, filesha256 = fa338e47d4d6a9d62626ca33f5a80f80a58d0268158aefda367403098983d3ef
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 285
+- progress  = 61.2 % 
+- chunk[0]  = 159
+- chunk[-1] = 5
+OK! filesize = 572000000, filesha256 = c9d9e92fad30889e396d8274cc702deadb8ff1c206ffe361abde2a76493c7464
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 286
+- progress  = 61.4 % 
+- chunk[0]  = 152
+- chunk[-1] = 22
+OK! filesize = 574000000, filesha256 = 265d4f4c8111520bb656eff95829801a08e63d0099f63c111637b2e7757968c2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 287
+- progress  = 61.6 % 
+- chunk[0]  = 39
+- chunk[-1] = 188
+OK! filesize = 576000000, filesha256 = 1f8e8b9b5d65beadacd72714cb73074890822a89b50e903b620534defdf4f0e8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 288
+- progress  = 61.8 % 
+- chunk[0]  = 151
+- chunk[-1] = 155
+OK! filesize = 578000000, filesha256 = b76bbe9da807ee65af6d9aa580094ae28c72043043155cc829b205f7352c780f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 289
+- progress  = 62.0 % 
+- chunk[0]  = 96
+- chunk[-1] = 158
+OK! filesize = 580000000, filesha256 = bb995a0c783ff2ebd5bfd51703fc2bee727627b940d86230bfd6f08b82257544
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 290
+- progress  = 62.2 % 
+- chunk[0]  = 133
+- chunk[-1] = 213
+OK! filesize = 582000000, filesha256 = c78005333c3a9b4e6ef79410a56b252b339587c0adc23b11e6c5f91521d46164
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 291
+- progress  = 62.5 % 
+- chunk[0]  = 181
+- chunk[-1] = 103
+OK! filesize = 584000000, filesha256 = efe1e6d88ddf4f174c36e3cfc65f0e5f70e36a10a5b6064b780b01d7bda9a51b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 292
+- progress  = 62.7 % 
+- chunk[0]  = 151
+- chunk[-1] = 160
+OK! filesize = 586000000, filesha256 = ffc2482a30486592fdf863eb474a61c763ce4735d696c91e84ceb9dcd29bc149
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 293
+- progress  = 62.9 % 
+- chunk[0]  = 137
+- chunk[-1] = 10
+OK! filesize = 588000000, filesha256 = f55e3e01ae2f6b364d3b2e68d69c5a0f94ce7d5ac636f5fd7b092d6179d44ecb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 294
+- progress  = 63.1 % 
+- chunk[0]  = 152
+- chunk[-1] = 154
+OK! filesize = 590000000, filesha256 = d690cd83b94ff9386eeed335c6e24b9301466030f219bab041b603cc2678b8c8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 295
+- progress  = 63.3 % 
+- chunk[0]  = 200
+- chunk[-1] = 121
+OK! filesize = 592000000, filesha256 = 4cbc1dd12d70f34ed239b7e878852ed20c1549c38e0273efb1d96226c0cebfa6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 296
+- progress  = 63.5 % 
+- chunk[0]  = 137
+- chunk[-1] = 108
+OK! filesize = 594000000, filesha256 = 0688524cb0a39f372da2de3b5a738743e8d4412f61e3e18b052033a9297e02e3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 297
+- progress  = 63.7 % 
+- chunk[0]  = 114
+- chunk[-1] = 197
+OK! filesize = 596000000, filesha256 = 570eee5bc37839b6331cc99a96bd56525ed87c8ae511cd04dd84ce4f08506705
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 298
+- progress  = 64.0 % 
+- chunk[0]  = 40
+- chunk[-1] = 99
+OK! filesize = 598000000, filesha256 = ae61f49ce99361d9b5340052196e05e968fc13379ca9dfd0718288fcbf08d05d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 299
+- progress  = 64.2 % 
+- chunk[0]  = 93
+- chunk[-1] = 133
+OK! filesize = 600000000, filesha256 = a5810b178b9bdaa12a295ccd5d72c72bb4daaad05238680fdebf9f1f1ae5d8de
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 300
+- progress  = 64.4 % 
+- chunk[0]  = 150
+- chunk[-1] = 149
+OK! filesize = 602000000, filesha256 = 005cc41965a3c220537f7caa9e129051f9c7f4d7e6fdcc16c4649e76d5fd053c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 301
+- progress  = 64.6 % 
+- chunk[0]  = 96
+- chunk[-1] = 137
+OK! filesize = 604000000, filesha256 = bddc0b205098675e970e7e09f738a9acd4e243cd23f0cfcb38fc6e0ca612f71e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 302
+- progress  = 64.8 % 
+- chunk[0]  = 192
+- chunk[-1] = 201
+OK! filesize = 606000000, filesha256 = ccf269fc22eb7e7e06b4dbbb2411849a524b36a306849834e36d72e9527d3a0d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 303
+- progress  = 65.0 % 
+- chunk[0]  = 156
+- chunk[-1] = 138
+OK! filesize = 608000000, filesha256 = edf11a6487d2684a5c7b22e0776414c1b8cee3e2e7e4e868df0aa433ca0a4a33
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 304
+- progress  = 65.2 % 
+- chunk[0]  = 182
+- chunk[-1] = 120
+OK! filesize = 610000000, filesha256 = 72abd94d0c1cbc06dd29fd5353adde057b053666856f6ef1cc928fc04ee915d7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 305
+- progress  = 65.5 % 
+- chunk[0]  = 136
+- chunk[-1] = 150
+OK! filesize = 612000000, filesha256 = ff81c19cc15cc05f69cc122039056485cfbb598db11a73d7d3a2cdf15bb81d15
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 306
+- progress  = 65.7 % 
+- chunk[0]  = 120
+- chunk[-1] = 156
+OK! filesize = 614000000, filesha256 = 5f3f87b4806b918d6f307c288407de84941225449c64f2cc3c256e962e6e6a4d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 307
+- progress  = 65.9 % 
+- chunk[0]  = 182
+- chunk[-1] = 185
+OK! filesize = 616000000, filesha256 = 006c02ebb94743b5f53737a8cdbccb42e4c7400d59e800498d0f5351e10e16fa
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 308
+- progress  = 66.1 % 
+- chunk[0]  = 192
+- chunk[-1] = 32
+OK! filesize = 618000000, filesha256 = c3c095349e3ce7df70960931e8adec2914e8735bc3cd463fae2a5597e6699500
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 309
+- progress  = 66.3 % 
+- chunk[0]  = 72
+- chunk[-1] = 132
+OK! filesize = 620000000, filesha256 = 68e8cb34728280a244509a739da765684aa296933f529700fe6d44cd516edab4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 310
+- progress  = 66.5 % 
+- chunk[0]  = 112
+- chunk[-1] = 187
+OK! filesize = 622000000, filesha256 = 35ef9cbeabb236cab04fb23b83e2a543ac3d52be9ed1a3e669aff53df46cf585
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 311
+- progress  = 66.7 % 
+- chunk[0]  = 202
+- chunk[-1] = 167
+OK! filesize = 624000000, filesha256 = 3adaf7e748ebf96f9452b36284647dad2f1beb3a0520d18aced1cd23d485abd2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 312
+- progress  = 67.0 % 
+- chunk[0]  = 80
+- chunk[-1] = 32
+OK! filesize = 626000000, filesha256 = fc12b8bd383ebdf8f761360d1e37c8dfa81fbcc56c6b145faa1eb3bf5cb4e663
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 313
+- progress  = 67.2 % 
+- chunk[0]  = 137
+- chunk[-1] = 55
+OK! filesize = 628000000, filesha256 = 3f9c8d4c163732b68432d6c6267af134bf2bf2c49bf6e4b7f0566f20dad882e7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 314
+- progress  = 67.4 % 
+- chunk[0]  = 102
+- chunk[-1] = 119
+OK! filesize = 630000000, filesha256 = 4d22ccfbe93ab306427b439a5248a0be7a677ac00f19dc4d3788b458a4fbfb9d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 315
+- progress  = 67.6 % 
+- chunk[0]  = 135
+- chunk[-1] = 8
+OK! filesize = 632000000, filesha256 = 70214c8ec5c7f2f77d7883b9040d2ff98a6f02f9bcde6e0748fe71021b62a546
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 316
+- progress  = 67.8 % 
+- chunk[0]  = 102
+- chunk[-1] = 173
+OK! filesize = 634000000, filesha256 = a3b23fb29dcad2ab1358b7cac8514f2156fce10fa65fc115ad5f255fe082524e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 317
+- progress  = 68.0 % 
+- chunk[0]  = 114
+- chunk[-1] = 119
+OK! filesize = 636000000, filesha256 = ae75600dbe3c9bc86f0c417600f128d973052f85784f4011ca72b4cb3b5c98c1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 318
+- progress  = 68.2 % 
+- chunk[0]  = 137
+- chunk[-1] = 136
+OK! filesize = 638000000, filesha256 = e55de0d6d198d4ec4619a034ede9fe59ef4676ba2f2e5c41f77960f277596507
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 319
+- progress  = 68.5 % 
+- chunk[0]  = 173
+- chunk[-1] = 230
+OK! filesize = 640000000, filesha256 = c1a2f6c6894a3c10ac2402fd1e6a3e96c7c20c21892895addff9466838eba1dd
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 320
+- progress  = 68.7 % 
+- chunk[0]  = 135
+- chunk[-1] = 153
+OK! filesize = 642000000, filesha256 = 5d83db6c96e13c36afac7a1723cbf4a30d4d4162c31f030bd74ce42044a58576
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 321
+- progress  = 68.9 % 
+- chunk[0]  = 58
+- chunk[-1] = 62
+OK! filesize = 644000000, filesha256 = b9f76d22db994ecfdac680e041a792d486a224a15342ea942d2228d5f282f87e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 322
+- progress  = 69.1 % 
+- chunk[0]  = 167
+- chunk[-1] = 147
+OK! filesize = 646000000, filesha256 = f17eb549a68496c871c6848c8e329490797d5022b2754b874f043e9bad70c83b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 323
+- progress  = 69.3 % 
+- chunk[0]  = 167
+- chunk[-1] = 133
+OK! filesize = 648000000, filesha256 = 776cb367c09f98cae0f61f334b34f8e2fc498a97e01a35ab21736e04a73f34c3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 324
+- progress  = 69.5 % 
+- chunk[0]  = 189
+- chunk[-1] = 137
+OK! filesize = 650000000, filesha256 = bef265688172e0a365e7912ee7eb30fd4ce19ed3409ea942411d0354188743d5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 325
+- progress  = 69.7 % 
+- chunk[0]  = 183
+- chunk[-1] = 116
+OK! filesize = 652000000, filesha256 = 6855a130d319004b7d25a885a59ee036ccecb817d23591a5bc2460080fd0c94b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 326
+- progress  = 69.9 % 
+- chunk[0]  = 61
+- chunk[-1] = 122
+OK! filesize = 654000000, filesha256 = f175dc59d9153c1893c9e61aeca703ad3a2001ac0fa9258b4b659170df6de0f6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 327
+- progress  = 70.2 % 
+- chunk[0]  = 148
+- chunk[-1] = 90
+OK! filesize = 656000000, filesha256 = 7746a5d16a9523f84f2fe95756912743dd5c59d4f7a1ff5877e2346ccf080401
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 328
+- progress  = 70.4 % 
+- chunk[0]  = 80
+- chunk[-1] = 160
+OK! filesize = 658000000, filesha256 = c77a09076b10f49a2b59a3490e32a43cdb9711fd5e9abab458f23ec509a6a440
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 329
+- progress  = 70.6 % 
+- chunk[0]  = 131
+- chunk[-1] = 118
+OK! filesize = 660000000, filesha256 = eafc1f23a9f31f1aa4b7944d0f92cc2e6dfa9016dc063149cd515f3c3f664f8f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 330
+- progress  = 70.8 % 
+- chunk[0]  = 170
+- chunk[-1] = 166
+OK! filesize = 662000000, filesha256 = 31a930d5d288e95415f5770e93bc99f6fbf423144db99b4a5c2a5ae8cbe043df
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 331
+- progress  = 71.0 % 
+- chunk[0]  = 122
+- chunk[-1] = 32
+OK! filesize = 664000000, filesha256 = cd46204f723ddc04b2429097aea33ecf5d519a1fa24fdee432a5c69486699037
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 332
+- progress  = 71.2 % 
+- chunk[0]  = 155
+- chunk[-1] = 151
+OK! filesize = 666000000, filesha256 = fb0a88b3cbfff478298583f8ef02bce4be165c40683716a93e6691ca6fe525b3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 333
+- progress  = 71.4 % 
+- chunk[0]  = 188
+- chunk[-1] = 138
+OK! filesize = 668000000, filesha256 = ae52011ef58c3d0811df9edc1fb252e1ee85f961755477147b153488f92bff4e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 334
+- progress  = 71.7 % 
+- chunk[0]  = 133
+- chunk[-1] = 132
+OK! filesize = 670000000, filesha256 = 8025724bb2de96a8ec2ed1fb5370837fc0bd52f33adda52456a31a994e5f0c3a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 335
+- progress  = 71.9 % 
+- chunk[0]  = 184
+- chunk[-1] = 170
+OK! filesize = 672000000, filesha256 = fb9d91132f82c3a58ed5ca29e7edabec4c1ab491a78a3bea2b791f0219f7fe19
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 336
+- progress  = 72.1 % 
+- chunk[0]  = 130
+- chunk[-1] = 160
+OK! filesize = 674000000, filesha256 = 1aa4e8194fe6d35c0f89b8ee892a5c3985667964392a0ef11cee366907b6117f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 337
+- progress  = 72.3 % 
+- chunk[0]  = 169
+- chunk[-1] = 168
+OK! filesize = 676000000, filesha256 = 472ec84d35784129b08343ca019786bb07f01fca510db6dbae743af4f38dd114
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 338
+- progress  = 72.5 % 
+- chunk[0]  = 27
+- chunk[-1] = 202
+OK! filesize = 678000000, filesha256 = f1fee81d6cc1519bf2f2ae3220fdbf4dbb4eaee169f9a41150748a7ee7981992
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 339
+- progress  = 72.7 % 
+- chunk[0]  = 182
+- chunk[-1] = 39
+OK! filesize = 680000000, filesha256 = 8cd806a9c20462aa8424491037785213fbf5a20f0ec273432c800e5e6a7d4563
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 340
+- progress  = 72.9 % 
+- chunk[0]  = 83
+- chunk[-1] = 2
+OK! filesize = 682000000, filesha256 = 5a41dc0c71570a5ef27375136855f63b282e46c29279f26d5514a3e105b71008
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 341
+- progress  = 73.2 % 
+- chunk[0]  = 159
+- chunk[-1] = 205
+OK! filesize = 684000000, filesha256 = 0420ca45fd1a8d549a68a3c078b27032540e1651a0b81d6a550836f728e998ca
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 342
+- progress  = 73.4 % 
+- chunk[0]  = 103
+- chunk[-1] = 119
+OK! filesize = 686000000, filesha256 = 5e742beef0a397358d1cc1c4bbd8427147b98cfce6d6b31a492c0023750d29bf
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 343
+- progress  = 73.6 % 
+- chunk[0]  = 122
+- chunk[-1] = 90
+OK! filesize = 688000000, filesha256 = c5a4e76ad0714cdafdadfac81d79763fef25d10b81c28ebc985312d38f672391
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 344
+- progress  = 73.8 % 
+- chunk[0]  = 8
+- chunk[-1] = 162
+OK! filesize = 690000000, filesha256 = eac72596b10ae0a402310413df18683e10c20dcb4f80127400b24ecdf5ae3f6b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 345
+- progress  = 74.0 % 
+- chunk[0]  = 170
+- chunk[-1] = 7
+OK! filesize = 692000000, filesha256 = 7ede4034df1a6788be6529f45b9cb08e5a88d9ad5ba9228f97032d10b22fd4c0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 346
+- progress  = 74.2 % 
+- chunk[0]  = 194
+- chunk[-1] = 106
+OK! filesize = 694000000, filesha256 = daeaf7ef0f6f39c85bebe1f7b0076ea5306c952433f0cf0c9f94b4ca6fbaa3c5
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 347
+- progress  = 74.4 % 
+- chunk[0]  = 168
+- chunk[-1] = 30
+OK! filesize = 696000000, filesha256 = d9eead43926d4a5a5928c2661f8f2134c397260e01cd637816e4117ae3d467d3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 348
+- progress  = 74.7 % 
+- chunk[0]  = 171
+- chunk[-1] = 253
+OK! filesize = 698000000, filesha256 = 3cc80ac94492dad19a1cac5a140bccac2ba567204f4934105bd17197b8d809b1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 349
+- progress  = 74.9 % 
+- chunk[0]  = 114
+- chunk[-1] = 117
+OK! filesize = 700000000, filesha256 = 1d05281a953b5c472392e8eaf0ce27170fe4854b54cf8b65496e92856806263f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 350
+- progress  = 75.1 % 
+- chunk[0]  = 89
+- chunk[-1] = 169
+OK! filesize = 702000000, filesha256 = e15ca6f76dc4aeae9200659063a275d347db50f36c1b43fcc212f3199d0ecd62
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 351
+- progress  = 75.3 % 
+- chunk[0]  = 184
+- chunk[-1] = 162
+OK! filesize = 704000000, filesha256 = b08c9244cd03e53c551f3486c01778fe868d2034a4462f2a6cf672573750ed79
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 352
+- progress  = 75.5 % 
+- chunk[0]  = 136
+- chunk[-1] = 101
+OK! filesize = 706000000, filesha256 = e58b863c4db068c29e97e2ec96f07110318f41afcb750b4af6e7a453d7b56f5a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 353
+- progress  = 75.7 % 
+- chunk[0]  = 134
+- chunk[-1] = 138
+OK! filesize = 708000000, filesha256 = f2d8e2668aa727d11f15b6c0348cd64ee7f2ecdf8c32c52e524c6e159e00b925
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 354
+- progress  = 75.9 % 
+- chunk[0]  = 132
+- chunk[-1] = 169
+OK! filesize = 710000000, filesha256 = ff0909e57eaba02427747fac7c8dfb20b1375d680d36a233b5c7397ea019a7e3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 355
+- progress  = 76.2 % 
+- chunk[0]  = 92
+- chunk[-1] = 184
+OK! filesize = 712000000, filesha256 = b4f8e8867866ac9678bc4a582127e5ab71bfa42724c77469b8fb15675844fc24
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 356
+- progress  = 76.4 % 
+- chunk[0]  = 136
+- chunk[-1] = 57
+OK! filesize = 714000000, filesha256 = cbd73c3b915af56ab09103dbe01f87993f565462af9c2b3bde0bd86e45d9f18e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 357
+- progress  = 76.6 % 
+- chunk[0]  = 200
+- chunk[-1] = 188
+OK! filesize = 716000000, filesha256 = 842bd42cc5c5486dc6759336254e788859d1db5509b2ad63436826f273e1e9ec
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 358
+- progress  = 76.8 % 
+- chunk[0]  = 139
+- chunk[-1] = 164
+OK! filesize = 718000000, filesha256 = 4a62f8b85856c262c78deef26a3c18e501244f0e64099624fac192c85d142e00
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 359
+- progress  = 77.0 % 
+- chunk[0]  = 88
+- chunk[-1] = 194
+OK! filesize = 720000000, filesha256 = ff0b1b35cf0a8af2d0ac3d9233431a9619b337e06a9ae0cc0fd91d6345f337ae
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 360
+- progress  = 77.2 % 
+- chunk[0]  = 184
+- chunk[-1] = 181
+OK! filesize = 722000000, filesha256 = e8409adf64afe07c0635f34de38a0f6f91d345495d75a5e770b425842d2d81cb
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 361
+- progress  = 77.4 % 
+- chunk[0]  = 213
+- chunk[-1] = 103
+OK! filesize = 724000000, filesha256 = 4c049febfbd1f8cccaa01e2906d24e44c6ebe84b31d464ec3ad48e19ef42ed05
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 362
+- progress  = 77.7 % 
+- chunk[0]  = 114
+- chunk[-1] = 199
+OK! filesize = 726000000, filesha256 = 1a0132f779d4e71d66dce120028f73d4c01d9e1b77d925b531fcbe6c811894ce
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 363
+- progress  = 77.9 % 
+- chunk[0]  = 168
+- chunk[-1] = 90
+OK! filesize = 728000000, filesha256 = 1e40cf921c492fd1631a1a178f1c4a91b3adb600673348dbea0a7d8b7c4bd5dc
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 364
+- progress  = 78.1 % 
+- chunk[0]  = 65
+- chunk[-1] = 73
+OK! filesize = 730000000, filesha256 = f1f75d1e28a995fd3bad81e4f0e62a50000dc91d1e1112e9b2b4ac07dc875ad6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 365
+- progress  = 78.3 % 
+- chunk[0]  = 166
+- chunk[-1] = 124
+OK! filesize = 732000000, filesha256 = d611b610612d68d5e82293f4a46572ab99782fcc21b9929546ce523984d025ca
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 366
+- progress  = 78.5 % 
+- chunk[0]  = 140
+- chunk[-1] = 118
+OK! filesize = 734000000, filesha256 = d0b786d01fbf2ff712845fb0a036668869e6f3856583f24308ad251f9f08abaa
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 367
+- progress  = 78.7 % 
+- chunk[0]  = 112
+- chunk[-1] = 27
+OK! filesize = 736000000, filesha256 = 53ffd1aa82ca9f9dc2e4e7746e1f5a720ddae28768a9ecc0fbdf36eba35a35c4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 368
+- progress  = 78.9 % 
+- chunk[0]  = 155
+- chunk[-1] = 94
+OK! filesize = 738000000, filesha256 = df781224e40f99dfa0f80b78b9b199a5f6651ec07487fbc19ec6298c68e6361a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 369
+- progress  = 79.1 % 
+- chunk[0]  = 231
+- chunk[-1] = 162
+OK! filesize = 740000000, filesha256 = 8b25d9521eb2c8fd7ada32c767ba669681c7e029427c6c834fa01e9dc4ac7c1d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 370
+- progress  = 79.4 % 
+- chunk[0]  = 42
+- chunk[-1] = 218
+OK! filesize = 742000000, filesha256 = 534e8fc3db1ab071bf20e14caec670c0eef3edadea620828d6e3c5827cbddff0
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 371
+- progress  = 79.6 % 
+- chunk[0]  = 226
+- chunk[-1] = 166
+OK! filesize = 744000000, filesha256 = 05ae246ed18ce5f53f78540cdb289d250f3791a0d082c5fed16d712945ea052a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 372
+- progress  = 79.8 % 
+- chunk[0]  = 129
+- chunk[-1] = 74
+OK! filesize = 746000000, filesha256 = 8f06501bf829af4a88c0e5e40517ec18270f24282eb2685109c067fe2045fc36
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 373
+- progress  = 80.0 % 
+- chunk[0]  = 124
+- chunk[-1] = 135
+OK! filesize = 748000000, filesha256 = 78f2a27605c526a67d0827fba67da2b87b0afb36311a7ad79920a4eb9e2b8e6e
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 374
+- progress  = 80.2 % 
+- chunk[0]  = 145
+- chunk[-1] = 150
+OK! filesize = 750000000, filesha256 = e3aaa10aea614c5ed76509b2a68f105e1507d664079adfc66691f0edde008e8c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 375
+- progress  = 80.4 % 
+- chunk[0]  = 49
+- chunk[-1] = 152
+OK! filesize = 752000000, filesha256 = dd78b5304e21f055cbdc2544cb14dbc712c7da420911deb38c1e0e9ad7525836
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 376
+- progress  = 80.6 % 
+- chunk[0]  = 173
+- chunk[-1] = 203
+OK! filesize = 754000000, filesha256 = d93dabb6638a19acd17f8cc559e3b5a2ed1c9f71bcc0d29fc4f5a344dc384a8f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 377
+- progress  = 80.9 % 
+- chunk[0]  = 140
+- chunk[-1] = 38
+OK! filesize = 756000000, filesha256 = c2161bca4c206366bf32c2460795ba8ba1449488672c8ba4bceea7c9b4a0de51
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 378
+- progress  = 81.1 % 
+- chunk[0]  = 140
+- chunk[-1] = 150
+OK! filesize = 758000000, filesha256 = dd5efd3fa3c6f9aca5955f4657b93d9567f188147dd48bdccca7e3e13fb53eb6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 379
+- progress  = 81.3 % 
+- chunk[0]  = 183
+- chunk[-1] = 109
+OK! filesize = 760000000, filesha256 = e0523aecc123b90a008dba5607277f897a413cf5599bb1ebddcad1fa7aee283f
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 380
+- progress  = 81.5 % 
+- chunk[0]  = 133
+- chunk[-1] = 145
+OK! filesize = 762000000, filesha256 = 3574548e3a857582f5a91464c36ab804d2f25788b3fdda1a98b3e0a579671f28
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 381
+- progress  = 81.7 % 
+- chunk[0]  = 110
+- chunk[-1] = 105
+OK! filesize = 764000000, filesha256 = 70b42e8c021cee989f958eebe3423752c0a4b0a5bf8191ca13ac3bba9b92739c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 382
+- progress  = 81.9 % 
+- chunk[0]  = 154
+- chunk[-1] = 114
+OK! filesize = 766000000, filesha256 = de7aaaf9524dab4ca6ca6745e52a7927fbcace84a797dc78fe4f08e2eac6e762
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 383
+- progress  = 82.1 % 
+- chunk[0]  = 160
+- chunk[-1] = 159
+OK! filesize = 768000000, filesha256 = a26d07a0a33ce1e86787ee64d6314727fa57a3d819df75ad56e7c5d3a615d948
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 384
+- progress  = 82.4 % 
+- chunk[0]  = 224
+- chunk[-1] = 87
+OK! filesize = 770000000, filesha256 = a0412390cbe7004d6de2b1710e77b9847063aa469e01993378c249c4ede0b2ed
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 385
+- progress  = 82.6 % 
+- chunk[0]  = 185
+- chunk[-1] = 57
+OK! filesize = 772000000, filesha256 = cacb8745ac69c632e673af193e5bbf53cc158d31bb5fa66829f8f1a21948c305
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 386
+- progress  = 82.8 % 
+- chunk[0]  = 104
+- chunk[-1] = 32
+OK! filesize = 774000000, filesha256 = 6043a93371e6b03981f296540b36a41c10bc4702ac21e1c52447e8886ed729ab
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 387
+- progress  = 83.0 % 
+- chunk[0]  = 102
+- chunk[-1] = 107
+OK! filesize = 776000000, filesha256 = 57de735b08364cd10687cc17a4ce25f567ce345496c655cdae39d0de59661fa6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 388
+- progress  = 83.2 % 
+- chunk[0]  = 13
+- chunk[-1] = 32
+OK! filesize = 778000000, filesha256 = dec00854ec0d749ed951a44a18f9399177f5d72f3409e2faf159e631e77dce3d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 389
+- progress  = 83.4 % 
+- chunk[0]  = 137
+- chunk[-1] = 105
+OK! filesize = 780000000, filesha256 = 5ab4005e7abb0a1fd89557234b597ef472487d905814283dbcc05e159f6164ce
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 390
+- progress  = 83.6 % 
+- chunk[0]  = 232
+- chunk[-1] = 30
+OK! filesize = 782000000, filesha256 = 0e932100a3b3444171046ee802de05e4b03086fb040e37fef80fc834b7b2468c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 391
+- progress  = 83.9 % 
+- chunk[0]  = 213
+- chunk[-1] = 195
+OK! filesize = 784000000, filesha256 = b6f0ad8d4364416d2279624ef360d4ee989077a9388c74d865a3c90a469d7930
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 392
+- progress  = 84.1 % 
+- chunk[0]  = 202
+- chunk[-1] = 90
+OK! filesize = 786000000, filesha256 = 2f970b83fe44fe3d982b8b42085c0b184294c3172f3a2b482318e33c93219b0b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 393
+- progress  = 84.3 % 
+- chunk[0]  = 106
+- chunk[-1] = 171
+OK! filesize = 788000000, filesha256 = d3e51413cb72f378eb24c063bf38982ae806e992ff4d0e7e114d45e0b495532a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 394
+- progress  = 84.5 % 
+- chunk[0]  = 68
+- chunk[-1] = 136
+OK! filesize = 790000000, filesha256 = af4c93ecc5eaa06614d2c355ca85427df3e800598e36a8694174a36bf2bb7aa9
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 395
+- progress  = 84.7 % 
+- chunk[0]  = 35
+- chunk[-1] = 142
+OK! filesize = 792000000, filesha256 = 5b55c9cdaa652282c57e111541a84f066698443c797484e73d11c20733e92774
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 396
+- progress  = 84.9 % 
+- chunk[0]  = 151
+- chunk[-1] = 3
+OK! filesize = 794000000, filesha256 = 9e1b1a15a8f263d3a12f79932b7b10e8d0fe57039c70f9406e5e380c9168b0c6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 397
+- progress  = 85.1 % 
+- chunk[0]  = 182
+- chunk[-1] = 4
+OK! filesize = 796000000, filesha256 = 90e1ce5649026257c5fe5681b5ce1c31158b57822df45b8ffdc29756cda29301
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 398
+- progress  = 85.4 % 
+- chunk[0]  = 62
+- chunk[-1] = 136
+OK! filesize = 798000000, filesha256 = 117533a1cc4f52e45836bfdf98a4dd2db58ae82fe533e4d8a71ec0f3d75a6575
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 399
+- progress  = 85.6 % 
+- chunk[0]  = 167
+- chunk[-1] = 208
+OK! filesize = 800000000, filesha256 = f87aafdc1f3dff8f21f29dc6f87b8135040d28cef1ceb5a52af146c25ee14350
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 400
+- progress  = 85.8 % 
+- chunk[0]  = 243
+- chunk[-1] = 137
+OK! filesize = 802000000, filesha256 = d3388c2ee4ce004f82ca2424dada3c92044563bdd7448377fb9d340438e1370d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 401
+- progress  = 86.0 % 
+- chunk[0]  = 128
+- chunk[-1] = 155
+OK! filesize = 804000000, filesha256 = c7d866a3e9c59ad5239d09bff541ca82d9555a54f68417f0e82997ecc6cd0b87
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 402
+- progress  = 86.2 % 
+- chunk[0]  = 40
+- chunk[-1] = 121
+OK! filesize = 806000000, filesha256 = 64983520d66d34ac3ba1b0fbc3ceda4aa6aaecf4171a5d9d22bab3fe9174ac4c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 403
+- progress  = 86.4 % 
+- chunk[0]  = 200
+- chunk[-1] = 213
+OK! filesize = 808000000, filesha256 = 356f51faae5f32e37c2719ff4a8d4a7001afa761ac41cd587269d2b62760fae3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 404
+- progress  = 86.6 % 
+- chunk[0]  = 137
+- chunk[-1] = 152
+OK! filesize = 810000000, filesha256 = 944a8bcdb23bf362ebc7f962943f2df504268e96981b1a2177269d8e40aa8b89
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 405
+- progress  = 86.8 % 
+- chunk[0]  = 143
+- chunk[-1] = 151
+OK! filesize = 812000000, filesha256 = 12e62e3a878f62eda32038cb0a38d1fab1e3b21b91282e6271833d5a2e49467a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 406
+- progress  = 87.1 % 
+- chunk[0]  = 24
+- chunk[-1] = 32
+OK! filesize = 814000000, filesha256 = c4d19fa82adb8d8107046f680c4db43afeb05c0516a9ff62d508faf9780d3a96
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 407
+- progress  = 87.3 % 
+- chunk[0]  = 103
+- chunk[-1] = 91
+OK! filesize = 816000000, filesha256 = 2a30f84d1ec96a3e346168c24f782959ad42e6c7418b6315931921283d485b48
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 408
+- progress  = 87.5 % 
+- chunk[0]  = 156
+- chunk[-1] = 58
+OK! filesize = 818000000, filesha256 = 710ddcc7d6e5a5fcd71b8fb3aafd78accb48748fe9db2cdbe558aadd737be6af
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 409
+- progress  = 87.7 % 
+- chunk[0]  = 73
+- chunk[-1] = 200
+OK! filesize = 820000000, filesha256 = fcdd17c4f2dd74383646ea00f2b50ed188bce2bfb756d1d05f34838a5b46549a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 410
+- progress  = 87.9 % 
+- chunk[0]  = 198
+- chunk[-1] = 120
+OK! filesize = 822000000, filesha256 = cccab0639ea2d634b9d0d0474eb97610530e421d94e64b67c31bd66d8b3d45b1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 411
+- progress  = 88.1 % 
+- chunk[0]  = 136
+- chunk[-1] = 39
+OK! filesize = 824000000, filesha256 = b4772194c28c4a5e38e23777fded2fd177b11684045546397a883e07b70da191
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 412
+- progress  = 88.3 % 
+- chunk[0]  = 28
+- chunk[-1] = 185
+OK! filesize = 826000000, filesha256 = e1123a425d8c8885c493947790c20990e605b221d654472f670b2e37c71833da
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 413
+- progress  = 88.6 % 
+- chunk[0]  = 90
+- chunk[-1] = 158
+OK! filesize = 828000000, filesha256 = 68172f4876f1e1ba5edb3aa9b1cb60e16f1aa67d4f0e309068bc240529cf94c3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 414
+- progress  = 88.8 % 
+- chunk[0]  = 219
+- chunk[-1] = 172
+OK! filesize = 830000000, filesha256 = 78cce3a5fa35241bda99f2ba7cd35b3cc84148a97fdc1e991c8dd36b7bfd8802
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 415
+- progress  = 89.0 % 
+- chunk[0]  = 183
+- chunk[-1] = 118
+OK! filesize = 832000000, filesha256 = 6dc6695889f3c641f21af430e141f948b9878a171e14cb924901573db6e1a8bc
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 416
+- progress  = 89.2 % 
+- chunk[0]  = 120
+- chunk[-1] = 150
+OK! filesize = 834000000, filesha256 = 8db073d37f4cde45677db58f415dc6a1b13996dd2dfe398e51946319c60e1f3d
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 417
+- progress  = 89.4 % 
+- chunk[0]  = 196
+- chunk[-1] = 148
+OK! filesize = 836000000, filesha256 = 8f905fd9f2b40d6d2653bb4994954ceb2a76de944274b2f1557924ca2c091bce
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 418
+- progress  = 89.6 % 
+- chunk[0]  = 170
+- chunk[-1] = 151
+OK! filesize = 838000000, filesha256 = 299b3ba9ea92cc02196d6e30bb232de006b9179d223841620019249520dcc65c
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 419
+- progress  = 89.8 % 
+- chunk[0]  = 167
+- chunk[-1] = 118
+OK! filesize = 840000000, filesha256 = 608b16f23a1e0eaf057cf354ab70753d0f9db9e8a536835a5c8b1b5f6b712742
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 420
+- progress  = 90.1 % 
+- chunk[0]  = 166
+- chunk[-1] = 162
+OK! filesize = 842000000, filesha256 = 4bd9c1649560d82c47ec9b760175be02cb6e3de6d28055f7411771ee20b17cf1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 421
+- progress  = 90.3 % 
+- chunk[0]  = 104
+- chunk[-1] = 92
+OK! filesize = 844000000, filesha256 = f067b522d7e02b3c9ad3e24d6fe615bca56e44fca9ad78219889bcae405b5114
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 422
+- progress  = 90.5 % 
+- chunk[0]  = 32
+- chunk[-1] = 158
+OK! filesize = 846000000, filesha256 = 1dee800dda75007ca88e354ebfae17f9d3c8351d7d2556564b80f931ba6be68a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 423
+- progress  = 90.7 % 
+- chunk[0]  = 133
+- chunk[-1] = 217
+OK! filesize = 848000000, filesha256 = b0fa1080f1768e38a129a7d94744cfe0cd994ce82af4b235059274625a336eb1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 424
+- progress  = 90.9 % 
+- chunk[0]  = 5
+- chunk[-1] = 157
+OK! filesize = 850000000, filesha256 = 9b17f7ddb2cf328c5e6a0e74ffcb790813af11d9379a4950cd3eb0ff484803a4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 425
+- progress  = 91.1 % 
+- chunk[0]  = 128
+- chunk[-1] = 160
+OK! filesize = 852000000, filesha256 = 7a7ec046ca2a7baef7759b919f921be8870749946f76bc665e0e40a1d45d2fbc
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 426
+- progress  = 91.3 % 
+- chunk[0]  = 152
+- chunk[-1] = 116
+OK! filesize = 854000000, filesha256 = b30a2ea6baa1a0ab13ba102b4ec75a268b6f912602cf9c85fff1aa90edf688c7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 427
+- progress  = 91.6 % 
+- chunk[0]  = 108
+- chunk[-1] = 98
+OK! filesize = 856000000, filesha256 = 50a3445ccb195c251322fb733274ef45974dde8fa552f9dcd677b82d741fe5c4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 428
+- progress  = 91.8 % 
+- chunk[0]  = 162
+- chunk[-1] = 4
+OK! filesize = 858000000, filesha256 = c7e2149adcefc5a6cdb985434848e6419b111e2fe944b622572081d77b133358
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 429
+- progress  = 92.0 % 
+- chunk[0]  = 229
+- chunk[-1] = 33
+OK! filesize = 860000000, filesha256 = 70c4420d48b6eb3a9d75910bebd91e87de1fc74f6b7d0c323dcd95d6cbb2dfec
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 430
+- progress  = 92.2 % 
+- chunk[0]  = 107
+- chunk[-1] = 109
+OK! filesize = 862000000, filesha256 = 117b126c330c386a44a1089dbdb9b09886520445391896fadab08bc27c4e617a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 431
+- progress  = 92.4 % 
+- chunk[0]  = 84
+- chunk[-1] = 155
+OK! filesize = 864000000, filesha256 = f80a62845933821d891f6fcaa51b5bb1576648238353faeb88e7582d3a057d36
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 432
+- progress  = 92.6 % 
+- chunk[0]  = 138
+- chunk[-1] = 117
+OK! filesize = 866000000, filesha256 = be376a3007b619f05c2e3b5be6859fc123c5040c3e5e077bf39d7f86904db691
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 433
+- progress  = 92.8 % 
+- chunk[0]  = 8
+- chunk[-1] = 138
+OK! filesize = 868000000, filesha256 = 211873afd79d6df99f10c84e1e152505b6c3cf91afd443d975b6de965755d29b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 434
+- progress  = 93.1 % 
+- chunk[0]  = 113
+- chunk[-1] = 134
+OK! filesize = 870000000, filesha256 = 38ef18bafd07f2a8bec45f6eb05e960a4c047b9d5a35b560dfa8cadd42d718af
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 435
+- progress  = 93.3 % 
+- chunk[0]  = 169
+- chunk[-1] = 143
+OK! filesize = 872000000, filesha256 = 58b53dfddac66dd42356c479d09dbafacfd538da60dbebb39c7eac2f34600ce4
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 436
+- progress  = 93.5 % 
+- chunk[0]  = 122
+- chunk[-1] = 81
+OK! filesize = 874000000, filesha256 = 8979b930957bbf1e0e1a5f660d8da350c19cbf89f0e8aa9ea5ef839c91d4d6d2
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 437
+- progress  = 93.7 % 
+- chunk[0]  = 172
+- chunk[-1] = 152
+OK! filesize = 876000000, filesha256 = deb21088d40c718f23e73d7b2c2166e7fc177f10a9d8919b956f8beb240c2313
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 438
+- progress  = 93.9 % 
+- chunk[0]  = 229
+- chunk[-1] = 199
+OK! filesize = 878000000, filesha256 = 8dbdcdcb8b737392d514a7b51b716576387e69853b7dc5a732bdb3705cc855ae
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 439
+- progress  = 94.1 % 
+- chunk[0]  = 197
+- chunk[-1] = 109
+OK! filesize = 880000000, filesha256 = 134206adb0f6b4d1ea3f90d314abbfaa7caee653d7d4c392d7da13a0d334d976
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 440
+- progress  = 94.3 % 
+- chunk[0]  = 104
+- chunk[-1] = 168
+OK! filesize = 882000000, filesha256 = 2660af5577222f95286fc4e6940a51412caf9398365563c2b789b6fa4ea8c519
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 441
+- progress  = 94.6 % 
+- chunk[0]  = 72
+- chunk[-1] = 113
+OK! filesize = 884000000, filesha256 = 75c05c5130626d8e7dcaa60c39ff1fb4a357ab433e93c17f7757fbe488ac06a3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 442
+- progress  = 94.8 % 
+- chunk[0]  = 108
+- chunk[-1] = 85
+OK! filesize = 886000000, filesha256 = 8b6f310de3e23eadaed1f3a0e738067da0af4b9daefbd9d13400445d8b84235b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 443
+- progress  = 95.0 % 
+- chunk[0]  = 62
+- chunk[-1] = 11
+OK! filesize = 888000000, filesha256 = d67c03eccc823bc3578834bbcc7d30eb88d162fd847b8481e7c39e137ece58b8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 444
+- progress  = 95.2 % 
+- chunk[0]  = 117
+- chunk[-1] = 168
+OK! filesize = 890000000, filesha256 = 52d0badb8a364aac63c36bffa3c376f6d4399e74e7f00b6ac12d20a65eb9f1fa
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 445
+- progress  = 95.4 % 
+- chunk[0]  = 104
+- chunk[-1] = 162
+OK! filesize = 892000000, filesha256 = a63be2cfd09c12b0bfe7407e9c081eed9aefe4b668e401d3854393bdbf31ab86
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 446
+- progress  = 95.6 % 
+- chunk[0]  = 197
+- chunk[-1] = 152
+OK! filesize = 894000000, filesha256 = b72ac9c55454882f5aaee53c6f23eeb5697b9f67f9b1cfa72703aa8558b54311
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 447
+- progress  = 95.8 % 
+- chunk[0]  = 178
+- chunk[-1] = 136
+OK! filesize = 896000000, filesha256 = 83b88a383b5f3817177bbd4810a8e61025d12edbb3386224379b20f90b872567
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 448
+- progress  = 96.0 % 
+- chunk[0]  = 4
+- chunk[-1] = 134
+OK! filesize = 898000000, filesha256 = 1064dccb64613b4fbab5394ce551b4853e3665940c6b174031f626eee908b959
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 449
+- progress  = 96.3 % 
+- chunk[0]  = 152
+- chunk[-1] = 124
+OK! filesize = 900000000, filesha256 = f55a6a56145ce239b0f6d91b65bf2cd9b6db17b516f0cae4c663de85db15b2be
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 450
+- progress  = 96.5 % 
+- chunk[0]  = 172
+- chunk[-1] = 138
+OK! filesize = 902000000, filesha256 = c2091283034b08cc9614aa221773f4ee6563209f38d9ca28485b9ab5589b3a85
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 451
+- progress  = 96.7 % 
+- chunk[0]  = 57
+- chunk[-1] = 183
+OK! filesize = 904000000, filesha256 = b336872a086195858a6dd889ee0d2dc897c2832584442dc2e779dc2805cc0fa6
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 452
+- progress  = 96.9 % 
+- chunk[0]  = 138
+- chunk[-1] = 112
+OK! filesize = 906000000, filesha256 = 3be874ac438846dffde8ed2b9ab7c3f8e5cdb79929c236a6af2557290ece04ad
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 453
+- progress  = 97.1 % 
+- chunk[0]  = 137
+- chunk[-1] = 110
+OK! filesize = 908000000, filesha256 = 928ae18be5ffeb12083cb2c7ae1fea5c6352afd429cedb4f316a33963d048c4b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 454
+- progress  = 97.3 % 
+- chunk[0]  = 121
+- chunk[-1] = 116
+OK! filesize = 910000000, filesha256 = f062485e90befd315f183b2e090547d6e3e53755d13160df753ca92a149fa70b
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 455
+- progress  = 97.5 % 
+- chunk[0]  = 184
+- chunk[-1] = 86
+OK! filesize = 912000000, filesha256 = e598cbe404f417ef2716725af7e77fc202f53b42b16be1e4aa01fdc04b96a0b7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 456
+- progress  = 97.8 % 
+- chunk[0]  = 138
+- chunk[-1] = 106
+OK! filesize = 914000000, filesha256 = d8a69e8f25a58b5b56804ff5f0bc8dc7e12a4710fff082498ffc0159637bf8bf
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 457
+- progress  = 98.0 % 
+- chunk[0]  = 184
+- chunk[-1] = 148
+OK! filesize = 916000000, filesha256 = 11300cb1c8b9c997ff5396a52edc467f0c1af30c81ff5fc4e488a3b95cb785db
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 458
+- progress  = 98.2 % 
+- chunk[0]  = 71
+- chunk[-1] = 86
+OK! filesize = 918000000, filesha256 = 69f850be076731ea48f5f384a7b085ff082c881cdb862fd3d852110dd8f0289a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 459
+- progress  = 98.4 % 
+- chunk[0]  = 204
+- chunk[-1] = 71
+OK! filesize = 920000000, filesha256 = 56e9f6541d70fc12b67a73748d8783cae46757925e3d49e256f74ecd3af6a9c3
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 460
+- progress  = 98.6 % 
+- chunk[0]  = 58
+- chunk[-1] = 122
+OK! filesize = 922000000, filesha256 = c48cef6165c209f472017b2302b3044e4edf579f64bf4cd4d72b5bf9125228db
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 461
+- progress  = 98.8 % 
+- chunk[0]  = 248
+- chunk[-1] = 160
+OK! filesize = 924000000, filesha256 = 47a379888bbc52d6c7b9a579da3004a9e37c1f55fef09225c60434f6f3a91fe7
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 462
+- progress  = 99.0 % 
+- chunk[0]  = 164
+- chunk[-1] = 222
+OK! filesize = 926000000, filesha256 = 242987f4ba2ec9a39e2a357998e1bd2fc615740ebd053212794581757100846a
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 463
+- progress  = 99.3 % 
+- chunk[0]  = 217
+- chunk[-1] = 117
+OK! filesize = 928000000, filesha256 = 25e21669ae7f9930398784d8f95ec8bb5f748d6bb4e13816820f6604f640f3c8
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 464
+- progress  = 99.5 % 
+- chunk[0]  = 240
+- chunk[-1] = 160
+OK! filesize = 930000000, filesha256 = 7f075124783ed0ec087d3179eb22ee71d5e71b63d650cb1da88d52bf0a60f674
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 465
+- progress  = 99.7 % 
+- chunk[0]  = 203
+- chunk[-1] = 151
+OK! filesize = 932000000, filesha256 = 1f8ad01eb2c9566aba660b49efa84892d77f5f1424d28384c83e73053839b129
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 2000000 bytes :
+- i         = 466
+- progress  = 99.9 % 
+- chunk[0]  = 151
+- chunk[-1] = 221
+OK! filesize = 934000000, filesha256 = bb048a94a0fb7690c01d18a94b9a5a9ded10f37d874a91fd5f6ea725eec3ccea
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending another chunk for 954624 bytes :
+- i         = 467
+- progress  = 100.0 % 
+- chunk[0]  = 72
+- chunk[-1] = 200
+OK! filesize = 934954624, filesha256 = dca4b41e255d5ca266dd2335af0ca117922353f83640a5fabc585651a031deb9
+--
+Congratulations, the file llama_cpp_canister/models/qwen15-q4.gguf was uploaded and the filesize & sha256 are correct!
+- canister_filesize: 934954624
+- local_file_size: 934954624
+- canister_filesha256: dca4b41e255d5ca266dd2335af0ca117922353f83640a5fabc585651a031deb9
+--
+Verifying that the file was uploaded correctly
+Waiting 5 seconds before next call, to ensure the upload calls are done.
+OK! filesize = 934954624, filesha256 = dca4b41e255d5ca266dd2335af0ca117922353f83640a5fabc585651a031deb9
+💯 🎉 🏁

@@ -1,0 +1,7 @@
+scope,estimator,n_models,n_families,alpha_eff
+All families,Median,13,9,1.54
+All families,Mean,13,9,1.5963
+All families,Huber M-estimator,13,9,3.4578
+Modern families,Median,11,8,1.527
+Modern families,Mean,11,8,1.5256
+Legacy (GPT-2),Median,2,1,1.985

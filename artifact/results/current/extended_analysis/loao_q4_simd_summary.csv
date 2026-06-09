@@ -1,0 +1,7 @@
+held_out_arch,n_models,alpha_train,mean_abs_rel_error,max_abs_rel_error
+gpt2,2,1.54,0.28885,0.3309
+gpt_neox,2,1.54,0.05495,0.107
+llama,3,1.675,0.11183333333333334,0.1413
+openelm,1,1.54,0.0689,0.0689
+qwen2,1,1.595,0.0599,0.0599
+OVERALL,9,,0.12798888888888887,0.3309

@@ -1,0 +1,31 @@
+# TriLM 3.9B TQ2_0 — Swiss Subnet mainnet binary search
+# Date: 2026-04-19
+# Canister: u2pva-3iaaa-aaaax-qaa7a-cai (SSN mainnet, 13-node, --network ic)
+# Model: same GGUF as local (sha256 8319932b…2da3b53), 1112.7 MB
+# Build: Phase 1 llama_cpp.wasm
+# Cycle cost: 0 (SSN rental)
+
+# Warmup at low N (per established protocol):
+1     OK_1   " a"
+2     OK_2   " a city"
+3     OK_3   " the city of"
+
+# Post-warmup probe:
+4     OK_4   " the city of Paris"
+5     OK_5   " the city of Paris,"        ← FACTUAL ✓
+6     EXCEEDED_INST_LIMIT
+7     EXCEEDED_INST_LIMIT
+
+# 3-rep variance at N_MAX=5:
+5     OK_5   " the city of Paris,"   (rep 1)
+5     OK_5   " the city of Paris,"   (rep 2)
+5     OK_5   " the city of Paris,"   (rep 3)
+
+# Result: SSN N_MAX = 5 tok/call, CV = 0.00%, identical to local dfx.
+# Boundary at N=6 reproduces local-vs-SSN agreement we already saw at
+# 560M (both N_MAX = 34). Same conclusion: the 40B instruction limit
+# is a protocol invariant, independent of the execution environment.
+#
+# Cross-environment determinism: at every N tested (1..5), SSN output
+# is byte-identical to the local-dfx output. Confirms the TQ2_0 WASM
+# SIMD kernel is fully deterministic at this scale.

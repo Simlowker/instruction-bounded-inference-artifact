@@ -1,0 +1,33 @@
+# Cross-environment determinism check — TriLM 560M TQ2_0
+# Date: 2026-04-19
+#
+# Re-ran the 10-prompt coherence audit on the SSN mainnet canister
+# (u2pva-3iaaa-aaaax-qaa7a-cai, 13-node) and diffed the completions
+# byte-by-byte against the local dfx canister run
+# (uzt4z-lp777-77774-qaabq-cai, single replica).
+#
+# Diff command (excludes the timestamp and environment label lines,
+# which legitimately differ):
+#
+#   diff <(grep -v "^Date:\|^Environment:" trilm-560m-coherence-audit.md) \
+#        <(grep -v "^Date:\|^Environment:" trilm-coherence-ssn.md)
+#
+# Result: empty diff. All 10 completions are byte-identical.
+#
+# What this validates
+# -------------------
+# The TQ2_0 WASM SIMD kernel (Phase 1 build) produces deterministic,
+# byte-exact outputs across:
+#   - Single-replica local dfx replica
+#   - 13-node SSN mainnet subnet under live consensus
+#
+# This rules out non-deterministic kernel hazards (e.g., uninitialised
+# vector lanes, FP nondeterminism via reorder, replica-specific code
+# paths) that would otherwise threaten the validity of any §5.6-style
+# mainnet measurement protocol used in Paper 1.5.
+#
+# Files compared
+# --------------
+#   results/paper_1_5/raw/trilm-560m-coherence-audit.md   (local dfx)
+#   /tmp/trilm-coherence-ssn.md                           (SSN mainnet)
+# (SSN run kept in /tmp because the data lives in this diff file.)

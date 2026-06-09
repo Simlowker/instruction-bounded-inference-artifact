@@ -1,0 +1,1479 @@
+/opt/homebrew/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py:202: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `snapshot_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+[download] SpectraSuite/TriLM_3.9B_Unpacked → <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:05,  1.69it/s]Fetching 10 files:  50%|█████     | 5/10 [00:44<00:47,  9.49s/it]Fetching 10 files: 100%|██████████| 10/10 [00:44<00:00,  4.48s/it]
+INFO:hf-to-gguf:Loading model: 3.9B
+INFO:hf-to-gguf:Model architecture: LlamaForCausalLM
+INFO:hf-to-gguf:gguf: loading model weight map from 'model.safetensors.index.json'
+INFO:hf-to-gguf:gguf: indexing model part 'model-00001-of-00002.safetensors'
+INFO:hf-to-gguf:gguf: indexing model part 'model-00002-of-00002.safetensors'
+INFO:gguf.gguf_writer:gguf: This GGUF file is for Little Endian only
+INFO:hf-to-gguf:Exporting model...
+INFO:hf-to-gguf:token_embd.weight,           torch.float16 --> F16, shape = {3072, 50688}
+INFO:hf-to-gguf:blk.0.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.0.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.0.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.0.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.0.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.0.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.0.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.0.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.0.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.1.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.1.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.1.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.1.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.1.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.1.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.1.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.1.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.1.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.10.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.10.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.10.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.10.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.10.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.10.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.10.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.10.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.10.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.11.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.11.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.11.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.11.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.11.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.11.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.11.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.11.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.11.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.12.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.12.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.12.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.12.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.12.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.12.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.12.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.12.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.12.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.13.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.13.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.13.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.13.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.13.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.13.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.13.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.13.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.13.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.14.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.14.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.14.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.14.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.14.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.14.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.14.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.14.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.14.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.15.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.15.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.15.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.15.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.15.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.15.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.15.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.15.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.15.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.16.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.16.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.16.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.16.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.16.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.16.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.16.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.16.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.16.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.17.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.17.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.17.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.17.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.17.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.17.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.17.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.17.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.17.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.18.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.18.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.18.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.18.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.18.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.18.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.18.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.18.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.18.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.19.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.2.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.2.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.2.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.2.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.2.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.2.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.2.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.2.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.2.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.3.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.3.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.3.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.3.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.3.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.3.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.3.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.3.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.3.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.4.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.4.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.4.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.4.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.4.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.4.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.4.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.4.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.4.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.5.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.5.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.5.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.5.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.5.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.5.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.5.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.5.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.5.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.6.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.6.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.6.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.6.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.6.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.6.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.6.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.6.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.6.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.7.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.7.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.7.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.7.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.7.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.7.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.7.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.7.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.7.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.8.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.8.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.8.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.8.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.8.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.8.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.8.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.8.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.8.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.9.attn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.9.ffn_down.weight,       torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.9.ffn_gate.weight,       torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.9.ffn_up.weight,         torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.9.ffn_norm.weight,       torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.9.attn_k.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.9.attn_output.weight,    torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.9.attn_q.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.9.attn_v.weight,         torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:output.weight,               torch.float16 --> F16, shape = {3072, 50688}
+INFO:hf-to-gguf:blk.19.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.19.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.19.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.19.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.19.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.19.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.19.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.19.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.20.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.20.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.20.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.20.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.20.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.20.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.20.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.20.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.20.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.21.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.21.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.21.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.21.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.21.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.21.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.21.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.21.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.21.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.22.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.22.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.22.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.22.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.22.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.22.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.22.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.22.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.22.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.23.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.23.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.23.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.23.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.23.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.23.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.23.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.23.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.23.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.24.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.24.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.24.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.24.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.24.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.24.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.24.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.24.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.24.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.25.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.25.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.25.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.25.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.25.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.25.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.25.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.25.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.25.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.26.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.26.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.26.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.26.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.26.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.26.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.26.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.26.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.26.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.27.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.27.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.27.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.27.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.27.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.27.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.27.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.27.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.27.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.28.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.28.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.28.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.28.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.28.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.28.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.28.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.28.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.28.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.29.attn_norm.weight,     torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.29.ffn_down.weight,      torch.float16 --> F16, shape = {9216, 3072}
+INFO:hf-to-gguf:blk.29.ffn_gate.weight,      torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.29.ffn_up.weight,        torch.float16 --> F16, shape = {3072, 9216}
+INFO:hf-to-gguf:blk.29.ffn_norm.weight,      torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:blk.29.attn_k.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.29.attn_output.weight,   torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.29.attn_q.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:blk.29.attn_v.weight,        torch.float16 --> F16, shape = {3072, 3072}
+INFO:hf-to-gguf:output_norm.weight,          torch.float16 --> F32, shape = {3072}
+INFO:hf-to-gguf:Set meta model
+INFO:hf-to-gguf:Set model parameters
+INFO:hf-to-gguf:gguf: context length = 2048
+INFO:hf-to-gguf:gguf: embedding length = 3072
+INFO:hf-to-gguf:gguf: feed forward length = 9216
+INFO:hf-to-gguf:gguf: head count = 24
+INFO:hf-to-gguf:gguf: key-value head count = 24
+WARNING:hf-to-gguf:Unknown RoPE type: default
+INFO:hf-to-gguf:gguf: rope scaling type = NONE
+INFO:hf-to-gguf:gguf: rope theta = 10000.0
+INFO:hf-to-gguf:gguf: rms norm epsilon = 1e-05
+INFO:hf-to-gguf:gguf: layer norm epsilon = 1e-05
+INFO:hf-to-gguf:gguf: file type = 1
+INFO:hf-to-gguf:Set model quantization version
+INFO:hf-to-gguf:Set model tokenizer
+INFO:gguf.vocab:Adding 50009 merge(s).
+INFO:gguf.vocab:Setting special token type bos to 0
+INFO:gguf.vocab:Setting special token type eos to 0
+INFO:gguf.vocab:Setting special token type unk to 0
+INFO:gguf.vocab:Setting add_bos_token to False
+INFO:gguf.vocab:Setting add_eos_token to False
+INFO:gguf.gguf_writer:Writing the following files:
+INFO:gguf.gguf_writer:<local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf: n_tensors = 273, total_size = 8.0G
+Writing:   0%|          | 0.00/7.98G [00:00<?, ?byte/s]Writing:   4%|▍         | 311M/7.98G [00:00<00:14, 512Mbyte/s]Writing:   5%|▍         | 368M/7.98G [00:00<00:15, 489Mbyte/s]Writing:   5%|▌         | 425M/7.98G [00:00<00:15, 482Mbyte/s]Writing:   6%|▌         | 481M/7.98G [00:00<00:15, 477Mbyte/s]Writing:   7%|▋         | 538M/7.98G [00:01<00:15, 473Mbyte/s]Writing:   8%|▊         | 613M/7.98G [00:01<00:16, 451Mbyte/s]Writing:   8%|▊         | 670M/7.98G [00:01<00:15, 459Mbyte/s]Writing:   9%|▉         | 727M/7.98G [00:01<00:15, 464Mbyte/s]Writing:  10%|▉         | 783M/7.98G [00:01<00:15, 478Mbyte/s]Writing:  11%|█         | 859M/7.98G [00:01<00:15, 453Mbyte/s]Writing:  11%|█▏        | 915M/7.98G [00:01<00:15, 453Mbyte/s]Writing:  12%|█▏        | 972M/7.98G [00:02<00:15, 458Mbyte/s]Writing:  13%|█▎        | 1.03G/7.98G [00:02<00:14, 464Mbyte/s]Writing:  14%|█▍        | 1.10G/7.98G [00:02<00:16, 428Mbyte/s]Writing:  15%|█▍        | 1.16G/7.98G [00:02<00:15, 431Mbyte/s]Writing:  15%|█▌        | 1.22G/7.98G [00:02<00:15, 428Mbyte/s]Writing:  16%|█▌        | 1.27G/7.98G [00:02<00:15, 424Mbyte/s]Writing:  17%|█▋        | 1.35G/7.98G [00:02<00:16, 402Mbyte/s]Writing:  18%|█▊        | 1.41G/7.98G [00:03<00:15, 422Mbyte/s]Writing:  18%|█▊        | 1.46G/7.98G [00:03<00:15, 432Mbyte/s]Writing:  19%|█▉        | 1.52G/7.98G [00:03<00:14, 438Mbyte/s]Writing:  20%|█▉        | 1.60G/7.98G [00:03<00:15, 415Mbyte/s]Writing:  21%|██        | 1.65G/7.98G [00:03<00:15, 418Mbyte/s]Writing:  21%|██▏       | 1.71G/7.98G [00:03<00:15, 415Mbyte/s]Writing:  22%|██▏       | 1.76G/7.98G [00:03<00:15, 402Mbyte/s]Writing:  23%|██▎       | 1.84G/7.98G [00:04<00:16, 382Mbyte/s]Writing:  24%|██▍       | 1.90G/7.98G [00:04<00:15, 393Mbyte/s]Writing:  24%|██▍       | 1.95G/7.98G [00:04<00:15, 400Mbyte/s]Writing:  25%|██▌       | 2.01G/7.98G [00:04<00:15, 397Mbyte/s]Writing:  26%|██▌       | 2.09G/7.98G [00:04<00:15, 379Mbyte/s]Writing:  27%|██▋       | 2.14G/7.98G [00:04<00:14, 393Mbyte/s]Writing:  28%|██▊       | 2.20G/7.98G [00:05<00:14, 399Mbyte/s]Writing:  28%|██▊       | 2.26G/7.98G [00:05<00:14, 388Mbyte/s]Writing:  29%|██▉       | 2.33G/7.98G [00:05<00:14, 377Mbyte/s]Writing:  30%|██▉       | 2.39G/7.98G [00:05<00:15, 366Mbyte/s]Writing:  31%|███       | 2.44G/7.98G [00:05<00:14, 382Mbyte/s]Writing:  31%|███▏      | 2.50G/7.98G [00:05<00:14, 366Mbyte/s]Writing:  32%|███▏      | 2.58G/7.98G [00:06<00:15, 357Mbyte/s]Writing:  33%|███▎      | 2.63G/7.98G [00:06<00:14, 376Mbyte/s]Writing:  34%|███▎      | 2.69G/7.98G [00:06<00:13, 392Mbyte/s]Writing:  34%|███▍      | 2.75G/7.98G [00:06<00:14, 374Mbyte/s]Writing:  35%|███▌      | 2.82G/7.98G [00:06<00:14, 363Mbyte/s]Writing:  36%|███▌      | 2.88G/7.98G [00:06<00:13, 385Mbyte/s]Writing:  37%|███▋      | 2.94G/7.98G [00:07<00:14, 352Mbyte/s]Writing:  37%|███▋      | 2.97G/7.98G [00:07<00:14, 336Mbyte/s]Writing:  38%|███▊      | 3.01G/7.98G [00:07<00:14, 340Mbyte/s]Writing:  39%|███▊      | 3.09G/7.98G [00:07<00:14, 349Mbyte/s]Writing:  39%|███▉      | 3.14G/7.98G [00:07<00:13, 372Mbyte/s]Writing:  40%|████      | 3.20G/7.98G [00:07<00:12, 381Mbyte/s]Writing:  41%|████      | 3.26G/7.98G [00:08<00:13, 361Mbyte/s]Writing:  42%|████▏     | 3.33G/7.98G [00:08<00:13, 350Mbyte/s]Writing:  42%|████▏     | 3.39G/7.98G [00:08<00:12, 368Mbyte/s]Writing:  43%|████▎     | 3.44G/7.98G [00:08<00:12, 376Mbyte/s]Writing:  44%|████▍     | 3.50G/7.98G [00:08<00:12, 359Mbyte/s]Writing:  45%|████▍     | 3.58G/7.98G [00:08<00:12, 346Mbyte/s]Writing:  46%|████▌     | 3.63G/7.98G [00:09<00:12, 356Mbyte/s]Writing:  46%|████▌     | 3.69G/7.98G [00:09<00:11, 361Mbyte/s]Writing:  47%|████▋     | 3.73G/7.98G [00:09<00:13, 325Mbyte/s]Writing:  47%|████▋     | 3.77G/7.98G [00:09<00:12, 325Mbyte/s]Writing:  48%|████▊     | 3.82G/7.98G [00:09<00:12, 336Mbyte/s]Writing:  49%|████▊     | 3.88G/7.98G [00:09<00:11, 352Mbyte/s]Writing:  49%|████▉     | 3.94G/7.98G [00:09<00:11, 365Mbyte/s]Writing:  50%|████▉     | 3.97G/7.98G [00:10<00:12, 321Mbyte/s]Writing:  50%|█████     | 4.01G/7.98G [00:10<00:12, 319Mbyte/s]Writing:  51%|█████     | 4.07G/7.98G [00:10<00:12, 315Mbyte/s]Writing:  52%|█████▏    | 4.12G/7.98G [00:10<00:11, 328Mbyte/s]Writing:  52%|█████▏    | 4.18G/7.98G [00:10<00:11, 342Mbyte/s]Writing:  53%|█████▎    | 4.22G/7.98G [00:10<00:11, 322Mbyte/s]Writing:  53%|█████▎    | 4.26G/7.98G [00:10<00:11, 321Mbyte/s]Writing:  54%|█████▍    | 4.31G/7.98G [00:11<00:11, 326Mbyte/s]Writing:  55%|█████▍    | 4.37G/7.98G [00:11<00:10, 349Mbyte/s]Writing:  55%|█████▌    | 4.43G/7.98G [00:11<00:09, 364Mbyte/s]Writing:  56%|█████▌    | 4.46G/7.98G [00:11<00:10, 324Mbyte/s]Writing:  56%|█████▋    | 4.50G/7.98G [00:11<00:10, 324Mbyte/s]Writing:  57%|█████▋    | 4.56G/7.98G [00:11<00:10, 323Mbyte/s]Writing:  58%|█████▊    | 4.62G/7.98G [00:12<00:09, 348Mbyte/s]Writing:  59%|█████▊    | 4.67G/7.98G [00:12<00:09, 359Mbyte/s]Writing:  59%|█████▉    | 4.71G/7.98G [00:12<00:10, 319Mbyte/s]Writing:  59%|█████▉    | 4.75G/7.98G [00:12<00:10, 313Mbyte/s]Writing:  60%|██████    | 4.80G/7.98G [00:12<00:10, 306Mbyte/s]Writing:  61%|██████    | 4.86G/7.98G [00:12<00:10, 308Mbyte/s]Writing:  62%|██████▏   | 4.92G/7.98G [00:12<00:09, 333Mbyte/s]Writing:  62%|██████▏   | 4.95G/7.98G [00:13<00:09, 306Mbyte/s]Writing:  63%|██████▎   | 4.99G/7.98G [00:13<00:09, 309Mbyte/s]Writing:  66%|██████▋   | 5.30G/7.98G [00:13<00:06, 430Mbyte/s]Writing:  67%|██████▋   | 5.36G/7.98G [00:13<00:06, 434Mbyte/s]Writing:  68%|██████▊   | 5.42G/7.98G [00:14<00:05, 438Mbyte/s]Writing:  69%|██████▊   | 5.47G/7.98G [00:14<00:05, 438Mbyte/s]Writing:  69%|██████▉   | 5.53G/7.98G [00:14<00:05, 430Mbyte/s]Writing:  70%|██████▉   | 5.59G/7.98G [00:14<00:05, 436Mbyte/s]Writing:  71%|███████   | 5.64G/7.98G [00:14<00:05, 400Mbyte/s]Writing:  71%|███████▏  | 5.70G/7.98G [00:14<00:05, 399Mbyte/s]Writing:  72%|███████▏  | 5.76G/7.98G [00:14<00:05, 423Mbyte/s]Writing:  73%|███████▎  | 5.83G/7.98G [00:15<00:05, 404Mbyte/s]Writing:  74%|███████▍  | 5.89G/7.98G [00:15<00:05, 408Mbyte/s]Writing:  74%|███████▍  | 5.95G/7.98G [00:15<00:04, 416Mbyte/s]Writing:  75%|███████▌  | 6.00G/7.98G [00:15<00:04, 421Mbyte/s]Writing:  76%|███████▌  | 6.08G/7.98G [00:15<00:04, 418Mbyte/s]Writing:  77%|███████▋  | 6.13G/7.98G [00:15<00:04, 424Mbyte/s]Writing:  78%|███████▊  | 6.19G/7.98G [00:15<00:04, 432Mbyte/s]Writing:  78%|███████▊  | 6.25G/7.98G [00:16<00:04, 430Mbyte/s]Writing:  79%|███████▉  | 6.32G/7.98G [00:16<00:04, 411Mbyte/s]Writing:  80%|███████▉  | 6.38G/7.98G [00:16<00:03, 410Mbyte/s]Writing:  81%|████████  | 6.44G/7.98G [00:16<00:03, 418Mbyte/s]Writing:  81%|████████▏ | 6.49G/7.98G [00:16<00:03, 428Mbyte/s]Writing:  82%|████████▏ | 6.57G/7.98G [00:16<00:03, 409Mbyte/s]Writing:  83%|████████▎ | 6.63G/7.98G [00:17<00:03, 421Mbyte/s]Writing:  84%|████████▎ | 6.68G/7.98G [00:17<00:03, 421Mbyte/s]Writing:  84%|████████▍ | 6.74G/7.98G [00:17<00:03, 400Mbyte/s]Writing:  85%|████████▌ | 6.81G/7.98G [00:17<00:03, 369Mbyte/s]Writing:  86%|████████▌ | 6.87G/7.98G [00:17<00:03, 364Mbyte/s]Writing:  87%|████████▋ | 6.93G/7.98G [00:17<00:02, 371Mbyte/s]Writing:  87%|████████▋ | 6.97G/7.98G [00:17<00:02, 360Mbyte/s]Writing:  88%|████████▊ | 7.00G/7.98G [00:18<00:02, 361Mbyte/s]Writing:  88%|████████▊ | 7.06G/7.98G [00:18<00:02, 362Mbyte/s]Writing:  89%|████████▉ | 7.12G/7.98G [00:18<00:02, 363Mbyte/s]Writing:  90%|████████▉ | 7.17G/7.98G [00:18<00:02, 372Mbyte/s]Writing:  90%|█████████ | 7.21G/7.98G [00:18<00:02, 359Mbyte/s]Writing:  91%|█████████ | 7.25G/7.98G [00:18<00:02, 363Mbyte/s]Writing:  91%|█████████▏| 7.31G/7.98G [00:18<00:01, 364Mbyte/s]Writing:  92%|█████████▏| 7.36G/7.98G [00:19<00:01, 383Mbyte/s]Writing:  93%|█████████▎| 7.42G/7.98G [00:19<00:01, 395Mbyte/s]Writing:  94%|█████████▎| 7.47G/7.98G [00:19<00:01, 372Mbyte/s]Writing:  95%|█████████▍| 7.55G/7.98G [00:19<00:01, 366Mbyte/s]Writing:  95%|█████████▌| 7.61G/7.98G [00:19<00:01, 353Mbyte/s]Writing:  96%|█████████▌| 7.66G/7.98G [00:19<00:00, 366Mbyte/s]Writing:  96%|█████████▋| 7.70G/7.98G [00:19<00:00, 351Mbyte/s]Writing:  97%|█████████▋| 7.74G/7.98G [00:20<00:00, 355Mbyte/s]Writing:  98%|█████████▊| 7.80G/7.98G [00:20<00:00, 352Mbyte/s]Writing:  98%|█████████▊| 7.85G/7.98G [00:20<00:00, 365Mbyte/s]Writing:  99%|█████████▉| 7.91G/7.98G [00:20<00:00, 368Mbyte/s]Writing: 100%|█████████▉| 7.95G/7.98G [00:20<00:00, 336Mbyte/s]Writing: 100%|█████████▉| 7.98G/7.98G [00:20<00:00, 344Mbyte/s]Writing: 100%|██████████| 7.98G/7.98G [00:20<00:00, 383Mbyte/s]
+INFO:hf-to-gguf:Model successfully exported to <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf
+main: build = 8660 (d00685831)
+main: built with AppleClang 17.0.0.17000604 for Darwin arm64
+main: quantizing '<local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf' to 'llama_cpp_canister/models/trilm/TriLM_3.9B_Unpacked.TQ2_0.gguf' as TQ2_0
+llama_model_loader: loaded meta data with 32 key-value pairs and 273 tensors from <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = 3.9B
+llama_model_loader: - kv   3:                           general.finetune str              = 3.9B
+llama_model_loader: - kv   4:                         general.size_label str              = 4.0B
+llama_model_loader: - kv   5:                            general.license str              = apache-2.0
+llama_model_loader: - kv   6:                          llama.block_count u32              = 30
+llama_model_loader: - kv   7:                       llama.context_length u32              = 2048
+llama_model_loader: - kv   8:                     llama.embedding_length u32              = 3072
+llama_model_loader: - kv   9:                  llama.feed_forward_length u32              = 9216
+llama_model_loader: - kv  10:                 llama.attention.head_count u32              = 24
+llama_model_loader: - kv  11:              llama.attention.head_count_kv u32              = 24
+llama_model_loader: - kv  12:                       llama.rope.freq_base f32              = 10000.000000
+llama_model_loader: - kv  13:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  14:         llama.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  15:                 llama.attention.key_length u32              = 128
+llama_model_loader: - kv  16:               llama.attention.value_length u32              = 128
+llama_model_loader: - kv  17:                          general.file_type u32              = 1
+llama_model_loader: - kv  18:                           llama.vocab_size u32              = 50688
+llama_model_loader: - kv  19:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  20:               general.quantization_version u32              = 2
+llama_model_loader: - kv  21:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  22:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  23:                      tokenizer.ggml.tokens arr[str,50688]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  24:                  tokenizer.ggml.token_type arr[i32,50688]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  25:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  26:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  27:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  28:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  29:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  30:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  31:            tokenizer.ggml.add_space_prefix bool             = false
+llama_model_loader: - type  f32:   61 tensors
+llama_model_loader: - type  f16:  212 tensors
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name position_embd with suffix=weight bid=-1 xid=-1
+str: cannot properly format tensor name token_types with suffix=weight bid=-1 xid=-1
+[   1/ 273] output.weight                        - [  3072,  50688,      1,      1], type =    f16, converting to q6_K .. size =   297.00 MiB ->   121.82 MiB
+[   2/ 273] output_norm.weight                   - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[   3/ 273] token_embd.weight                    - [  3072,  50688,      1,      1], type =    f16, converting to q4_K .. size =   297.00 MiB ->    83.53 MiB
+[   4/ 273] blk.0.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[   5/ 273] blk.0.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[   6/ 273] blk.0.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[   7/ 273] blk.0.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[   8/ 273] blk.0.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[   9/ 273] blk.0.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  10/ 273] blk.0.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  11/ 273] blk.0.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  12/ 273] blk.0.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  13/ 273] blk.1.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  14/ 273] blk.1.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  15/ 273] blk.1.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  16/ 273] blk.1.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  17/ 273] blk.1.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  18/ 273] blk.1.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  19/ 273] blk.1.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  20/ 273] blk.1.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  21/ 273] blk.1.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  22/ 273] blk.2.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  23/ 273] blk.2.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  24/ 273] blk.2.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  25/ 273] blk.2.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  26/ 273] blk.2.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  27/ 273] blk.2.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  28/ 273] blk.2.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  29/ 273] blk.2.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  30/ 273] blk.2.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  31/ 273] blk.3.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  32/ 273] blk.3.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  33/ 273] blk.3.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  34/ 273] blk.3.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  35/ 273] blk.3.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  36/ 273] blk.3.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  37/ 273] blk.3.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  38/ 273] blk.3.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  39/ 273] blk.3.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  40/ 273] blk.4.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  41/ 273] blk.4.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  42/ 273] blk.4.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  43/ 273] blk.4.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  44/ 273] blk.4.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  45/ 273] blk.4.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  46/ 273] blk.4.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  47/ 273] blk.4.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  48/ 273] blk.4.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  49/ 273] blk.5.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  50/ 273] blk.5.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  51/ 273] blk.5.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  52/ 273] blk.5.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  53/ 273] blk.5.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  54/ 273] blk.5.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  55/ 273] blk.5.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  56/ 273] blk.5.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  57/ 273] blk.5.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  58/ 273] blk.6.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  59/ 273] blk.6.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  60/ 273] blk.6.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  61/ 273] blk.6.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  62/ 273] blk.6.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  63/ 273] blk.6.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  64/ 273] blk.6.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  65/ 273] blk.6.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  66/ 273] blk.6.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  67/ 273] blk.7.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  68/ 273] blk.7.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  69/ 273] blk.7.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  70/ 273] blk.7.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  71/ 273] blk.7.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  72/ 273] blk.7.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  73/ 273] blk.7.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  74/ 273] blk.7.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  75/ 273] blk.7.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  76/ 273] blk.8.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  77/ 273] blk.8.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  78/ 273] blk.8.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  79/ 273] blk.8.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  80/ 273] blk.8.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  81/ 273] blk.8.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  82/ 273] blk.8.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  83/ 273] blk.8.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  84/ 273] blk.8.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  85/ 273] blk.9.attn_k.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  86/ 273] blk.9.attn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  87/ 273] blk.9.attn_output.weight             - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  88/ 273] blk.9.attn_q.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  89/ 273] blk.9.attn_v.weight                  - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  90/ 273] blk.9.ffn_down.weight                - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  91/ 273] blk.9.ffn_gate.weight                - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  92/ 273] blk.9.ffn_norm.weight                - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  93/ 273] blk.9.ffn_up.weight                  - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[  94/ 273] blk.10.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  95/ 273] blk.10.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[  96/ 273] blk.10.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  97/ 273] blk.10.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  98/ 273] blk.10.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[  99/ 273] blk.10.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 100/ 273] blk.10.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 101/ 273] blk.10.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 102/ 273] blk.10.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 103/ 273] blk.11.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 104/ 273] blk.11.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 105/ 273] blk.11.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 106/ 273] blk.11.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 107/ 273] blk.11.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 108/ 273] blk.11.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 109/ 273] blk.11.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 110/ 273] blk.11.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 111/ 273] blk.11.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 112/ 273] blk.12.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 113/ 273] blk.12.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 114/ 273] blk.12.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 115/ 273] blk.12.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 116/ 273] blk.12.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 117/ 273] blk.12.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 118/ 273] blk.12.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 119/ 273] blk.12.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 120/ 273] blk.12.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 121/ 273] blk.13.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 122/ 273] blk.13.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 123/ 273] blk.13.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 124/ 273] blk.13.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 125/ 273] blk.13.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 126/ 273] blk.13.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 127/ 273] blk.13.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 128/ 273] blk.13.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 129/ 273] blk.13.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 130/ 273] blk.14.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 131/ 273] blk.14.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 132/ 273] blk.14.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 133/ 273] blk.14.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 134/ 273] blk.14.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 135/ 273] blk.14.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 136/ 273] blk.14.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 137/ 273] blk.14.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 138/ 273] blk.14.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 139/ 273] blk.15.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 140/ 273] blk.15.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 141/ 273] blk.15.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 142/ 273] blk.15.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 143/ 273] blk.15.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 144/ 273] blk.15.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 145/ 273] blk.15.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 146/ 273] blk.15.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 147/ 273] blk.15.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 148/ 273] blk.16.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 149/ 273] blk.16.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 150/ 273] blk.16.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 151/ 273] blk.16.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 152/ 273] blk.16.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 153/ 273] blk.16.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 154/ 273] blk.16.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 155/ 273] blk.16.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 156/ 273] blk.16.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 157/ 273] blk.17.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 158/ 273] blk.17.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 159/ 273] blk.17.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 160/ 273] blk.17.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 161/ 273] blk.17.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 162/ 273] blk.17.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 163/ 273] blk.17.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 164/ 273] blk.17.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 165/ 273] blk.17.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 166/ 273] blk.18.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 167/ 273] blk.18.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 168/ 273] blk.18.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 169/ 273] blk.18.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 170/ 273] blk.18.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 171/ 273] blk.18.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 172/ 273] blk.18.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 173/ 273] blk.18.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 174/ 273] blk.18.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 175/ 273] blk.19.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 176/ 273] blk.19.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 177/ 273] blk.19.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 178/ 273] blk.19.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 179/ 273] blk.19.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 180/ 273] blk.19.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 181/ 273] blk.19.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 182/ 273] blk.19.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 183/ 273] blk.19.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 184/ 273] blk.20.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 185/ 273] blk.20.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 186/ 273] blk.20.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 187/ 273] blk.20.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 188/ 273] blk.20.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 189/ 273] blk.20.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 190/ 273] blk.20.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 191/ 273] blk.20.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 192/ 273] blk.20.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 193/ 273] blk.21.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 194/ 273] blk.21.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 195/ 273] blk.21.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 196/ 273] blk.21.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 197/ 273] blk.21.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 198/ 273] blk.21.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 199/ 273] blk.21.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 200/ 273] blk.21.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 201/ 273] blk.21.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 202/ 273] blk.22.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 203/ 273] blk.22.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 204/ 273] blk.22.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 205/ 273] blk.22.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 206/ 273] blk.22.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 207/ 273] blk.22.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 208/ 273] blk.22.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 209/ 273] blk.22.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 210/ 273] blk.22.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 211/ 273] blk.23.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 212/ 273] blk.23.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 213/ 273] blk.23.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 214/ 273] blk.23.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 215/ 273] blk.23.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 216/ 273] blk.23.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 217/ 273] blk.23.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 218/ 273] blk.23.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 219/ 273] blk.23.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 220/ 273] blk.24.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 221/ 273] blk.24.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 222/ 273] blk.24.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 223/ 273] blk.24.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 224/ 273] blk.24.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 225/ 273] blk.24.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 226/ 273] blk.24.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 227/ 273] blk.24.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 228/ 273] blk.24.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 229/ 273] blk.25.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 230/ 273] blk.25.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 231/ 273] blk.25.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 232/ 273] blk.25.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 233/ 273] blk.25.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 234/ 273] blk.25.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 235/ 273] blk.25.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 236/ 273] blk.25.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 237/ 273] blk.25.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 238/ 273] blk.26.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 239/ 273] blk.26.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 240/ 273] blk.26.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 241/ 273] blk.26.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 242/ 273] blk.26.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 243/ 273] blk.26.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 244/ 273] blk.26.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 245/ 273] blk.26.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 246/ 273] blk.26.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 247/ 273] blk.27.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 248/ 273] blk.27.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 249/ 273] blk.27.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 250/ 273] blk.27.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 251/ 273] blk.27.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 252/ 273] blk.27.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 253/ 273] blk.27.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 254/ 273] blk.27.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 255/ 273] blk.27.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 256/ 273] blk.28.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 257/ 273] blk.28.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 258/ 273] blk.28.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 259/ 273] blk.28.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 260/ 273] blk.28.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 261/ 273] blk.28.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 262/ 273] blk.28.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 263/ 273] blk.28.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 264/ 273] blk.28.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 265/ 273] blk.29.attn_k.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 266/ 273] blk.29.attn_norm.weight              - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 267/ 273] blk.29.attn_output.weight            - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 268/ 273] blk.29.attn_q.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 269/ 273] blk.29.attn_v.weight                 - [  3072,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    18.00 MiB ->     2.32 MiB
+[ 270/ 273] blk.29.ffn_down.weight               - [  9216,   3072,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 271/ 273] blk.29.ffn_gate.weight               - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+[ 272/ 273] blk.29.ffn_norm.weight               - [  3072,      1,      1,      1], type =    f32, size =    0.012 MiB
+[ 273/ 273] blk.29.ffn_up.weight                 - [  3072,   9216,      1,      1], type =    f16, converting to tq2_0 .. size =    54.00 MiB ->     6.96 MiB
+llama_model_quantize_impl: model size  =  7614.71 MiB (16.00 BPW)
+llama_model_quantize_impl: quant size  =  1110.98 MiB (2.33 BPW)
+
+main: quantize time =  4069.64 ms
+main:    total time =  4069.64 ms
+[convert] <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/quantize-venv/bin/python3 <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/llama_cpp_src/convert_hf_to_gguf.py <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B --outfile <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf --outtype f16
+[convert] F16 GGUF → <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf (7616.4 MB)
+[quantize] /opt/homebrew/bin/llama-quantize <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf llama_cpp_canister/models/trilm/TriLM_3.9B_Unpacked.TQ2_0.gguf TQ2_0
+[quantize] TQ2_0 GGUF → llama_cpp_canister/models/trilm/TriLM_3.9B_Unpacked.TQ2_0.gguf (1112.7 MB)
+[cleanup] removed intermediate <local-workspace>/.worktrees/paper-1.5-phase-1/.worktree-cache/trilm-hf-staging/3.9B.F16.gguf

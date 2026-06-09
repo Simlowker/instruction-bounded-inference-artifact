@@ -1,0 +1,12 @@
+held_out_arch,model,params_M,tok_measured,tok_predicted,alpha_train_median,relative_error,absolute_relative_error,is_legacy
+gemma3,Gemma3-270M-IT,270.0,56,48.3,1.534,-0.1374,0.1374,False
+llama,H2O-Danube3-500M,500.0,27,26.0,1.54,-0.038,0.038,False
+llama,SmolLM2-135M,135.0,97,96.2,1.54,-0.0082,0.0082,False
+llama,SmolLM2-360M,360.0,36,36.1,1.54,0.0021,0.0021,False
+mamba,Mamba-370M,370.0,30,35.5,1.523,0.1827,0.1827,False
+openelm,OpenELM-270M,270.0,45,48.6,1.523,0.0805,0.0805,False
+gpt_neox,Pythia-14M,14.0,838,935.5,1.527,0.1164,0.1164,False
+gpt_neox,Pythia-70M,70.0,208,187.1,1.527,-0.1004,0.1004,False
+qwen2,Qwen-2.5-0.5B,494.0,31,26.4,1.534,-0.1484,0.1484,False
+qwen3,Qwen3-0.6B,600.0,22,21.7,1.534,-0.012,0.012,False
+rwkv7,RWKV7-0.4B,400.0,32,32.8,1.523,0.0256,0.0256,False

@@ -1,0 +1,40 @@
+date,model,quant,simd,layers_real,size_MB,tok_call,alpha_eff,build,measurement_type,status_tags,notes
+2026-03,Pythia-14M,Q8_0,no,6,12.3,587,1.7,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-03,Pythia-14M,Q4_0,yes,6,12.3,838,1.7,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-03,Pythia-70M,Q8_0,no,6,73,149,1.54,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-04,Pythia-70M,Q4_0,yes,6,46,208,1.374,gian,binary_search,runs=repeated; quality=invalid; env=local; build=build_sensitive; role=calibration,calibration table [VARIANCE UPDATE 208.33±0.577]
+2026-03,Pythia-70M,Q4_K_M,yes,6,47,175,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=supporting_measurement,multi-format
+2026-03,Pythia-70M,Q6_K,yes,6,57,159,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=supporting_measurement,multi-format
+2026-03,Pythia-70M,Q8_0,yes,6,73,256,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=supporting_measurement,SIMD enabled
+2026-03,Pythia-70M,TQ2_0,no,6,40,152,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=systems_demo,ternary scalar
+2026-03,Pythia-70M,TQ2_0,yes,6,40,201,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=systems_demo,ternary SIMD — highest tok/MB (5.03)
+2026-03,DistilGPT2,Q8_0,no,6,124.7,86,2.05,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table — GPT-2 outlier
+2026-03,DistilGPT2,Q4_0,yes,6,77.2,119,2.05,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table — GPT-2 outlier
+2026-03,GPT2-124M,Q8_0,no,12,169.4,56,1.92,gian,binary_search,runs=single_run; quality=invalid; env=local; build=historical; role=calibration,calibration table — GPT-2 outlier
+2026-03,GPT2-124M,Q4_0,yes,12,101.6,84,1.92,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table — GPT-2 outlier
+2026-03,SmolLM2-135M,Q8_0,no,30,138,36,1.44,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-04,SmolLM2-135M,Q4_0,yes,30,87,97,1.527,gian,binary_search,runs=repeated; quality=limited; env=local; build=build_sensitive; role=calibration,calibration table — sweet spot [VARIANCE UPDATE 97.0±0.0]
+2026-03,SmolLM2-135M,Q4_K_M,yes,30,101,85,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=supporting_measurement,multi-format
+2026-03,SmolLM2-135M,Q8_0,yes,30,138,90,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=supporting_measurement,SIMD enabled — validates ternary projection (87 proj 3.4% err)
+2026-03,SmolLM2-135M,TQ2_0,no,30,80,74,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=systems_demo,ternary scalar
+2026-03,SmolLM2-135M,TQ2_0,yes,30,80,89,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=systems_demo,ternary SIMD
+2026-03,SmolLM2-135M-instruct,Q8_0,yes,30,138,95,,gian,binary_search,runs=single_run; quality=limited; env=local; build=historical; role=supporting_measurement,instruct variant — native bench done
+2026-03,AMD-LLaMA-135M,Q8_0,yes,12,136.6,122,1.21,upstream,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,shallow 12L — 29% faster than SmolLM2 30L at same P. Output degenerate (base model)
+2026-04,Gemma3-270M-IT,Q8_0,yes,18,278,53,1.4,upstream,binary_search,runs=single_run; quality=not_checked; env=local; build=current; role=calibration,upstream fork validation
+2026-04,Gemma3-270M-IT,Q4_0,yes,18,230,56,1.323,gian,binary_search,runs=repeated; quality=verified; env=local; build=build_sensitive; role=calibration,variance reps: mean=55.67 std=0.577 (P0-1)
+2026-03,OpenELM-270M,Q4_0,yes,16,156.6,45,1.65,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-03,SmolLM2-360M,Q8_0,no,32,218.5,10,1.54,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-03,SmolLM2-360M,Q4_0,yes,32,218.5,36,1.54,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-04,Mamba-370M,Q8_0,yes,48,429,30,1.802,gian,binary_search,runs=repeated; quality=verified; env=local; build=build_sensitive; role=calibration,"SSM architecture — non-transformer [VARIANCE UPDATE 30.0±0.0; build relabeled upstream→gian 2026-04-17, tok=30 was measured on gian build hash 17806d52]"
+2026-04,RWKV7-0.4B,Q8_0,yes,24,478,32,1.56,upstream,binary_search,runs=single_run; quality=not_checked; env=local; build=current; role=calibration,RNN architecture — non-transformer
+2026-03,Qwen2.5-0.5B,Q8_0,no,24,644,6,1.5,gian,binary_search,runs=single_run; quality=verified; env=local; build=historical; role=calibration,calibration table
+2026-04,Qwen2.5-0.5B,Q4_0,yes,24,336,31,1.306,gian,binary_search,runs=repeated; quality=verified; env=local; build=build_sensitive; role=calibration,calibration table [VARIANCE UPDATE 31.0±0.0]
+2026-03,Qwen2.5-0.5B,Q4_K_M,yes,24,379,21,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=supporting_measurement,multi-format
+2026-03,Qwen2.5-0.5B,Q8_0,yes,24,644,30,,gian,binary_search,runs=single_run; quality=verified; env=local; build=historical; role=supporting_measurement,SIMD enabled
+2026-03,Qwen2.5-0.5B,TQ2_0,no,24,305,23,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=systems_demo,ternary scalar
+2026-03,Qwen2.5-0.5B,TQ2_0,yes,24,305,29,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=systems_demo,ternary SIMD
+2026-03,H2O-Danube3-500M,Q4_0,yes,16,288.5,27,1.48,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=calibration,calibration table
+2026-03,H2O-Danube3-500M,Q8_0,yes,16,521,33,,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=supporting_measurement,SIMD enabled
+2026-04,Bloomz-560M,Q3_K_M,yes,24,469,20,1.79,upstream,binary_search,runs=single_run; quality=not_checked; env=local; build=current; role=calibration,outlier — uses Q3_K_M not Q8_0
+2026-04,Qwen3-0.6B,Q8_0,yes,28,610,22,1.52,upstream,binary_search,runs=single_run; quality=not_checked; env=local; build=current; role=calibration,upstream fork validation
+2026-03,Gemma3-1B-IT,Q2_K,yes,26,658,4,5,gian,binary_search,runs=single_run; quality=not_checked; env=local; build=historical; role=negative_result,Q2_K overhead massive — NOT VIABLE on ICP

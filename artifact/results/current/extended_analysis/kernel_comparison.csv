@@ -1,0 +1,12 @@
+kernel,instructions_M,alpha_kernel,speedup_vs_f32_simd
+F32 Scalar,387.8,7.397,0.271
+F32 SIMD (f32x4),105.2,2.006,1.0
+F32 SIMD x4 unrolled,115.8,2.208,0.908
+F32 SIMD x8 unrolled,106.1,2.024,0.991
+Ternary LUT (f32 cast),215.9,4.118,0.487
+Ternary AddSub (masks),293.6,5.601,0.358
+Ternary Shuffle (scalar),505.9,9.649,0.208
+Ternary INT SIMD (extmul),70.7,1.349,1.487
+Ternary DOT (i32x4.dot),59.0,1.126,1.781
+Ternary DOT x4 unrolled,42.9,0.817,2.454
+Ternary CondNeg (XOR+SUB),77.3,1.474,1.361

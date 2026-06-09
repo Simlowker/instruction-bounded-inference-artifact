@@ -1,0 +1,64 @@
+# TriLM 3.9B TQ2_0 — local dfx binary search for max tok/call
+# Date: 2026-04-19
+# Canister: uzt4z-lp777-77774-qaabq-cai (local replica, after reinstall)
+# Model:    models/trilm/TriLM_3.9B_Unpacked.TQ2_0.gguf (1112.7 MB)
+#           sha256 8319932bbc15eba572327fd32bcd392fe17ac984e6887060c97733f6a2da3b53
+#           30 layers × 3072 hidden × 9216 FFN, 24 attn heads (no GQA), ctx 2048
+# Build:    Phase 1 llama_cpp.wasm (5.76 MB), TQ2_0 WASM SIMD path active
+# Replica instruction limit: 40_000_000_000 per update call
+# set_max_tokens: 10000 (non-binding)
+# Prompt: "The capital of France is"
+# Initial canister cycles: needed top-up via dfx ledger fabricate-cycles
+#   (1.1 GB upload exhausted the default local allocation)
+
+# Cold-state probe (immediately post load_model, no warm-up):
+5     EXCEEDED_INST_LIMIT     # cold
+4     EXCEEDED_INST_LIMIT     # cold
+6     EXCEEDED_INST_LIMIT     # cold
+7     EXCEEDED_INST_LIMIT     # cold
+10    EXCEEDED_INST_LIMIT     # cold
+
+# Warm-up at low N (per protocol from C1a.1 SSN observation):
+1     OK_1   " a"
+2     OK_2   " a city"
+3     OK_3   " the city of"
+
+# Post-warm-up probe:
+4     OK_4   " the city of Paris"
+5     OK_5   " the city of Paris,"        ← FACTUAL ✓ ("Paris")
+6     EXCEEDED_INST_LIMIT
+7     EXCEEDED_INST_LIMIT
+8     EXCEEDED_INST_LIMIT
+
+# 3-rep variance at N_MAX=5:
+5     OK_5   " the city of Paris,"   (rep 1)
+5     OK_5   " the city of Paris,"   (rep 2)
+5     OK_5   " the city of Paris,"   (rep 3)
+
+# Boundary confirmation at N=6 (3 reps, all fail):
+6     EXCEEDED_INST_LIMIT  (rep 1)
+6     EXCEEDED_INST_LIMIT  (rep 2)
+6     EXCEEDED_INST_LIMIT  (rep 3)
+
+# Result: N_MAX = 5 tok/call (post-warm-up), CV = 0.00% (deterministic decode)
+#
+# Cross-scale comparison vs C1a.1 (TriLM 560M, N_MAX = 34):
+#   Param ratio: 3992 / 569 = 7.02×
+#   tok/call ratio: 5 / 34 = 0.147 ≈ 1/6.8
+#   Roughly inverse-linear in P, as predicted by Paper 1 §4.1 formula
+#   tok/call ≈ 40e9 / (α_eff × 2P).
+#
+# Implied α_eff at 3.9B:
+#   α_eff = 40e9 / (5 × 2 × 3992e6) ≈ 1.002
+#
+# This essentially matches the theoretical floor (α_eff = 1, one MAC
+# per param-token). The 560M result yielded α_eff = 1.03; the 3.9B
+# yields α_eff ≈ 1.00. Two data points 7× apart in scale agree on
+# α_eff ≈ 1, validating Paper 1 §4.1's projection that ternary kernels
+# can approach the theoretical floor end-to-end on canister.
+#
+# Quality observation: at N=5 the model emits "the city of Paris,"
+# which is FACTUALLY CORRECT (capital of France). The 560M model at
+# N=34 emitted "famous for its monuments and museums" without ever
+# naming Paris. The 3.9B's larger capacity yields qualitatively
+# better factual recall even though it has fewer tokens to work with.

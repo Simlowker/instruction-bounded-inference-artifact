@@ -1,0 +1,65 @@
+=== 16:33:26Z RUN V1 wt2 ===
+    rc=0 wall=46s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-V1-qwen05.log
+    parsed PPL=11.8716 stderr=0.08444
+=== 16:34:12Z RUN V1 c4 ===
+    rc=0 wall=292s log=artifact/results/paper_1_5/raw/c2-ppl-c4-V1-qwen05.log
+    parsed PPL=19.2555 stderr=0.08236
+=== 16:39:04Z RUN V2 wt2 ===
+    rc=0 wall=64s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-V2-qwen05.log
+    parsed PPL=11.8416 stderr=0.08421
+=== 16:40:08Z RUN V2 c4 ===
+    rc=0 wall=195s log=artifact/results/paper_1_5/raw/c2-ppl-c4-V2-qwen05.log
+    parsed PPL=19.1751 stderr=0.08195
+=== 16:43:24Z RUN V3a wt2 ===
+    rc=0 wall=62s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-V3a-qwen05.log
+    parsed PPL=11.8928 stderr=0.08470
+=== 16:44:26Z RUN V3a c4 ===
+    rc=0 wall=184s log=artifact/results/paper_1_5/raw/c2-ppl-c4-V3a-qwen05.log
+    parsed PPL=19.2597 stderr=0.08238
+=== 16:47:30Z RUN V3b wt2 ===
+    rc=0 wall=59s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-V3b-qwen05.log
+    parsed PPL=11.8487 stderr=0.08445
+=== 16:48:29Z RUN V3b c4 ===
+    rc=0 wall=180s log=artifact/results/paper_1_5/raw/c2-ppl-c4-V3b-qwen05.log
+    parsed PPL=19.2050 stderr=0.08217
+=== 16:51:29Z RUN V3c wt2 ===
+    rc=0 wall=58s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-V3c-qwen05.log
+    parsed PPL=11.8145 stderr=0.08404
+=== 16:52:27Z RUN V3c c4 ===
+    rc=0 wall=177s log=artifact/results/paper_1_5/raw/c2-ppl-c4-V3c-qwen05.log
+    parsed PPL=19.1307 stderr=0.08187
+=== 16:55:24Z RUN V4 wt2 ===
+    rc=0 wall=59s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-V4-qwen05.log
+    parsed PPL=11.8133 stderr=0.08385
+=== 16:56:23Z RUN V4 c4 ===
+    rc=0 wall=178s log=artifact/results/paper_1_5/raw/c2-ppl-c4-V4-qwen05.log
+    parsed PPL=19.1821 stderr=0.08187
+=== 16:59:21Z RUN BASE-Q4_0 wt2 ===
+    rc=0 wall=54s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-BASE-Q4_0-qwen05.log
+    parsed PPL=13.1389 stderr=0.09490
+=== 17:00:15Z RUN BASE-Q4_0 c4 ===
+    rc=0 wall=165s log=artifact/results/paper_1_5/raw/c2-ppl-c4-BASE-Q4_0-qwen05.log
+    parsed PPL=21.0646 stderr=0.09039
+=== 17:03:00Z RUN BASE-Q5_K_M wt2 ===
+    rc=0 wall=59s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-BASE-Q5_K_M-qwen05.log
+    parsed PPL=11.8746 stderr=0.08422
+=== 17:03:59Z RUN BASE-Q5_K_M c4 ===
+    rc=0 wall=179s log=artifact/results/paper_1_5/raw/c2-ppl-c4-BASE-Q5_K_M-qwen05.log
+    parsed PPL=19.1810 stderr=0.08158
+=== 17:06:58Z RUN BASE-Q8_0 wt2 ===
+    rc=0 wall=58s log=artifact/results/paper_1_5/raw/c2-ppl-wt2-BASE-Q8_0-qwen05.log
+    parsed PPL=11.6803 stderr=0.08283
+=== 17:07:56Z RUN BASE-Q8_0 c4 ===
+    rc=0 wall=172s log=artifact/results/paper_1_5/raw/c2-ppl-c4-BASE-Q8_0-qwen05.log
+    parsed PPL=18.9232 stderr=0.08061
+=== FINAL CSV ===
+variant_id,perplexity_wikitext2,perplexity_wikitext2_stderr,perplexity_c4,perplexity_c4_stderr,timestamp_utc
+V1,11.8716,0.08444,19.2555,0.08236,2026-04-20T16:39:04Z
+V2,11.8416,0.08421,19.1751,0.08195,2026-04-20T16:43:24Z
+V3a,11.8928,0.08470,19.2597,0.08238,2026-04-20T16:47:30Z
+V3b,11.8487,0.08445,19.2050,0.08217,2026-04-20T16:51:29Z
+V3c,11.8145,0.08404,19.1307,0.08187,2026-04-20T16:55:24Z
+V4,11.8133,0.08385,19.1821,0.08187,2026-04-20T16:59:21Z
+BASE-Q4_0,13.1389,0.09490,21.0646,0.09039,2026-04-20T17:03:00Z
+BASE-Q5_K_M,11.8746,0.08422,19.1810,0.08158,2026-04-20T17:06:58Z
+BASE-Q8_0,11.6803,0.08283,18.9232,0.08061,2026-04-20T17:10:48Z

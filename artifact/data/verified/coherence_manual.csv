@@ -1,0 +1,6 @@
+model_tag,quant,simd,auto_label,manual_label,manual_reason
+Pythia-70M,Q4_0,yes,coherent,degraded,"hallucinates nonexistent word ""Amphiclanthe"" repeated 4× with near-identical 5-gram (""the Amphiclanthe was the largest""). Auto-classifier missed higher-order repetition. Fluent English but semantically broken."
+SmolLM2-135M,Q4_0,yes,coherent,coherent,"correctly identifies Paris as French capital; minor factual error (Europe's largest city claim). Topically relevant throughout."
+Qwen2.5-0.5B,Q4_0,yes,coherent,coherent,"correctly identifies Paris; Zurich is often mistaken for Swiss capital (actually Bern). Grammatically and semantically coherent."
+Gemma3-270M-IT,Q4_0,yes,coherent,coherent,"correctly identifies Paris with markdown formatting; repetitive self-affirmation but fluent."
+Mamba-370M,Q8_0,yes,coherent,coherent,"base (not instruct) model — continuation-style output. Fluent English, topically adjacent (Paris/city/Europe)."

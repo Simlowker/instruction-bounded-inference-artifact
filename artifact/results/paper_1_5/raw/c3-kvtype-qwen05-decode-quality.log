@@ -1,0 +1,101 @@
+Task 17 - KV cache type trade-off decode quality log
+=====================================================
+Model:   Qwen 2.5 0.5B Instruct Q4_0 (models/c3-qwen05-q4.gguf)
+Wasm:    patched C3-IO profiling build (commit bb238b9, llama_cpp_canister main)
+Driver:  papers/.../scripts/paper_1_5/c3_kvtype_v2.sh
+Network: local dfx replica
+Prompt:  "Tell me a story about a cat."  (later changed to "Hi cat." when
+         fresh-chat N=20 probes hit IC0522 with the longer prompt)
+Started: 2026-04-20T18:19:27+00:00
+Finished:2026-04-20T18:21:08+00:00
+
+
+Quantitative results (N_MAX and wall-clock at N_MAX, fresh new_chat per arm)
+----------------------------------------------------------------------------
+  arm         N_MAX   wall_s   tok_per_s
+  f16          20     13.43    1.49
+  q8_0         20     10.94    1.83
+  q4_0         20     10.73    1.86
+
+Key observation: N_MAX is identical (20) across all three arms.
+
+
+Qualitative comparison - emitted text at N_MAX=20, same prompt, same sampler
+----------------------------------------------------------------------------
+  f16:  "Nice to meet you! Let's get started.\n\nWhat would you like to learn today, and what"
+  q8_0: "Nice to meet you! Let's get started.\n\nWhat would you like to learn today, and what"
+  q4_0: "Nice to meet you! Let's get started.\n\nWhat would you like to learn today, and what"
+
+The outputs are BIT-IDENTICAL across all three --cache-type-k settings.
+
+
+Interpretation and limitation
+-----------------------------
+The --cache-type-k flag IS parsed by the canister's arg parser -- this was
+verified independently by passing "--cache-type-k INVALID_XYZ" which produced
+the expected exception "Unsupported cache type: INVALID_XYZ" (canister log
+entry around 2026-04-20T18:13:57Z). However, when passed at run_update time
+on this patched wasm build, the flag is functionally a no-op: the KV cache
+has already been allocated with f16 precision at the model's first lazy
+load (which happened earlier in this session via run_update without any
+--cache-type-k). Subsequent run_update calls just reuse the already-allocated
+KV tensors; llama.cpp does not re-allocate the cache to honor a changed
+--cache-type-k on an existing context.
+
+Evidence this is the failure mode (not a true quality-equivalence finding):
+  1. Bit-identical decode across all three settings at the same seed is
+     extremely unlikely if the KV quant actually differed -- q4_0 KV
+     introduces enough per-layer noise to alter sampling in practice.
+  2. The canister's load_model endpoint, which IS the correct entry point
+     for --cache-type-k (it controls cache allocation), consistently trapped
+     with "heap out of bounds" every time it was invoked during this
+     session (exit code IC0502, canister log "common_init_result: fitting
+     params to device memory" followed by [TRAP]: heap out of bounds).
+     This reproduces whether or not --cache-type-k is passed. load_model
+     is reliably broken on this patched wasm build once the context has
+     been populated once; attempts to force re-init would require a full
+     wasm re-install.
+  3. The wall-clock differences (13.43 vs 10.94 vs 10.73 s) do not track
+     KV compute cost; they track probe ordering (f16 is the first arm
+     measured after fresh new_chat, incurs re-tokenization + initial
+     prompt eval overhead; q8 and q4 inherit the warm context).
+
+
+Actionable conclusion for Paper 1.5 Phase 2
+-------------------------------------------
+Task 17 result: "cache-type-k is RUNTIME-ACCESSIBLE on this wasm build
+(parser accepts the flag and rejects invalid values with a clear error)
+but is NOT functionally EFFECTIVE at run_update time because KV cache
+allocation happens at model-load time, and load_model traps reliably on
+this patched wasm once a context exists. A true f16 / q8_0 / q4_0 KV
+trade-off measurement requires rebuilding the wasm with either (a) a
+working load_model path that can swap KV cache type, or (b) the flag
+baked in at compile time per arm with separate wasm artifacts. Punt to
+next wasm iteration."
+
+Per the task protocol: data still recorded to CSV (rows
+c3-kvtype-qwen05-{f16,q8,q4}) so downstream analysis can see both the
+wall-clock numbers AND this caveat. The CSV notes column flags
+"prompt=hi-cat;probes=10,15,20;90s-timeout" but does NOT claim the KV
+was actually quantized -- the bit-identical decode above refutes that.
+
+
+Quality sentences (for paper, required by protocol)
+---------------------------------------------------
+1. "At Qwen 2.5 0.5B Q4_0, N_MAX=20 was reached identically under all
+   three requested KV precisions (f16, q8_0, q4_0)."
+2. "The emitted text at N_MAX=20 was bit-identical across the three
+   arms, which is physically implausible if KV quantization had
+   actually taken effect."
+3. "The arg parser accepts --cache-type-k and rejects invalid values
+   with a clean error, but the flag only applies at KV allocation,
+   which happens inside load_model -- the endpoint that reliably
+   traps on this build once a context exists."
+4. "Thus Task 17 as specified is BLOCKED on the current wasm artifact
+   and would require a rebuild with --cache-type-k baked in per arm
+   (three separate wasm binaries) or a fix to load_model's re-init
+   path."
+5. "The single-arm f16 reference (N_MAX=20, 13.43 s, 1.49 tok/s) is
+   still usable as a C3 baseline and is consistent with Task 14's
+   N=20 measurement (13.46 s from the io-overhead sweep; see CSV
+   row c3-ioover-qwen05-n20)."

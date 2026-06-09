@@ -1,0 +1,72 @@
+=== SSN mainnet validation — Qwen 2.5 0.5B BASE-Q8_0 ===
+Date: 2026-04-20T20:40Z
+Canister: u2pva-3iaaa-aaaax-qaa7a-cai
+File: models/model.gguf
+sha256: fddbe1e45667d99b8b864936978399dfba5d34b79379834e22208dbc7266444c
+Size: 531,067,616 bytes (531 MB)
+
+=== Operational finding: load_model heap-OOB with default ctx ===
+
+Initial load_model with default args trapped IC0502 "heap out of bounds".
+Canister log showed:
+  n_ctx = 32768 (model's n_ctx_train default)
+  KV buffer = 384 MiB
+  compute buffer = 300 MiB
+  weights = 531 MiB
+  total ≈ 1215 MiB heap allocation
+
+This exceeds the wasm memory pagination budget on SSN even with 3 GB
+wasm_memory_limit. Same failure repeated with -c 2048 (compute buffer
+still 302 MiB).
+
+Fix: `load_model -c 512 -b 512` → total ≈ 850 MiB, loads cleanly.
+
+This is NEW operational finding: **wasm heap pagination on SSN is
+tighter than raw wasm_memory_limit suggests for models >500 MB with
+default batch/context sizes.** Affects Phase 3 BitNet 2B4T (~1.8 GB
+expected) — will require similar tuning.
+
+=== Measurements ===
+
+Prompt: "The capital of France is"
+Load args: --model models/model.gguf --no-warmup -c 512 -b 512
+
+Binsearch:
+  N=32 → FAIL
+  N=30 → FAIL (local N_MAX)
+  N=29 → FAIL
+  N=28 → OK, wall=8.98s
+  N=26 → OK, wall=8.73s
+
+N_MAX = 28 tok/call
+
+3 reps at N=28:
+  rep1: wall=8.89s, output=" ____. A. Paris B. Brussels C. London D. Berlin Answer: A ..."
+  rep2: wall=8.89s, output=" ____. A. Paris B. Brussels C. London D. Berlin Answer: A ..."
+  rep3: wall=8.71s, output=" ____. A. Paris B. Brussels C. London D. Berlin Answer: A ..."
+
+Byte-determinism across 3 reps: ✓ (identical first 80 chars)
+Wall variance: mean=8.83s, stdev=0.10s, CV=1.2%
+α_eff SSN = 40e9 / (28 × 2 × 500e6) = 1.429
+
+Notable: output contains "Answer: A" (correct, Paris). Even a non-instruct
+base model reliably recalls Paris as France's capital from pretrain.
+
+Cross-env vs local:
+  Local (Phase 2 Task 8): N_MAX=30 tok/call
+  SSN: N_MAX=28 tok/call
+  Delta: -6.7% — larger than SmolLM2's -2% but still within SSN variance
+  band observed for prior Qwen measurements
+
+α_eff consistency: local=1.333, SSN=1.429 — within the Paper 1
+[1.3, 1.6] modern Q4/Q8 band. No regression.
+
+=== C3 chat demo on SSN (Qwen Q8_0, current load state) ===
+
+See c3-ssn-chat-demo-qwen05.log and c3-ssn-chat-demo-transcript.md.
+
+Result: 10/10 turns completed, 100 tokens cumulative, 41.12s wall-clock.
+Narrative coherent across all 10 calls (multi-turn state preserved
+via prompt-cache-all on SSN mainnet 13-node consensus).
+
+=== END ===
