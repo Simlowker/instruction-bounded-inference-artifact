@@ -152,7 +152,7 @@ The full network tables are `artifact/data/onchain/icp_mainnet.csv` and `artifac
 
 The underlying registry rows are in `artifact/results/raw/core_measurements_v2.csv`; the network rows are in `artifact/data/onchain/`. The long-form measurement inventory is preserved in `artifact/notes/paper1_long_measurement_inventory.md` for reviewers who want the distinction between fit rows, deployment rows, negative results, and canister-characterization rows.
 
-Fit statistics on the modern-only regime (`artifact/results/current/scaling_law/`, via `scripts/analyze_scaling_law.py`):
+Fit statistics on the modern-only regime (`artifact/results/current/scaling_law/`, via `artifact/scripts/analyze_scaling_law.py`):
 
 - Median **α_eff = 1.527**, 95% bias-corrected bootstrap CI **[1.374, 1.65]** (BCa, 9 999 resamples)
 - Strict modern-only **LOAO MAPE = 7.7%** (model-weighted; family-equal weighting gives 8.9%), max per-architecture error 18.3%
@@ -302,7 +302,7 @@ A WASM SIMD vectorized unpack for the Q6_K `ql/qh` path (reviewer-flagged scalar
 4. **Build sensitivity.** Absolute tok/call drifts within ±15% between builds; calibration points must be tied to a WASM hash.
 5. **Prefill.** Long-prompt usability remains poor under a per-call budget: a 512-token SmolLM2-135M prompt requires ~15 sequential calls (~15–30 s latency) before the first generated token. Decode may obey a simple law while user-visible latency still needs multi-call orchestration.
 6. **Throughput is not quality.** Higher tok/call does not imply a better model; it implies a cheaper one under the budget. We retain `Qwen 3.5` ternary and layer-pruned variants in the artifact as explicit negative results: throughput-valid but quality-invalid (`artifact/data/quality_audit.csv`, flagged `role=negative_result`).
-7. **Embedding evaluation.** The encoder case study is N = 1 with small sanity checks; MTEB-grade on-chain evaluation is a template (`scripts/run_mteb_fra.py`), not a completed benchmark.
+7. **Embedding evaluation.** The encoder case study is N = 1 with small sanity checks; MTEB-grade on-chain evaluation is a template (`artifact/scripts/run_mteb_fra.py`), not a completed benchmark.
 
 ## 8 Conclusion
 
@@ -397,7 +397,7 @@ Full SHA-256 values, rebuild commits, baseline tags, and the non-reproducible or
 
 [29] A. Chan et al., "Optimistic TEE-Rollups: A Hybrid Architecture for Scalable and Verifiable Generative AI Inference on Blockchain," arXiv:2512.20176.
 
-[30] W. Zhou, X. Xu, C. Wei, Y. Yan, "DTVM: Revolutionizing Smart Contract Execution with Determinism," arXiv:2504.16552.
+[30] W. Zhou et al., "DTVM: Revolutionizing Smart Contract Execution with Determinism," arXiv:2504.16552.
 
 [31] T. Vaidhya et al., "Spectra 1.1: Scaling Laws and Efficient Inference for Ternary Language Models," arXiv:2506.23025.
 
