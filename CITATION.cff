@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the preprint below."
+title: "Instruction-Bounded Inference — Reproducible Artifact"
+authors:
+  - family-names: Aerni
+    given-names: Julien
+    affiliation: "Meotis Sàrl"
+    orcid: "https://orcid.org/0009-0001-7872-1057"
+  - family-names: Fluck
+    given-names: "Siméon"
+    affiliation: "Kaizen Corp SA"
+    orcid: "https://orcid.org/0009-0002-8215-7150"
+  - family-names: Becker
+    given-names: Dustin
+    affiliation: "ORIGYN Foundation"
+    orcid: "https://orcid.org/0000-0002-8505-0597"
+license: MIT
+doi: 10.5281/zenodo.20607598
+preferred-citation:
+  type: article
+  title: "On-Chain LLM Inference Under Instruction Budgets: An Instruction-Budget Cost Model, Ternary Floor Evidence, and Session Costs"
+  year: 2026
+  doi: 10.5281/zenodo.20607598
+  authors:
+    - family-names: Aerni
+      given-names: Julien
+    - family-names: Fluck
+      given-names: "Siméon"
+    - family-names: Becker
+      given-names: Dustin

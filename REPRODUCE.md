@@ -21,12 +21,8 @@ This document is the single-source procedure to reproduce the headline mainnet r
 # Comoto fork (this work)
 git clone https://github.com/Simlowker/gian-paper-artifact-source.git gian
 cd gian/llama_cpp_canister
-git checkout 8cda13b   # paper-v14-bench-snapshot
-
-# In the same llama_cpp_canister directory, clone the upstream fork
-cd src
-git clone https://github.com/onicai/llama_cpp_onicai_fork.git
-cd ..
+# The repo is a byte-exact export of Simlowker/gian@8cda13b (tag: paper-v14-bench-snapshot).
+# The llama.cpp fork sources are already vendored in src/llama_cpp_onicai_fork/ — no extra clone needed.
 
 # onicai baseline (latest tagged release)
 cd /tmp
