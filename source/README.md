@@ -1,8 +1,10 @@
 # source/ — Comoto fork source snapshot
 
-Byte-exact `git archive` export of the subtree `llama_cpp_canister/` from the authors'
-private monorepo at the paper's pinned commit (Table DA1: `Simlowker/gian@8cda13b`;
-repository tag: `paper-v14-bench-snapshot`). Exported 2026-07-03.
+`git archive` export of the subtree `llama_cpp_canister/` from the authors' private
+monorepo at the paper's pinned commit (Table DA1: `Simlowker/gian@8cda13b`; repository
+tag: `paper-v14-bench-snapshot`). Exported 2026-07-03. Five internal working notes
+(`.claude/`, `docs/superpowers/` — planning documents, no build-relevant content) were
+removed from the export; **all build sources are byte-identical to the pinned commit**.
 
 - Builds the **29 tok/call** WASM of the 2.9× result (rebuild SHA-256 `da112d99…`, see
   `../results/rebench_2026-05-19.md`).
