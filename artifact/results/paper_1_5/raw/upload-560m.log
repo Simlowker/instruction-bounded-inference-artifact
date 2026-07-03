@@ -25,7 +25,7 @@ Checking if the local network is up...
 Ok!
 replica-port       = None
 webserver-port     = 4943
-networks-json-path = /Users/macpromax/.config/dfx/networks.json
+networks-json-path = ~/.config/dfx/networks.json
 Network URL        = http://localhost:4943
 Using identity = default
 Canister ID = uzt4z-lp777-77774-qaabq-cai

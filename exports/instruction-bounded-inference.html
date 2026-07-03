@@ -1049,7 +1049,7 @@ consensus-metered WASM canister rather than native hardware:</p>
 <tr>
 <td>Speedup vs baseline</td>
 <td style="text-align: right;"><strong>1.49×</strong></td>
-<td style="text-align: right;"><strong>1.50×</strong></td>
+<td style="text-align: right;"><strong>≈1.5×</strong></td>
 </tr>
 <tr>
 <td>% of theoretical floor (α = 1)</td>
@@ -1067,7 +1067,7 @@ consensus-metered WASM canister rather than native hardware:</p>
 cost-model floor for this path. We read this as evidence consistent with
 the floor on the measured TQ2_0 path; the 3.9B point sits at
 integer-token resolution <code>N_MAX = 5</code> (≈ 20% per-step
-granularity in α), so we do not claim closed saturation. The 1.49–1.50×
+granularity in α), so we do not claim closed saturation. The ≈1.5×
 speedup over the modern-arch baseline is constant across the 7× span,
 weakening the alternative explanation that the 560 M result was inflated
 by sub-α = 1.54 inefficiency at small scale.</p>
@@ -1106,7 +1106,10 @@ layers→Q8, top-ΔPPL layers→Q8) on a Q4_K_M base, and compared against
 uniform <code>Q4_0</code>, <code>Q5_K_M</code>, <code>Q8_0</code> on
 SmolLM2-135M and Qwen 2.5 0.5B. Throughput rows in
 <code>artifact/data/paper_1_5/mixed_precision_measurements.csv</code>;
-perplexity rows in <code>c2-ppl-*.csv</code>; joined summary in
+perplexity rows in
+<code>artifact/data/paper_1_5/c2-ppl-smollm135-only.csv</code> (SmolLM2)
+and <code>artifact/results/paper_1_5/raw/c2-ppl-qwen05-only.csv</code>
+(Qwen); joined summary in
 <code>artifact/results/paper_1_5/tables/c2-mixed-precision-summary.md</code>.</p>
 <p><strong>Table 2.</strong> Pareto winners on both models. Qwen 0.5B
 Q8_0 size is reported as the Phase 2 local build (506.5 MB, matching the
@@ -1158,6 +1161,9 @@ byte-exact weights, differing only in metadata.</p>
 </tr>
 </tbody>
 </table>
+<p><em>α_eff in this table uses nominal parameter counts (135 M / 0.5
+B); with the GGUF-audited counts (134.5 M / 494 M) the values are 1.53 /
+1.35 — the same registry convention as Table 1.</em></p>
 <p>Uniform <code>Q8_0</code> is the highest-throughput, lowest-PPL point
 on both tested frontiers, but not the smallest. The precise statement
 is: no mixed variant strictly dominates it. <code>Q5_K_M</code> is the
@@ -1317,15 +1323,19 @@ future Q6_K workloads that might land above the threshold.</p>
 only for TQ2_0. Neither result is yet a universal law across
 architecture, quantization, and scale.</li>
 <li><strong>Variance coverage.</strong> 4 of 17 modern-Transformer
-calibration points are variance-verified (3 reps, CV &lt; 1.05%) —
-Pythia-70M Q4_0, SmolLM2-135M Q4_0, Gemma3-270M-IT Q4_0, Qwen 2.5 0.5B
-Q4_0; a fifth variance-verified point, Mamba-370M, is the
-non-Transformer baseline included in the modern-only LOAO fit, where it
-is the single largest per-architecture error (18.3%). The remaining
-single-run binary-search estimates still contribute to the LOAO summary
-and the reported modern-only BCa interval in §3, so the interval should
-be read as conditional on a mixed repeated/single-run evidence base
-rather than as a repetition-only uncertainty estimate.</li>
+calibration rows are variance-verified (3 reps, CV &lt; 1.05%); the 17
+counts <code>role=calibration</code> registry rows with modern
+Transformer architectures in <code>artifact/data/models.csv</code>,
+quantization/SIMD variants counted as separate rows (GPT-2 legacy rows
+and the Mamba/RWKV non-Transformer baselines excluded) — Pythia-70M
+Q4_0, SmolLM2-135M Q4_0, Gemma3-270M-IT Q4_0, Qwen 2.5 0.5B Q4_0; a
+fifth variance-verified point, Mamba-370M, is the non-Transformer
+baseline included in the modern-only LOAO fit, where it is the single
+largest per-architecture error (18.3%). The remaining single-run
+binary-search estimates still contribute to the LOAO summary and the
+reported modern-only BCa interval in §3, so the interval should be read
+as conditional on a mixed repeated/single-run evidence base rather than
+as a repetition-only uncertainty estimate.</li>
 <li><strong>Non-Transformer evidence is preliminary.</strong> RWKV-7 is
 consistent; Mamba is build-sensitive. Cross-architecture generalization
 is not settled.</li>
@@ -1558,9 +1568,9 @@ Ternary LLM Inference via In-Place SIMD ALU Reorganization,”
 arXiv:2511.13676.</p>
 <p>[28] KD Conway, C. So, X. Yu, K. Wong, “opML: Optimistic Machine
 Learning on Blockchain,” arXiv:2401.17555.</p>
-<p>[29] A. Chan, A. Ding, F. Chen, A. Wu, “Optimistic TEE-Rollups: A
-Hybrid Architecture for Scalable and Verifiable Generative AI Inference
-on Blockchain,” arXiv:2512.20176.</p>
+<p>[29] A. Chan et al., “Optimistic TEE-Rollups: A Hybrid Architecture
+for Scalable and Verifiable Generative AI Inference on Blockchain,”
+arXiv:2512.20176.</p>
 <p>[30] W. Zhou, X. Xu, C. Wei, Y. Yan, “DTVM: Revolutionizing Smart
 Contract Execution with Determinism,” arXiv:2504.16552.</p>
 </body>

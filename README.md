@@ -30,6 +30,8 @@ multi-call IO tax.
 | `artifact/notes/` | β derivation, source pins (WASM/GGUF SHA-256), execution-boundary note |
 | `CLAIMS-EVIDENCE-MATRIX.md` | every load-bearing number → its CSV / summary table |
 | `REPRODUCE.md` | end-to-end local rebuild of the 2.9× gap (dfx, ~50 GB, ~30 min, **no ICP cycles**) |
+| `results/rebench_2026-05-19.md` | 2026-05-19 rebuild + re-bench log — SHA-256 of both rebuilt WASMs behind the 29-vs-10 re-validation |
+| `scripts/run_bench.sh` | benchmark driver used by `REPRODUCE.md` |
 
 ## Quickstart
 

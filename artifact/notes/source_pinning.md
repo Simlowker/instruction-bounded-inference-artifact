@@ -29,3 +29,11 @@ The original 2026-04-09 Comoto WASM hash (`ef8f9d78...`) is not byte-reproducibl
 it was built from a working tree whose model source files were not all committed.
 The publication claim is therefore functional reproducibility of the 29-vs-10
 fork gap, not byte-exact reproduction of the original April binary.
+
+## Registry GGUF provenance columns (`models.csv`)
+
+`gguf_path` / `gguf_match` record the GGUF file used to **audit parameter counts**
+(`params_M_gguf`), not necessarily the binary of the measured run (the `quant` column).
+Parameter counts are quantization-invariant, so for four historical Q8_0 rows
+(M01, M15, M18, M26) the Q4_0 GGUF of the same checkpoint was used for the parameter
+audit; `gguf_match = exact` refers to the parameter-count match, not the measured quant.

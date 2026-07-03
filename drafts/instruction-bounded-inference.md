@@ -219,11 +219,11 @@ We integrated a custom TQ2_0 (2-bit ternary, weights in {−1, 0, +1}) WASM SIMD
 | **N_MAX SSN mainnet (3 reps)**        | **34** (CV 0%) |    **5** (CV 0%) |
 | Implied α_eff                         |       **1.03** |         **1.00** |
 | Paper 1 modern-arch baseline (α=1.54) |           22.8 |              3.3 |
-| Speedup vs baseline                   |      **1.49×** |        **1.50×** |
+| Speedup vs baseline                   |      **1.49×** |        **≈1.5×** |
 | % of theoretical floor (α = 1)        |           97 % | ≈100 % (N=5, ±20 % res.) |
 | Coherence                             |  10/10 fluency | factual ✓ at N=5 |
 
-Two points 7× apart in parameter count both land at α_eff ≈ 1, the cost-model floor for this path. We read this as evidence consistent with the floor on the measured TQ2_0 path; the 3.9B point sits at integer-token resolution `N_MAX = 5` (≈ 20% per-step granularity in α), so we do not claim closed saturation. The 1.49–1.50× speedup over the modern-arch baseline is constant across the 7× span, weakening the alternative explanation that the 560 M result was inflated by sub-α = 1.54 inefficiency at small scale.
+Two points 7× apart in parameter count both land at α_eff ≈ 1, the cost-model floor for this path. We read this as evidence consistent with the floor on the measured TQ2_0 path; the 3.9B point sits at integer-token resolution `N_MAX = 5` (≈ 20% per-step granularity in α), so we do not claim closed saturation. The ≈1.5× speedup over the modern-arch baseline is constant across the 7× span, weakening the alternative explanation that the 560 M result was inflated by sub-α = 1.54 inefficiency at small scale.
 
 ### 5.2 Byte-exact cross-environment determinism
 
@@ -237,7 +237,7 @@ On non-purpose-trained ternary weights, the same TQ2_0 path reaches **201 tok/ca
 
 ### 6.1 Q8_0 stays on the Pareto frontier
 
-The per-call law does not by itself say which quantization to pick. We computed per-layer ΔPPL sensitivity on WikiText-2, generated six mixed-precision variants per model (embedding→Q8, attention→Q8, first K layers→Q8, top-ΔPPL layers→Q8) on a Q4_K_M base, and compared against uniform `Q4_0`, `Q5_K_M`, `Q8_0` on SmolLM2-135M and Qwen 2.5 0.5B. Throughput rows in `artifact/data/paper_1_5/mixed_precision_measurements.csv`; perplexity rows in `c2-ppl-*.csv`; joined summary in `artifact/results/paper_1_5/tables/c2-mixed-precision-summary.md`.
+The per-call law does not by itself say which quantization to pick. We computed per-layer ΔPPL sensitivity on WikiText-2, generated six mixed-precision variants per model (embedding→Q8, attention→Q8, first K layers→Q8, top-ΔPPL layers→Q8) on a Q4_K_M base, and compared against uniform `Q4_0`, `Q5_K_M`, `Q8_0` on SmolLM2-135M and Qwen 2.5 0.5B. Throughput rows in `artifact/data/paper_1_5/mixed_precision_measurements.csv`; perplexity rows in `artifact/data/paper_1_5/c2-ppl-smollm135-only.csv` (SmolLM2) and `artifact/results/paper_1_5/raw/c2-ppl-qwen05-only.csv` (Qwen); joined summary in `artifact/results/paper_1_5/tables/c2-mixed-precision-summary.md`.
 
 **Table 2.** Pareto winners on both models. Qwen 0.5B Q8_0 size is reported as the Phase 2 local build (506.5 MB, matching the anchored throughput row); the Phase 3 SSN rebuild is 531 MB with byte-exact weights, differing only in metadata.
 
@@ -250,6 +250,8 @@ The per-call law does not by itself say which quantization to pick. We computed 
 | PPL WT2 (F16 baseline)   |        13.574 |        11.674 |
 | ΔPPL vs F16              |    **+0.029** |    **+0.007** |
 | α_eff = B / (N · 2P)     |         1.527 |         1.333 |
+
+*α_eff in this table uses nominal parameter counts (135 M / 0.5 B); with the GGUF-audited counts (134.5 M / 494 M) the values are 1.53 / 1.35 — the same registry convention as Table 1.*
 
 Uniform `Q8_0` is the highest-throughput, lowest-PPL point on both tested frontiers, but not the smallest. The precise statement is: no mixed variant strictly dominates it. `Q5_K_M` is the sole strictly-dominated variant. The ΔPPL-guided `V4` variant (top-K fragility layers at Q8, rest at Q4_K_M) is the best mixed variant and remains relevant under tight size budgets.
 
@@ -295,7 +297,7 @@ A WASM SIMD vectorized unpack for the Q6_K `ql/qh` path (reviewer-flagged scalar
 ### 7.3 Limitations
 
 1. **Calibration coverage.** The modern-regime law (α_eff ≈ 1.53) is anchored on the 70 M–800 M range; the ternary floor (α_eff ≈ 1.00) is validated at 560 M and 3.9 B but only on the TriLM family and only for TQ2_0. Neither result is yet a universal law across architecture, quantization, and scale.
-2. **Variance coverage.** 4 of 17 modern-Transformer calibration points are variance-verified (3 reps, CV < 1.05%) — Pythia-70M Q4_0, SmolLM2-135M Q4_0, Gemma3-270M-IT Q4_0, Qwen 2.5 0.5B Q4_0; a fifth variance-verified point, Mamba-370M, is the non-Transformer baseline included in the modern-only LOAO fit, where it is the single largest per-architecture error (18.3%). The remaining single-run binary-search estimates still contribute to the LOAO summary and the reported modern-only BCa interval in §3, so the interval should be read as conditional on a mixed repeated/single-run evidence base rather than as a repetition-only uncertainty estimate.
+2. **Variance coverage.** 4 of 17 modern-Transformer calibration rows are variance-verified (3 reps, CV < 1.05%); the 17 counts `role=calibration` registry rows with modern Transformer architectures in `artifact/data/models.csv`, quantization/SIMD variants counted as separate rows (GPT-2 legacy rows and the Mamba/RWKV non-Transformer baselines excluded) — Pythia-70M Q4_0, SmolLM2-135M Q4_0, Gemma3-270M-IT Q4_0, Qwen 2.5 0.5B Q4_0; a fifth variance-verified point, Mamba-370M, is the non-Transformer baseline included in the modern-only LOAO fit, where it is the single largest per-architecture error (18.3%). The remaining single-run binary-search estimates still contribute to the LOAO summary and the reported modern-only BCa interval in §3, so the interval should be read as conditional on a mixed repeated/single-run evidence base rather than as a repetition-only uncertainty estimate.
 3. **Non-Transformer evidence is preliminary.** RWKV-7 is consistent; Mamba is build-sensitive. Cross-architecture generalization is not settled.
 4. **Build sensitivity.** Absolute tok/call drifts within ±15% between builds; calibration points must be tied to a WASM hash.
 5. **Prefill.** Long-prompt usability remains poor under a per-call budget: a 512-token SmolLM2-135M prompt requires ~15 sequential calls (~15–30 s latency) before the first generated token. Decode may obey a simple law while user-visible latency still needs multi-call orchestration.
@@ -393,6 +395,6 @@ Full SHA-256 values, rebuild commits, baseline tags, and the non-reproducible or
 
 [28] KD Conway, C. So, X. Yu, K. Wong, "opML: Optimistic Machine Learning on Blockchain," arXiv:2401.17555.
 
-[29] A. Chan, A. Ding, F. Chen, A. Wu, "Optimistic TEE-Rollups: A Hybrid Architecture for Scalable and Verifiable Generative AI Inference on Blockchain," arXiv:2512.20176.
+[29] A. Chan et al., "Optimistic TEE-Rollups: A Hybrid Architecture for Scalable and Verifiable Generative AI Inference on Blockchain," arXiv:2512.20176.
 
 [30] W. Zhou, X. Xu, C. Wei, Y. Yan, "DTVM: Revolutionizing Smart Contract Execution with Determinism," arXiv:2504.16552.

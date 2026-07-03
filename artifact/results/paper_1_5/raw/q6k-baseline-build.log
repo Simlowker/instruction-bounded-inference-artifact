@@ -4,7 +4,7 @@ Deleting the folder: build-library
 Library build folder: llama_cpp_canister/build-library/__ic_candid__
 --
 Compiling C++ files for library: __ic_candid__
-Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -DNDEBUG -DGGML_USE_CPU -msimd128 -fexceptions -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS -DGGML_DEFAULT_N_THREADS=1  
+Compile command: ~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot ~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -DNDEBUG -DGGML_USE_CPU -msimd128 -fexceptions -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS -DGGML_DEFAULT_N_THREADS=1  
 /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_inspect_message.cpp
 /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_reject_callback.cpp
 /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister/canister_init.cpp
@@ -90,14 +90,14 @@ Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --ta
 /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors/hash-library/sha256.cpp
 --
 Compiling C files for library: __ic_candid__
-Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -DNDEBUG -msimd128 -DGGML_USE_CPU -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS  
+Compile command: ~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang  --target=wasm32-wasi --sysroot ~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -DNDEBUG -msimd128 -DGGML_USE_CPU -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS  
 /opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/__wasilibc_initialize_environ.c
 /opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/posix.c
 /opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/unreachable.c
 /opt/homebrew/lib/python3.14/site-packages/icpp/ic/wasi_sdk_traps/ic_trap.c
 --
 Creating the static library: __ic_candid__.a
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-ar qc __ic_candid__.a *.o
+~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-ar qc __ic_candid__.a *.o
 --
 All done building the static library:
 llama_cpp_canister/build-library/__ic_candid__/__ic_candid__.a
@@ -111,7 +111,7 @@ Deleting the folder: build
 Copying your Candid file to the build folder...
 --
 Compiling your C++ files:
-Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -I llama_cpp_canister -I llama_cpp_canister/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/vendor -I llama_cpp_canister/wasi-shims -I llama_cpp_canister/src/llama_cpp_onicai_fork/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/common -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu -I llama_cpp_canister/src/llama_cpp_onicai_fork  -DNDEBUG -DGGML_USE_CPU -msimd128 -fexceptions -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS -DGGML_DEFAULT_N_THREADS=1  
+Compile command: ~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot ~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -I llama_cpp_canister -I llama_cpp_canister/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/vendor -I llama_cpp_canister/wasi-shims -I llama_cpp_canister/src/llama_cpp_onicai_fork/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/common -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu -I llama_cpp_canister/src/llama_cpp_onicai_fork  -DNDEBUG -DGGML_USE_CPU -msimd128 -fexceptions -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS -DGGML_DEFAULT_N_THREADS=1  
 llama_cpp_canister/src/run.cpp
 llama_cpp_canister/src/llama_cpp_onicai_fork/src/llama-graph.cpp
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/binary-ops.cpp
@@ -706,61 +706,61 @@ llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning:
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:449:16: warning: 'u8path<char[9], 0>' is deprecated [-Wdeprecated-declarations]
   449 |     return fs::u8path("libggml-");
       |                ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[9], 0>' has been explicitly marked deprecated here
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[9], 0>' has been explicitly marked deprecated here
    78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
       |                       ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
   747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
       |                                             ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
   688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
       |                                                 ^
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:457:16: warning: 'u8path<char[4], 0>' is deprecated [-Wdeprecated-declarations]
   457 |     return fs::u8path(".so");
       |                ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[4], 0>' has been explicitly marked deprecated here
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[4], 0>' has been explicitly marked deprecated here
    78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
       |                       ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
   747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
       |                                             ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
   688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
       |                                                 ^
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:463:36: warning: 'u8path<const char *, 0>' is deprecated [-Wdeprecated-declarations]
   463 |     const fs::path name_path = fs::u8path(name);
       |                                    ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<const char *, 0>' has been explicitly marked deprecated here
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<const char *, 0>' has been explicitly marked deprecated here
    78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
       |                       ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
   747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
       |                                             ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
   688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
       |                                                 ^
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:464:96: warning: 'u8path<char[2], 0>' is deprecated [-Wdeprecated-declarations]
   464 |     const fs::path file_prefix = backend_filename_prefix().native() + name_path.native() + fs::u8path("-").native();
       |                                                                                                ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[2], 0>' has been explicitly marked deprecated here
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<char[2], 0>' has been explicitly marked deprecated here
    78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
       |                       ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
   747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
       |                                             ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
   688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
       |                                                 ^
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp:481:36: warning: 'u8path<const char *, 0>' is deprecated [-Wdeprecated-declarations]
   481 |         search_paths.push_back(fs::u8path(user_search_path));
       |                                    ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<const char *, 0>' has been explicitly marked deprecated here
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__filesystem/u8path.h:78:23: note: 'u8path<const char *, 0>' has been explicitly marked deprecated here
    78 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_WITH_CHAR8_T path u8path(const _Source& __s) {
       |                       ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:747:45: note: expanded from macro '_LIBCPP_DEPRECATED_WITH_CHAR8_T'
   747 | #    define _LIBCPP_DEPRECATED_WITH_CHAR8_T _LIBCPP_DEPRECATED
       |                                             ^
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
   688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
       |                                                 ^
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/gguf.cpp:673:100: warning: format specifies type 'size_t' (aka 'unsigned long') but the argument has type 'unsigned int' [-Wformat]
@@ -769,10 +769,10 @@ llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/gguf.cpp:673:100: warning:
       |                                                                                                                                       %u
   673 |                     __func__, info.t.name, info.t.ne[0], info.t.ne[1], info.t.ne[2], info.t.ne[3], SIZE_MAX);
       |                                                                                                    ^~~~~~~~
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/bits/stdint.h:20:25: note: expanded from macro 'SIZE_MAX'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/bits/stdint.h:20:25: note: expanded from macro 'SIZE_MAX'
    20 | #define SIZE_MAX        UINT32_MAX
       |                         ^~~~~~~~~~
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/stdint.h:50:20: note: expanded from macro 'UINT32_MAX'
+~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot/include/wasm32-wasi/stdint.h:50:20: note: expanded from macro 'UINT32_MAX'
    50 | #define UINT32_MAX (0xffffffffu)
       |                    ^~~~~~~~~~~~~
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-impl.h:119:69: note: expanded from macro 'GGML_LOG_ERROR'
@@ -944,7 +944,7 @@ llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include/ggml.h:232:9: warning:
 3 warnings generated.
 --
 Compiling your C files:
-Compile command: /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -I llama_cpp_canister -I llama_cpp_canister/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/common -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu -I llama_cpp_canister/src/llama_cpp_onicai_fork  -DNDEBUG -msimd128 -DGGML_USE_CPU -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS  
+Compile command: ~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang  --target=wasm32-wasi --sysroot ~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors   -O3 -flto -fno-exceptions -fvisibility=hidden -D NDEBUG -D ICPP_VERBOSE=0   -I llama_cpp_canister -I llama_cpp_canister/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/include -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src -I llama_cpp_canister/src/llama_cpp_onicai_fork/common -I llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu -I llama_cpp_canister/src/llama_cpp_onicai_fork  -DNDEBUG -msimd128 -DGGML_USE_CPU -fmerge-all-constants -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PTHREAD -D_WASI_EMULATED_GETPID -D_WASI_EMULATED_PROCESS_CLOCKS  
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-alloc.c
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/arch/wasm/quants.c
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/arch/wasm/flash-attn.c
@@ -954,10 +954,10 @@ llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/quants.c
 llama_cpp_canister/src/llama_cpp_onicai_fork/ggml/src/ggml-quants.c
 --
 Building a wasi compatible wasm with command:
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot /Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -mexec-model=reactor  -Wl,--lto-O3 -Wl,--strip-debug -Wl,--stack-first -Wl,--export-dynamic  -Wl,-z,stack-size=8388608 -Wl,--initial-memory=536870912 -lwasi-emulated-pthread -lwasi-emulated-getpid -lwasi-emulated-signal -lwasi-emulated-process-clocks -fexceptions  *.o /Users/macpromax/.icpp/rust/1.93.0/target/wasm32-wasip1/release/libic_wasi_polyfill.a llama_cpp_canister/build-library/__ic_candid__/__ic_candid__.a -o llama_cpp_wasi.wasm 
+~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/clang++  --target=wasm32-wasi --sysroot ~/.icpp/wasi-sdk/wasi-sdk-25.0/share/wasi-sysroot  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/canister -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/icapi  -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/pro -I /opt/homebrew/lib/python3.14/site-packages/icpp/ic/ic0  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/candid -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/hooks  -I /opt/homebrew/lib/python3.14/site-packages/icpp_candid/vendors  -std=c++20   -mexec-model=reactor  -Wl,--lto-O3 -Wl,--strip-debug -Wl,--stack-first -Wl,--export-dynamic  -Wl,-z,stack-size=8388608 -Wl,--initial-memory=536870912 -lwasi-emulated-pthread -lwasi-emulated-getpid -lwasi-emulated-signal -lwasi-emulated-process-clocks -fexceptions  *.o ~/.icpp/rust/1.93.0/target/wasm32-wasip1/release/libic_wasi_polyfill.a llama_cpp_canister/build-library/__ic_candid__/__ic_candid__.a -o llama_cpp_wasi.wasm 
 --
 Converting into an IC compatible wasm with command:
-/Users/macpromax/.icpp/rust/1.93.0/bin/wasi2ic llama_cpp_wasi.wasm llama_cpp.wasm 
+~/.icpp/rust/1.93.0/bin/wasi2ic llama_cpp_wasi.wasm llama_cpp.wasm 
 wasi2ic 0.2.13: processing input file: 'llama_cpp_wasi.wasm', writing output into 'llama_cpp.wasm'
 --
 Calling post_wasm_function: scripts.optimize_wasm.main
@@ -969,11 +969,11 @@ Delta:  -3,268,430 bytes, -622 globals
 Within ICP limit (417 <= 1000)
 --
 Adding custom sections to the wasm file...
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public candid:service"="llama_cpp_canister/src/llama_cpp.did" llama_cpp.wasm llama_cpp.wasm
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public cdk:name"="llama_cpp_canister/build/custom_section_cdk_name.txt" llama_cpp.wasm llama_cpp.wasm
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public cdk:languages"="llama_cpp_canister/build/custom_section_cdk_languages.txt" llama_cpp.wasm llama_cpp.wasm
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:private icpp:compiler"="llama_cpp_canister/build/custom_section_version.txt" llama_cpp.wasm llama_cpp.wasm
-/Users/macpromax/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public dfx"="llama_cpp_canister/build/custom_section_dfx.txt" llama_cpp.wasm llama_cpp.wasm
+~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public candid:service"="llama_cpp_canister/src/llama_cpp.did" llama_cpp.wasm llama_cpp.wasm
+~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public cdk:name"="llama_cpp_canister/build/custom_section_cdk_name.txt" llama_cpp.wasm llama_cpp.wasm
+~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public cdk:languages"="llama_cpp_canister/build/custom_section_cdk_languages.txt" llama_cpp.wasm llama_cpp.wasm
+~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:private icpp:compiler"="llama_cpp_canister/build/custom_section_version.txt" llama_cpp.wasm llama_cpp.wasm
+~/.icpp/wasi-sdk/wasi-sdk-25.0/bin/llvm-objcopy --add-section="icp:public dfx"="llama_cpp_canister/build/custom_section_dfx.txt" llama_cpp.wasm llama_cpp.wasm
 --
 All done building the canister Wasm module:
 llama_cpp_canister/build/llama_cpp.wasm

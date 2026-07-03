@@ -81,7 +81,7 @@ artifact/
     ├── historical/
     │   └── scaling_law_baseline/      ← pre-variance baseline outputs
     ├── audit/
-    │   └── CHATGPT-VERIFICATION-PACKAGE.md ← independent statistical review bundle
+    │   └── INDEPENDENT-VERIFICATION-PACKAGE.md ← independent statistical review bundle
     └── README.md
 ```
 
@@ -187,7 +187,7 @@ Four steps to get a new model into the scaling law.
 
 ## Statistical review
 
-We sought independent statistical review on the scaling-law re-fit. See `results/audit/CHATGPT-VERIFICATION-PACKAGE.md` for the verification package and response summary. Key findings:
+We sought independent statistical review on the scaling-law re-fit. See `results/audit/INDEPENDENT-VERIFICATION-PACKAGE.md` for the verification package and response summary. Key findings:
 
 - BCa bootstrap implementation is sound (uses `scipy.stats.bootstrap`).
 - Strict modern-only LOAO MAPE is 7.7%; legacy-in-train convention gives 8.8%. Both reported in paper.

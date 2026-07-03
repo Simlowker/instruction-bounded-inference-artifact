@@ -20,7 +20,7 @@ The following historical names are preserved as symlinks:
 - `summary_v2` → `current/scaling_law`
 - `summary` → `current/extended_analysis`
 - `summary_baseline` → `historical/scaling_law_baseline`
-- `CHATGPT-VERIFICATION-PACKAGE.md` → `audit/CHATGPT-VERIFICATION-PACKAGE.md`
+- `INDEPENDENT-VERIFICATION-PACKAGE.md` → `audit/INDEPENDENT-VERIFICATION-PACKAGE.md`
 - `logs` → `audit/logs`
 
 ## Write Targets

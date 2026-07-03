@@ -1,6 +1,6 @@
-# ChatGPT Verification Package — α_eff Refit with Variance Data
+# Independent Verification Package — α_eff Refit with Variance Data
 
-**Context for the reviewer (ChatGPT).** You are asked to verify the statistical re-fit of an empirical scaling law for LLM inference on the Internet Computer Protocol (ICP). The paper claims:
+**Context for the verifier.** This package is self-contained so that any independent party (human reviewer or automated assistant) can verify the statistical re-fit of an empirical scaling law for LLM inference on the Internet Computer Protocol (ICP). The paper claims:
 
 > **tok/call ≈ B / (α_eff · 2P)** with B = 4 × 10¹⁰ instructions per message, P = total parameter count, α_eff a dimensionless cost multiplier.
 
@@ -40,7 +40,7 @@ All v2 measurements: 3 runs × 3 prompts each, CV < 1.05%.
 - Bootstrap 95% CI via BCa, 9999 resamples, seed=42
 - Cook's distance threshold = 4/n
 
-## 4. What we want ChatGPT to verify
+## 4. What we want the external verifier to verify
 
 1. **Is the re-fit correct?** α_eff point estimate moves from 1.54 → 1.527 (−0.8%) while CI widens [1.50, 1.65] → [1.374, 1.65]. Is the Bca bootstrap implementation in `analyze_scaling_law.py` sound? Any reason the CI asymmetry should concern us?
 
