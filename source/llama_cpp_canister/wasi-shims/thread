@@ -1,0 +1,51 @@
+// WASI shim: <thread> — single-threaded stub
+// ICP canisters don't support threads.
+#pragma once
+
+#include <functional>
+
+namespace std {
+
+class thread {
+public:
+    class id {
+        unsigned long id_ = 0;
+    public:
+        id() noexcept = default;
+        explicit id(unsigned long i) : id_(i) {}
+        friend bool operator==(id a, id b) noexcept { return a.id_ == b.id_; }
+        friend bool operator!=(id a, id b) noexcept { return a.id_ != b.id_; }
+        friend bool operator<(id a, id b) noexcept { return a.id_ < b.id_; }
+    };
+
+    thread() noexcept = default;
+
+    // Accept any callable but run it inline (single-threaded)
+    template <class F, class... Args>
+    explicit thread(F&& f, Args&&... args) {
+        // In single-threaded WASI, we could run inline,
+        // but llama.cpp shouldn't create threads when n_threads=1.
+        // If this is reached, it's a bug — abort.
+        __builtin_trap();
+    }
+
+    ~thread() = default;
+    thread(thread&&) noexcept = default;
+    thread& operator=(thread&&) noexcept = default;
+
+    bool joinable() const noexcept { return false; }
+    void join() {}
+    void detach() {}
+    id get_id() const noexcept { return id{}; }
+
+    static unsigned int hardware_concurrency() noexcept { return 1; }
+};
+
+namespace this_thread {
+    inline thread::id get_id() noexcept { return thread::id{1}; }
+    inline void yield() noexcept {}
+    template <class Rep, class Period>
+    void sleep_for(const Rep&) {}
+}
+
+} // namespace std

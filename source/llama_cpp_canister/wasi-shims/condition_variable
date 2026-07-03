@@ -1,0 +1,44 @@
+// WASI shim: <condition_variable> — single-threaded no-op
+#pragma once
+
+#include "mutex"
+#include <chrono>
+
+namespace std {
+
+enum class cv_status { no_timeout, timeout };
+
+class condition_variable {
+public:
+    condition_variable() = default;
+    ~condition_variable() = default;
+    condition_variable(const condition_variable&) = delete;
+    condition_variable& operator=(const condition_variable&) = delete;
+
+    void notify_one() noexcept {}
+    void notify_all() noexcept {}
+
+    void wait(unique_lock<mutex>&) {}
+
+    template <class Predicate>
+    void wait(unique_lock<mutex>& lock, Predicate pred) {
+        while (!pred()) {} // spin — in single-thread, pred should be true immediately
+    }
+
+    template <class Rep, class Period>
+    cv_status wait_for(unique_lock<mutex>&, const chrono::duration<Rep, Period>&) {
+        return cv_status::no_timeout;
+    }
+
+    template <class Rep, class Period, class Predicate>
+    bool wait_for(unique_lock<mutex>&, const chrono::duration<Rep, Period>&, Predicate pred) {
+        return pred();
+    }
+
+    template <class Clock, class Duration>
+    cv_status wait_until(unique_lock<mutex>&, const chrono::time_point<Clock, Duration>&) {
+        return cv_status::no_timeout;
+    }
+};
+
+} // namespace std

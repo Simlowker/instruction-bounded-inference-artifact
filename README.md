@@ -32,6 +32,7 @@ multi-call IO tax.
 | `REPRODUCE.md` | end-to-end local rebuild of the 2.9× gap (dfx, ~50 GB, ~30 min, **no ICP cycles**) |
 | `results/rebench_2026-05-19.md` | 2026-05-19 rebuild + re-bench log — SHA-256 of both rebuilt WASMs behind the 29-vs-10 re-validation |
 | `scripts/run_bench.sh` | benchmark driver used by `REPRODUCE.md` |
+| `source/llama_cpp_canister/` | **Comoto fork source** (byte-exact export of the paper's pinned commit; llama.cpp fork vendored) — builds the 29 tok/call WASM |
 
 ## Quickstart
 

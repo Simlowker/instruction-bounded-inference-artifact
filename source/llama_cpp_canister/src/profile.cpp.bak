@@ -1,0 +1,106 @@
+#include "profile.h"
+
+#include "ic_api.h"
+#include "wasm_symbol.h"
+#include <string>
+#include <sstream>
+#include <cstdint>
+
+#include "llama_cpp_onicai_fork/ggml/include/ggml.h"
+#include "llama_cpp_onicai_fork/ggml/include/ggml-cpu.h"
+
+void profile_enable() WASM_SYMBOL_EXPORTED("canister_update profile_enable");
+void profile_enable() {
+    IC_API ic_api(CanisterUpdate{std::string(__func__)}, false);
+    ggml_profile_enable(1);
+    ic_api.to_wire(CandidTypeText{std::string("Profiling enabled. Run inference, then call profile_results.")});
+}
+
+void profile_results() WASM_SYMBOL_EXPORTED("canister_query profile_results");
+void profile_results() {
+    IC_API ic_api(CanisterQuery{std::string(__func__)}, false);
+
+    uint64_t total = ggml_profile_get_total();
+
+    std::ostringstream oss;
+    oss << "=== GGML Op Profile (ICP instructions per op type) ===\n\n";
+    oss << "Total: " << total << " instructions\n\n";
+
+    oss << "| Op | Name | Instructions | Count | Avg/call | % total |\n";
+    oss << "|----|------|-------------|-------|----------|--------|\n";
+
+    // Collect and sort by instructions (descending)
+    struct OpEntry { int op; uint64_t instr; uint64_t count; };
+    OpEntry entries[80];
+    int n_entries = 0;
+
+    for (int i = 0; i < 80 && i < (int)GGML_OP_COUNT; i++) {
+        uint64_t instr = ggml_profile_get_instr(i);
+        uint64_t count = ggml_profile_get_count(i);
+        if (instr > 0) {
+            entries[n_entries++] = {i, instr, count};
+        }
+    }
+
+    // Simple bubble sort by instr descending (n is small)
+    for (int i = 0; i < n_entries - 1; i++) {
+        for (int j = i + 1; j < n_entries; j++) {
+            if (entries[j].instr > entries[i].instr) {
+                OpEntry tmp = entries[i];
+                entries[i] = entries[j];
+                entries[j] = tmp;
+            }
+        }
+    }
+
+    // Key categories for paper
+    uint64_t matmul_instr = 0;
+    uint64_t norm_instr = 0;
+    uint64_t softmax_instr = 0;
+    uint64_t rope_instr = 0;
+    uint64_t other_instr = 0;
+
+    for (int i = 0; i < n_entries; i++) {
+        const char *name = ggml_op_name((enum ggml_op)entries[i].op);
+        double pct = (total > 0) ? (double)entries[i].instr / (double)total * 100.0 : 0;
+        uint64_t avg = (entries[i].count > 0) ? entries[i].instr / entries[i].count : 0;
+        oss << "| " << entries[i].op
+            << " | " << name
+            << " | " << entries[i].instr
+            << " | " << entries[i].count
+            << " | " << avg
+            << " | " << pct << "% |\n";
+
+        // Categorize
+        int op = entries[i].op;
+        if (op == GGML_OP_MUL_MAT || op == GGML_OP_MUL_MAT_ID) {
+            matmul_instr += entries[i].instr;
+        } else if (op == GGML_OP_RMS_NORM || op == GGML_OP_NORM || op == GGML_OP_GROUP_NORM) {
+            norm_instr += entries[i].instr;
+        } else if (op == GGML_OP_SOFT_MAX) {
+            softmax_instr += entries[i].instr;
+        } else if (op == GGML_OP_ROPE) {
+            rope_instr += entries[i].instr;
+        } else {
+            other_instr += entries[i].instr;
+        }
+    }
+
+    oss << "\n--- Summary (C_non decomposition) ---\n";
+    oss << "C_matmul (MUL_MAT):  " << matmul_instr << " (" << (total>0 ? (double)matmul_instr/total*100 : 0) << "%)\n";
+    oss << "C_norm (RMS_NORM):   " << norm_instr << " (" << (total>0 ? (double)norm_instr/total*100 : 0) << "%)\n";
+    oss << "C_softmax:           " << softmax_instr << " (" << (total>0 ? (double)softmax_instr/total*100 : 0) << "%)\n";
+    oss << "C_rope:              " << rope_instr << " (" << (total>0 ? (double)rope_instr/total*100 : 0) << "%)\n";
+    oss << "C_other:             " << other_instr << " (" << (total>0 ? (double)other_instr/total*100 : 0) << "%)\n";
+    oss << "C_non (total-matmul):" << (total - matmul_instr) << " (" << (total>0 ? (double)(total-matmul_instr)/total*100 : 0) << "%)\n";
+
+    std::string result = oss.str();
+    ic_api.to_wire(CandidTypeText{result});
+}
+
+void profile_reset_call() WASM_SYMBOL_EXPORTED("canister_update profile_reset");
+void profile_reset_call() {
+    IC_API ic_api(CanisterUpdate{std::string(__func__)}, false);
+    ggml_profile_reset();
+    ic_api.to_wire(CandidTypeText{std::string("Profile counters reset.")});
+}

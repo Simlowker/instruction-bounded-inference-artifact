@@ -1,0 +1,150 @@
+{
+  "configs": [
+    {
+      "id": "C1",
+      "name": "Pythia-70M",
+      "params_M": 70,
+      "arch": "gpt_neox",
+      "quant": "Q4_0",
+      "gguf": "models/Pythia-70M/pythia-70m-Q4_0.gguf",
+      "known_tok_call": 185,
+      "safe_max_tokens": 150
+    },
+    {
+      "id": "C2",
+      "name": "SmolLM2-135M",
+      "params_M": 135,
+      "arch": "llama",
+      "quant": "Q4_0",
+      "gguf": "models/SmolLM2-135M/smollm2-135m-Q4_0.gguf",
+      "known_tok_call": 103,
+      "safe_max_tokens": 80
+    },
+    {
+      "id": "C3",
+      "name": "Gemma3-270M",
+      "params_M": 270,
+      "arch": "gemma3",
+      "quant": "Q4_0",
+      "gguf": "models/candidates/gemma3-270m-it-q4_0.gguf",
+      "known_tok_call": 51,
+      "safe_max_tokens": 40
+    },
+    {
+      "id": "C4",
+      "name": "Qwen2.5-0.5B",
+      "params_M": 494,
+      "arch": "qwen2",
+      "quant": "Q4_0",
+      "gguf": "models/Qwen/qwen2.5-0.5b-Q4_0.gguf",
+      "known_tok_call": 27,
+      "safe_max_tokens": 20
+    },
+    {
+      "id": "C5",
+      "name": "GPT2-124M",
+      "params_M": 124,
+      "arch": "gpt2",
+      "quant": "Q8_0",
+      "gguf": "models/GPT2-124M/gpt2.Q8_0.gguf",
+      "known_tok_call": 56,
+      "safe_max_tokens": 45
+    },
+    {
+      "id": "C6",
+      "name": "Llama-3.2-1B",
+      "params_M": 1236,
+      "arch": "llama",
+      "quant": "Q4_0",
+      "gguf": "models/candidates/llama-3.2-1b-instruct-q4_0.gguf",
+      "known_tok_call": 4,
+      "safe_max_tokens": 3
+    },
+    {
+      "id": "C7",
+      "name": "Gemma3-1B",
+      "params_M": 1000,
+      "arch": "gemma3",
+      "quant": "Q2_K",
+      "gguf": "models/candidates/gemma3-1b-it-q2_k.gguf",
+      "known_tok_call": 6,
+      "safe_max_tokens": 4
+    },
+    {
+      "id": "C8",
+      "name": "Falcon-H1-Tiny-90M",
+      "params_M": 90,
+      "arch": "falcon_h1",
+      "quant": "Q8_0",
+      "gguf": "models/candidates/Falcon-H1-Tiny-90M-Instruct-Q8_0.gguf",
+      "known_tok_call": 199,
+      "safe_max_tokens": 160
+    },
+    {
+      "id": "C9",
+      "name": "Qwen2.5-0.5B-12L",
+      "params_M": 270,
+      "arch": "qwen2",
+      "quant": "Q4_0",
+      "gguf": "models/Qwen/qwen2.5-0.5b-Q4_0-12L.gguf",
+      "known_tok_call": 50,
+      "safe_max_tokens": 40
+    },
+    {
+      "id": "C10",
+      "name": "Qwen2.5-0.5B-18L",
+      "params_M": 380,
+      "arch": "qwen2",
+      "quant": "Q4_0",
+      "gguf": "models/Qwen/qwen2.5-0.5b-Q4_0-18L.gguf",
+      "known_tok_call": 35,
+      "safe_max_tokens": 28
+    },
+    {
+      "id": "C11",
+      "name": "SmolLM2-135M-15L",
+      "params_M": 68,
+      "arch": "llama",
+      "quant": "Q4_0",
+      "gguf": "models/SmolLM2-135M/smollm2-135m-Q4_0-15L.gguf",
+      "known_tok_call": 200,
+      "safe_max_tokens": 160
+    },
+    {
+      "id": "C12",
+      "name": "GPT2-124M-6L",
+      "params_M": 62,
+      "arch": "gpt2",
+      "quant": "Q8_0",
+      "gguf": "models/GPT2-124M/gpt2-6L-pruned.Q8_0.gguf",
+      "known_tok_call": 110,
+      "safe_max_tokens": 90
+    }
+  ],
+  "prompts": {
+    "16": {
+      "P1": "The capital of France is Paris which is known for its beautiful architecture and rich history",
+      "P2": "In machine learning a neural network consists of layers of interconnected nodes that process",
+      "P3": "Once upon a time in a small village near the mountains there lived an old wizard who",
+      "P4": "Please explain in simple terms how a computer processor executes instructions step by step"
+    },
+    "128": {
+      "P1": "The history of mathematics spans thousands of years and touches every civilization on Earth. Ancient Babylonians developed a base-60 number system that we still use today for measuring time and angles. The Greeks, particularly Euclid, formalized geometry into an axiomatic system that remained the gold standard for over two thousand years. In the Islamic Golden Age, scholars like Al-Khwarizmi developed algebra and algorithms, concepts that would become foundational to modern computer science. The Renaissance saw the development of calculus independently by Newton and Leibniz, enabling the mathematical description of motion and change. Today, mathematics underpins virtually every scientific discipline and technological advancement.",
+      "P2": "A hash table is one of the most important data structures in computer science. It provides average-case constant-time complexity for insertion, deletion, and lookup operations. The basic idea is simple: use a hash function to map keys to indices in an array. When two different keys hash to the same index, a collision occurs. There are several strategies for handling collisions, including chaining, where each bucket contains a linked list, and open addressing, where the algorithm probes for the next available slot. The choice of hash function is critical: it should distribute keys uniformly across the array to minimize collisions. Load factor, defined as the ratio of stored elements to array size, determines when the table should be resized.",
+      "P3": "The old lighthouse stood at the edge of the cliff, its white paint peeling from decades of salt spray and winter storms. Every evening, as the sun dipped below the horizon, its beam would sweep across the dark waters, a rhythmic pulse of light that fishermen had relied upon for generations. Maria had inherited the lighthouse from her grandfather, along with his leather-bound journal filled with observations about the sea. She would sit in the lamp room reading his entries about strange lights beneath the waves, unusually calm seas before great storms, and the songs that seemed to drift up from the deep on moonless nights. She had always assumed these were the fancies of an old man who spent too much time alone.",
+      "P4": "Let me walk you through how modern web applications handle user authentication. When a user first creates an account, the server receives their password and runs it through a hashing algorithm like bcrypt or argon2. The original password is never stored. When the user logs in, the server hashes the submitted password and compares it with the stored hash. If they match, the server generates a JSON Web Token containing the user identity and an expiration timestamp, signs it with a secret key, and sends it back. The client stores this token and includes it in the Authorization header of subsequent requests. The server can verify the token signature without hitting the database, making authentication stateless and scalable."
+    },
+    "512": {
+      "P1": "The development of quantum computing represents one of the most significant technological frontiers of the twenty-first century. Unlike classical computers, which process information in bits that exist as either zero or one, quantum computers use quantum bits or qubits that can exist in superposition, representing both states simultaneously. This property, combined with quantum entanglement and interference, theoretically allows quantum computers to solve certain classes of problems exponentially faster than their classical counterparts. The mathematical foundation of quantum computing rests on linear algebra and complex probability amplitudes. A qubit state is described by a vector in a two-dimensional complex Hilbert space, and quantum gates are represented by unitary matrices that transform these state vectors. The most famous quantum algorithm, developed by Peter Shor in 1994, can factor large integers in polynomial time, which would render current RSA encryption vulnerable. Grover search algorithm provides quadratic speedup for unstructured search problems. However, building practical quantum computers faces enormous engineering challenges. Qubits are extraordinarily fragile and must be isolated from environmental noise, a problem known as decoherence. Most current quantum processors operate at temperatures near absolute zero, requiring sophisticated cryogenic systems. Error rates in quantum gates remain high compared to classical logic gates, necessitating quantum error correction schemes that require many physical qubits to encode a single logical qubit. Despite these challenges, major technology companies and governments are investing billions of dollars in quantum computing research. IBM, Google, and other companies have demonstrated quantum processors with over a hundred qubits, and Google claimed quantum supremacy in 2019 when their Sycamore processor performed a specific calculation faster than any classical supercomputer. The practical applications of quantum computing extend beyond cryptography to drug discovery, materials science, optimization problems, and machine learning. Quantum simulation could revolutionize our understanding of molecular interactions, potentially leading to breakthroughs in pharmaceuticals and battery technology. Yet significant hurdles remain before quantum computers become commercially viable for general-purpose computing.",
+      "P2": "Building a modern distributed system requires careful consideration of numerous architectural principles and trade-offs. The CAP theorem, formulated by Eric Brewer, states that a distributed data store can provide at most two of the following three guarantees: consistency, availability, and partition tolerance. Since network partitions are inevitable in real-world systems, architects must choose between consistency and availability during failure scenarios. This fundamental trade-off shapes the design of every major distributed database and messaging system. Consistency models range from strong consistency, where all nodes see the same data at the same time, to eventual consistency, where updates propagate asynchronously and temporary inconsistencies are tolerated. Systems like Google Spanner achieve external consistency using synchronized atomic clocks, while systems like Amazon DynamoDB offer configurable consistency levels per request. Microservice architecture has become the dominant pattern for building large-scale web applications. Each service owns its data and communicates through well-defined APIs, typically REST or gRPC. This decomposition enables independent deployment and scaling but introduces challenges around distributed transactions, service discovery, and observability. The saga pattern handles distributed transactions by breaking them into a series of local transactions with compensating actions for rollback. Service meshes like Istio provide infrastructure-level support for load balancing, circuit breaking, and mutual TLS authentication between services. Event-driven architecture using message brokers like Apache Kafka enables loose coupling between services and supports event sourcing, where the state of an entity is derived from its complete history of events rather than stored as a snapshot. Container orchestration platforms, primarily Kubernetes, have become essential infrastructure for deploying and managing distributed applications. Kubernetes provides declarative configuration for desired state, automatic scaling based on resource utilization or custom metrics, self-healing through health checks and automatic restarts, and rolling updates with rollback capabilities. However, the operational complexity of Kubernetes itself has spawned an entire ecosystem of tools for monitoring, logging, security scanning, and cost optimization.",
+      "P3": "The rain had been falling for three days straight when Detective Sarah Chen arrived at the abandoned textile factory on the outskirts of the city. The building loomed against the grey sky like a forgotten monument, its broken windows staring down at her like hollow eyes. She pulled her coat tighter and stepped through the rusted metal door that hung loosely on its hinges. Inside, the air was thick with dust and the sweet smell of decay. Water dripped from the ceiling in a steady rhythm, forming dark pools on the concrete floor. Her flashlight beam cut through the darkness, revealing rows of empty machinery, their gears and belts frozen in time. The anonymous tip had said the third floor, east wing. She climbed the stairs carefully, each step groaning under her weight, the sound echoing through the empty building. On the second floor landing, she paused. There were fresh footprints in the dust, leading both up and down. Someone had been here recently, more than once. She unholstered her weapon and continued upward, her training taking over, each movement deliberate and controlled. The third floor was different. Someone had cleared an area near the eastern windows, setting up what looked like a makeshift laboratory. Tables were covered with electronic equipment, monitors, and cables snaking across the floor to a portable generator. On one wall, photographs and documents were pinned in an intricate web connected by colored string. She recognized some of the faces. City council members, police officials, business leaders. Her own captain was there, his photograph circled in red. In the center of it all was a laptop, still running, its screen casting a pale blue glow across the room. She approached carefully, reading the open document. It was a timeline stretching back five years, documenting a series of events she had dismissed as unconnected. Property purchases, zoning changes, contract awards, each one seemingly innocent on its own but together forming a pattern that was impossible to ignore. Someone had spent months connecting these dots, building a case that would shake the city to its foundations.",
+      "P4": "Understanding how modern operating systems manage memory is fundamental to writing efficient software and debugging performance problems. At the hardware level, modern processors use virtual memory to provide each process with the illusion of having a large contiguous address space. The Memory Management Unit translates virtual addresses to physical addresses using page tables, typically organized as multi-level structures to save memory. When a process accesses a virtual page that is not currently mapped to physical memory, a page fault occurs. The operating system handles this fault by finding a free physical frame, loading the required page from disk or creating a new zero-filled page, updating the page table, and restarting the interrupted instruction. The performance of this mechanism depends critically on the Translation Lookaside Buffer, a specialized cache that stores recent virtual-to-physical address mappings. A TLB miss requires walking the page table hierarchy, which can cost hundreds of CPU cycles. Modern processors use multiple levels of TLB with different sizes and associativities. Huge pages, which are typically two megabytes or one gigabyte instead of the standard four kilobytes, can significantly reduce TLB pressure for applications with large working sets. The operating system must also decide which pages to keep in physical memory when memory pressure increases. Page replacement algorithms like Least Recently Used approximate the optimal strategy but require tracking access patterns. Linux uses a two-list approach with active and inactive lists, promoting pages from inactive to active on repeated access and demoting pages from active to inactive when they have not been accessed recently. The kernel performs background page reclamation through the kswapd daemon and direct reclamation when memory allocation fails. Memory allocators like glibc malloc manage the heap within a process, requesting pages from the operating system via mmap or brk and subdividing them into smaller allocations. These allocators use various strategies to balance allocation speed, memory utilization, and cache locality. Thread-local caches, size classes, and arena-based allocation are common techniques used by high-performance allocators like jemalloc and tcmalloc."
+    }
+  },
+  "protocol": {
+    "reps_per_prompt": 2,
+    "determinism_reps": 10,
+    "determinism_configs": ["C1", "C2"],
+    "n_predict": 512
+  }
+}

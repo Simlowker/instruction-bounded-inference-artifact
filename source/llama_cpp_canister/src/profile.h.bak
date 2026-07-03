@@ -1,0 +1,5 @@
+#pragma once
+#include <string>
+
+void profile_enable_impl();
+void profile_results_impl();

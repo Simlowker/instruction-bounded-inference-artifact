@@ -1,0 +1,87 @@
+[build-wasm]
+canister = "llama_cpp"
+did_path = "src/llama_cpp.did"
+cpp_paths = [
+    "src/llama_cpp_onicai_fork/src/llama.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-vocab.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-grammar.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-sampling.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-impl.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-context.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-arch.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-kv-cache.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-chat.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-mmap.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-model.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-batch.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-adapter.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-model-loader.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-hparams.cpp",
+    "src/llama_cpp_onicai_fork/src/unicode-data.cpp",
+    "src/llama_cpp_onicai_fork/src/unicode.cpp",
+    "src/llama_cpp_onicai_fork/common/arg.cpp",
+    "src/llama_cpp_onicai_fork/common/json-schema-to-grammar.cpp",
+    "src/llama_cpp_onicai_fork/common/build-info.cpp",
+    "src/llama_cpp_onicai_fork/common/sampling.cpp",
+    "src/llama_cpp_onicai_fork/common/common.cpp",
+    "src/llama_cpp_onicai_fork/common/log.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-backend.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-threading.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/gguf.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu-traits.cpp",
+    "src/*.cpp",
+]
+cpp_include_dirs = [
+    "src/llama_cpp_onicai_fork",
+    "src/llama_cpp_onicai_fork/include",
+    "src/llama_cpp_onicai_fork/src",
+    "src/llama_cpp_onicai_fork/ggml/include",
+    "src/llama_cpp_onicai_fork/ggml/src",
+    "src/llama_cpp_onicai_fork/common",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu",
+]
+# NOTE: Adding compile flag "-msimd128" might be too much. It will compile everything with simd
+#       Alternative is to add it at granular level in the code, like:
+#       // Function with SIMD128 enabled
+#       void __attribute__((target("simd128"))) simd_function() {
+#           // SIMD-specific code here
+#       }
+cpp_compile_flags = ["-DNDEBUG", "-DGGML_USE_CPU"]
+# 8MB stack to prevent "heap out of bounds" (actually stack overflow)
+# -> This is sufficient for the Qwen2.5 model, but you might need to increase it for larger models
+cpp_link_flags = ["-Wl,-z,stack-size=8388608"]
+c_paths = [
+    "src/llama_cpp_onicai_fork/ggml/src/ggml.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-alloc.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-quants.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu-quants.c",
+]
+c_include_dirs = [
+    "src/llama_cpp_onicai_fork",
+    "src/llama_cpp_onicai_fork/include",
+    "src/llama_cpp_onicai_fork/common",
+    "src/llama_cpp_onicai_fork/ggml/include",
+    "src/llama_cpp_onicai_fork/ggml/src",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu",
+]
+c_compile_flags = ["-DNDEBUG", "-msimd128", "-DGGML_USE_CPU"]
+post_wasm_function = "scripts.optimize_wasm.main"
+
+[build-native]
+cpp_paths = [
+    # Use this to build native debug executable for testing canister code
+    "native/*.cpp",
+
+    # Use this to build the original console app of llama.cpp, without canister wrapper
+    # "src/llama_cpp_onicai_fork/examples/main/main.cpp",
+    # "src/llama_cpp_onicai_fork/common/console.cpp",
+]
+cpp_include_dirs = []
+cpp_compile_flags = ["-DNDEBUG", "-DGGML_USE_CPU"]
+cpp_link_flags = []
+c_paths = []
+c_include_dirs = []
+c_compile_flags = ["-DNDEBUG", "-DGGML_USE_CPU"]

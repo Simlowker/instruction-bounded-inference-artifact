@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "canisters": {
+    "llama_cpp": {
+      "type": "custom",
+      "candid": "build/llama_cpp.did",
+      "wasm": "build/llama_cpp.wasm",
+      "wasm_memory_limit": "3221225472"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  }
+}

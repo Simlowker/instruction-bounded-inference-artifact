@@ -1,0 +1,2 @@
+timestamp,config_id,model,params_M,arch,quant,prompt_id,prompt_len_target,prompt_tokens,max_tokens_set,tokens_generated,total_instructions,decode_instructions,sample_instructions,setup_instructions,overhead_instructions,per_token_total,per_token_decode,generated_eog,prompt_remaining,env,rep
+2026-04-16T11:39:57.613074,C2,SmolLM2-135M,135,llama,Q4_0,P1_det,128,126,80,0,25791179320,25424910681,0,200523610,366268639,,,False,yes,local,1

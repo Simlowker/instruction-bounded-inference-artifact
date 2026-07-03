@@ -2,7 +2,7 @@
 # run_bench.sh — minimal automation of the paper §4.1 binary-search trap protocol.
 #
 # Usage:
-#   bash scripts/run_bench.sh gian      # expects to find max_tokens=29 OK, max_tokens=30 TRAP
+#   bash scripts/run_bench.sh comoto    # expects to find max_tokens=29 OK, max_tokens=30 TRAP
 #   bash scripts/run_bench.sh onicai    # expects to find max_tokens=10 OK, max_tokens=11 TRAP
 #
 # Prerequisites:
@@ -11,9 +11,9 @@
 
 set -euo pipefail
 
-FORK="${1:-gian}"
+FORK="${1:-comoto}"
 
-if [ "$FORK" = "gian" ]; then
+if [ "$FORK" = "comoto" ] || [ "$FORK" = "gian" ]; then
   OK_MAX=29
   TRAP_MAX=30
   N_PREFILL=2
@@ -22,7 +22,7 @@ elif [ "$FORK" = "onicai" ]; then
   TRAP_MAX=11
   N_PREFILL=3
 else
-  echo "Unknown fork: $FORK (expected 'gian' or 'onicai')" >&2
+  echo "Unknown fork: $FORK (expected 'comoto' or 'onicai')" >&2
   exit 1
 fi
 

@@ -18,10 +18,11 @@ This document is the single-source procedure to reproduce the headline mainnet r
 ## 1. Clone the two sources
 
 ```bash
-# Comoto fork (this work)
-git clone https://github.com/Simlowker/gian-paper-artifact-source.git gian
-cd gian/llama_cpp_canister
-# The repo is a byte-exact export of Simlowker/gian@8cda13b (tag: paper-v14-bench-snapshot).
+# Comoto fork (this work) — vendored in this repository under source/
+git clone https://github.com/Simlowker/instruction-bounded-inference-artifact.git
+cd instruction-bounded-inference-artifact/source/llama_cpp_canister
+# source/ is a byte-exact export of the private monorepo at the paper's pinned commit
+# (Table DA1: Simlowker/gian@8cda13b; repository tag: paper-v14-bench-snapshot).
 # The llama.cpp fork sources are already vendored in src/llama_cpp_onicai_fork/ — no extra clone needed.
 
 # onicai baseline (latest tagged release)
@@ -36,7 +37,7 @@ git clone https://github.com/onicai/llama_cpp_onicai_fork.git
 ### Comoto fork
 
 ```bash
-cd gian/llama_cpp_canister
+cd source/llama_cpp_canister   # from the artifact repo root
 
 # Generate build-info.cpp (the auto-generated file is missing from the working tree
 # in some snapshots; if so, create it manually with the LLAMA_BUILD_NUMBER /
@@ -72,7 +73,7 @@ shasum -a 256 build/llama_cpp_opt.wasm
 ## 3. Start a local dfx replica and deploy Comoto
 
 ```bash
-cd gian/llama_cpp_canister
+cd source/llama_cpp_canister   # from the artifact repo root
 dfx start --background --clean
 
 dfx deploy llama_cpp
@@ -97,7 +98,7 @@ shasum -a 256 qwen2.5-0.5b-instruct-q8_0.gguf
 ## 5. Upload Qwen and top-up cycles
 
 ```bash
-cd gian/llama_cpp_canister
+cd source/llama_cpp_canister   # from the artifact repo root
 
 # Top up cycles (local fabricate)
 dfx ledger fabricate-cycles --canister llama_cpp --amount 100 --network local
@@ -115,7 +116,7 @@ dfx canister call llama_cpp uploaded_file_details \
 
 ## 6. Bench Comoto: expect 29 tok/call OK, gen@30 TRAP
 
-Run `bash scripts/run_bench.sh gian` (or do it manually below).
+Run `bash scripts/run_bench.sh comoto` (or do it manually below).
 
 ```bash
 PROMPT='<|im_start|>user\nAnswer the following question as brief as possible. This is the question: What are the key differences between proof-of-work and proof-of-stake consensus mechanisms?<|im_end|>\n<|im_start|>assistant\n'

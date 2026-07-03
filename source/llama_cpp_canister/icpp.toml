@@ -1,0 +1,185 @@
+# Upstream llama.cpp for ICP — injected into onicai canister shell
+# Strategy: wasi-shims provide no-op threading, -fexceptions avoids throw patching
+
+[build-wasm]
+canister = "llama_cpp"
+did_path = "src/llama_cpp.did"
+
+cpp_paths = [
+    # --- llama.cpp core (27 files) ---
+    "src/llama_cpp_onicai_fork/src/llama.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-adapter.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-arch.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-batch.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-chat.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-context.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-cparams.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-grammar.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-graph.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-hparams.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-impl.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-io.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-kv-cache.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-kv-cache-iswa.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-memory.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-memory-hybrid.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-memory-hybrid-iswa.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-memory-recurrent.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-mmap.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-model.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-model-loader.cpp",
+    # llama-quant.cpp removed — not needed for inference
+    "src/llama_cpp_onicai_fork/src/llama-sampler.cpp",
+    "src/llama_cpp_onicai_fork/src/llama-vocab.cpp",
+    "src/llama_cpp_onicai_fork/src/unicode.cpp",
+    "src/llama_cpp_onicai_fork/src/unicode-data.cpp",
+
+    # --- model architectures ---
+    "src/llama_cpp_onicai_fork/src/models/llama.cpp",
+    "src/llama_cpp_onicai_fork/src/models/qwen2.cpp",
+    "src/llama_cpp_onicai_fork/src/models/qwen3.cpp",
+    "src/llama_cpp_onicai_fork/src/models/gemma3.cpp",
+    "src/llama_cpp_onicai_fork/src/models/bloom.cpp",
+    "src/llama_cpp_onicai_fork/src/models/openelm.cpp",
+    "src/llama_cpp_onicai_fork/src/models/mamba-base.cpp",
+    "src/llama_cpp_onicai_fork/src/models/mamba.cpp",
+    "src/llama_cpp_onicai_fork/src/models/rwkv7-base.cpp",
+    "src/llama_cpp_onicai_fork/src/models/rwkv7.cpp",
+    # "src/llama_cpp_onicai_fork/src/models/lfm2.cpp",  # hybrid memory — disabled
+    "src/llama_cpp_onicai_fork/src/models/gptneox.cpp",
+    "src/llama_cpp_onicai_fork/src/models/gpt2.cpp",
+    "src/llama_cpp_onicai_fork/src/models/delta-net-base.cpp",
+    "src/llama_cpp_onicai_fork/src/models/qwen35.cpp",
+    "src/llama_cpp_onicai_fork/src/models/gemma-embedding.cpp",
+    "src/llama_cpp_onicai_fork/src/models/falcon-h1.cpp",
+
+    # --- common (minimal set for inference — no chat templates, no speculative) ---
+    "src/llama_cpp_onicai_fork/common/arg.cpp",
+    "src/llama_cpp_onicai_fork/common/build-info.cpp",
+    "src/llama_cpp_onicai_fork/common/common.cpp",
+    # json-schema-to-grammar.cpp removed — not needed for simple inference
+    "src/llama_cpp_onicai_fork/common/log.cpp",
+    "src/llama_cpp_onicai_fork/common/preset.cpp",
+    "src/llama_cpp_onicai_fork/common/reasoning-budget.cpp",
+    "src/llama_cpp_onicai_fork/common/sampling.cpp",
+    "src/llama_cpp_onicai_fork/common/unicode.cpp",
+    # download.cpp/hf-cache.cpp excluded — stubs in src/wasi-download-stubs.cpp
+    # chat*.cpp, jinja/*.cpp, speculative.cpp, ngram-*.cpp, debug.cpp, etc. removed
+    # to reduce WASM globals below ICP limit (1000)
+
+    # --- ggml C++ ---
+    "src/llama_cpp_onicai_fork/ggml/src/ggml.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/gguf.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-backend.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-backend-reg.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-backend-dl.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-opt.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-threading.cpp",
+
+    # --- ggml-cpu C++ ---
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ops.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/binary-ops.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/unary-ops.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/vec.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/traits.cpp",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/repack.cpp",
+
+    # --- WASI stubs ---
+    "src/wasi-exception-stubs.cpp",
+    "src/wasi-dl-stubs.cpp",
+
+    # --- canister wrapper (onicai) ---
+    "src/*.cpp",
+]
+
+# IMPORTANT: wasi-shims FIRST — overrides system <mutex>, <thread>, etc.
+cpp_include_dirs = [
+    "wasi-shims",
+    "src/llama_cpp_onicai_fork/vendor",
+    "src/llama_cpp_onicai_fork",
+    "src/llama_cpp_onicai_fork/include",
+    "src/llama_cpp_onicai_fork/src",
+    "src/llama_cpp_onicai_fork/ggml/include",
+    "src/llama_cpp_onicai_fork/ggml/src",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu",
+    "src/llama_cpp_onicai_fork/common",
+]
+
+cpp_compile_flags = [
+    "-DNDEBUG",
+    "-DGGML_USE_CPU",
+    "-msimd128",
+    "-fexceptions",
+    "-fmerge-all-constants",
+
+    "-D_WASI_EMULATED_SIGNAL",
+    "-D_WASI_EMULATED_PTHREAD",
+    "-D_WASI_EMULATED_GETPID",
+    "-D_WASI_EMULATED_PROCESS_CLOCKS",
+    "-DGGML_DEFAULT_N_THREADS=1",
+]
+
+# 8MB stack (sufficient for Qwen2.5, increase for larger models)
+cpp_link_flags = [
+    "-Wl,-z,stack-size=8388608",
+    "-Wl,--initial-memory=536870912",
+    "-lwasi-emulated-pthread",
+    "-lwasi-emulated-getpid",
+    "-lwasi-emulated-signal",
+    "-lwasi-emulated-process-clocks",
+    "-fexceptions",
+]
+
+c_paths = [
+    "src/llama_cpp_onicai_fork/ggml/src/ggml.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-alloc.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-quants.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/ggml-cpu.c",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/quants.c",
+    # THE critical WASM SIMD file — 9 kernels
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/arch/wasm/quants.c",
+    # Flash Attention SIMD kernel — F32 accumulator + F16 widening
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu/arch/wasm/flash-attn.c",
+]
+
+c_include_dirs = [
+    "src/llama_cpp_onicai_fork",
+    "src/llama_cpp_onicai_fork/include",
+    "src/llama_cpp_onicai_fork/ggml/include",
+    "src/llama_cpp_onicai_fork/ggml/src",
+    "src/llama_cpp_onicai_fork/ggml/src/ggml-cpu",
+    "src/llama_cpp_onicai_fork/common",
+]
+
+c_compile_flags = [
+    "-DNDEBUG",
+    "-msimd128",
+    "-DGGML_USE_CPU",
+    "-fmerge-all-constants",
+
+    "-D_WASI_EMULATED_SIGNAL",
+    "-D_WASI_EMULATED_PTHREAD",
+    "-D_WASI_EMULATED_GETPID",
+    "-D_WASI_EMULATED_PROCESS_CLOCKS",
+]
+
+post_wasm_function = "scripts.optimize_wasm.main"
+
+[build-native]
+cpp_paths = [
+    "native/*.cpp",
+]
+cpp_include_dirs = [
+    "src/llama_cpp_onicai_fork",
+    "src/llama_cpp_onicai_fork/include",
+    "src/llama_cpp_onicai_fork/src",
+    "src/llama_cpp_onicai_fork/ggml/include",
+    "src/llama_cpp_onicai_fork/ggml/src",
+    "src/llama_cpp_onicai_fork/common",
+]
+cpp_compile_flags = ["-DNDEBUG", "-DGGML_USE_CPU"]
+cpp_link_flags = []
+c_paths = []
+c_include_dirs = []
+c_compile_flags = ["-DNDEBUG", "-DGGML_USE_CPU"]
