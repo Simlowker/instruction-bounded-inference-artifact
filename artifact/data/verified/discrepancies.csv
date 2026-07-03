@@ -1,5 +1,5 @@
 id,name,status,gguf_file,L_csv,L_gguf,gguf_match,d_csv,d_gguf,P_csv,P_csv_gguf,P_gguf,issues
-M01,Pythia-14M,OK,pythia-14m-Q4_0.gguf,6,6,exact,128,128,14,14.1,14.1,
+M01,Pythia-14M,OK,pythia-14m-Q4_0.gguf,6,6,exact,128,128,14,14.1,14.1,QUANT_PROVENANCE: registry quant=Q8_0 but param audit used the Q4_0 GGUF of the same checkpoint (parameter counts are quantization-invariant); gguf_match refers to the param-count match
 M02,Pythia-14M,OK,pythia-14m-Q4_0.gguf,6,6,exact,128,128,14,14.1,14.1,
 M03,Pythia-70M,OK,IPythia-70m.Q8_0.gguf,6,6,exact,512,512,70,70.4,70.4,
 M04,Pythia-70M,OK,pythia-70m-Q4_0.gguf,6,6,exact,512,512,70,70.4,70.4,
@@ -13,10 +13,10 @@ M11,DistilGPT2,PARAM_COUNT_CONVENTION,distilgpt2.Q4_0.gguf,6,6,exact,768,768,82,
 M12,Falcon-H1-Tiny-90M,OK,Falcon-H1-Tiny-90M-Instruct-Q8_0.gguf,24,24,exact,512,512,90,91.1,91.1,
 M13,GPT2-124M,PARAM_COUNT_CONVENTION,gpt2.Q8_0.gguf,12,12,exact,768,768,124,163,163.0,params_M=124.0 vs GGUF_calc=163.0M (23.9%)
 M14,GPT2-124M,PARAM_COUNT_CONVENTION,gpt2.Q4_0.gguf,12,12,exact,768,768,124,163,163.0,params_M=124.0 vs GGUF_calc=163.0M (23.9%)
-M15,SmolLM2-135M,OK,smollm2-135m-Q4_0.gguf,30,30,exact,576,576,135,134.5,134.5,
+M15,SmolLM2-135M,OK,smollm2-135m-Q4_0.gguf,30,30,exact,576,576,135,134.5,134.5,QUANT_PROVENANCE: registry quant=Q8_0 but param audit used the Q4_0 GGUF of the same checkpoint (parameter counts are quantization-invariant); gguf_match refers to the param-count match
 M16,SmolLM2-135M,OK,smollm2-135m-Q4_0.gguf,30,30,exact,576,576,135,134.5,134.5,
 M17,SmolLM2-135M,OK,smollm2-135m-Q4_K_M.gguf,30,30,exact,576,576,135,134.5,134.5,
-M18,SmolLM2-135M,OK,smollm2-135m-Q4_0.gguf,30,30,exact,576,576,135,134.5,134.5,
+M18,SmolLM2-135M,OK,smollm2-135m-Q4_0.gguf,30,30,exact,576,576,135,134.5,134.5,QUANT_PROVENANCE: registry quant=Q8_0 but param audit used the Q4_0 GGUF of the same checkpoint (parameter counts are quantization-invariant); gguf_match refers to the param-count match
 M19,SmolLM2-135M,OK,smollm2-135m-TQ2_0.gguf,30,30,exact,576,576,135,134.5,134.5,
 M20,SmolLM2-135M,OK,smollm2-135m-TQ2_0.gguf,30,30,exact,576,576,135,134.5,134.5,
 M21,SmolLM2-135M-instruct,OK,smollm2-135m-instruct-q8_0.gguf,30,30,exact,576,576,135,134.5,134.5,
@@ -24,7 +24,7 @@ M22,AMD-LLaMA-135M,OK,amd-llama-135m-q8_0.gguf,12,12,exact,768,768,135,134.1,134
 M23,Gemma3-270M-IT,OK,gemma3-270m-it-q8_0.gguf,18,18,exact,640,640,270,268.1,268.1,
 M24,Gemma3-270M-IT,OK,gemma3-270m-it-q4_0.gguf,18,18,exact,640,640,270,268.1,268.1,
 M25,OpenELM-270M,OK,OpenELM-270M.Q4_0.gguf,16,16,exact,1280,1280,270,271.5,271.5,
-M26,SmolLM2-360M,OK,SmolLM2-360M.Q4_0.gguf,32,32,exact,960,960,360,361.8,361.8,
+M26,SmolLM2-360M,OK,SmolLM2-360M.Q4_0.gguf,32,32,exact,960,960,360,361.8,361.8,QUANT_PROVENANCE: registry quant=Q8_0 but param audit used the Q4_0 GGUF of the same checkpoint (parameter counts are quantization-invariant); gguf_match refers to the param-count match
 M27,SmolLM2-360M,OK,SmolLM2-360M.Q4_0.gguf,32,32,exact,960,960,360,361.8,361.8,
 M28,Mamba-370M,OK,mamba-370m-q8_0.gguf,48,48,exact,1024,1024,370,371.5,371.5,
 M29,RWKV7-0.4B,PARAM_COUNT_CONVENTION,rwkv7-0.4b-world-q8_0.gguf,24,24,exact,1024,1024,400,450.9,450.9,params_M=400.0 vs GGUF_calc=450.9M (11.3%)

@@ -5,7 +5,7 @@ GGUF: BASE-Q5_K_M-smollm135.gguf
 START_UTC: 2026-04-20T13:52:21Z
 ======================================================================
 ===== STEP 1: cp GGUF =====
--rw-r--r--@ 1 macpromax  staff  112102944 Apr 20 15:52 models/baseq5km.gguf
+-rw-r--r--@ 1 USER  staff  112102944 Apr 20 15:52 models/baseq5km.gguf
 ===== STEP 2: reinstall =====
 Reinstalled code for canister llama_cpp, with canister ID uxrrr-q7777-77774-qaaaq-cai
 Deployed canisters.

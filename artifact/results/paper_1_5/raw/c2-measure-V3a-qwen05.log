@@ -5,7 +5,7 @@ GGUF: V3a-qwen05.gguf
 START_UTC: 2026-04-20T15:10:16Z
 ======================================================================
 ===== STEP 1: cp GGUF =====
--rw-r--r--@ 1 macpromax  staff  417684576 Apr 20 17:10 models/v3aq.gguf
+-rw-r--r--@ 1 USER  staff  417684576 Apr 20 17:10 models/v3aq.gguf
 ===== STEP 2: reinstall =====
 Reinstalled code for canister llama_cpp, with canister ID uxrrr-q7777-77774-qaaaq-cai
 Deployed canisters.

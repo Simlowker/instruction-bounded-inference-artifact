@@ -5,7 +5,7 @@ GGUF: BASE-Q4_0-qwen05.gguf
 START_UTC: 2026-04-20T15:54:44Z
 ======================================================================
 ===== STEP 1: cp GGUF =====
--rw-r--r--@ 1 macpromax  staff  352154336 Apr 20 17:54 models/bq4q.gguf
+-rw-r--r--@ 1 USER  staff  352154336 Apr 20 17:54 models/bq4q.gguf
 ===== STEP 2: reinstall =====
 Reinstalled code for canister llama_cpp, with canister ID uxrrr-q7777-77774-qaaaq-cai
 Deployed canisters.

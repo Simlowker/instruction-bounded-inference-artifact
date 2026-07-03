@@ -18,7 +18,7 @@ exit=0
 
 ===== STEP 3: cp V1 into models/ =====
 exit=0
--rw-r--r--@ 1 macpromax  staff  105454016 Apr 20 14:35 models/v1-smollm135.gguf
+-rw-r--r--@ 1 USER  staff  105454016 Apr 20 14:35 models/v1-smollm135.gguf
 
 ===== STEP 4: upload v1-smollm135.gguf =====
 2026-04-20T12:35:38Z

@@ -5,7 +5,7 @@ GGUF: V2-qwen05.gguf
 START_UTC: 2026-04-20T14:59:52Z
 ======================================================================
 ===== STEP 1: cp GGUF =====
--rw-r--r--@ 1 macpromax  staff  406581344 Apr 20 16:59 models/v2q.gguf
+-rw-r--r--@ 1 USER  staff  406581344 Apr 20 16:59 models/v2q.gguf
 ===== STEP 2: reinstall =====
 Reinstalled code for canister llama_cpp, with canister ID uxrrr-q7777-77774-qaaaq-cai
 Deployed canisters.
