@@ -397,7 +397,7 @@ Full SHA-256 values, rebuild commits, baseline tags, and the non-reproducible or
 
 [29] A. Chan et al., "Optimistic TEE-Rollups: A Hybrid Architecture for Scalable and Verifiable Generative AI Inference on Blockchain," arXiv:2512.20176.
 
-[30] W. Zhou et al., "DTVM: Revolutionizing Smart Contract Execution with Determinism," arXiv:2504.16552.
+[30] W. Zhou et al., "DTVM: Revolutionizing Smart Contract Execution with Determinism and Compatibility," arXiv:2504.16552.
 
 [31] T. Vaidhya et al., "Spectra 1.1: Scaling Laws and Efficient Inference for Ternary Language Models," arXiv:2506.23025.
 
