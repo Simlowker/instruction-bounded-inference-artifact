@@ -993,10 +993,13 @@ from the SpectraSuite TriLM family [15] on the same canister build
 (<code>artifact/data/paper_1_5/ternary_measurements.csv</code>,
 <code>artifact/results/paper_1_5/PHASE-1-SUMMARY.md</code>). The broader
 ternary-LLM line — BitNet-style 1-bit and 1.58-bit training [3, 22],
-ternary sparsification [17], edge-inference kernels [4], and CPU SIMD
-reorganizations for ternary inference [27] — motivates the
-integer-matmul boundary we exploit here; we differ in targeting a
-consensus-metered WASM canister rather than native hardware:</p>
+ternary scaling laws and efficient inference on the same TriLM suite
+[31], ternary sparsification [17], edge-inference kernels [4], CPU SIMD
+reorganizations for ternary inference [27], and recent
+multiplication-free fused kernels and consumer-CPU ternary SIMD
+frameworks [32, 33] — motivates the integer-matmul boundary we exploit
+here; we differ in targeting a consensus-metered WASM canister rather
+than native hardware:</p>
 <table>
 <colgroup>
 <col style="width: 55%" />
@@ -1519,7 +1522,9 @@ Accessed April 2026.</p>
 <code>v0.9.0</code>
 (<code>github.com/onicai/llama_cpp_canister/releases/tag/v0.9.0</code>);
 re-validated against <code>v0.10.1</code> on 2026-05-19 (post-v0.9.0
-commits are housekeeping only, no inference-path change).</p>
+commits are housekeeping only, no inference-path change);
+<code>v0.11.0</code> (2026-06-29) diff-checked 2026-07-03 — adds only an
+admin cycle-balance monitor, no inference-path change.</p>
 <p>[10] ggml-org, “llama.cpp: LLM inference in C/C++,”
 <code>github.com/ggml-org/llama.cpp</code> (source-provenance note in
 <code>artifact/notes/source_pinning.md</code>). Accessed April 2026.</p>
@@ -1573,5 +1578,12 @@ for Scalable and Verifiable Generative AI Inference on Blockchain,”
 arXiv:2512.20176.</p>
 <p>[30] W. Zhou, X. Xu, C. Wei, Y. Yan, “DTVM: Revolutionizing Smart
 Contract Execution with Determinism,” arXiv:2504.16552.</p>
+<p>[31] T. Vaidhya et al., “Spectra 1.1: Scaling Laws and Efficient
+Inference for Ternary Language Models,” arXiv:2506.23025.</p>
+<p>[32] F. Zuo et al., “FairyFuse: Multiplication-Free LLM Inference on
+CPUs via Fused Ternary Kernels,” arXiv:2604.20913.</p>
+<p>[33] N. O. O. Dade et al., “Litespark Inference For CPUs: Ultra-Fast
+SIMD Framework for Ternary (1.58-bit) Language Models,”
+arXiv:2605.06485.</p>
 </body>
 </html>

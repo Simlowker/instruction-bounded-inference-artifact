@@ -208,7 +208,7 @@ SSN Q4_0 deployments (`artifact/data/onchain/ssn_mainnet.csv`) stay inside the c
 
 ### 5.1 TriLM ternary at 560 M and 3.9 B both hit α_eff ≈ 1.00
 
-We integrated a custom TQ2_0 (2-bit ternary, weights in {−1, 0, +1}) WASM SIMD path — absent from upstream llama.cpp [10] — end-to-end into the inference framework, and measured two purpose-trained ternary models from the SpectraSuite TriLM family [15] on the same canister build (`artifact/data/paper_1_5/ternary_measurements.csv`, `artifact/results/paper_1_5/PHASE-1-SUMMARY.md`). The broader ternary-LLM line — BitNet-style 1-bit and 1.58-bit training [3, 22], ternary sparsification [17], edge-inference kernels [4], and CPU SIMD reorganizations for ternary inference [27] — motivates the integer-matmul boundary we exploit here; we differ in targeting a consensus-metered WASM canister rather than native hardware:
+We integrated a custom TQ2_0 (2-bit ternary, weights in {−1, 0, +1}) WASM SIMD path — absent from upstream llama.cpp [10] — end-to-end into the inference framework, and measured two purpose-trained ternary models from the SpectraSuite TriLM family [15] on the same canister build (`artifact/data/paper_1_5/ternary_measurements.csv`, `artifact/results/paper_1_5/PHASE-1-SUMMARY.md`). The broader ternary-LLM line — BitNet-style 1-bit and 1.58-bit training [3, 22], ternary scaling laws and efficient inference on the same TriLM suite [31], ternary sparsification [17], edge-inference kernels [4], CPU SIMD reorganizations for ternary inference [27], and recent multiplication-free fused kernels and consumer-CPU ternary SIMD frameworks [32, 33] — motivates the integer-matmul boundary we exploit here; we differ in targeting a consensus-metered WASM canister rather than native hardware:
 
 | Metric                                |     TriLM 560M |       TriLM 3.9B |
 | ------------------------------------- | -------------: | ---------------: |
@@ -355,7 +355,7 @@ Full SHA-256 values, rebuild commits, baseline tags, and the non-reproducible or
 
 [8] DFINITY Foundation, "ICP Swiss Subnet," NNS Proposal 136408, `dashboard.internetcomputer.org/proposal/136408`; Swiss Subnet introduction forum thread, `forum.dfinity.org/t/introducing-the-swiss-subnet-a-secure-and-compliant-blockchain-infrastructure-leveraging-the-internet-computer-protocol/41135`. Accessed April 2026.
 
-[9] onicai, "llama_cpp_canister," `github.com/onicai/llama_cpp_canister`, baseline release tag `v0.9.0` (`github.com/onicai/llama_cpp_canister/releases/tag/v0.9.0`); re-validated against `v0.10.1` on 2026-05-19 (post-v0.9.0 commits are housekeeping only, no inference-path change).
+[9] onicai, "llama_cpp_canister," `github.com/onicai/llama_cpp_canister`, baseline release tag `v0.9.0` (`github.com/onicai/llama_cpp_canister/releases/tag/v0.9.0`); re-validated against `v0.10.1` on 2026-05-19 (post-v0.9.0 commits are housekeeping only, no inference-path change); `v0.11.0` (2026-06-29) diff-checked 2026-07-03 — adds only an admin cycle-balance monitor, no inference-path change.
 
 [10] ggml-org, "llama.cpp: LLM inference in C/C++," `github.com/ggml-org/llama.cpp` (source-provenance note in `artifact/notes/source_pinning.md`). Accessed April 2026.
 
@@ -398,3 +398,10 @@ Full SHA-256 values, rebuild commits, baseline tags, and the non-reproducible or
 [29] A. Chan et al., "Optimistic TEE-Rollups: A Hybrid Architecture for Scalable and Verifiable Generative AI Inference on Blockchain," arXiv:2512.20176.
 
 [30] W. Zhou, X. Xu, C. Wei, Y. Yan, "DTVM: Revolutionizing Smart Contract Execution with Determinism," arXiv:2504.16552.
+
+[31] T. Vaidhya et al., "Spectra 1.1: Scaling Laws and Efficient Inference for Ternary Language Models," arXiv:2506.23025.
+
+[32] F. Zuo et al., "FairyFuse: Multiplication-Free LLM Inference on CPUs via Fused Ternary Kernels," arXiv:2604.20913.
+
+[33] N. O. O. Dade et al., "Litespark Inference For CPUs: Ultra-Fast SIMD Framework for Ternary (1.58-bit) Language Models," arXiv:2605.06485.
+

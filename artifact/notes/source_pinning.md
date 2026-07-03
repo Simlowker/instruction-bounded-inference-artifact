@@ -37,3 +37,10 @@ fork gap, not byte-exact reproduction of the original April binary.
 Parameter counts are quantization-invariant, so for four historical Q8_0 rows
 (M01, M15, M18, M26) the Q4_0 GGUF of the same checkpoint was used for the parameter
 audit; `gguf_match = exact` refers to the parameter-count match, not the measured quant.
+
+## Upstream freshness checks
+
+- **2026-07-03** — onicai `llama_cpp_canister` `v0.11.0` (released 2026-06-29) diff-checked
+  against the pinned `v0.10.1` (GitHub compare, 2 commits, 11 files): adds an admin-gated
+  cycle-balance monitor (`src/cycle_balance.*`, candid entry, tests) only. No llama.cpp,
+  kernel, SIMD, or build-flag change — the 29-vs-10 baseline claim (ref [9]) is unaffected.
