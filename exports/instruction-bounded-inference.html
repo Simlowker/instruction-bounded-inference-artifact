@@ -538,13 +538,13 @@ Pythia-14M, Mamba-370M, Qwen3-0.6B, and RWKV7-0.4B. Four Transformer
 anchor points (†) are variance-verified with 3 repetitions each (CV &lt;
 1.05% under the binary-search protocol described above; for
 transparency, <code>variance.csv</code> also retains an earlier
-SmolLM2-135M session recording [150, 150, 75] — CV ≈ 35% — from a run
-configuration predating the fixed protocol, a reminder that tok/call is
-protocol-sensitive and the CIs are conditional on the stated protocol);
-a fifth variance-verified point, Mamba-370M, is <strong>retained in the
-modern fit</strong> — it carries the largest per-architecture LOAO error
-(18.3%, reported in §3) — not excluded. All other rows are single-run
-binary-search estimates.</p>
+same-evening SmolLM2-135M session recording [150, 75, 150] — CV ≈ 35% —
+whose cause was not recorded; the anchors were re-measured minutes later
+at [97, 97, 97] under the protocol used throughout, and the reported CIs
+are conditional on that protocol); a fifth variance-verified point,
+Mamba-370M, is <strong>retained in the modern fit</strong> — it carries
+the largest per-architecture LOAO error (18.3%, reported in §3) — not
+excluded. All other rows are single-run binary-search estimates.</p>
 <table>
 <colgroup>
 <col style="width: 28%" />
