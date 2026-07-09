@@ -13,10 +13,14 @@ script is `artifact/scripts/compute_alpha_exec.py`, its output
 - **α_eff** (retained symbol; a.k.a. α_param): `C_token ≈ α_eff × 2·P_published`.
   The *deployment predictor*: computable from a model card alone. This is the quantity
   fitted and LOAO-validated in §3 (median 1.527, CV 9.7%, n=11).
-- **α_exec**: cost per *executed* FLOP. `P_exec = P_gguf_audited − token_embedding_table`
-  (iff a separate output head exists — untied or export-duplicated) `− learned positions`.
-  For tied models whose GGUF stores the table once, that table IS the executed LM head:
-  `P_exec = P_gguf`. For encoder-only models the token table is always excluded (no LM head).
+- **α_exec**: cost per *executed* FLOP. **General rule:** `P_exec = P_gguf_audited −
+  token_embedding_table` **iff the export carries a separate output tensor** (untied
+  models, and tied models whose export duplicates the head — e.g. GPT-2/DistilGPT2)
+  `− learned position embeddings`. For tied models whose GGUF stores the table once,
+  that table IS the executed LM head: `P_exec = P_gguf`. For encoder-only models the
+  token table is always excluded (no LM head). GPT-2 is thus an instance of the rule,
+  not an exception: its duplicated stored head executes once, so subtracting the input
+  table from the audited total recovers the executed set (≈ nominal minus positions).
 
 ## Tie-status provenance (per fit model)
 
@@ -43,11 +47,13 @@ excluded from its P_exec.
 - **Modern core (9 of 11):** α_exec median **1.536**, min 1.31, max 1.79, **CV 9.3%** —
   the cluster survives the corrected convention essentially unchanged (tied models are
   invariant by construction; Danube3 and RWKV7 shift within-cluster: 1.48→1.60, 1.56→1.63).
-- **Small-dimension overhead regime:** Pythia-70M (d=512) α_exec **2.154**; Pythia-14M
+- **Small-dimension / gpt_neox outliers:** Pythia-70M (d=512) α_exec **2.154**; Pythia-14M
   (d=128) α_exec **3.115**. Under the published-parameter convention these models
   *appeared* cluster-consistent (1.37, 1.70) because never-executed lookup parameters
-  inflated the denominator. The executed convention reveals a genuine per-FLOP overhead
-  regime at small hidden dimensions.
+  inflated the denominator. Caveat (re-review): at n = 2 — the fit's only two gpt_neox
+  models — hidden dimension and architecture family are perfectly confounded, and legacy
+  GPT-2 (d = 768, α_exec ≈ 2.0) shows dimension alone is not the controlling variable.
+  All-11 α_exec dispersion: CV ≈ 28% (core-9: 9.3%). Reported as an observation, not a law.
 - **GPT-2 (legacy):** α_exec ≈ 2.05–2.07 — unchanged from the nominal convention (tied).
   The earlier observation that *audited stored* counts (+24–32%, duplicated tensors)
   compress GPT-2's α toward the cluster is itself a stored-convention artifact: duplicated
@@ -57,10 +63,12 @@ excluded from its P_exec.
   1.0 partly because TriLM's untied input table inflates `2·P_published` — a coincidence
   of convention. Under α_exec the floor decomposes consistently with Theorem 1 accounting:
   ≈0.5 units/FLOP of ternary arithmetic + unamortized per-weight load/dequant.
-- **Encoder:** EmbeddingGemma-300M α_embed = 0.53 (published-parameter) → α_exec ≈ **1.61**,
-  inside the modern cluster. The apparent "below-floor" coefficient was a lookup-table
-  artifact (201.3 M of 308 M parameters never execute FLOPs in the forward pass); the
-  encoder's real advantage is workload shape (batch amortization), not per-FLOP efficiency.
+- **Encoder:** EmbeddingGemma-300M α_embed = 0.53 (published-parameter) → α_exec ≈ **1.6**
+  (1.53–1.61 depending on whether published or GGUF-audited totals anchor both sides of
+  the conversion — inside the modern cluster under any consistent basis). The apparent
+  "below-floor" coefficient was a lookup-table artifact (201.3 M of 308 M parameters never
+  execute FLOPs in the forward pass); the encoder's real advantage is workload shape
+  (batch amortization), not per-FLOP efficiency.
 
 ## Interpretation
 

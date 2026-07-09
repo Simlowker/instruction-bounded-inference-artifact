@@ -30,9 +30,9 @@ limit.
 | tok/MB (SSN) | 0.1744 | 0.0045 |
 | Cycle cost per call (SSN) | 0 | 0 |
 | Paper 1 §4.1 baseline (α=1.54) | 22.8 | 3.3 |
-| Theoretical floor (α=1.00) | 35.1 | 5.0 |
+| Cost-model floor reference (α_eff=1.00, published-param convention) | 35.1 | 5.0 |
 | **Implied α_eff** | **1.03** | **1.00** |
-| % of theoretical floor | 97 % | 100 % |
+| % of that reference | 97 % | 100 % |
 | Speedup vs Paper 1 baseline | 1.49× | 1.50× |
 | Coherence (fluency) | 10/10 | (inline at N=5: factual ✓) |
 | `coherence_pass` | true | true |
@@ -192,3 +192,8 @@ The C1a result (α_eff ≈ 1.00 at both scales) suggests Phase 2 should
 prioritise *workload* improvements (multi-call stateful, prompt cache
 amortisation) over further *kernel* improvements — there's no kernel
 margin left to recover end-to-end.
+
+
+## Update (2026-07-09, revision round 2)
+
+The "floor" language above predates the two-convention treatment: the α_eff values are published-parameter-convention figures, and their proximity to exactly 1.00 is partly a convention coincidence (TriLM's untied input table inflates 2·P_published). Under the executed-FLOPs convention the measured floor is α_exec = 1.166 (560M) / ≤ 1.04 (3.9B, one-sided). See `artifact/notes/alpha_exec_convention.md` and `artifact/results/current/scaling_law/alpha_exec.csv`; the paper (§2, §5.1) carries the corrected framing.

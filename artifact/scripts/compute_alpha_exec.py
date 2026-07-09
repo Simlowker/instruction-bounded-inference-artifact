@@ -42,8 +42,13 @@ CONFIG = [
     ("Mamba-370M",        ["Q8_0", "Q4_0"], True,  0.0),
     ("Qwen3-0.6B",        ["Q8_0", "Q4_0"], True,  0.0),
     ("RWKV7-0.4B",        ["Q8_0", "Q4_0"], False, 0.0),
+    # Legacy sensitivity rows (excluded from the modern fit; duplicated-head exports →
+    # subtract the input table per the general rule; learned positions excluded):
+    ("DistilGPT2",        ["Q4_0", "Q8_0"], False, 0.6),
+    ("GPT2-124M",         ["Q4_0", "Q8_0"], False, 0.8),
 ]
-SMALL_DIM_REGIME = {"Pythia-70M", "Pythia-14M"}  # d ≤ 512: overhead regime under alpha_exec
+SMALL_DIM_REGIME = {"Pythia-70M", "Pythia-14M"}  # d ≤ 512 AND gpt_neox: confounded at n=2 (observation, not a law)
+LEGACY = {"DistilGPT2", "GPT2-124M"}
 
 def fit_row(rows, name, quants):
     for q in quants:
@@ -69,7 +74,9 @@ def main():
                         params_M_nominal=P_nom, params_M_gguf=P_gguf,
                         embed_table_M=round(table_M, 1), params_M_exec=round(P_exec, 1),
                         alpha_param=round(a_param, 3), alpha_exec=round(a_exec, 3),
-                        regime=("small_dim_overhead" if name in SMALL_DIM_REGIME else "modern_core")))
+                        regime=("legacy_code_path" if name in LEGACY else
+                                "small_dim_gptneox_outlier" if name in SMALL_DIM_REGIME else
+                                "modern_core")))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(out[0].keys()))

@@ -1,12 +1,14 @@
 name,quant,tok_call,tied,params_M_nominal,params_M_gguf,embed_table_M,params_M_exec,alpha_param,alpha_exec,regime
-Pythia-70M,Q4_0,208,False,70.0,70.4,25.8,44.6,1.374,2.154,small_dim_overhead
+Pythia-70M,Q4_0,208,False,70.0,70.4,25.8,44.6,1.374,2.154,small_dim_gptneox_outlier
 SmolLM2-135M,Q4_0,97,True,135.0,134.5,28.3,134.5,1.527,1.533,modern_core
 Gemma3-270M-IT,Q4_0,56,True,270.0,268.1,167.8,268.1,1.323,1.332,modern_core
 OpenELM-270M,Q4_0,45,True,270.0,271.5,41.0,271.5,1.646,1.637,modern_core
 SmolLM2-360M,Q4_0,36,True,360.0,361.8,47.2,361.8,1.543,1.536,modern_core
 Qwen2.5-0.5B,Q4_0,31,True,494.0,494.0,136.1,494.0,1.306,1.306,modern_core
 H2O-Danube3-500M,Q4_0,27,False,500.0,513.6,49.2,464.4,1.481,1.595,modern_core
-Pythia-14M,Q4_0,838,False,14.0,14.1,6.4,7.7,1.705,3.115,small_dim_overhead
+Pythia-14M,Q4_0,838,False,14.0,14.1,6.4,7.7,1.705,3.115,small_dim_gptneox_outlier
 Mamba-370M,Q8_0,30,True,370.0,371.5,51.5,371.5,1.802,1.795,modern_core
 Qwen3-0.6B,Q8_0,22,True,600.0,596.0,155.6,596.0,1.515,1.525,modern_core
 RWKV7-0.4B,Q8_0,32,False,400.0,450.9,67.1,383.8,1.562,1.628,modern_core
+DistilGPT2,Q4_0,119,False,82.0,120.5,38.6,81.3,2.05,2.067,legacy_code_path
+GPT2-124M,Q4_0,84,False,124.0,163.0,38.6,123.6,1.92,1.926,legacy_code_path

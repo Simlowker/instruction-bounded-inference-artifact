@@ -424,7 +424,7 @@ def plot_full_analysis(df_all: pd.DataFrame, df_modern: pd.DataFrame,
 # ---------- main ----------
 def main():
     parser = argparse.ArgumentParser(description="Scaling law analysis (Option C hybrid)")
-    parser.add_argument("--data", default="artifact/results/raw/core_measurements.csv")
+    parser.add_argument("--data", default="artifact/results/raw/core_measurements_v2.csv")
     parser.add_argument(
         "--outdir",
         default="artifact/results/current/scaling_law",
