@@ -1,0 +1,16 @@
+[1] output = " famous for its monuments and museums. The capital of France is the center of the European continent and is the center of the"
+[2] output = " up to 200 degrees Fahrenheit. The water is pumped through a mechanical pump or through a water heater. The water"
+[3] output = " our own planet Earth.
+Earth is the fourth largest planet in our solar system (after Mars, Jupiter and Saturn)"
+[4] output = " \'The Man of La Mancha\' in 1594. His characters are generally portrayed as the \'good\' and the"
+[5] output = " James Clerk Maxwell, the famous British physicist.
+He was the pioneer of a theory of space and time.
+He"
+[6] output = " the \"
+[7] output = " between the two World Wars.
+The Great Wall of China was built between the two World Wars. It is located in"
+[8] output = " yeast extract. If you don\'t have any, you can substitute by adding 4-6 tablespoons of water.
+
+"
+[9] output = " main source of oceanic heat and pressure, which is produced primarily by convection and mixing of the water column. And the"
+[10] output = " obtain oxygen, carbon dioxide, and nutrients from the air and for the conversion of those nutrients into energy. The process takes"

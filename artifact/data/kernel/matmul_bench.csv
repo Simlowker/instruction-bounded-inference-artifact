@@ -20,3 +20,4 @@ Ternary_DOT,128x128,50,,,1.129,,none,variable dimension
 Ternary_DOT,256x256,50,,,1.065,,none,variable dimension
 Ternary_DOT,512x512,50,,,1.032,,none,variable dimension
 Ternary_DOT,1024x1024,50,,,1.016,,none,variable dimension
+Empty_loop_metering,26214400_iters,26214400,177.46,0,,n/a,none,"empty-loop metering microbench (observed 2026-04): 177460428 units / 26214400 iters = 6.770 units/iter; unmetered baseline ~3.67 units/iter is a stored engineering estimate (see notes/beta_derivation.md) => beta=1.844"

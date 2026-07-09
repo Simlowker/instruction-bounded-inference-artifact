@@ -172,9 +172,6 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">instruction-bounded-inference</h1>
-</header>
 <h1
 id="on-chain-llm-inference-under-instruction-budgets-an-instruction-budget-cost-model-ternary-floor-evidence-and-session-costs">On-Chain
 LLM Inference Under Instruction Budgets: An Instruction-Budget Cost
@@ -185,8 +182,8 @@ Becker³</p>
 — ORCID 0009-0001-7872-1057. ² Kaizen Corp SA — ORCID
 0009-0002-8215-7150. ³ ORIGYN Foundation — ORCID
 0000-0002-8505-0597.</p>
-<p><strong>Date:</strong> May 2026</p>
-<p><strong>Categories:</strong> cs.DC (primary), cs.LG, cs.CL
+<p><strong>Date:</strong> July 2026</p>
+<p><strong>Categories:</strong> cs.DC (primary), cs.LG, cs.PF
 (cross-list)</p>
 <p><strong>ACM CCS:</strong> Computing methodologies → Machine learning;
 Computer systems organization → Distributed architectures.</p>
@@ -194,24 +191,28 @@ Computer systems organization → Distributed architectures.</p>
 Protocol (ICP); blockchain AI; decentralized AI; verifiable AI;
 WebAssembly (WASM) SIMD; deterministic inference; LLM scaling law;
 instruction budget; quantization; ternary weights; TQ2_0; BitNet; matmul
-dominance (MUL_MAT); smart-contract inference; stateful inference;
-agentic AI workloads; small language models (SLM); edge LLM;
-llama.cpp</p>
+dominance (MUL_MAT); smart-contract inference; stateful multi-call
+inference; small language models (SLM); edge LLM; llama.cpp</p>
 <p><strong>TL;DR.</strong> On the Internet Computer (ICP), large
 language model (LLM) inference inside a smart-contract canister is
 bounded not by hardware throughput but by a deterministic per-call
 instruction budget of about 40 billion metered units. We calibrate a
-decode scaling law, <code>tok/call ≈ B / (α_eff × 2P)</code>;
-demonstrate a 2.9× software-path speedup on ICP mainnet; produce
-end-to-end evidence consistent with the ternary <code>α_eff ≈ 1</code>
-instruction-cost floor using a custom TQ2_0 WebAssembly (WASM) SIMD
-kernel; and model the per-session IO tax that governs stateful, agentic
-on-chain workloads.</p>
-<p><strong>Companion artifact.</strong> The local <code>artifact/</code>
-directory (MIT code, CC BY 4.0 data) contains the calibration registry
-(49+ benchmarks across local dfx, ICP mainnet, and Swiss Subnet),
-variance-verified anchors, coherence audits, per-operation profiling,
-multi-call IO fits, source pins
+decode cost model, <code>tok/call ≈ B / (α_eff × 2P)</code>; show that
+the cost coefficient is software-determined — a 2.9× gap between two
+forks on identical mainnet weights; produce end-to-end evidence
+consistent with the ternary <code>α_eff ≈ 1</code> floor of the measured
+decode path using a custom TQ2_0 WebAssembly (WASM) SIMD kernel, with
+byte-identical outputs across a local replica, the Swiss Subnet, and a
+standard ICP mainnet subnet; and model the per-session IO tax so that
+the compute budget of stateful multi-call workloads can be planned
+analytically.</p>
+<p><strong>Companion artifact.</strong> The companion archive’s
+<code>artifact/</code> directory (MIT code, CC BY 4.0 data; archived at
+Zenodo DOI <code>10.5281/zenodo.20607598</code> and public at GitHub
+<code>Simlowker/instruction-bounded-inference-artifact</code>) contains
+the calibration registry (49+ benchmarks across local dfx, ICP mainnet,
+and Swiss Subnet), variance-verified anchors, coherence audits,
+per-operation profiling, multi-call IO fits, source pins
 (<code>artifact/notes/source_pinning.md</code>), and a source-backed
 execution-boundary note
 (<code>artifact/notes/blockchain_ai_execution_boundaries.md</code>). The
@@ -244,17 +245,22 @@ Legacy GPT-2 code paths form a separate α ≈ 2.0 regime.</p>
 mainnet; matmul accounts for 98.7% of decode cost on the profiled
 Pythia-70M Q8_0 view (98.3% on the Qwen 0.5B Q8_0 SIMD characterization
 row, §3); per-element unstructured sparsity is provably
-counter-productive (Theorem 1). Swiss Subnet (SSN) [8] deployments stay
-within 7% of local calibration.</p>
+counter-productive on the measured integer paths (Theorem 1). Swiss
+Subnet (SSN) [8] deployments stay within 7% of local calibration.</p>
 <p><strong>(R3) Floor evidence.</strong> A purpose-built TQ2_0 (2-bit
 ternary in the GGUF binary format used by llama.cpp [10]) WASM SIMD path
-on TriLM 560M and TriLM 3.9B both decode at <code>α_eff ≈ 1.00</code> —
-one metered unit per multiply-accumulate, the minimum compatible with
-the cost model — across a 7× parameter span, with byte-identical outputs
-on local and 13-replica SSN consensus. We treat this as evidence
-consistent with the cost-model floor on the measured TQ2_0 path, not a
-closed proof that all ternary deployments saturate it; the 3.9B point is
-at integer-token resolution (<code>N_MAX = 5</code>).</p>
+on purpose-trained TriLM models decodes at the empirical floor of the
+measured decode path: <code>α_eff = 1.03</code> at 560M, with a coarse
+integer-token consistency check at 3.9B (<code>N_MAX = 5</code>,
+asymmetric −17%/+0.2% resolution, implying <code>α_eff ≤ 1.002</code>) —
+and byte-identical outputs across a local replica, 13-replica Swiss
+Subnet consensus, and a standard ICP mainnet subnet. Here
+<code>α_eff = 1</code> is one metered unit per FLOP at the
+<code>2P</code> count — the observed floor of single-token decode on
+this stack, not a cost-table minimum: batched encode and isolated
+ternary kernel benches measure below it (§2, §5.3, §7.1). The evidence
+spans one model family and one format; we do not claim closed
+saturation.</p>
 <p>Three secondary results compose the law into deployment decisions.
 <strong>(S1)</strong> Uniform Q8_0 stays on the Pareto frontier on
 SmolLM2-135M and Qwen 0.5B: no mixed-precision variant strictly
@@ -274,13 +280,17 @@ constraint means for large language model (LLM) inference in practice.
 We find a simple scaling law for how many tokens a model can generate
 per call; show that rewriting the software path (not changing the
 hardware) can almost triple output; build a ternary-weight WebAssembly
-(WASM) kernel that produces end-to-end evidence consistent with the
-theoretical cost floor; and quantify the extra cost of keeping
-conversation state across calls, so that on-chain AI agents can be
-budgeted reliably. The practical recipe: choose the model for quality,
-choose its parameter count and quantization from the instruction law,
-optimize the matrix-multiplication (matmul) kernel, and treat saved
-session state as part of the budget.</p>
+(WASM) kernel whose measured cost sits at the floor of the current
+decode path, with bit-identical outputs across three independent
+execution environments; and quantify the extra cost of keeping
+conversation state across calls, so that the compute budget of a
+multi-call on-chain session can be planned analytically. Whether today’s
+sub-billion-parameter on-chain models are good enough to make useful
+agents is a separate, open question (§7.3). The practical recipe: choose
+the model for quality — today the binding constraint — choose its
+parameter count and quantization from the instruction law, optimize the
+matrix-multiplication (matmul) kernel, and treat saved session state as
+part of the budget.</p>
 <h2
 id="introduction-on-chain-llm-inference-as-an-instruction-bounded-problem">1
 Introduction: On-Chain LLM Inference as an Instruction-Bounded
@@ -371,7 +381,7 @@ how does the regime extend to non-decode workloads? (§6, §7)</li>
 <tr>
 <td><code>f32.mul</code> vs <code>i32.mul</code></td>
 <td>Identical</td>
-<td>2× cost (per ICP cost table)</td>
+<td>2× per opcode table; ~1.05× at SIMD-kernel level (§4.2)</td>
 </tr>
 <tr>
 <td>Main hotspot</td>
@@ -380,6 +390,12 @@ how does the regime extend to non-decode workloads? (§6, §7)</li>
 </tr>
 </tbody>
 </table>
+<p>We model the instruction budget rather than the memory ceiling
+because metering is the runtime’s protocol-level primitive — the
+constraint that scales with parameter count and prices every call —
+whereas the wasm-heap and page-access limits that currently bind
+deployments at sub-1B scales (§6.3, §8) are implementation ceilings of
+the present runtime build.</p>
 <p>The <em>qualitative</em> regime distinction — executed instructions,
 not DRAM bandwidth, as the binding cost — plausibly extends to other
 discretely-metered runtimes: blockchain canisters [5, 7], fuelled WASM
@@ -390,7 +406,13 @@ the ICP opcode cost table and are not claimed to transfer numerically;
 constraint-counting zkVMs in particular have a different cost structure
 (proving cost can be super-linear in sequence length), where the linear
 <code>2P</code> relation need not hold. All measurements in this paper
-are on the ICP/SSN stack.</p>
+are on the ICP/SSN stack. What transfers is the method, not the
+constants: on another discretely-metered runtime, re-derive
+<code>B</code> (the per-invocation budget), re-measure the metering
+overhead <code>β</code> on a tight-loop microbench, and re-fit
+<code>α_eff</code> from a small model ladder; the regime prediction is
+that <code>α_eff</code> clusters by software path rather than by
+architecture.</p>
 <h3 id="contributions-and-related-work">1.3 Contributions and related
 work</h3>
 <p>We establish three main results (R1–R3) and three secondary results
@@ -401,29 +423,39 @@ first-order scaling law for native instruction-metered decoder
 throughput on a live ICP/WASM canister stack. Concurrent on-chain
 inference efforts [9, 21] establish that native deployment is possible,
 but they describe systems and boundaries rather than a parametric law.
-The closest prior system is opML [28], which executes an LLM forward
-pass on-chain inside a fraud-proof VM; it meters execution
-<em>lazily</em> — only when a result is challenged — whereas the ICP
-setting meters <em>every</em> update call eagerly, and our contribution
-is a throughput cost model rather than a verification protocol.
-Optimistic-TEE-rollup inference [29] and deterministic-WASM execution
-[30] target adjacent verifiable-compute boundaries. The novelty claimed
-here is therefore boundary-specific: native decoder execution under
-consensus metering, measured as a throughput law, not “blockchain AI” in
-the broad sense. On-chain embedding offerings typically store
+The closest prior system is opML [28], which runs the LLM forward pass
+off-chain and re-executes only a single challenged step on-chain inside
+a fraud-proof VM; its metering is therefore <em>lazy</em> — engaged only
+when a result is disputed — whereas the ICP setting meters
+<em>every</em> replica’s full forward pass on <em>every</em> update
+call, eagerly, and our contribution is a throughput cost model rather
+than a verification protocol. Optimistic-TEE-rollup inference [29] and
+deterministic-WASM execution [30] target adjacent verifiable-compute
+boundaries. The practical decision boundary between these designs is the
+trust root and the latency budget: native in-consensus execution is
+warranted when the forward pass itself must be a consensus fact — no
+hardware enclave as trust anchor [29], no challenge window before
+finality [28], no prover in the loop [24] — and it is dominated by TEE
+or off-chain-plus-proof designs when model quality or interactive
+latency is the binding constraint, since the measured envelope here is
+sub-1B models at tens of tokens per call (§6.2, §7.3). The novelty
+claimed here is therefore boundary-specific: native decoder execution
+under consensus metering, measured as a throughput law, not “blockchain
+AI” in the broad sense. On-chain embedding offerings typically store
 precomputed vectors or rely on off-chain workers; our encoder case study
 (§7) runs the full forward pass inside the consensus boundary and is
 framed as a systems demonstration, not a claim of priority.</p>
 <h2 id="the-instruction-bounded-cost-model-for-decoder-inference">2 The
 Instruction-Bounded Cost Model for Decoder Inference</h2>
 <p>ICP canisters execute WebAssembly with deterministic instruction
-metering [5, 6]. Each opcode has an explicit cost; one update call may
-consume at most <code>B = 40 × 10⁹</code> ICP cost units [7]. Two
-asymmetries matter for inference. <code>f32</code> arithmetic is priced
-2× above <code>i32</code> under the ICP opcode cost table, but at the
-SIMD-kernel level the observed <code>f32x4</code> vs <code>i32x4</code>
-accounting is <code>1.05×</code> because the metering instrumentation
-block dominates a tight inner loop
+metering [5, 6]. Each opcode has an explicit cost per the replica
+instrumentation cost table [6]; one update call may consume at most
+<code>B = 40 × 10⁹</code> ICP cost units [7]. Two asymmetries matter for
+inference. <code>f32</code> arithmetic is priced 2× above
+<code>i32</code> under the ICP opcode cost table, but at the SIMD-kernel
+level the observed <code>f32x4</code> vs <code>i32x4</code> accounting
+is <code>1.05×</code> because the metering instrumentation block
+dominates a tight inner loop
 (<code>artifact/data/kernel/matmul_bench.csv</code>). We measure that
 metering overhead as <code>β = 1.844</code> on tight SIMD kernels;
 <code>β</code> is the metering-overhead multiplier on a tight SIMD inner
@@ -458,16 +490,32 @@ the current stack, α_eff resolves into three distinct clusters:</p>
 <li><strong>Legacy GPT-2 code paths</strong>: α_eff ≈ 2.0
 (software-penalty regime)</li>
 <li><strong>Purpose-built TQ2_0 ternary path</strong>: α_eff ≈ 1.00
-(theoretical floor)</li>
+(empirical decode-path floor)</li>
 </ul>
-<p>The floor is load-bearing. Setting α_eff = 1 corresponds to exactly
-one metered unit per multiply-accumulate at the <code>2P</code> count —
-the minimum compatible with the cost model. No deployment on this stack
-is observed below it. The claim “the TQ2_0 path reaches the floor” (§5)
-should therefore be read as measurement evidence that no large remaining
-kernel-level margin is visible on that measured path at integer-token
-resolution, not as a proof that every ternary deployment saturates the
-bound.</p>
+<p>The floor is load-bearing, so we state precisely what it is — and
+what it is not. Setting α_eff = 1 corresponds to one metered unit per
+FLOP at the <code>2P</code> count (equivalently, two units per
+multiply-accumulate, since <code>2P</code> counts multiply and add
+separately). It is <em>not</em> a cost-table minimum: fused SIMD
+instructions retire several MACs at once, and both the isolated ternary
+kernel bench (<code>Ternary_DOT_i32x4dot_x4</code>, α_kernel = 0.817,
+<code>artifact/data/kernel/matmul_bench.csv</code>) and the batched
+encoder path (α_embed ≈ 0.53, §7.1) measure below 1 on the same cost
+model. What makes 1 the operative floor for <em>decode</em> is
+structural: single-token matrix-vector decode streams every weight
+through load + dequantize + MAC exactly once per token, so the
+per-weight load/dequant instructions cannot be amortized — unlike
+batched encode, where they are shared across the token batch, and unlike
+matrix-matrix kernel benches, where operand reuse hides them. On the
+currently-integrated decode kernels, that per-weight overhead lands the
+end-to-end coefficient at α_eff ≈ 1, and no end-to-end decode deployment
+on this stack is observed below it. The claim “the TQ2_0 path reaches
+the floor” (§5) should therefore be read as measurement evidence that no
+large remaining margin is visible on that measured decode path at
+integer-token resolution — an <em>empirical</em> floor of the current
+path, not a bound future kernels cannot cross: the ternary-native DOT ×4
+microkernel already measures α_kernel = 0.817 on isolated benches
+(§5.3), and integrating it at model level is the obvious next step.</p>
 <h2
 id="empirical-decode-scaling-law-for-instruction-bounded-llm-inference">3
 Empirical Decode Scaling Law for Instruction-Bounded LLM Inference</h2>
@@ -488,10 +536,15 @@ reported below. The modern-only fit comprises <strong>eleven
 models</strong>: these seven rows plus four not shown here for space —
 Pythia-14M, Mamba-370M, Qwen3-0.6B, and RWKV7-0.4B. Four Transformer
 anchor points (†) are variance-verified with 3 repetitions each (CV &lt;
-1.05%); a fifth variance-verified point, Mamba-370M, is <strong>retained
-in the modern fit</strong> — it carries the largest per-architecture
-LOAO error (18.3%, reported in §3) — not excluded. All other rows are
-single-run binary-search estimates.</p>
+1.05% under the binary-search protocol described above; for
+transparency, <code>variance.csv</code> also retains an earlier
+SmolLM2-135M session recording [150, 150, 75] — CV ≈ 35% — from a run
+configuration predating the fixed protocol, a reminder that tok/call is
+protocol-sensitive and the CIs are conditional on the stated protocol);
+a fifth variance-verified point, Mamba-370M, is <strong>retained in the
+modern fit</strong> — it carries the largest per-architecture LOAO error
+(18.3%, reported in §3) — not excluded. All other rows are single-run
+binary-search estimates.</p>
 <table>
 <colgroup>
 <col style="width: 28%" />
@@ -714,21 +767,21 @@ IO analysis, not same-build calibration</td>
 <td>SSN</td>
 <td>BASE-Q8_0</td>
 <td style="text-align: right;">95</td>
-<td>Paper 1.5 C2 Pareto-winner cross-env validation</td>
+<td>Mixed-precision Pareto-winner cross-env validation (§6.1)</td>
 </tr>
 <tr>
 <td>Qwen 2.5 0.5B</td>
 <td>SSN</td>
 <td>BASE-Q8_0</td>
 <td style="text-align: right;">28</td>
-<td>Paper 1.5 C2 Pareto-winner cross-env validation</td>
+<td>Mixed-precision Pareto-winner cross-env validation (§6.1)</td>
 </tr>
 <tr>
 <td>Qwen 2.5 0.5B</td>
 <td>SSN</td>
 <td>BASE-Q8_0, 10-turn</td>
 <td style="text-align: right;">100 total tokens</td>
-<td>Paper 1.5 C3 multi-call session demo</td>
+<td>Multi-call session demo (§6.2)</td>
 </tr>
 <tr>
 <td>EmbeddingGemma-300M</td>
@@ -747,9 +800,8 @@ rows are also summarized in
 <code>mixed_precision_measurements.csv</code>, and
 <code>multicall_characterization.csv</code>.</p>
 <p><strong>Table 1c.</strong> Additional Qwen 2.5 0.5B canister
-characterization retained from the long Paper 1 draft. These rows
-explain the software gap and prompt-length limits; they are not
-additional same-status calibration anchors.</p>
+characterization. These rows explain the software gap and prompt-length
+limits; they are not additional same-status calibration anchors.</p>
 <table>
 <colgroup>
 <col style="width: 20%" />
@@ -819,24 +871,46 @@ measurement inventory is preserved in
 <code>artifact/notes/paper1_long_measurement_inventory.md</code> for
 reviewers who want the distinction between fit rows, deployment rows,
 negative results, and canister-characterization rows.</p>
-<p>Fit statistics on the modern-only regime
+<p>Because α_eff is <em>defined</em> as <code>B / (N · 2P)</code>, the
+relation <code>tok/call ≈ B/(α_eff·2P)</code> is a re-parameterization
+of the standard <code>2P</code> FLOP count [16], not an independently
+discovered law; a log-log slope near −1 is implied by the convention
+whenever α_eff varies far less than <code>P</code>. The falsifiable
+empirical content is therefore (a) how tightly α_eff clusters across
+heterogeneous families, and (b) whether the other families’ coefficient
+predicts a held-out architecture’s throughput (LOAO). Fit statistics on
+the modern-only regime
 (<code>artifact/results/current/scaling_law/</code>, via
-<code>artifact/scripts/analyze_scaling_law.py</code>):</p>
+<code>artifact/scripts/analyze_scaling_law.py</code>; fit membership is
+declared in the registry — <code>role=calibration</code> rows, excluding
+degenerate-output and instruct variants):</p>
 <ul>
-<li>Median <strong>α_eff = 1.527</strong>, 95% bias-corrected bootstrap
-CI <strong>[1.374, 1.65]</strong> (BCa, 9 999 resamples)</li>
+<li>Median <strong>α_eff = 1.53</strong>, 95% bias-corrected bootstrap
+CI <strong>[1.37, 1.65]</strong> (BCa, 9 999 resamples; with n = 11
+models the median’s bootstrap interval is an order-statistic range whose
+endpoints coincide with observed models — we report it at two decimals
+accordingly)</li>
 <li>Strict modern-only <strong>LOAO MAPE = 7.7%</strong>
 (model-weighted; family-equal weighting gives 8.9%), max
-per-architecture error 18.3%</li>
+per-architecture error 18.3% — the out-of-sample test that carries the
+claim</li>
 <li>Log-log slope <strong>−0.980</strong>, 95% OLS CI <strong>[−1.047,
-−0.913]</strong>, R² 0.9919 — consistent with the <code>−1</code>
-expected from <code>tok/call ∝ 1/(α_eff · 2P)</code></li>
+−0.913]</strong>, R² 0.9919 — a consistency check on the <code>2P</code>
+exponent, not independent validation</li>
 </ul>
-<p>Legacy GPT-2 rows land at α ≈ 2.0 — systematically above the modern
-cluster, and only on ICP. On native Apple M4 Max the same models show no
-regime split (<code>artifact/data/native/m4_max_baseline.csv</code>);
-the penalty lives in the llama.cpp GPT-2 code path, not in the
-architecture itself.</p>
+<p>Legacy GPT-2 rows land at α ≈ 2.0 on nominal parameter counts —
+systematically above the modern cluster, and only on ICP. Two effects
+compose here. First, a parameter-convention effect: GPT-2’s audited GGUF
+counts exceed nominal by 24–32% (untied vocabulary and position
+embeddings; <code>discrepancies.csv</code>), and on audited counts the
+same rows land at α ≈ 1.39–1.46, at or below the modern cluster. Second,
+a residual ICP-specific software component: on native Apple M4 Max the
+same models show no regime split
+(<code>artifact/data/native/m4_max_baseline.csv</code>), so what remains
+after the convention correction is attributable to the llama.cpp GPT-2
+code path on this stack, not to the architecture itself. The α ≈ 2.0
+headline is thus partly a nominal-convention artifact; we retain GPT-2
+as a sensitivity regime, excluded from the modern fit either way.</p>
 <p>Architecture details (depth, hidden size, vocabulary) do not
 independently predict throughput once total parameter count is fixed.
 Danube3-500M and Qwen 2.5 0.5B occupy very different layer/hidden
@@ -846,12 +920,18 @@ consistent with the cluster; Mamba-370M [13] drifts between builds (α =
 1.54 → 1.80, −14% tok/call) and we treat its result as suggestive, not
 settled.</p>
 <p><strong>Sensitivity to the parameter convention.</strong>
-<code>2P</code> counts only trainable linear weights in our fits.
-GGUF-audited parameter counts occasionally exceed nominal counts by
-15–25 % (e.g. Qwen 2.5 0.5B: 494 M nominal vs 630 M audited;
-cf. <code>CLAIMS-EVIDENCE-MATRIX.md</code> discrepancies log).
-Recalibrating on audited counts compresses α_eff by a similar margin
-without changing the modern-regime cluster or the α ≈ 1 floor.</p>
+<code>2P</code> uses nominal (published) parameter totals in our fits,
+applied uniformly. GGUF-audited tensor counts are
+<em>file-dependent</em> and occasionally exceed nominal by 15–32%
+(e.g. the Qwen 2.5 0.5B Q8_0-instruct export audits at 630 M vs 494 M
+nominal, while its Q4_0/TQ2_0 exports audit at 494 M; GPT-2 audits
++24–32%; <code>CLAIMS-EVIDENCE-MATRIX.md</code> discrepancies log).
+Recalibrating on audited counts therefore shifts α_eff
+<em>non-uniformly</em> — affected models move down by their discrepancy
+(Qwen Q8_0: 1.33 → ≈ 1.06) while others barely move — preserving the
+cluster’s ordering and the α ≈ 1 floor but not every individual value.
+We report the nominal convention throughout and flag rows with a large
+audit gap in the registry.</p>
 <p>Absolute tok/call numbers are build-sensitive within ±15% between
 March and April 2026 builds. The scaling-law <em>structure</em> — slope,
 model ordering, α_eff median — is stable across those builds;
@@ -915,6 +995,18 @@ cycles required. The end-to-end procedure is in the companion
 <code>instruction-bounded-inference-artifact</code> repository, file
 <code>REPRODUCE.md</code>; the reproduced 29-vs-10 result is logged in
 <code>results/rebench_2026-05-19.md</code> in that repository.</p>
+<p><strong>What the 2.9× is made of.</strong> The gap is kernel-path
+vectorization, not hardware or weights: on the same build, the same Qwen
+Q8_0 runs at 6 tok/call on the scalar path and 30 tok/call with WASM
+SIMD enabled (Table 1c) — a ~5× spread that brackets the onicai
+baseline’s 10 tok/call between the scalar and fully-vectorized operating
+points. The dominant contributors on this stack are SIMD dispatch of the
+quantized matmul inner loops and the associated dequantization strategy
+(§4.2); everything else is bounded by the 1.3–1.7% non-matmul profiling
+share. We did not characterize the onicai fork’s exact kernel
+configuration, and the claim is about stack-dependence of α_eff, not
+baseline optimality: an equivalently-vectorized baseline would be
+expected to close most of the gap.</p>
 <h3 id="matmul-dominates-at-98.7">4.2 Matmul dominates at 98.7%</h3>
 <p>Per-operation profiling at ggml-operation boundaries on Pythia-70M
 Q8_0 decode (<code>artifact/data/profiling/per_operation.csv</code>)
@@ -984,12 +1076,15 @@ ordinary build and deployment variance, not a different governing
 law.</p>
 <h2 id="reaching-the-ternary-α_eff-1-instruction-cost-floor-tq2_0">5
 Reaching the Ternary α_eff ≈ 1 Instruction-Cost Floor (TQ2_0)</h2>
-<h3 id="trilm-ternary-at-560-m-and-3.9-b-both-hit-α_eff-1.00">5.1 TriLM
-ternary at 560 M and 3.9 B both hit α_eff ≈ 1.00</h3>
-<p>We integrated a custom TQ2_0 (2-bit ternary, weights in {−1, 0, +1})
-WASM SIMD path — absent from upstream llama.cpp [10] — end-to-end into
-the inference framework, and measured two purpose-trained ternary models
-from the SpectraSuite TriLM family [15] on the same canister build
+<h3 id="trilm-ternary-α_eff-1.03-at-560-m-consistent-at-3.9-b">5.1 TriLM
+ternary: α_eff = 1.03 at 560 M, consistent at 3.9 B</h3>
+<p>The floor evidence in this section comes from one model family
+(SpectraSuite TriLM [15]) and one format (TQ2_0); within that scope it
+is measured at two scales 7× apart. We integrated a custom TQ2_0 (2-bit
+ternary, weights in {−1, 0, +1}) WASM SIMD path — absent from upstream
+llama.cpp [10] as of this writing — end-to-end into the inference
+framework, and measured two purpose-trained ternary models on the same
+canister build
 (<code>artifact/data/paper_1_5/ternary_measurements.csv</code>,
 <code>artifact/results/paper_1_5/PHASE-1-SUMMARY.md</code>). The broader
 ternary-LLM line — BitNet-style 1-bit and 1.58-bit training [3, 22],
@@ -1040,12 +1135,18 @@ than native hardware:</p>
 <td style="text-align: right;"><strong>5</strong> (CV 0%)</td>
 </tr>
 <tr>
+<td><strong>N_MAX ICP mainnet, standard subnet (3 reps,
+2026-07)</strong></td>
+<td style="text-align: right;"><strong>34</strong> (CV 0%)</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
 <td>Implied α_eff</td>
 <td style="text-align: right;"><strong>1.03</strong></td>
 <td style="text-align: right;"><strong>1.00</strong></td>
 </tr>
 <tr>
-<td>Paper 1 modern-arch baseline (α=1.54)</td>
+<td>Modern-regime baseline (α = 1.54, §3)</td>
 <td style="text-align: right;">22.8</td>
 <td style="text-align: right;">3.3</td>
 </tr>
@@ -1055,9 +1156,9 @@ than native hardware:</p>
 <td style="text-align: right;"><strong>≈1.5×</strong></td>
 </tr>
 <tr>
-<td>% of theoretical floor (α = 1)</td>
+<td>% of empirical floor (α = 1)</td>
 <td style="text-align: right;">97 %</td>
-<td style="text-align: right;">≈100 % (N=5, ±20 % res.)</td>
+<td style="text-align: right;">≈100 % (N=5, −17 %/+0.2 % res.)</td>
 </tr>
 <tr>
 <td>Coherence</td>
@@ -1066,36 +1167,54 @@ than native hardware:</p>
 </tr>
 </tbody>
 </table>
-<p>Two points 7× apart in parameter count both land at α_eff ≈ 1, the
-cost-model floor for this path. We read this as evidence consistent with
-the floor on the measured TQ2_0 path; the 3.9B point sits at
-integer-token resolution <code>N_MAX = 5</code> (≈ 20% per-step
-granularity in α), so we do not claim closed saturation. The ≈1.5×
-speedup over the modern-arch baseline is constant across the 7× span,
+<p>The 560 M point is the tight anchor: <code>N_MAX = 34</code> implies
+α_eff ∈ (1.004, 1.034] — within 3% of the floor. The 3.9 B point is a
+coarse consistency check, not independent floor evidence: at
+<code>N_MAX = 5</code> the integer-token resolution is asymmetric
+(−17%/+0.2%), so the observation establishes α_eff ≤ 1.002
+<em>given</em> the decode-path floor α ≥ 1, and distinguishes little
+below it. We therefore read the pair as evidence consistent with the
+floor on the measured TQ2_0 path, not as closed saturation. The ≈1.5×
+speedup over the modern-regime baseline is constant across the 7× span,
 weakening the alternative explanation that the 560 M result was inflated
-by sub-α = 1.54 inefficiency at small scale.</p>
+by small-scale inefficiency in the baseline.</p>
 <h3 id="byte-exact-cross-environment-determinism">5.2 Byte-exact
 cross-environment determinism</h3>
 <p>A stronger consistency check than throughput matching is bit-for-bit
-output agreement. We re-ran the 10-prompt TriLM 560M coherence audit on
-the 13-node SSN canister and diffed completions byte-by-byte against the
-local dfx run
-(<code>artifact/results/paper_1_5/raw/trilm-560m-ssn-vs-mainnet-diff.txt</code>):
-<strong>empty diff — all 10 completions byte-identical.</strong> For
-TriLM 3.9B every token produced at <code>N = 1..5</code> on SSN matches
-the local output verbatim. This rules out non-deterministic kernel
-hazards (uninitialized vector lanes, FP reorder, replica-specific code
-paths). The TQ2_0 WASM SIMD kernel is fully deterministic at both scales
-under live 13-replica consensus.</p>
+output agreement — and we now have it across <strong>three execution
+environments</strong>. In April 2026, the 10-prompt TriLM 560M coherence
+audit on the 13-node SSN canister diffed empty against the local dfx run
+(<code>artifact/results/paper_1_5/raw/trilm-560m-ssn-vs-mainnet-diff.txt</code>),
+and for TriLM 3.9B every token produced at <code>N = 1..5</code> on SSN
+matched the local output verbatim. In July 2026 we repeated the campaign
+on a <strong>standard ICP mainnet application subnet</strong> (canister
+<code>zmm32-7yaaa-aaaad-qlqsq-cai</code>, subnet <code>5kdm2-…</code>),
+this time with both sides of every diff archived
+(<code>artifact/results/paper_1_5/raw/mainnet-2026-07-09/</code>):
+<code>N_MAX = 34</code> in 3/3 repetitions with the boundary trap at 35,
+and the 10-prompt audit <strong>byte-identical between the local replica
+and the mainnet canister</strong> — under an independently rebuilt GGUF
+(a separate conversion pipeline, three months after the original) and a
+newer canister build, with all completions word-for-word equal to the
+April audit. Identical output bytes across three environments, two build
+generations, and two conversion pipelines rule out non-deterministic
+kernel hazards (uninitialized vector lanes, FP reorder, replica-specific
+code paths). The TQ2_0 WASM SIMD kernel is fully deterministic under
+live consensus on both production subnets.</p>
 <h3 id="throughput-density">5.3 Throughput density</h3>
 <p>On non-purpose-trained ternary weights, the same TQ2_0 path reaches
 <strong>201 tok/call on Pythia-70M</strong>, giving <strong>5.03
 tok/MB</strong> — the highest throughput-per-megabyte observed in the
-study (<code>artifact/results/current/extended_analysis/</code>). Q4_0
-SIMD remains the best absolute-throughput operating point for
-non-ternary models in the calibration set. A ternary-native DOT ×4
-microkernel projects a 2.45× bench-level speedup over F32 SIMD (artifact
-only; no model-level run yet).</p>
+study (<code>artifact/results/current/extended_analysis/</code>). Note
+what this row does <em>not</em> show: at 201 tok/call, Pythia-70M TQ2_0
+runs at α_eff ≈ 1.41 — well above the floor, and marginally below its
+own Q4_0 SIMD throughput (208 tok/call, Table 1). The floor of §5.1 is
+attained by purpose-trained ternary models at sufficient scale on this
+path, not by the TQ2_0 format per se. Q4_0 SIMD remains the best
+absolute-throughput operating point for non-ternary models in the
+calibration set. A ternary-native DOT ×4 microkernel projects a 2.45×
+bench-level speedup over F32 SIMD (artifact only; no model-level run
+yet).</p>
 <h2
 id="pareto-quantization-mixed-precision-vs-uniform-q8_0-and-the-multi-call-session-io-tax">6
 Pareto Quantization (Mixed-Precision vs Uniform Q8_0) and the Multi-Call
@@ -1164,9 +1283,12 @@ byte-exact weights, differing only in metadata.</p>
 </tr>
 </tbody>
 </table>
-<p><em>α_eff in this table uses nominal parameter counts (135 M / 0.5
-B); with the GGUF-audited counts (134.5 M / 494 M) the values are 1.53 /
-1.35 — the same registry convention as Table 1.</em></p>
+<p><em>α_eff in this table uses rounded nominal parameter counts (135 M
+/ 0.5 B), giving 1.527 / 1.333; on the registry’s nominal counts (134.5
+M / 494 M) the values are 1.53 / 1.35 — the same convention as Table 1.
+The Qwen Q8_0-instruct GGUF export audits at 630 M tensor-level
+parameters (<code>discrepancies.csv</code>), on which its α_eff would be
+≈ 1.06; see the parameter-convention sensitivity note in §3.</em></p>
 <p>Uniform <code>Q8_0</code> is the highest-throughput, lowest-PPL point
 on both tested frontiers, but not the smallest. The precise statement
 is: no mixed variant strictly dominates it. <code>Q5_K_M</code> is the
@@ -1203,11 +1325,12 @@ giving an <strong>extended session formula</strong>:</p>
 </blockquote>
 <p>with
 <code>IO_instr(n, c) = save_instr(n, c) + load_instr(n, c) ≈ (a_s + b_s · n) + (a_l + b_l · n)</code>
-fitted from instrumented canister runs (ggml commit <code>bb238b9</code>
-adds a <code>C3-IO-END</code> log line exposing <code>save_instr</code>
-and <code>load_instr</code> per call). Units: <code>B</code> and
-<code>IO_instr</code> in ICP instruction-cost units;
-<code>α_eff × 2P</code> in instructions per token.</p>
+fitted from instrumented canister runs (an instrumented build — ggml
+commit <code>bb238b9</code> — logs <code>save_instr</code> and
+<code>load_instr</code> per call; for the Qwen fit,
+<code>b_l ≈ 0</code>: the load cost resolves to a near-constant term).
+Units: <code>B</code> and <code>IO_instr</code> in ICP instruction-cost
+units; <code>α_eff × 2P</code> in instructions per token.</p>
 <p><strong>Table 3.</strong> Fitted IO parameters
 (<code>artifact/data/paper_1_5/multicall_characterization.csv</code>,
 <code>artifact/results/paper_1_5/tables/c3-fit-parameters.json</code>).</p>
@@ -1322,9 +1445,10 @@ future Q6_K workloads that might land above the threshold.</p>
 <ol type="1">
 <li><strong>Calibration coverage.</strong> The modern-regime law (α_eff
 ≈ 1.53) is anchored on the 70 M–800 M range; the ternary floor (α_eff ≈
-1.00) is validated at 560 M and 3.9 B but only on the TriLM family and
-only for TQ2_0. Neither result is yet a universal law across
-architecture, quantization, and scale.</li>
+1.00) is validated at 560 M (local, SSN, and a standard ICP mainnet
+subnet) and 3.9 B (local, SSN) but only on the TriLM family and only for
+TQ2_0. Neither result is yet a universal law across architecture,
+quantization, and scale.</li>
 <li><strong>Variance coverage.</strong> 4 of 17 modern-Transformer
 calibration rows are variance-verified (3 reps, CV &lt; 1.05%); the 17
 counts <code>role=calibration</code> registry rows with modern
@@ -1372,11 +1496,14 @@ holds for modern decoder families, with a separate penalty regime for
 legacy GPT-2 code paths. The production explanation is software: the
 fork gap reproduces on mainnet, matmul is the only first-order
 optimization lever, and per-element sparsity is formally excluded.
-Evidence consistent with the cost-model floor is observed on a
-purpose-built kernel and purpose-trained ternary weights at both 560 M
-and 3.9 B, under live 13-replica consensus, with byte-identical outputs
-across environments — a systems result, not a universal theorem of
-saturation.</p>
+Evidence consistent with the empirical decode-path floor is observed on
+a purpose-built kernel and purpose-trained ternary weights at both 560 M
+and 3.9 B, under live consensus on both a Swiss-Subnet and a
+standard-mainnet deployment, with byte-identical outputs across three
+execution environments — a systems result, not a universal theorem of
+saturation; the isolated kernel bench (α_kernel = 0.817) shows a further
+floor below the current decode path, not yet integrated at model
+level.</p>
 <p>Two derived results matter for deployment. Uniform <code>Q8_0</code>
 remains non-dominated against the mixed-precision variants tested, and
 multi-call stateful inference pays a predictable two-term IO tax per
@@ -1403,14 +1530,16 @@ per-operation profiling, Paper 1.5 CSVs, scripts, exports): the
 <code>github.com/Simlowker/instruction-bounded-inference-artifact</code>
 — the end-to-end local rebuild of the 2.9× fork gap
 (<code>REPRODUCE.md</code>) and its result log
-(<code>results/rebench_2026-05-19.md</code>). Made public at
-deposit.</li>
+(<code>results/rebench_2026-05-19.md</code>). Public.</li>
 <li><strong>Archived snapshot + DOI</strong>: Zenodo
-<code>10.5281/zenodo.20607598</code> (reserved at deposit; the GitHub
-release is archived via the Zenodo–GitHub integration).</li>
+<code>10.5281/zenodo.20607598</code> (reserved; the record archives the
+manuscript PDF and the artifact snapshot).</li>
 <li><strong>Live deployments</strong>: ICP mainnet decode canister
-<code>zmm32-7yaaa-aaaad-qlqsq-cai</code>; SSN encoder canister
-<code>u2pva-3iaaa-aaaax-qaa7a-cai</code>.</li>
+<code>zmm32-7yaaa-aaaad-qlqsq-cai</code> (re-provisioned 2026-07-09,
+running the TriLM 560M TQ2_0 model of §5); SSN encoder canister
+<code>u2pva-3iaaa-aaaax-qaa7a-cai</code>. Canister liveness is
+cycles-dependent and periodic; the archived logs, not the live
+canisters, are the durable evidence.</li>
 </ul>
 <p><strong>Table DA1. Key artifacts → location → SHA-256 → claim
 supported.</strong></p>

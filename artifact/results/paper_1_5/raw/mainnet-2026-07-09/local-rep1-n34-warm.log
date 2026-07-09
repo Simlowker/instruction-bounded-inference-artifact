@@ -1,0 +1,18 @@
+Using network type: local
+Token budget: 34
+ 
+--------------------------------------------------
+Calling run_update for llama_cpp (TriLM 560M)
+(
+  variant {
+    Ok = record {
+      output = " famous for its monuments and museums. The capital of France is the center of the European continent and is the center of the world for the French language. There are so many";
+      n_tokens_generated = 34 : nat64;
+      conversation = "The capital of France is famous for its monuments and museums. The capital of France is the center of the European continent and is the center of the world for the French language. There are so";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)

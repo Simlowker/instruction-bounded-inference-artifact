@@ -1,0 +1,8 @@
+Using network type: ic
+Token budget: 35
+ 
+--------------------------------------------------
+Calling run_update for llama_cpp (TriLM 560M)
+Error: Failed update call.
+Caused by: The replica returned a rejection error: reject code CanisterError, reject message Error from Canister zmm32-7yaaa-aaaad-qlqsq-cai: Canister exceeded the limit of 40000000000 instructions for single message execution..
+Try optimizing this method to consume fewer instructions or split the work across multiple messages. See documentation: https://docs.internetcomputer.org/references/execution-errors#instruction-limit-exceeded, error code Some("IC0522")

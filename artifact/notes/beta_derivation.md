@@ -41,10 +41,13 @@ The empty-loop measurement was recorded on the same canister build family
 that produced `artifact/data/kernel/matmul_bench.csv` (`fork build
 17806d52`). The measurement is preserved in the script's constants table so
 that re-running `python3 artifact/scripts/analyze_kernels.py` produces a
-self-consistent derivation; the underlying observation does not currently
-have its own row in `matmul_bench.csv`. Future re-collections should add the
-empty-loop row to the CSV directly so the derivation rebuilds end-to-end
-from data files.
+self-consistent derivation, and (as of 2026-07) the observation is also
+recorded as the `Empty_loop_metering` row of `matmul_bench.csv`, so the
+numerator rebuilds from the data file. The ~3.67 units/iter unmetered
+denominator is a stored engineering estimate derived from the opcode cost
+table, not an independent measurement — β should therefore be read as an
+operating point anchored on one measured quantity and one accounting
+assumption, and any future re-collection should re-measure both sides.
 
 ## Reconciling `2×` opcode cost with `1.05×` observed SIMD-kernel ratio
 

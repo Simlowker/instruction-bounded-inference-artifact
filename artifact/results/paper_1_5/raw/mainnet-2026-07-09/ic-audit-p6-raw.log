@@ -1,0 +1,13 @@
+(
+  variant {
+    Ok = record {
+      output = " the \"science of the human mind.\"\nBy the way, in the 1950s, the American psychologist Carl Rogers made";
+      n_tokens_generated = 24 : nat64;
+      conversation = "DNA stands for the \"science of the human mind.\"\nBy the way, in the 1950s, the American psychologist Carl Rogers";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)
