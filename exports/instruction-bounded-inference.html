@@ -236,11 +236,17 @@ canister, yields 10 tok/call on the onicai baseline and 29 tok/call on
 our fork. The 2.9× gap is software, not hardware.</p>
 <p><strong>(R1) Decode cost model.</strong> Decode follows
 <code>tok/call ≈ B / (α_eff × 2P)</code>, where <code>α_eff</code> is
-the effective cost per FLOP — a deployment-stack property, not a
-constant. Across 11 modern decoder models from 8 families,
-<code>α_eff = 1.527</code> (95% bias-corrected bootstrap CI [1.374,
-1.65]; leave-one-architecture-out — LOAO — MAPE 7.7%, model-weighted).
-Legacy GPT-2 code paths form a separate α ≈ 2.0 regime.</p>
+the effective cost coefficient at the published-parameter count
+<code>2P</code> — a deployment-stack property computable from a model
+card, not a constant. Across 11 modern decoder models from 8 families,
+<code>α_eff = 1.53</code> (95% bias-corrected bootstrap CI [1.37, 1.65];
+leave-one-architecture-out — LOAO — MAPE 7.7%, model-weighted). Under
+the executed-FLOPs convention (embedding-table lookups excluded), the
+physical coefficient <code>α_exec</code> clusters at 1.54 (CV 9.3%) for
+9 of the 11 models; the two smallest-dimension models (Pythia, d ≤ 512)
+reveal a per-FLOP overhead regime that the published-parameter
+convention masks. Legacy GPT-2 code paths form a separate α ≈ 2.0 regime
+under both conventions.</p>
 <p><strong>(R2) Matmul dominates.</strong> The gap reproduces on
 mainnet; matmul accounts for 98.7% of decode cost on the profiled
 Pythia-70M Q8_0 view (98.3% on the Qwen 0.5B Q8_0 SIMD characterization
@@ -250,15 +256,16 @@ Subnet (SSN) [8] deployments stay within 7% of local calibration.</p>
 <p><strong>(R3) Floor evidence.</strong> A purpose-built TQ2_0 (2-bit
 ternary in the GGUF binary format used by llama.cpp [10]) WASM SIMD path
 on purpose-trained TriLM models decodes at the empirical floor of the
-measured decode path: <code>α_eff = 1.03</code> at 560M, with a coarse
+measured decode path: <code>α_eff = 1.03</code> at 560M
+(<code>α_exec = 1.17</code> under executed FLOPs), with a coarse
 integer-token consistency check at 3.9B (<code>N_MAX = 5</code>,
-asymmetric −17%/+0.2% resolution, implying <code>α_eff ≤ 1.002</code>) —
-and byte-identical outputs across a local replica, 13-replica Swiss
-Subnet consensus, and a standard ICP mainnet subnet. Here
-<code>α_eff = 1</code> is one metered unit per FLOP at the
-<code>2P</code> count — the observed floor of single-token decode on
-this stack, not a cost-table minimum: batched encode and isolated
-ternary kernel benches measure below it (§2, §5.3, §7.1). The evidence
+asymmetric −17%/+0.2% resolution, implying <code>α_eff ≤ 1.002</code>,
+<code>α_exec ≤ 1.04</code>) — and byte-identical outputs across a local
+replica, 13-replica Swiss Subnet consensus, and a standard ICP mainnet
+subnet. The floor is an observed property of single-token decode on this
+stack, not a cost-table minimum — isolated ternary kernels bench at
+α_kernel = 0.817 — and the proximity of the published-parameter value to
+exactly 1.0 is partly a convention coincidence (§2, §5.1). The evidence
 spans one model family and one format; we do not claim closed
 saturation.</p>
 <p>Three secondary results compose the law into deployment decisions.
@@ -426,25 +433,27 @@ but they describe systems and boundaries rather than a parametric law.
 The closest prior system is opML [28], which runs the LLM forward pass
 off-chain and re-executes only a single challenged step on-chain inside
 a fraud-proof VM; its metering is therefore <em>lazy</em> — engaged only
-when a result is disputed — whereas the ICP setting meters
-<em>every</em> replica’s full forward pass on <em>every</em> update
-call, eagerly, and our contribution is a throughput cost model rather
-than a verification protocol. Optimistic-TEE-rollup inference [29] and
-deterministic-WASM execution [30] target adjacent verifiable-compute
-boundaries. The practical decision boundary between these designs is the
-trust root and the latency budget: native in-consensus execution is
-warranted when the forward pass itself must be a consensus fact — no
-hardware enclave as trust anchor [29], no challenge window before
-finality [28], no prover in the loop [24] — and it is dominated by TEE
-or off-chain-plus-proof designs when model quality or interactive
-latency is the binding constraint, since the measured envelope here is
-sub-1B models at tens of tokens per call (§6.2, §7.3). The novelty
-claimed here is therefore boundary-specific: native decoder execution
-under consensus metering, measured as a throughput law, not “blockchain
-AI” in the broad sense. On-chain embedding offerings typically store
-precomputed vectors or rely on off-chain workers; our encoder case study
-(§7) runs the full forward pass inside the consensus boundary and is
-framed as a systems demonstration, not a claim of priority.</p>
+when a result is disputed (the multi-phase variant additionally verifies
+phase transitions with on-chain zero-knowledge checks, a hybrid within
+the lazy family) — whereas the ICP setting meters <em>every</em>
+replica’s full forward pass on <em>every</em> update call, eagerly, and
+our contribution is a throughput cost model rather than a verification
+protocol. Optimistic-TEE-rollup inference [29] and deterministic-WASM
+execution [30] target adjacent verifiable-compute boundaries. The
+practical decision boundary between these designs is the trust root and
+the latency budget: native in-consensus execution is warranted when the
+forward pass itself must be a consensus fact — no hardware enclave as
+trust anchor [29], no challenge window before finality [28], no prover
+in the loop [24] — and it is dominated by TEE or off-chain-plus-proof
+designs when model quality or interactive latency is the binding
+constraint, since the measured envelope here is sub-1B models at tens of
+tokens per call (§6.2, §7.3). The novelty claimed here is therefore
+boundary-specific: native decoder execution under consensus metering,
+measured as a throughput law, not “blockchain AI” in the broad sense.
+On-chain embedding offerings typically store precomputed vectors or rely
+on off-chain workers; our encoder case study (§7) runs the full forward
+pass inside the consensus boundary and is framed as a systems
+demonstration, not a claim of priority.</p>
 <h2 id="the-instruction-bounded-cost-model-for-decoder-inference">2 The
 Instruction-Bounded Cost Model for Decoder Inference</h2>
 <p>ICP canisters execute WebAssembly with deterministic instruction
@@ -456,11 +465,14 @@ inference. <code>f32</code> arithmetic is priced 2× above
 level the observed <code>f32x4</code> vs <code>i32x4</code> accounting
 is <code>1.05×</code> because the metering instrumentation block
 dominates a tight inner loop
-(<code>artifact/data/kernel/matmul_bench.csv</code>). We measure that
-metering overhead as <code>β = 1.844</code> on tight SIMD kernels;
-<code>β</code> is the metering-overhead multiplier on a tight SIMD inner
-loop, derived from an empty-loop microbench. The full derivation, and
-the reconciliation between the <code>2×</code> opcode-table cost and the
+(<code>artifact/data/kernel/matmul_bench.csv</code>). We derive
+<code>β = 1.844</code> for tight SIMD kernels from an empty-loop
+microbench — one measured quantity (the metered empty-loop cost,
+<code>Empty_loop_metering</code> row of <code>matmul_bench.csv</code>)
+combined with one stored accounting estimate (the unmetered
+per-iteration baseline); <code>β</code> is the metering-overhead
+multiplier on a tight SIMD inner loop. The full derivation, and the
+reconciliation between the <code>2×</code> opcode-table cost and the
 <code>1.05×</code> observed SIMD-kernel ratio, is given in
 <code>artifact/notes/beta_derivation.md</code>.</p>
 <p>For decoder-only transformers in the calibrated regime, FLOPs per
@@ -474,23 +486,37 @@ per-token cost as</p>
 <blockquote>
 <p><strong>tok/call ≈ B / (α_eff × 2P)</strong>.</p>
 </blockquote>
-<p>We distinguish three levels of the cost coefficient.
-<strong>α_kernel</strong> is measured on isolated matmul benches with
-square matrices and random data. <strong>α_eff</strong> is the
-operational quantity, derived from end-to-end model throughput; it folds
-in dequantization, dispatch, tiling, metering, and framework overhead
-(α_eff &gt; α_kernel). <strong>α_embed</strong> is the analogous
-coefficient for encoder forward passes.</p>
+<p>We distinguish the cost coefficient along two axes. Along the
+<em>measurement</em> axis: <strong>α_kernel</strong> (isolated matmul
+benches, square matrices, random data), <strong>α_eff</strong>
+(end-to-end decode throughput; folds in dequantization, dispatch,
+tiling, metering, and framework overhead; α_eff &gt; α_kernel), and
+<strong>α_embed</strong> (encoder forward passes). Along the
+<em>counting-convention</em> axis: <strong>α_eff</strong> divides by
+<code>2·P_published</code> — every number in this paper uses this
+convention unless suffixed — while <strong>α_exec</strong> divides by
+<em>executed</em> FLOPs only: <code>P_exec</code> excludes the input
+token-embedding table (a per-token row lookup) whenever a separate
+output head exists, and any learned position embeddings
+(<code>artifact/notes/alpha_exec_convention.md</code>; recompute in
+<code>artifact/results/current/scaling_law/alpha_exec.csv</code>). α_eff
+is the deployment predictor — computable from a model card; α_exec is
+the physical quantity — invariant to export-duplicated stored tensors.
+For tied-embedding models, the majority of the calibration set, the two
+coincide.</p>
 <p>α_eff is not a constant of nature. It is a property of the deployment
 stack: family, quantization, compiler, metering, and implementation. On
 the current stack, α_eff resolves into three distinct clusters:</p>
 <ul>
-<li><strong>Modern decoder families (FP/INT path)</strong>: α_eff ≈
-1.53</li>
-<li><strong>Legacy GPT-2 code paths</strong>: α_eff ≈ 2.0
-(software-penalty regime)</li>
-<li><strong>Purpose-built TQ2_0 ternary path</strong>: α_eff ≈ 1.00
-(empirical decode-path floor)</li>
+<li><strong>Modern decoder families (FP/INT path)</strong>: α_eff ≈ 1.53
+— α_exec ≈ 1.54 for the nine models outside the small-dimension
+regime</li>
+<li><strong>Small-dimension overhead regime (d ≤ 512)</strong>: masked
+under α_eff; α_exec ≈ 2.2–3.1 (Pythia rows, §3)</li>
+<li><strong>Legacy GPT-2 code paths</strong>: α ≈ 2.0 under both
+conventions (software-penalty regime)</li>
+<li><strong>Purpose-built TQ2_0 ternary path</strong>: α_eff ≈ 1.00,
+α_exec ≈ 1.17 (empirical decode-path floor)</li>
 </ul>
 <p>The floor is load-bearing, so we state precisely what it is — and
 what it is not. Setting α_eff = 1 corresponds to one metered unit per
@@ -508,14 +534,18 @@ per-weight load/dequant instructions cannot be amortized — unlike
 batched encode, where they are shared across the token batch, and unlike
 matrix-matrix kernel benches, where operand reuse hides them. On the
 currently-integrated decode kernels, that per-weight overhead lands the
-end-to-end coefficient at α_eff ≈ 1, and no end-to-end decode deployment
-on this stack is observed below it. The claim “the TQ2_0 path reaches
-the floor” (§5) should therefore be read as measurement evidence that no
-large remaining margin is visible on that measured decode path at
-integer-token resolution — an <em>empirical</em> floor of the current
-path, not a bound future kernels cannot cross: the ternary-native DOT ×4
-microkernel already measures α_kernel = 0.817 on isolated benches
-(§5.3), and integrating it at model level is the obvious next step.</p>
+end-to-end ternary coefficient at α_exec ≈ 1.17 (α_eff ≈ 1.00 under the
+published-parameter convention — the roundness of that value is partly a
+coincidence: TriLM’s untied input table inflates the
+<code>2·P_published</code> denominator), and no end-to-end decode
+deployment on this stack is observed below it under either convention.
+The claim “the TQ2_0 path reaches the floor” (§5) should therefore be
+read as measurement evidence that no large remaining margin is visible
+on that measured decode path at integer-token resolution — an
+<em>empirical</em> floor of the current path, not a bound future kernels
+cannot cross: the ternary-native DOT ×4 microkernel already measures
+α_kernel = 0.817 on isolated benches (§5.3), and integrating it at model
+level is the obvious next step.</p>
 <h2
 id="empirical-decode-scaling-law-for-instruction-bounded-llm-inference">3
 Empirical Decode Scaling Law for Instruction-Bounded LLM Inference</h2>
@@ -547,12 +577,13 @@ the largest per-architecture LOAO error (18.3%, reported in §3) — not
 excluded. All other rows are single-run binary-search estimates.</p>
 <table>
 <colgroup>
-<col style="width: 28%" />
-<col style="width: 14%" />
-<col style="width: 10%" />
-<col style="width: 14%" />
-<col style="width: 10%" />
-<col style="width: 22%" />
+<col style="width: 25%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
@@ -561,6 +592,7 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <th style="text-align: right;">Params</th>
 <th style="text-align: right;">tok/call</th>
 <th style="text-align: right;">α_eff</th>
+<th style="text-align: right;">α_exec</th>
 <th>Notes</th>
 </tr>
 </thead>
@@ -571,13 +603,15 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td style="text-align: right;">70 M</td>
 <td style="text-align: right;">208</td>
 <td style="text-align: right;">1.37</td>
-<td>Q4_0 SIMD</td>
+<td style="text-align: right;">2.15 ◇</td>
+<td>Q4_0 SIMD, untied</td>
 </tr>
 <tr>
 <td>SmolLM2-135M†</td>
 <td>llama</td>
 <td style="text-align: right;">135 M</td>
 <td style="text-align: right;">97</td>
+<td style="text-align: right;">1.53</td>
 <td style="text-align: right;">1.53</td>
 <td>Q4_0 SIMD</td>
 </tr>
@@ -587,6 +621,7 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td style="text-align: right;">270 M</td>
 <td style="text-align: right;">56</td>
 <td style="text-align: right;">1.32</td>
+<td style="text-align: right;">1.33</td>
 <td>Q4_0 SIMD</td>
 </tr>
 <tr>
@@ -595,6 +630,7 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td style="text-align: right;">270 M</td>
 <td style="text-align: right;">45</td>
 <td style="text-align: right;">1.65</td>
+<td style="text-align: right;">1.64</td>
 <td>Q4_0 SIMD</td>
 </tr>
 <tr>
@@ -602,6 +638,7 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td>llama</td>
 <td style="text-align: right;">360 M</td>
 <td style="text-align: right;">36</td>
+<td style="text-align: right;">1.54</td>
 <td style="text-align: right;">1.54</td>
 <td>Q4_0 SIMD</td>
 </tr>
@@ -611,6 +648,7 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td style="text-align: right;">494 M</td>
 <td style="text-align: right;">31</td>
 <td style="text-align: right;">1.31</td>
+<td style="text-align: right;">1.31</td>
 <td>Q4_0 SIMD</td>
 </tr>
 <tr>
@@ -619,7 +657,8 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td style="text-align: right;">500 M</td>
 <td style="text-align: right;">27</td>
 <td style="text-align: right;">1.48</td>
-<td>Q4_0 SIMD</td>
+<td style="text-align: right;">1.60</td>
+<td>Q4_0 SIMD, untied</td>
 </tr>
 <tr>
 <td>DistilGPT2</td>
@@ -627,6 +666,7 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td style="text-align: right;">82 M</td>
 <td style="text-align: right;">119</td>
 <td style="text-align: right;">2.05 ⚠</td>
+<td style="text-align: right;">2.07</td>
 <td>legacy regime</td>
 </tr>
 <tr>
@@ -635,10 +675,16 @@ excluded. All other rows are single-run binary-search estimates.</p>
 <td style="text-align: right;">124 M</td>
 <td style="text-align: right;">84</td>
 <td style="text-align: right;">1.92 ⚠</td>
+<td style="text-align: right;">1.93</td>
 <td>legacy regime</td>
 </tr>
 </tbody>
 </table>
+<p><em>α_exec = executed-FLOPs convention (§2): identical to α_eff for
+tied-embedding models; ◇ marks the small-dimension overhead regime (d ≤
+512) that the published-parameter convention masks. Full recompute
+incl. the four models not shown:
+<code>artifact/results/current/scaling_law/alpha_exec.csv</code>.</em></p>
 <p><strong>Table 1b.</strong> Network and deployment rows measured on
 ICP mainnet or Swiss Subnet (SSN). These rows are included in the
 artifact, but they are not all used in the modern-only scaling-law fit
@@ -897,20 +943,39 @@ claim</li>
 <li>Log-log slope <strong>−0.980</strong>, 95% OLS CI <strong>[−1.047,
 −0.913]</strong>, R² 0.9919 — a consistency check on the <code>2P</code>
 exponent, not independent validation</li>
+<li>Under the executed-FLOPs convention: <strong>α_exec median 1.54, CV
+9.3%</strong> across the nine models outside the small-dimension regime;
+Pythia-70M/14M (d = 512/128) sit at <strong>2.15 / 3.12</strong> — a
+genuine per-FLOP overhead regime at small hidden dimensions that the
+published-parameter convention masks by crediting never-executed lookup
+parameters (<code>alpha_exec.csv</code>, script
+<code>compute_alpha_exec.py</code>). The LOAO test operates on the
+published-parameter convention — the deployment setting, where only
+public counts are available.</li>
 </ul>
-<p>Legacy GPT-2 rows land at α ≈ 2.0 on nominal parameter counts —
-systematically above the modern cluster, and only on ICP. Two effects
-compose here. First, a parameter-convention effect: GPT-2’s audited GGUF
-counts exceed nominal by 24–32% (untied vocabulary and position
-embeddings; <code>discrepancies.csv</code>), and on audited counts the
-same rows land at α ≈ 1.39–1.46, at or below the modern cluster. Second,
-a residual ICP-specific software component: on native Apple M4 Max the
-same models show no regime split
-(<code>artifact/data/native/m4_max_baseline.csv</code>), so what remains
-after the convention correction is attributable to the llama.cpp GPT-2
-code path on this stack, not to the architecture itself. The α ≈ 2.0
-headline is thus partly a nominal-convention artifact; we retain GPT-2
-as a sensitivity regime, excluded from the modern fit either way.</p>
+<figure>
+<img
+src="../artifact/results/current/scaling_law/scaling_law_full_analysis.png"
+alt="Log-log fit of decode throughput against 2P across the modern calibration set (published-parameter convention). The −0.980 slope is a consistency check on the 2P exponent; the informative content is the tightness and transferability of the α_eff cluster (§3)." />
+<figcaption aria-hidden="true">Log-log fit of decode throughput against
+2P across the modern calibration set (published-parameter convention).
+The −0.980 slope is a consistency check on the 2P exponent; the
+informative content is the tightness and transferability of the α_eff
+cluster (§3).</figcaption>
+</figure>
+<p>Legacy GPT-2 rows land at α ≈ 2.0 — systematically above the modern
+cluster, and only on ICP; on native Apple M4 Max the same models show no
+regime split (<code>artifact/data/native/m4_max_baseline.csv</code>),
+locating the penalty in the llama.cpp GPT-2 code path on this stack
+rather than in the architecture. Conventions matter here in an
+instructive way: GPT-2’s GGUF exports store a duplicated output head
+(+24–32% audited stored tensors; <code>discrepancies.csv</code>), which
+under a stored-tensor reading would compress α toward the cluster (≈1.4)
+— but duplicated tensors are not executed twice, and under the
+executed-FLOPs convention GPT-2 remains at α_exec ≈ 1.9–2.1 (tied head;
+learned positions excluded). The legacy penalty is real under the
+physical convention; we retain GPT-2 as a sensitivity regime, excluded
+from the modern fit.</p>
 <p>Architecture details (depth, hidden size, vocabulary) do not
 independently predict throughput once total parameter count is fixed.
 Danube3-500M and Qwen 2.5 0.5B occupy very different layer/hidden
@@ -920,18 +985,16 @@ consistent with the cluster; Mamba-370M [13] drifts between builds (α =
 1.54 → 1.80, −14% tok/call) and we treat its result as suggestive, not
 settled.</p>
 <p><strong>Sensitivity to the parameter convention.</strong>
-<code>2P</code> uses nominal (published) parameter totals in our fits,
-applied uniformly. GGUF-audited tensor counts are
-<em>file-dependent</em> and occasionally exceed nominal by 15–32%
-(e.g. the Qwen 2.5 0.5B Q8_0-instruct export audits at 630 M vs 494 M
-nominal, while its Q4_0/TQ2_0 exports audit at 494 M; GPT-2 audits
-+24–32%; <code>CLAIMS-EVIDENCE-MATRIX.md</code> discrepancies log).
-Recalibrating on audited counts therefore shifts α_eff
-<em>non-uniformly</em> — affected models move down by their discrepancy
-(Qwen Q8_0: 1.33 → ≈ 1.06) while others barely move — preserving the
-cluster’s ordering and the α ≈ 1 floor but not every individual value.
-We report the nominal convention throughout and flag rows with a large
-audit gap in the registry.</p>
+<code>2P</code> uses published parameter totals, applied uniformly; the
+α_exec treatment of §2 is the principled resolution of convention
+questions. Stored-tensor audits are <em>file-dependent</em> — the Qwen
+2.5 0.5B Q8_0-instruct export stores a duplicated head (630 M stored vs
+494 M published) while its Q4_0/TQ2_0 exports store 494 M
+(<code>discrepancies.csv</code>) — but stored duplication does not
+change execution: <strong>α_exec is invariant to it</strong>. The
+residual convention exposure is therefore confined to α_eff’s role as a
+<em>predictor</em>, where the published count is exactly what a deployer
+has, and the LOAO error already prices in the untied-model spread.</p>
 <p>Absolute tok/call numbers are build-sensitive within ±15% between
 March and April 2026 builds. The scaling-law <em>structure</em> — slope,
 model ordering, α_eff median — is stable across those builds;
@@ -1141,9 +1204,14 @@ than native hardware:</p>
 <td style="text-align: right;">—</td>
 </tr>
 <tr>
-<td>Implied α_eff</td>
+<td>Implied α_eff (published-param)</td>
 <td style="text-align: right;"><strong>1.03</strong></td>
 <td style="text-align: right;"><strong>1.00</strong></td>
+</tr>
+<tr>
+<td>Implied α_exec (executed FLOPs, §2)</td>
+<td style="text-align: right;"><strong>1.17</strong></td>
+<td style="text-align: right;">≤ 1.04 (one-sided)</td>
 </tr>
 <tr>
 <td>Modern-regime baseline (α = 1.54, §3)</td>
@@ -1154,11 +1222,6 @@ than native hardware:</p>
 <td>Speedup vs baseline</td>
 <td style="text-align: right;"><strong>1.49×</strong></td>
 <td style="text-align: right;"><strong>≈1.5×</strong></td>
-</tr>
-<tr>
-<td>% of empirical floor (α = 1)</td>
-<td style="text-align: right;">97 %</td>
-<td style="text-align: right;">≈100 % (N=5, −17 %/+0.2 % res.)</td>
 </tr>
 <tr>
 <td>Coherence</td>
@@ -1174,10 +1237,17 @@ coarse consistency check, not independent floor evidence: at
 (−17%/+0.2%), so the observation establishes α_eff ≤ 1.002
 <em>given</em> the decode-path floor α ≥ 1, and distinguishes little
 below it. We therefore read the pair as evidence consistent with the
-floor on the measured TQ2_0 path, not as closed saturation. The ≈1.5×
-speedup over the modern-regime baseline is constant across the 7× span,
-weakening the alternative explanation that the 560 M result was inflated
-by small-scale inefficiency in the baseline.</p>
+floor on the measured TQ2_0 path, not as closed saturation. Under the
+executed-FLOPs convention the same measurements read <strong>α_exec =
+1.17</strong> at 560 M and <strong>≤ 1.04</strong> at 3.9 B: the ternary
+path sits far below the modern cluster (≈1.54) under both conventions,
+and the decomposition becomes transparent — ≈0.5 units/FLOP of ternary
+arithmetic (Theorem 1 accounting) plus unamortized per-weight
+load/dequant. The proximity of the published-parameter values to exactly
+1.0 is partly a coincidence of TriLM’s untied input table (§2). The
+≈1.5× speedup over the modern-regime baseline is constant across the 7×
+span, weakening the alternative explanation that the 560 M result was
+inflated by small-scale inefficiency in the baseline.</p>
 <h3 id="byte-exact-cross-environment-determinism">5.2 Byte-exact
 cross-environment determinism</h3>
 <p>A stronger consistency check than throughput matching is bit-for-bit
@@ -1207,10 +1277,11 @@ live consensus on both production subnets.</p>
 tok/MB</strong> — the highest throughput-per-megabyte observed in the
 study (<code>artifact/results/current/extended_analysis/</code>). Note
 what this row does <em>not</em> show: at 201 tok/call, Pythia-70M TQ2_0
-runs at α_eff ≈ 1.41 — well above the floor, and marginally below its
-own Q4_0 SIMD throughput (208 tok/call, Table 1). The floor of §5.1 is
-attained by purpose-trained ternary models at sufficient scale on this
-path, not by the TQ2_0 format per se. Q4_0 SIMD remains the best
+runs at α_eff ≈ 1.41 (α_exec ≈ 2.2, consistent with its small-dimension
+regime, §3) — well above the floor, and marginally below its own Q4_0
+SIMD throughput (208 tok/call, Table 1). The floor of §5.1 is attained
+by purpose-trained ternary models at sufficient scale on this path, not
+by the TQ2_0 format per se. Q4_0 SIMD remains the best
 absolute-throughput operating point for non-ternary models in the
 calibration set. A ternary-native DOT ×4 microkernel projects a 2.45×
 bench-level speedup over F32 SIMD (artifact only; no model-level run
@@ -1424,15 +1495,21 @@ study</h3>
 <p>EmbeddingGemma-300M Q4_0 [11] runs end-to-end inside an SSN canister
 (<code>u2pva-3iaaa-aaaax-qaa7a-cai</code>, 212 MB on disk) at about
 <strong>126 input tokens per call</strong>, corresponding to
-<strong>α_embed ≈ 0.53</strong>
-(<code>artifact/data/onchain/ssn_mainnet.csv</code> embedding rows).
-That is materially cheaper per input token than autoregressive decode,
-suggesting retrieval-style workloads fit the instruction-bounded regime
-better than long-form chat generation. The deployment is a systems
-demonstration (N = 1 model, small cross-lingual sanity checks). It is
-not a claim of priority on the broader “on-chain embedding” term:
-ecosystem projects under different system boundaries — stored
-precomputed vectors, off-chain workers, oracle submissions — have
+<strong>α_embed ≈ 0.53</strong> under the published-parameter convention
+(<code>artifact/data/onchain/ssn_mainnet.csv</code> embedding rows). The
+apparent sub-floor coefficient is a convention artifact: 201.3 M of the
+model’s 308 M published parameters are an embedding lookup table that
+executes no FLOPs in the forward pass; under the executed-FLOPs
+convention <strong>α_exec ≈ 1.61</strong>, inside the modern cluster
+(§2; <code>artifact/notes/alpha_exec_convention.md</code>). The
+per-input-token cost advantage over autoregressive decode is nonetheless
+real — batched encode amortizes per-weight loads that single-token
+decode cannot (§2) — so retrieval-style workloads fit the
+instruction-bounded regime better than long-form chat generation. The
+deployment is a systems demonstration (N = 1 model, small cross-lingual
+sanity checks). It is not a claim of priority on the broader “on-chain
+embedding” term: ecosystem projects under different system boundaries —
+stored precomputed vectors, off-chain workers, oracle submissions — have
 existed for some time.</p>
 <h3 id="minor-systems-contribution">7.2 Minor systems contribution</h3>
 <p>A WASM SIMD vectorized unpack for the Q6_K <code>ql/qh</code> path
@@ -1501,9 +1578,9 @@ a purpose-built kernel and purpose-trained ternary weights at both 560 M
 and 3.9 B, under live consensus on both a Swiss-Subnet and a
 standard-mainnet deployment, with byte-identical outputs across three
 execution environments — a systems result, not a universal theorem of
-saturation; the isolated kernel bench (α_kernel = 0.817) shows a further
-floor below the current decode path, not yet integrated at model
-level.</p>
+saturation (α_exec = 1.17 under the executed-FLOPs convention, §2; the
+isolated kernel bench at α_kernel = 0.817 shows a further floor below
+the current decode path, not yet integrated at model level).</p>
 <p>Two derived results matter for deployment. Uniform <code>Q8_0</code>
 remains non-dominated against the mixed-precision variants tested, and
 multi-call stateful inference pays a predictable two-term IO tax per
@@ -1700,7 +1777,9 @@ arXiv:2506.04645.</p>
 Language Models,” arXiv:2411.13676.</p>
 <p>[27] H. Oh et al., “T-SAR: A Full-Stack Co-design for CPU-Only
 Ternary LLM Inference via In-Place SIMD ALU Reorganization,”
-arXiv:2511.13676.</p>
+arXiv:2511.13676. <em>(Refs [26] and [27] share the numeric suffix 13676
+under different year-months; both identifiers verified against arXiv on
+2026-07-08 — the collision is coincidental.)</em></p>
 <p>[28] KD Conway, C. So, X. Yu, K. Wong, “opML: Optimistic Machine
 Learning on Blockchain,” arXiv:2401.17555.</p>
 <p>[29] A. Chan et al., “Optimistic TEE-Rollups: A Hybrid Architecture
