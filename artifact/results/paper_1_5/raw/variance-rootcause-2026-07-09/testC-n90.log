@@ -1,0 +1,13 @@
+(
+  variant {
+    Ok = record {
+      output = ") and (b) is a more general and general purpose application of a. It is also a more general and general purpose application.\n\nThe machine learning concept is also an application of a few different areas of mathematics. There are various areas of mathematics that can be used to understand and make use of machine learning results, such as the field of combinatorics and graph theory. It is also a field of mathematics that deals with the study of the";
+      n_tokens_generated = 90 : nat64;
+      conversation = "In machine learning a) and (b) is a more general and general purpose application of a. It is also a more general and general purpose application.\n\nThe machine learning concept is also an application of a few different areas of mathematics. There are various areas of mathematics that can be used to understand and make use of machine learning results, such as the field of combinatorics and graph theory. It is also a field of mathematics that deals with the study of";
+      error = "";
+      status_code = 200 : nat16;
+      prompt_remaining = "";
+      generated_eog = false;
+    }
+  },
+)

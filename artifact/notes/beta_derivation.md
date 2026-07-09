@@ -100,3 +100,15 @@ cost, not opcode-mix engineering.
   asymmetry.
 - The `β = 1.844` value should be treated as a current-build operating
   point, not as a runtime-wide constant of nature.
+
+## Correction (2026-07-09, revision round 2)
+
+The earlier text of this note (and §2 of the paper) attributed the collapse from the
+"2×" opcode asymmetry to the observed 1.05× kernel ratio entirely to metering-block
+domination. Per the IC cost table (`rs/embedders/src/wasm_utils/instrumentation.rs`,
+inspected at commit `eeec0fd29765`, 2026-05-08), the 2× pricing holds for *scalar*
+`f32.mul` vs `i32.mul` only; SIMD `f32x4.mul` and `i32x4.mul` are both priced 2.
+The correct two-step reconciliation: the table-level asymmetry of the measured
+mul-add kernels is ≈ 4:3 (instruction mix), which the metering block then flattens
+to the observed 1.05×. The measurements are unchanged; the causal narration is
+corrected — and the paper's conclusion (opcode mix is not a lever) is strengthened.

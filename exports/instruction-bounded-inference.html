@@ -388,7 +388,8 @@ how does the regime extend to non-decode workloads? (§6, §7)</li>
 <tr>
 <td><code>f32.mul</code> vs <code>i32.mul</code></td>
 <td>Identical</td>
-<td>2× per opcode table; ~1.05× at SIMD-kernel level (§4.2)</td>
+<td>2× per opcode table (scalar; SIMD
+<code>f32x4</code>/<code>i32x4</code> are priced equal — §4.2)</td>
 </tr>
 <tr>
 <td>Main hotspot</td>
@@ -460,12 +461,20 @@ Instruction-Bounded Cost Model for Decoder Inference</h2>
 metering [5, 6]. Each opcode has an explicit cost per the replica
 instrumentation cost table [6]; one update call may consume at most
 <code>B = 40 × 10⁹</code> ICP cost units [7]. Two asymmetries matter for
-inference. <code>f32</code> arithmetic is priced 2× above
-<code>i32</code> under the ICP opcode cost table, but at the SIMD-kernel
-level the observed <code>f32x4</code> vs <code>i32x4</code> accounting
-is <code>1.05×</code> because the metering instrumentation block
-dominates a tight inner loop
-(<code>artifact/data/kernel/matmul_bench.csv</code>). We derive
+inference. Scalar <code>f32</code> arithmetic is priced 2× above scalar
+<code>i32</code> under the ICP opcode cost table (<code>f32.mul</code> =
+2, <code>i32.mul</code> = 1); at the SIMD level, however, the table
+prices <code>f32x4.mul</code> and <code>i32x4.mul</code> identically
+(both 2 — <code>instrumentation.rs</code>, cost table inspected at
+commit <code>eeec0fd29765</code>, 2026-05-08). The reconciliation with
+the observed kernel ratio therefore has two steps: the table-level
+asymmetry of the measured mul-add kernels is ≈ 4:3 (from the surrounding
+instruction mix, not the multiplies), and the metering instrumentation
+block that dominates a tight inner loop flattens that residual to the
+observed <code>1.05×</code>
+(<code>artifact/data/kernel/matmul_bench.csv</code>). If anything this
+strengthens §4.2’s conclusion: opcode-mix engineering has even less
+leverage than a scalar reading of the table suggests. We derive
 <code>β = 1.844</code> for tight SIMD kernels from an empty-loop
 microbench — one measured quantity (the metered empty-loop cost,
 <code>Empty_loop_metering</code> row of <code>matmul_bench.csv</code>)
@@ -568,10 +577,16 @@ Pythia-14M, Mamba-370M, Qwen3-0.6B, and RWKV7-0.4B. Four Transformer
 anchor points (†) are variance-verified with 3 repetitions each (CV &lt;
 1.05% under the binary-search protocol described above; for
 transparency, <code>variance.csv</code> also retains an earlier
-same-evening SmolLM2-135M session recording [150, 75, 150] — CV ≈ 35% —
-whose cause was not recorded; the anchors were re-measured minutes later
-at [97, 97, 97] under the protocol used throughout, and the reported CIs
-are conditional on that protocol); a fifth variance-verified point,
+same-evening SmolLM2-135M session recording [150, 150, 75] — CV ≈ 35% —
+traced during revision to a different metric: its values exceed the
+single-call instruction boundary (94–97 tokens across builds; a single
+<code>-n 150</code> call traps <code>IC0522</code>), identifying that
+session as cap-limited multi-call totals recorded before the protocol
+was fixed
+(<code>artifact/results/paper_1_5/raw/variance-rootcause-2026-07-09/</code>);
+the adopted anchors were re-measured minutes later at [97, 97, 97] under
+the single-call protocol used throughout, and the reported CIs are
+conditional on that protocol); a fifth variance-verified point,
 Mamba-370M, is <strong>retained in the modern fit</strong> — it carries
 the largest per-architecture LOAO error (18.3%, reported in §3) — not
 excluded. All other rows are single-run binary-search estimates.</p>
@@ -881,7 +896,7 @@ build/network drift</td>
 <tr>
 <td>Decode profiling, Q8_0 SIMD</td>
 <td style="text-align: right;">12.327B instructions / 10 tokens</td>
-<td>α_eff = 1.23 in the optimized path</td>
+<td>α_eff = 1.25 in the optimized path (494 M nominal)</td>
 </tr>
 <tr>
 <td><code>MUL_MAT</code> share, same profile</td>
@@ -1095,14 +1110,16 @@ attributes:</p>
 <p>This sharpens the optimization picture. Integer normalization,
 alternate attention formulations, and other non-matmul tweaks target ≤
 1.3% of cost on the profiled Pythia-70M Q8_0 view (≤ 1.7% on the Qwen
-0.5B Q8_0 SIMD profile reported in §3); kernel-table opcode differences
-(<code>f32</code> vs <code>i32</code>) are drowned by metering overhead
-<code>β = 1.844</code> (<code>artifact/notes/beta_derivation.md</code>).
-The only lever that moves end-to-end throughput is effective matmul
-cost. Matmul-free language modeling [18] is an orthogonal architectural
-response to the same dominance pattern; for a decoder running in our
-metering regime, eliminating matmul opcodes outright would change the
-cost decomposition itself rather than reduce the coefficient.</p>
+0.5B Q8_0 SIMD profile reported in §3); residual kernel-table opcode-mix
+differences (≈ 4:3 at the SIMD level — the 2×
+<code>f32</code>/<code>i32</code> gap is scalar-only, §2) are drowned by
+metering overhead <code>β = 1.844</code>
+(<code>artifact/notes/beta_derivation.md</code>). The only lever that
+moves end-to-end throughput is effective matmul cost. Matmul-free
+language modeling [18] is an orthogonal architectural response to the
+same dominance pattern; for a decoder running in our metering regime,
+eliminating matmul opcodes outright would change the cost decomposition
+itself rather than reduce the coefficient.</p>
 <h3 id="why-unstructured-sparsity-fails-theorem-1">4.3 Why unstructured
 sparsity fails (Theorem 1)</h3>
 <p><strong>Theorem 1.</strong> <em>For any sparsity rate s ∈ [0, 1],
@@ -1282,10 +1299,12 @@ regime, §3) — well above the floor, and marginally below its own Q4_0
 SIMD throughput (208 tok/call, Table 1). The floor of §5.1 is attained
 by purpose-trained ternary models at sufficient scale on this path, not
 by the TQ2_0 format per se. Q4_0 SIMD remains the best
-absolute-throughput operating point for non-ternary models in the
-calibration set. A ternary-native DOT ×4 microkernel projects a 2.45×
-bench-level speedup over F32 SIMD (artifact only; no model-level run
-yet).</p>
+absolute-throughput operating point for non-ternary models on the
+calibration build (Table 1); the Q4_0/Q8_0 ordering is build-sensitive
+at the ±1–2 token scale — §6.1’s campaign build had Q8_0 ahead — while
+§6.1’s Pareto conclusion (uniform Q8_0 non-dominated) is robust to that
+drift. A ternary-native DOT ×4 microkernel projects a 2.45× bench-level
+speedup over F32 SIMD (artifact only; no model-level run yet).</p>
 <h2
 id="pareto-quantization-mixed-precision-vs-uniform-q8_0-and-the-multi-call-session-io-tax">6
 Pareto Quantization (Mixed-Precision vs Uniform Q8_0) and the Multi-Call
@@ -1366,7 +1385,7 @@ is: no mixed variant strictly dominates it. <code>Q5_K_M</code> is the
 sole strictly-dominated variant. The ΔPPL-guided <code>V4</code> variant
 (top-K fragility layers at Q8, rest at Q4_K_M) is the best mixed variant
 and remains relevant under tight size budgets.</p>
-<p>Two caveats. First, neither hidden dim (576, 896) is divisible by
+<p>Three caveats. First, neither hidden dim (576, 896) is divisible by
 256, so <code>llama-quantize</code> emits many
 <code>q4_K/q5_K → q5_0/q8_0</code> fallbacks; the mixed-precision
 landscape likely differs on hidden dims in {512, 1024, 2048}. Second,
@@ -1374,7 +1393,17 @@ Qwen’s α_eff = 1.33 is lower than SmolLM’s 1.53 despite larger hidden
 dim. Plausible contributors: GQA (grouped-query attention; fewer K/V
 FLOPs), attention biases not counted in <code>2P</code>, and SmolLM2’s
 tied embedding making <code>2P</code> undercount its LM head. Both
-values remain inside the Paper 1 modern-regime CI.</p>
+values remain inside the modern-regime CI. Third, cross-campaign build
+drift: this campaign’s absolute BASE-Q4_0 throughput for Qwen (20
+tok/call on the campaign build) sits 35% below the Table 1 calibration
+value (31) — a model-specific regression of that build line (SmolLM2
+moved only 97 → 95 on the same build), re-measured at <strong>30
+tok/call</strong> on the current release build (−3%, inside the ±15%
+envelope; probes and provenance checks in
+<code>artifact/results/paper_1_5/raw/qwen-q4-build-drift-2026-07-09.md</code>).
+Within-campaign, same-build comparisons — the Pareto analysis above —
+are unaffected; absolute values should always be read against the pinned
+WASM hash (Limitation 4).</p>
 <p><strong>Validated on SSN.</strong> Pareto-winner
 <code>BASE-Q8_0</code> on SSN mainnet: SmolLM2-135M N_MAX = 95 (local =
 97, −2%, byte-exact 3/3 reps); Qwen 2.5 0.5B N_MAX = 28 (local = 30,
@@ -1398,8 +1427,22 @@ giving an <strong>extended session formula</strong>:</p>
 <code>IO_instr(n, c) = save_instr(n, c) + load_instr(n, c) ≈ (a_s + b_s · n) + (a_l + b_l · n)</code>
 fitted from instrumented canister runs (an instrumented build — ggml
 commit <code>bb238b9</code> — logs <code>save_instr</code> and
-<code>load_instr</code> per call; for the Qwen fit,
-<code>b_l ≈ 0</code>: the load cost resolves to a near-constant term).
+<code>load_instr</code> per call). Table 3’s campaign fit resolved the
+Qwen load cost to a near-constant (<code>b_l ≈ 0</code> over that
+build’s operating range); a dedicated 15-point sweep on the current
+release build (one growing session, <code>n_kv</code> 21–217) measures
+the load slope directly:
+<strong><code>load_instr ≈ 43.0 M + 0.177 M · n_kv</code></strong>, R² =
+0.9998 (figure below;
+<code>artifact/results/paper_1_5/raw/bl-sweep-2026-07-09/</code>). The
+load slope is real but small — ≈ 19% of the save slope — so the
+near-constant reading holds at small caches, while the growth term
+belongs in long-session budgets. Absolute IO constants are
+build-specific (the current build loads ≈ 10× cheaper than Table 3’s
+campaign build at comparable cache sizes); the linear <em>structure</em>
+is the transferable finding.</p>
+<p><img src="../artifact/results/current/figures/load_sweep_fit.png"
+alt="State-load cost vs KV-cache size on the current release build: 15 points from one growing session; the load slope is non-zero (≈ 19% of the save slope) and the relation is cleanly linear. Absolute constants are build-pinned (Limitation 4)." />
 Units: <code>B</code> and <code>IO_instr</code> in ICP instruction-cost
 units; <code>α_eff × 2P</code> in instructions per token.</p>
 <p><strong>Table 3.</strong> Fitted IO parameters
