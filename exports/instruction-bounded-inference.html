@@ -9,152 +9,6 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
@@ -170,6 +24,7 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
+  <link rel="stylesheet" href="/Users/macpromax/gian/local/reference/archive/paper-v14-review-repo/exports/paper-pdf.css" />
 </head>
 <body>
 <h1
@@ -234,7 +89,8 @@ bounded by executed instructions, not DRAM bandwidth — the
 <em>instruction-bounded</em> regime. The motivating gap: the same Qwen
 2.5 0.5B Q8_0 (8-bit uniform integer) model, on the same ICP mainnet
 canister, yields 10 tok/call on the onicai baseline and 29 tok/call on
-our fork. The 2.9× gap is software, not hardware.</p>
+our fork of the same codebase — hereafter Comoto, source-pinned in §4.1.
+The 2.9× gap is software, not hardware.</p>
 <p><strong>(R1) Decode cost model.</strong> Decode follows
 <code>tok/call ≈ B / (α_eff × 2P)</code>, where <code>α_eff</code> is
 the effective cost coefficient at the published-parameter count
@@ -275,7 +131,7 @@ saturation.</p>
 SmolLM2-135M and Qwen 0.5B: no mixed-precision variant strictly
 dominates it, while ΔPPL vs F16 remains tiny. <strong>(S2)</strong>
 Multi-call sessions pay a per-call IO tax; a hybrid Mamba+Transformer
-baseline halves the per-token slope. <strong>(S3)</strong>
+baseline halves the per-token save slope. <strong>(S3)</strong>
 EmbeddingGemma-300M Q4_0 (4-bit uniform integer GGUF) on SSN runs at
 <code>α_embed ≈ 0.53</code>, 126 input tok/call — retrieval fits the
 regime better than long-form decode.</p>
@@ -330,7 +186,7 @@ itself.</p>
 machine fixes throughput to within a few percent. On ICP, it does not.
 Qwen 2.5 0.5B Q8_0 generates <strong>10 tokens per update call</strong>
 on the onicai fork [9] and <strong>29 tokens per update call</strong> on
-our fork, despite running in the same mainnet canister framework, on the
+Comoto, despite running in the same mainnet canister framework, on the
 same GGUF weights, under the same 40-billion-instruction message
 cap.</p>
 <p>Once hardware, weights, and quantization are fixed, the remaining
@@ -391,7 +247,7 @@ how does the regime extend to non-decode workloads? (§6, §7)</li>
 <td><code>f32.mul</code> vs <code>i32.mul</code></td>
 <td>Identical</td>
 <td>2× per opcode table (scalar; SIMD
-<code>f32x4</code>/<code>i32x4</code> are priced equal — §4.2)</td>
+<code>f32x4</code>/<code>i32x4</code> are priced equal — §2)</td>
 </tr>
 <tr>
 <td>Main hotspot</td>
@@ -408,7 +264,7 @@ deployments at sub-1B scales (§6.3, §8) are implementation ceilings of
 the present runtime build.</p>
 <p>The <em>qualitative</em> regime distinction — executed instructions,
 not DRAM bandwidth, as the binding cost — plausibly extends to other
-discretely-metered runtimes: blockchain canisters [5, 7], fuelled WASM
+discretely-metered runtimes: blockchain canisters [5, 7], fueled WASM
 (Wasmtime <code>set_fuel</code>, WasmEdge gas), and possibly
 zero-knowledge VMs [23, 24]. The <em>quantitative</em> results here (β,
 the f32/i32 ratio, α_eff, the matmul-dominance share) are calibrated to
@@ -428,7 +284,7 @@ work</h3>
 <p>We establish three main results (R1–R3) and three secondary results
 (S1–S3), all traced to the artifact’s measurement registry (49 rows) and
 on-chain CSVs. Prior on-chain ML work [14, 19, 20] includes on-chain
-inference, gas-cost modelling, and verifiability-oriented system design,
+inference, gas-cost modeling, and verifiability-oriented system design,
 but does not provide a first-order scaling law for native
 instruction-metered decoder throughput on a live ICP/WASM canister
 stack. Concurrent on-chain inference efforts [9, 21] establish that
@@ -518,7 +374,7 @@ For tied-embedding models, the majority of the calibration set, the two
 coincide.</p>
 <p>α_eff is not a constant of nature. It is a property of the deployment
 stack: family, quantization, compiler, metering, and implementation. On
-the current stack, α_eff resolves into three distinct clusters:</p>
+the current stack, α_eff resolves into four distinct clusters:</p>
 <ul>
 <li><strong>Modern decoder families (FP/INT path)</strong>: α_eff ≈ 1.53
 — α_exec ≈ 1.54 for the nine models outside the small-dimension
@@ -730,7 +586,7 @@ and some are negative/operational evidence.</p>
 </thead>
 <tbody>
 <tr>
-<td>Qwen 2.5 0.5B, our fork</td>
+<td>Qwen 2.5 0.5B, Comoto</td>
 <td>ICP mainnet</td>
 <td>Q8_0</td>
 <td style="text-align: right;"><strong>29</strong></td>
@@ -1048,7 +904,7 @@ same 40 B per-call instruction cap:</p>
 </thead>
 <tbody>
 <tr>
-<td>Ours</td>
+<td>Comoto</td>
 <td><code>ef8f9d78…</code></td>
 <td style="text-align: right;"><strong>29</strong></td>
 <td>OK</td>
@@ -1061,7 +917,7 @@ same 40 B per-call instruction cap:</p>
 </tr>
 </tbody>
 </table>
-<p>The 2.9× gap is a production result, not a local artefact
+<p>The 2.9× gap is a production result, not a local artifact
 (<code>artifact/data/onchain/icp_mainnet.csv</code>) — a single-run,
 one-model, one-prompt mainnet measurement (claims-matrix C4) whose
 deterministic trap-boundary protocol and independent rebuild (below)
@@ -1249,7 +1105,7 @@ than native hardware:</p>
 <td style="text-align: right;">≤ 1.04 (one-sided)</td>
 </tr>
 <tr>
-<td>Modern-regime baseline (α = 1.54, §3)</td>
+<td>Modern-regime baseline (α_exec = 1.54, §3)</td>
 <td style="text-align: right;">22.8</td>
 <td style="text-align: right;">3.3</td>
 </tr>
@@ -1321,12 +1177,13 @@ SIMD throughput (208 tok/call, Table 1). The floor of §5.1 is attained
 by purpose-trained ternary models at sufficient scale on this path, not
 by the TQ2_0 format per se. Q4_0 SIMD remains the best
 absolute-throughput operating point for non-ternary models on the
-calibration build (Table 1, Q4_0 31 vs Q8_0 30 for Qwen); the ordering
-is build-sensitive — §6.1’s campaign build showed Q8_0 ahead, its Q4_0
-value being the documented build regression — while §6.1’s Pareto
-conclusion (uniform Q8_0 non-dominated) is robust to that drift. A
-ternary-native DOT ×4 microkernel projects a 2.45× bench-level speedup
-over F32 SIMD (artifact only; no model-level run yet).</p>
+calibration build (Table 1 Q4_0 = 31; Table 1c Q8_0 = 30, for Qwen); the
+ordering is build-sensitive — §6.1’s campaign build showed Q8_0 ahead,
+its Q4_0 value being the documented build regression — while §6.1’s
+Pareto conclusion (uniform Q8_0 non-dominated) is robust to that drift.
+A ternary-native DOT ×4 microkernel (α_kernel = 0.817, §2) projects a
+2.45× bench-level speedup over F32 SIMD (artifact only; no model-level
+run yet).</p>
 <h2
 id="pareto-quantization-mixed-precision-vs-uniform-q8_0-and-the-multi-call-session-io-tax">6
 Pareto Quantization (Mixed-Precision vs Uniform Q8_0) and the Multi-Call
@@ -1561,7 +1418,7 @@ TriLM 3.9B TQ2_0 at 1 113 MB loads cleanly, while Qwen 2.5 1.5B Q6_K at
 (<code>artifact/data/paper_1_5/ic0524_characterization.csv</code>). The
 failure is format-specific — ternary TQ2_0 is unusually friendly to the
 ICP page-access pattern. A parallel <code>IC0502 "unreachable"</code>
-trap at different sizes (Qwen 1.5B Q4_0 at 892 MB) is driven by
+trap at different sizes (Qwen 2.5 1.5B Q4_0 at 892 MB) is driven by
 Wasm-runtime limits rather than stable-memory limits; the two failure
 modes should not be conflated.</p>
 <h2 id="secondary-results-on-chain-encoder-case-study-and-limitations">7
@@ -1634,9 +1491,9 @@ obey a simple law while user-visible latency still needs multi-call
 orchestration.</li>
 <li><strong>Throughput is not quality.</strong> Higher tok/call does not
 imply a better model; it implies a cheaper one under the budget. We
-retain <code>Qwen 3.5</code> ternary and layer-pruned variants in the
-artifact as explicit negative results: throughput-valid but
-quality-invalid (<code>artifact/data/quality_audit.csv</code>, flagged
+retain Qwen3.5 ternary and layer-pruned variants in the artifact as
+explicit negative results: throughput-valid but quality-invalid
+(<code>artifact/data/quality_audit.csv</code>, flagged
 <code>role=negative_result</code>).</li>
 <li><strong>Embedding evaluation.</strong> The encoder case study is N =
 1 with small sanity checks; MTEB-grade on-chain evaluation is a template
@@ -1792,7 +1649,7 @@ LLMs,” arXiv:2502.11880.</p>
 <p>[5] DFINITY Foundation, “IC Interface Specification,”
 <code>docs.internetcomputer.org/references/ic-interface-spec</code>.
 Accessed April 2026.</p>
-<p>[6] DFINITY, “IC WASM Instrumentation,”
+<p>[6] DFINITY Foundation, “IC WASM Instrumentation,”
 <code>github.com/dfinity/ic/blob/master/rs/embedders/src/wasm_utils/instrumentation.rs</code>
 (source-provenance note in
 <code>artifact/notes/source_pinning.md</code>). Accessed April 2026.</p>
